@@ -511,3 +511,63 @@ These ensure clean joins and controlled vocabularies when building your knowledg
 
 ---
 
+## Question
+Is there a way to anonymise respondents?
+
+### Response
+
+When eliciting requirements from *internal* subject-matter experts (SMEs), anonymisation helps reduce bias and social 
+friction (especially in hierarchical environments), while still letting you correlate input patterns for quality and 
+traceability.
+
+Let’s go deep — below I’ll explain **strategic design options**, and then show **practical implementation steps**
+(including updates to your pipeline and GitHub Action).
+
+---
+
+#### 1. Design Principles for Anonymisation
+
+| Objective                           | Design Implication                                                                                     |
+|-------------------------------------|--------------------------------------------------------------------------------------------------------|
+| Protect privacy                     | Remove direct identifiers (names, email, job titles).                                                  |
+| Retain analytical value             | Keep pseudonyms or hashed IDs for tracking patterns.                                                   |
+| Preserve traceability internally    | Maintain a secure mapping file stored outside the public repo (e.g., internal vault or GitHub Secret). |
+| Reversible only under authorization | Hashes with a secret salt allow re-identification if necessary, but not by the public.                 |
+
+---
+
+#### 2. Practical Options
+
+**Option A. Pseudonymization**
+
+Replace each SME’s name with a stable pseudonym like <code>SME001</code>, <code>SME002</code>, etc.
+
+**Pros**: Reversible with a lookup table; useful for follow-up interviews.
+**Cons**: Slight admin overhead maintaining the mapping file.
+
+**Implementation:**
+
+- Create a file secure/sme_mapping.csv (not tracked in Git).
+- Script uses it to assign consistent pseudonyms.
+
+| SMEName    | Pseudonym |
+|------------|-----------|
+| Jane Doe   | SME001    |
+| John Smith | SME002    |
+
+Then replace <code>SMEName</code> in the merged dataset with <code>Pseudonym</code>.
+
+---
+
+**Option B. Hashed IDs (irreversible anonymisation)**
+
+Hash each SME’s name using a salted hash (SHA256 + secret salt).
+
+**Pros**: Fully anonymised; easy to automate; no mapping storage needed.
+**Cons**: Can’t reverse it — no follow-up interviews via this ID.
+
+Example hash:
+
+<code>hash("Jane Doe" + secret_salt) → "f2d3c59..."</code>
+
+

@@ -1,0 +1,58 @@
+{
+  "@context": {
+    "@vocab": "https://example.org/rfi#",
+    "RequirementID": "rfi:RequirementID",
+    "RequirementStatement": "rfi:RequirementStatement",
+    "SME_ID": "rfi:SME_ID",
+    "PriorityScore": "rfi:PriorityScore",
+    "Priority": "rfi:Priority"
+  },
+  "@graph": [
+    {
+      "RequirementID": "REQ-001",
+      "Section": "Data Upload",
+      "Theme": "Functional",
+      "SMERole": "Data Analyst",
+      "SourceDate": "2025-10-03",
+      "RequirementStatement": "System must allow bulk upload of CSV data",
+      "ProblemStatement": "Manual uploads are slow and error-prone",
+      "ProposedSolution": "Add upload page with file validation",
+      "Priority": "Must",
+      "Importance": 5,
+      "Frequency": 5,
+      "Dependencies": "REQ-010",
+      "Assumptions": "User has pre-cleaned data",
+      "FollowUpNeeded": "Yes",
+      "WorkshopNotes": NaN,
+      "SME_ID": "SME001",
+      "PriorityScore": 4.8,
+      "Feasibility": 3,
+      "Status": "Draft",
+      "Version": "v0.1",
+      "ChangeNote": "Initial merge"
+    },
+    {
+      "RequirementID": "REQ-002",
+      "Section": "User Access",
+      "Theme": "Security",
+      "SMERole": "Manager",
+      "SourceDate": "2025-10-04",
+      "RequirementStatement": "Users must log in with SSO",
+      "ProblemStatement": "Multiple passwords reduce adoption",
+      "ProposedSolution": "Integrate with internal IdP",
+      "Priority": "Must",
+      "Importance": 4,
+      "Frequency": 4,
+      "Dependencies": NaN,
+      "Assumptions": "SSO available",
+      "FollowUpNeeded": "No",
+      "WorkshopNotes": NaN,
+      "SME_ID": "SME002",
+      "PriorityScore": 3.9,
+      "Feasibility": 3,
+      "Status": "Draft",
+      "Version": "v0.1",
+      "ChangeNote": "Initial merge"
+    }
+  ]
+}
