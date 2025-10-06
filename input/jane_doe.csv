@@ -1,0 +1,2 @@
+RequirementID, Section, Theme, SMEName, SMERole, SourceDate, RequirementStatement, ProblemStatement, ProposedSolution, Priority, Importance, Frequency, Dependencies, Assumptions, FollowUpNeeded, WorkshopNotes
+REQ-001, Data Upload, Functional, Jane Doe, Data Analyst, 2025-10-03, System must allow bulk upload of CSV data, Manual uploads are slow and error-prone, Add upload page with file validation, Must, 5, 5, REQ-010, User has pre-cleaned data, Yes, 

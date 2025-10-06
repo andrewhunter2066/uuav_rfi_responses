@@ -1,0 +1,136 @@
+name: Merge, Validate & Export RFI Requirements
+
+on:
+  push:
+    paths:
+      - 'input/**/*.csv'
+  pull_request:
+    paths:
+      - 'input/**/*.csv'
+  workflow_dispatch:
+
+jobs:
+  merge-rfi:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Checkout repository
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      # Set up Python
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+
+      # Install dependencies
+      - name: Install Python dependencies
+        run: pip install pandas rdflib
+
+      # Merge SME input CSVs
+      - name: Merge RFI input CSVs
+        run: |
+          mkdir -p derived
+          python merge_rfi_requirements.py --input_dir ./input --output ./derived/requirements_rfi_collation.csv
+
+      # Validate the merged file
+      - name: Validate merged CSV
+        run: |
+          python <<'PYCODE'
+          import pandas as pd
+          import sys
+
+          path = "derived/requirements_rfi_collation.csv"
+          df = pd.read_csv(path)
+
+          errors = []
+
+          if df["RequirementID"].isnull().any():
+              errors.append("Missing RequirementID detected.")
+
+          duplicates = df[df["RequirementID"].duplicated(keep=False)]
+          if not duplicates.empty:
+              errors.append(f"Duplicate IDs found: {', '.join(duplicates['RequirementID'].unique())}")
+
+          blanks = df[df["Priority"].isnull() | (df["Priority"].astype(str).str.strip() == "")]
+          if not blanks.empty:
+              errors.append(f"{len(blanks)} rows missing Priority values.")
+
+          if errors:
+              print("\n".join(errors))
+              sys.exit(1)
+          else:
+              print("Validation passed — ready for graph export.")
+          PYCODE
+
+      # Export to JSON-LD and Neo4j CSV
+      - name: Export to Graph Formats
+        run: |
+          python <<'PYCODE'
+          import pandas as pd
+          import json
+          from rdflib import Graph, Literal, RDF, URIRef, Namespace
+
+          df = pd.read_csv("derived/requirements_rfi_collation.csv")
+
+          # --- JSON-LD Export ---
+          context = {
+              "@vocab": "https://example.org/rfi#",
+              "RequirementID": "rfi:RequirementID",
+              "RequirementTitle": "rfi:RequirementTitle",
+              "Description": "rfi:Description",
+              "Category": "rfi:Category",
+              "Priority": "rfi:Priority",
+              "Importance": "rfi:Importance",
+              "Frequency": "rfi:Frequency",
+              "Feasibility": "rfi:Feasibility",
+              "PriorityScore": "rfi:PriorityScore",
+              "SMEName": "rfi:SMEName"
+          }
+
+          data = df.to_dict(orient="records")
+          jsonld = {"@context": context, "@graph": data}
+
+          with open("derived/requirements_rfi_collation.jsonld", "w") as f:
+              json.dump(jsonld, f, indent=2)
+
+          # --- Neo4j CSV Export (Nodes + Relationships) ---
+          nodes = df[["RequirementID", "RequirementTitle", "Category", "PriorityScore"]].drop_duplicates()
+          nodes[":LABEL"] = "Requirement"
+          nodes.rename(columns={
+              "RequirementID": "id:ID",
+              "RequirementTitle": "title",
+              "Category": "category",
+              "PriorityScore": "priority_score"
+          }, inplace=True)
+          nodes.to_csv("derived/nodes_requirements.csv", index=False)
+
+          rels = df[["RequirementID", "SMEName"]].dropna()
+          rels[":TYPE"] = "PROPOSED_BY"
+          rels.rename(columns={
+              "RequirementID": ":START_ID",
+              "SMEName": ":END_ID"
+          }, inplace=True)
+          rels.to_csv("derived/relationships_sme.csv", index=False)
+
+          print("Export complete: JSON-LD + Neo4j CSVs ready.")
+          PYCODE
+
+      # Commit and push results
+      - name: Commit merged and exported files
+        if: success()
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add derived/requirements_rfi_collation.csv derived/*.jsonld derived/*.csv
+          git commit -m "Auto-merge, validate & export RFI data on $(date +'%Y-%m-%d %H:%M:%S')" || echo "No changes to commit"
+          git push
+
+      # Upload artefacts
+      - name: Upload derived outputs
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: rfi-derived-exports
+          path: derived/

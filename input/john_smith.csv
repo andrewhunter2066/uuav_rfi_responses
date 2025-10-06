@@ -1,0 +1,2 @@
+RequirementID, Section, Theme, SMEName, SMERole, SourceDate, RequirementStatement, ProblemStatement, ProposedSolution, Priority, Importance, Frequency, Dependencies, Assumptions, FollowUpNeeded, WorkshopNotes
+REQ-002, User Access, Security, John Smith, Manager, 2025-10-04, Users must log in with SSO, Multiple passwords reduce adoption, Integrate with internal IdP, Must, 4, 4, , SSO available, No,
