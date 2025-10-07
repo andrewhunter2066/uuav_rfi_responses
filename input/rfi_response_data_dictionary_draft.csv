@@ -1,0 +1,13 @@
+FieldName,DataType,NonNullCount,UniqueCount,ExampleValue,Description
+Respondent,object,339,2,R001,Anonymized identifier for the subject matter expert (SME).
+Scenario,object,339,4,Scenario 1 - Route to AOA,UUAV Scenario name
+ScenarioNumber,int64,339,4,1,Sequential number representing the scenario order.
+ScenarioLabel,object,339,4,Route to AOA,Descriptive label of the scenario used in the RFI.
+Question,object,339,12,"Q1 - What test scenarios and supporting data does the system  need to provide to support mission planners in evaluating route options, based on calculable or estimable factors (e.g., time, usage)?",Full text of the question (Q1–Q6).
+QuestionType,object,339,3,Route Evaluation,"Category of the question, such as RouteEvaluation, RiskEvaluation, or DataRecord."
+ResponseText,object,339,155,"Optimal terrain analysis, particularly identifying areas exceeding original equipment manufacturer-stipulated avoidance or abort angles.",The raw text response provided by the SME for the given question.
+SourceDate,object,339,1,2025-10-06,Date Excel file received from RAM/SME. (ISO format).
+FollowupNeeded,boolean,0,0,,Indicates whether further clarification or follow-up with the SME is required.
+Status,string,339,1,Draft,"Status of the record (e.g., Draft, Reviewed, Final)."
+Version,string,339,1,v0.1,Version label assigned to this merged data batch.
+ChangeNote,string,339,1,Initial merge,Short note describing what changed in this merge or version.

@@ -41,8 +41,8 @@ QUESTION_TYPE_MAP = {
 # File locations
 INPUT_FOLDER = "C:/Users/Andrew/Documents/GitHub/RAN/rfi/rfi_data/cleaned_ran_rfi_responses"
 OUTPUT_FOLDER = "input/normalised_individual_responses"
-OUTPUT_CSV = "input/normalized_all_responses.csv"
-OUTPUT_JSON = "input/normalized_all_responses.json"
+OUTPUT_CSV = "input/normalised_all_responses.csv"
+OUTPUT_JSON = "input/normalised_all_responses.json"
 
 # Scenario parsing patterns and constants
 SCENARIO_PATTERN = r"Scenario\s*([0-9]+)\s*[:\-]?\s*(.*)"
@@ -177,21 +177,21 @@ def parse_scenario(scenario_text: str) -> tuple[str, str]:
         be determined. The `label` is the descriptive text of the scenario, extracted from the input string, or a
         default label if not present.
     """
-    normalized_text = scenario_text.strip()
+    normalised_text = scenario_text.strip()
 
     # Try to match a standard scenario pattern
-    scenario_match = re.match(SCENARIO_PATTERN, normalized_text, re.IGNORECASE)
+    scenario_match = re.match(SCENARIO_PATTERN, normalised_text, re.IGNORECASE)
     if scenario_match:
         number = scenario_match.group(1).strip()
         label = scenario_match.group(2).strip() if scenario_match.group(2) else f"Scenario {number}"
         return number, label
 
     # Try to match a field observations pattern
-    if re.match(FIELD_OBSERVATIONS_PATTERN, normalized_text, re.IGNORECASE):
+    if re.match(FIELD_OBSERVATIONS_PATTERN, normalised_text, re.IGNORECASE):
         return FIELD_OBSERVATIONS_NUMBER, FIELD_OBSERVATIONS_LABEL
 
     # Return unknown scenario with original text as label
-    return UNKNOWN_SCENARIO_NUMBER, normalized_text
+    return UNKNOWN_SCENARIO_NUMBER, normalised_text
 
 
 def _is_field_observation_sheet(sheet_name: str) -> bool:
@@ -203,8 +203,8 @@ def _is_field_observation_sheet(sheet_name: str) -> bool:
     :return: True if the sheet is a field observation sheet, False otherwise
     :rtype: bool
     """
-    normalized_sheet_name = sheet_name.lower().strip()
-    return FIELD_KEYWORD in normalized_sheet_name and OBSERVATION_KEYWORD in normalized_sheet_name
+    normalised_sheet_name = sheet_name.lower().strip()
+    return FIELD_KEYWORD in normalised_sheet_name and OBSERVATION_KEYWORD in normalised_sheet_name
 
 
 def get_question_headers(sheet_name: str) -> dict[str, str]:
@@ -376,7 +376,7 @@ def _process_excel_files(input_folder: Path, output_folder: Path, per_respondent
         all_data.extend(rows)
 
         if per_respondent:
-            out_csv = output_folder / f"{file.stem}_normalized.csv"
+            out_csv = output_folder / f"{file.stem}_normalised.csv"
             pd.DataFrame(rows).to_csv(out_csv, index=False)
             print(f"  └─ Saved individual CSV → {out_csv.name}")
 
@@ -392,7 +392,7 @@ def _save_consolidated_data(df: pd.DataFrame, output_csv: Path, output_json: Pat
     :param output_json: an optional path to save the consolidated JSON file
     """
     df.to_csv(output_csv, index=False)
-    print(f"Saved combined normalized CSV → {output_csv}")
+    print(f"Saved combined normalised CSV → {output_csv}")
 
     if output_json:
         with open(output_json, "w", encoding="utf-8") as f:

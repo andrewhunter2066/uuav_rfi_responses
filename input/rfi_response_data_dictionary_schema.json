@@ -1,0 +1,55 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "RFI Merged Data Schema",
+  "type": "object",
+  "properties": {
+    "Respondent": {
+      "type": "string",
+      "description": "Anonymized identifier for the subject matter expert (SME)."
+    },
+    "Scenario": {
+      "type": "string",
+      "description": "UUAV Scenario name"
+    },
+    "ScenarioNumber": {
+      "type": "integer",
+      "description": "Sequential number representing the scenario order."
+    },
+    "ScenarioLabel": {
+      "type": "string",
+      "description": "Descriptive label of the scenario used in the RFI."
+    },
+    "Question": {
+      "type": "string",
+      "description": "Full text of the question (Q1\u2013Q6)."
+    },
+    "QuestionType": {
+      "type": "string",
+      "description": "Category of the question, such as RouteEvaluation, RiskEvaluation, or DataRecord."
+    },
+    "ResponseText": {
+      "type": "string",
+      "description": "The raw text response provided by the SME for the given question."
+    },
+    "SourceDate": {
+      "type": "string",
+      "description": "Date Excel file received from RAM/SME. (ISO format)."
+    },
+    "FollowupNeeded": {
+      "type": "boolean",
+      "description": "Indicates whether further clarification or follow-up with the SME is required."
+    },
+    "Status": {
+      "type": "string",
+      "description": "Status of the record (e.g., Draft, Reviewed, Final)."
+    },
+    "Version": {
+      "type": "string",
+      "description": "Version label assigned to this merged data batch."
+    },
+    "ChangeNote": {
+      "type": "string",
+      "description": "Short note describing what changed in this merge or version."
+    }
+  }
+}
