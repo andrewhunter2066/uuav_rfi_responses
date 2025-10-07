@@ -5,7 +5,7 @@ import json
 df = pd.read_csv("./input/rfi_response_data_dictionary_draft.csv")
 
 schema = {
-    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$schema": "http://json-schema.org/draft/2020-12/schema#",
     "title": "RFI Merged Data Schema",
     "type": "object",
     "properties": {}
