@@ -1,12 +1,10 @@
 #!/usr/bin/env python3
 
 import pandas as pd
-import numpy as np
 import random
 import re
 import nltk
 from nltk.corpus import stopwords, wordnet
-from nltk.tokenize import word_tokenize
 
 # Download required corpora
 nltk.download('stopwords')
@@ -173,7 +171,7 @@ def preprocess(text: str) -> str:
 
 
 # Custom synonym augmentation using NLTK WordNet
-def _extract_lemma_synonyms(synset: wordnet.synset, original_word: str) -> set[str]:
+def _extract_lemma_synonyms(synset, original_word: str) -> set[str]:
     """
     Extract and process lemma synonyms from a synset, excluding the original word.
 
@@ -193,7 +191,7 @@ def _extract_lemma_synonyms(synset: wordnet.synset, original_word: str) -> set[s
 def get_synonyms(word: str) -> list[str]:
     """
     Retrieve a list of synonyms for a given word using the WordNet lexical database.
-    The function utilises WordNet synsets to extract synonyms. Each synonym is
+    The function uses WordNet synsets to extract synonyms. Each synonym is
     processed to replace underscores with spaces and is included in the result if
     it differs from the input word (case-insensitive comparison). The returned
     list contains unique synonyms in alphabetical order.
@@ -304,6 +302,8 @@ def _calculate_category_scores(text_lower: str, q: str) -> dict[str, int]:
     """
     if q == "Q1":
         category_keywords = Q1_CATEGORY_KEYWORDS
+    else:
+        raise ValueError("Invalid question. Please provide a valid question to assess.")
     scores = {}
     for category, keywords in category_keywords.items():
         score = sum(1 for keyword in keywords if keyword in text_lower)
@@ -387,7 +387,7 @@ def augment_response_dataset(responses: list[str], aug_prob: float = 0.3,
     :param responses: List of preprocessed responses.
     :param aug_prob: Probability of word augmentation.
     :param max_synonyms: Maximum number of synonyms to use per word.
-    :param sample_size: Maximum number of responses to sample.
+    :param sample_size: Maximum number of responses to the sample.
     :return: List of augmented and sampled responses.
     """
     augmented_responses = []
@@ -450,7 +450,7 @@ def main(question: str, scenario: int):
     4. Classifies the augmented responses using a classification model.
     5. Saves the classification results to an output file.
 
-    :param question: The question string used to filter and classify responses.
+    :param question: The question is used to filter and classify responses.
     :type question: str
     :param scenario: The scenario string used for naming the output files.
     :type scenario: str
@@ -485,4 +485,4 @@ def main(question: str, scenario: int):
 
 
 if __name__ == "__main__":
-    main("Q1",3)
+    main("Q1", 3)
