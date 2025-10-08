@@ -5,6 +5,9 @@
 # Do not upload pseudonym mapping file
 secure/sme_mapping.csv
 
+# Do not upload raw text
+docs/text.txt
+
 # User-specific stuff
 .idea/**/workspace.xml
 .idea/**/tasks.xml

@@ -5,6 +5,7 @@ import random
 import re
 import nltk
 from nltk.corpus import stopwords, wordnet
+from datetime import datetime
 
 # Download required corpora
 nltk.download('stopwords')
@@ -33,111 +34,207 @@ PUNCTUATION_PATTERN = r'[^\w\s\-]'
 
 # Define keywords for each category as a module constant
 Q1_CATEGORY_KEYWORDS = {
-    "terrain and seafloor features": [
-        "seafloor topography",
-        "seafloor texture",
-        "seafloor complexity",
-        "seafloor classification",
-        "seabed complexity",
-        "seabed features",
-        "bottom texture",
-        "terrain complexity",
-        "seabed gradient"
+    "Terrain and Bathymetry": [
+        "terrain", "bathymetry", "seabed", "bottom texture", "slope", "gradient",
+        "topography", "complexity", "seafloor", "multibeam", "coverage", "resolution",
+        "overlap", "gap", "vector electronic navigational charts", "zone of confidence"
     ],
-    "environmental conditions": [
-        "ephemeral current",
-        "tides",
-        "current",
-        "tidal stream",
-        "ocean currents",
-        "water column",
-        "water conditions",
-        "wave height",
-        "environmental factors",
-        "environmental conditions",
-        "water column"
+
+    "Environmental and Oceanographic Conditions": [
+        "current", "tidal", "stream", "EAC", "East Australian Current", "tide",
+        "ephemeral", "wave height", "water column", "temperature", "salinity",
+        "environmental", "ocean", "conditions"
     ],
-    "navigation and localization": [
-        "gps requirements",
-        "navigation accuracy",
-        "navigation errors",
-        "positioning",
-        "gps fix",
-        "navigation systems",
-        "navigational charts",
-        "route data"
+
+    "Vehicle Capabilities and Constraints": [
+        "speed", "endurance", "maximum depth", "minimum depth", "sensor range",
+        "communication", "launch and recovery", "abort angles", "OEM",
+        "equipment limitations", "vehicle", "range", "fitted", "parameters",
+        "speed requirements"
     ],
-    "vehicle capabilities": [
-        "uuv limits",
-        "endurance",
-        "vehicle",
-        "minimum depth",
-        "maximum depth",
-        "range",
-        "speed",
-        "vehicle mobility",
-        "uuv capabilities",
-        "uuv limits",
-        "ascent",
-        "descent",
-        "dive",
-        "timings hard left right"
+
+    "Navigation and Positioning": [
+        "GPS", "Global Positioning System", "navigation", "accuracy", "fixing frequency",
+        "navigational hazards", "route", "depth", "position", "electronic navigational chart",
+        "no-go zones", "vector chart", "coordinates"
     ],
-    "sensors and data collection": [
-        "sensor collection requirements",
-        "sensor specifications",
-        "multibeam echo sounder coverage",
-        "resolution",
-        "overlap",
-        "gaps",
-        "sensor performance",
-        "active sensor"
+
+    "Mission Parameters and Objectives": [
+        "mission", "objective", "task", "time-on-task", "timings", "hard left right",
+        "collection requirements", "search area", "zone of operation", "area of operation",
+        "survey", "planning", "transit time", "route options", "evaluation",
+        "mission planning", "survey feasibility"
     ],
-    "surveillance and traffic considerations": [
-        "surface subsea traffic",
-        "surface traffic",
-        "subsea traffic",
-        "hazards along route",
-        "no-go zones",
-        "threats to a mission",
-        "threats"
+
+    "Threats and Risk Management": [
+        "threat", "cyber", "risk", "assessment", "loss of communications",
+        "loss of vehicle", "safety", "abort", "no-go", "failure", "contingency",
+        "recovery", "hazard"
     ],
-    "operational and logistical factors": [
-        "launch recovery locations",
-        "survey duration",
-        "transit time to beach",
-        "mission collection requirements",
-        "search areas",
-        "swept channel planning",
-        "area of operations",
-        "route planning",
-        "survey planning",
-        "constraints",
-        "beach landings"
+
+    "Historical and Contextual Data": [
+        "historical", "previous mission", "similar mission", "reference data",
+        "legacy", "archive", "past operations", "benchmark"
     ],
-    "support data and historical information": [
-        "historical data",
-        "similar beaches",
-        "environmental conditions",
-        "mission success factors"
+
+    "Data Products and Requirements": [
+        "coverage maps", "survey data", "data product", "sensor data", "multibeam",
+        "swath width", "resolution", "classification", "infrastructure", "overlap",
+        "metadata", "data format", "supporting data", "zone of confidence"
     ],
-    "threat and risk assessment": [
-        "cyber threat",
-        "cyber",
-        "hazards",
-        "threats",
-        "risks",
-        "no-go zone",
-        "navigational hazards",
-        "communication loss"
+
+    "Communications and Control": [
+        "communication", "link", "telemetry", "control", "signal", "frequency",
+        "loss of communications", "vehicle communication requirements", "bandwidth"
     ],
-    "data quality": [
-        "accuracy requirements",
-        "confidence",
-        "equipment limits",
-        "mission collection requirements"
-    ]
+
+    "Operational Logistics": [
+        "launch", "recovery", "deployment", "transit", "area of operation",
+        "survey planning", "constraints", "200 metre width", "approach route",
+        "landing", "access", "launch point", "recovery location"
+    ],
 }
+
+# Domain-specific controlled synonyms (safe replacements for technical text)
+DOMAIN_SYNONYMS = {
+    # Navigation & positioning
+    "location": ["position", "coordinates"],
+    "path": ["route", "trajectory"],
+    "area": ["region", "zone"],
+
+    # Marine environment
+    "water": ["marine", "aquatic"],
+    "depth": ["underwater depth"],
+    "surface": ["sea surface"],
+
+    # Operations
+    "mission": ["operation", "task"],
+    "survey": ["assessment", "examination"],
+    "data": ["information"],
+    "collection": ["gathering", "acquisition"],
+
+    # Capabilities
+    "capability": ["ability", "capacity"],
+    "limitation": ["constraint", "restriction"],
+    "requirement": ["need", "specification"],
+
+    # Temporal
+    "duration": ["timeframe", "period"],
+    "time": ["timing"],
+
+    # General safe terms
+    "important": ["critical", "essential", "significant"],
+    "needed": ["required", "necessary"],
+    "provide": ["supply", "furnish"],
+    "use": ["utilize", "employ"],
+    "show": ["display", "indicate"],
+    "large": ["substantial", "significant"],
+    "small": ["minimal", "limited"],
+}
+
+# Words to NEVER replace (protected terms)
+PROTECTED_TERMS = {
+    # Technical acronyms (already expanded)
+    "unmanned underwater vehicle", "uuv", "global positioning system", "gps",
+    "multibeam echo sounder", "mbes", "area of operations",
+
+    # Domain-specific technical terms
+    "seafloor", "seabed", "bathymetry", "sonar", "acoustic",
+    "navigation", "positioning", "sensor", "endurance",
+    "tide", "tidal", "current", "ephemeral",
+    "depth", "range", "speed", "vehicle",
+    "terrain", "topography", "gradient",
+
+    # Quantitative terms
+    "minimum", "maximum", "accuracy", "resolution",
+
+    # Key operational terms
+    "launch", "recovery", "deployment", "transit",
+    "threat", "hazard", "risk", "surveillance"
+}
+# Which method to use, domain-specific (True) or general NLP (False)
+DOMAIN_SPECIFIC = True
+
+
+def augment_text_minimal(text: str, aug_prob=0.1) -> str:
+    """
+    Augments text with minimal character-level variations that preserve meaning.
+    Suitable for technical/jargon-dense text where synonym replacement is risky.
+
+    Techniques:
+    - Random word order swap (adjacent words only, rarely)
+    - Punctuation variation
+    - Article insertion/removal (a/an/the)
+
+    :param text: The input text to augment.
+    :param aug_prob: Probability of applying augmentation.
+    :return: Lightly augmented text.
+    """
+    words = text.split()
+    word_count = len(words)
+
+    if word_count < 3 or random.random() > aug_prob:
+        return text
+
+    augmented_words = words.copy()
+
+    # Occasionally swap adjacent non-technical words
+    if word_count > 3:
+        idx = random.randint(0, word_count - 2)
+        # Only swap if neither word is in protected terms
+        if (augmented_words[idx].lower() not in PROTECTED_TERMS and
+                augmented_words[idx + 1].lower() not in PROTECTED_TERMS):
+            augmented_words[idx], augmented_words[idx + 1] = \
+                augmented_words[idx + 1], augmented_words[idx]
+
+    return ' '.join(augmented_words)
+
+
+def augment_text_structural(text: str) -> str:
+    """
+    Creates structural variations while preserving technical content.
+
+    Examples:
+    - "X is needed for Y" → "Y requires X"
+    - "System must support X" → "X support is required"
+
+    :param text: The input text to augment.
+    :return: Structurally varied text.
+    """
+    # Simple pattern-based transformations
+    transformations = [
+        (r'\b(\w+) is needed for (\w+)', r'\2 requires \1'),
+        (r'\bsystem must support (\w+)', r'\1 support is required'),
+        (r'\b(\w+) capability', r'capability to \1'),
+        (r'\brequirement for (\w+)', r'\1 requirement'),
+    ]
+
+    augmented = text
+    # Apply one random transformation if pattern matches
+    random.shuffle(transformations)
+    for pattern, replacement in transformations:
+        if re.search(pattern, augmented, re.IGNORECASE):
+            augmented = re.sub(pattern, replacement, augmented, count=1, flags=re.IGNORECASE)
+            break
+
+    return augmented
+
+
+def get_domain_synonyms(word: str) -> list[str]:
+    """
+    Retrieve domain-appropriate synonyms from controlled dictionary.
+
+    :param word: The word to find synonyms for.
+    :return: List of safe domain-specific synonyms, or empty list if none.
+    """
+    word_lower = word.lower()
+
+    # Never replace protected terms
+    if word_lower in PROTECTED_TERMS:
+        return []
+
+    # Return controlled synonyms if available
+    return DOMAIN_SYNONYMS.get(word_lower, [])
 
 
 def preprocess(text: str) -> str:
@@ -245,7 +342,10 @@ def _replace_words_with_synonyms(words: list[str], indices: list[int]) -> list[s
     """
     augmented_words = words.copy()
     for idx in indices:
-        synonyms = get_synonyms(words[idx])
+        if DOMAIN_SPECIFIC:
+            synonyms = get_domain_synonyms(words[idx])
+        else:
+            synonyms = get_synonyms(words[idx])
         if synonyms:
             augmented_words[idx] = random.choice(synonyms)
     return augmented_words
@@ -276,7 +376,13 @@ def augment_text(text: str, aug_prob=0.3, max_synonyms=2) -> str:
     indices_to_replace = _select_random_indices(word_count, num_to_replace)
     augmented_words = _replace_words_with_synonyms(words, indices_to_replace)
 
-    return ' '.join(augmented_words)
+    augmented_text = ' '.join(augmented_words)
+
+    # Optionally apply minimal structural variation
+    if random.random() < 0.3:  # 30% chance of structural change
+        augmented_text = augment_text_structural(augmented_text)
+
+    return augmented_text
 
 
 # --- Simple keyword-based classification ---
@@ -342,7 +448,7 @@ def classify_response(text: str, question: str) -> tuple[str, dict[str, float]]:
     return predicted_category, normalized_scores
 
 
-def load_and_filter_responses(file_path: str, scenario_number: int, question_prefix: str) -> pd.Series:
+def load_and_filter_responses(file_path: str, scenario_number: int, question_prefix: str) -> pd.DataFrame:
     """
     Loads response data from CSV and filters by scenario and question criteria.
 
@@ -352,54 +458,73 @@ def load_and_filter_responses(file_path: str, scenario_number: int, question_pre
     :return: Series of filtered response texts.
     :raises FileNotFoundError: If the input CSV file is not found.
     """
-    response_set = pd.read_csv(file_path)
-    df = pd.DataFrame(response_set)
+    df = pd.read_csv(file_path)
+    # df = pd.DataFrame(response_set)
     df['ResponseText'] = df['ResponseText'].str.replace(r'[/]', ' ', regex=True)
 
-    filtered_responses = df[
+    filtered_df = df[
         (df['ScenarioNumber'] == scenario_number) &
         (df['Question'].str.startswith(question_prefix))
-        ]['ResponseText']
+        ][['ResponseID','ResponseText']]
 
-    return filtered_responses
+    return filtered_df
 
 
-def preprocess_responses(response_series: pd.Series) -> list[str]:
+def preprocess_responses(response_series: pd.DataFrame) -> pd.DataFrame:
     """
     Preprocesses and deduplicates response texts.
 
     :param response_series: Series of raw response texts.
     :return: List of preprocessed unique responses.
     """
-    responses = [
-        preprocess(r)
-        for r in response_series
-        if isinstance(r, str) and r.strip() != ''
-    ]
-    return list(set(responses))
+    processed_rows = []
+    for _, row in response_series.iterrows():
+        if isinstance(row['ResponseText'], str) and row['ResponseText'].strip() != '':
+            cleaned_text = preprocess(row['ResponseText'])
+            processed_rows.append({'ResponseID': row['ResponseID'], 'ResponseText': cleaned_text})
+    return pd.DataFrame(processed_rows).drop_duplicates(subset=['ResponseText'], keep='first')
 
 
-def augment_response_dataset(responses: list[str], aug_prob: float = 0.3,
-                             max_synonyms: int = 2, sample_size: int = 500) -> list[str]:
+def augment_response_dataset(responses: pd.DataFrame, aug_prob: float = 0.3,
+                             max_synonyms: int = 2, sample_size: int = 500) -> pd.DataFrame:
     """
     Augments response dataset using synonym replacement and samples the result.
+    Maintains ResponseID throughout the augmentation process.
 
-    :param responses: List of preprocessed responses.
+    :param responses: DataFrame with ResponseID and ResponseText columns.
     :param aug_prob: Probability of word augmentation.
     :param max_synonyms: Maximum number of synonyms to use per word.
     :param sample_size: Maximum number of responses to the sample.
-    :return: List of augmented and sampled responses.
+    :return: DataFrame of augmented and sampled responses with ResponseIDs preserved.
     """
-    augmented_responses = []
-    for resp in responses:
-        augmented = augment_text(resp, aug_prob=aug_prob, max_synonyms=max_synonyms)
-        augmented_responses.append(augmented)
-        augmented_responses.append(resp)
+    augmented_rows = []
+    # Create both original and augmented versions for each response
+    for _, row in responses.iterrows():
+        response_id = row['ResponseID']
+        response_text = row['ResponseText']
+        # Add original response
+        augmented_rows.append({
+            'ResponseID': response_id,
+            'ResponseText': response_text
+        })
+        # Add an augmented version
+        augmented_text = augment_text(response_text, aug_prob=aug_prob, max_synonyms=max_synonyms)
+        augmented_rows.append({
+            'ResponseID': response_id,
+            'ResponseText': augmented_text
+        })
 
-    return random.sample(augmented_responses, min(sample_size, len(augmented_responses)))
+    # Convert to DataFrame
+    augmented_df = pd.DataFrame(augmented_rows)
+
+    # Sample if needed (maintaining ResponseID association)
+    if len(augmented_df) > sample_size:
+        augmented_df = augmented_df.sample(n=sample_size, random_state=42).reset_index(drop=True)
+
+    return augmented_df
 
 
-def classify_responses(responses: list[str], question: str) -> list[dict]:
+def classify_responses(responses: pd.DataFrame, question: str) -> list[dict]:
     """
     Classifies a list of responses based on a given question. Each response is
     analysed to determine its predicted category and associated scores, which
@@ -411,10 +536,13 @@ def classify_responses(responses: list[str], question: str) -> list[dict]:
              category, and associated scores.
     """
     results = []
-    for resp in responses:
-        predicted_category, all_scores = classify_response(resp, question)
+    for _, resp in responses.iterrows():
+        resp_id = resp['ResponseID']
+        text = resp['ResponseText']
+        predicted_category, all_scores = classify_response(text, question)
         results.append({
-            'response': resp,
+            'ResponseID': resp_id,
+            'response': text,
             'predicted_category': predicted_category,
             'all_scores': str(all_scores)
         })
@@ -438,7 +566,7 @@ def save_and_display_results(results: list[dict], output_path: str) -> None:
     print(df['predicted_category'].value_counts())
 
 
-def main(question: str, scenario: int):
+def main(question: str, scenario: int, merge_to_source: bool = False):
     """
     Executes the main process for loading, filtering, preprocessing, augmenting,
     classifying responses, and saving results based on input question and scenario.
@@ -449,11 +577,14 @@ def main(question: str, scenario: int):
     3. Augments the dataset by introducing controlled variations (e.g. synonyms).
     4. Classifies the augmented responses using a classification model.
     5. Saves the classification results to an output file.
+    6. Optionally merges classifications back to the source data (call separately after all scenarios).
 
     :param question: The question is used to filter and classify responses.
     :type question: str
-    :param scenario: The scenario string used for naming the output files.
-    :type scenario: str
+    :param scenario: The scenario number used for filtering and naming output files.
+    :type scenario: int
+    :param merge_to_source: Whether to merge ALL classifications back to source (do this after running all scenarios).
+    :type merge_to_source: bool
     :return: None
     """
     # Load and filter data
@@ -478,11 +609,306 @@ def main(question: str, scenario: int):
     results = classify_responses(responses_aug, question)
 
     # Save and display results
+    classification_output_path = f"./output/S{scenario}_{question}_classification_results.csv"
     save_and_display_results(
         results=results,
-        output_path=f"./output/S{scenario}_{question}_classification_results.csv"
+        output_path=classification_output_path
+    )
+
+    # Optionally merge all classifications (do this after running all scenarios)
+    if merge_to_source:
+        print("\n" + "=" * 60)
+        print("Merging ALL classifications back to source data...")
+        print("=" * 60)
+        merge_all_classifications()
+
+
+def merge_classifications_to_source(
+        classification_results_path: str,
+        original_data_path: str,
+        output_path: str
+) -> None:
+    """
+    Merges classification results back into the original normalised responses dataset.
+    Handles multiple classifications per response without duplicates.
+
+    :param classification_results_path: Path to classification results CSV.
+    :param original_data_path: Path to original normalised responses CSV.
+    :param output_path: Path to save merged output CSV.
+    """
+    # Load classification results
+    classifications_df = pd.read_csv(classification_results_path)
+
+    # Load original normalized data
+    original_df = pd.read_csv(original_data_path)
+
+    # Group by ResponseID and aggregate unique categories
+    # This handles the case where augmentation created multiple entries per ResponseID
+    aggregated_classifications = classifications_df.groupby('ResponseID').agg({
+        'predicted_category': lambda x: '|'.join(sorted(set(x))),  # Unique categories separated by |
+        'all_scores': 'first'  # Take first scores (they should be similar for same ResponseID)
+    }).reset_index()
+
+    # Rename columns for clarity
+    aggregated_classifications.rename(columns={
+        'predicted_category': 'PredictedCategories'
+    }, inplace=True)
+
+    # Merge back to original data
+    merged_df = original_df.merge(
+        aggregated_classifications[['ResponseID', 'PredictedCategories']],
+        on='ResponseID',
+        how='left'
+    )
+
+    # Fill NaN values for responses that weren't classified
+    merged_df['PredictedCategories'].fillna('not_classified', inplace=True)
+
+    # Save to new file
+    merged_df.to_csv(output_path, index=False)
+
+    print(f"\n{'=' * 60}")
+    print(f"Merged classifications saved to: {output_path}")
+    print(f"{'=' * 60}")
+    print(f"\nTotal responses: {len(merged_df)}")
+    print(f"Classified responses: {len(merged_df[merged_df['PredictedCategories'] != 'not_classified'])}")
+    print(f"Unclassified responses: {len(merged_df[merged_df['PredictedCategories'] == 'not_classified'])}")
+
+    # Show distribution of classification patterns
+    print(f"\nClassification patterns:")
+    category_counts = merged_df['PredictedCategories'].value_counts().head(10)
+    print(category_counts)
+
+    # Count responses with multiple categories
+    multi_category = merged_df[merged_df['PredictedCategories'].str.contains('\|', na=False)]
+    print(f"\nResponses with multiple categories: {len(multi_category)}")
+
+
+def batch_merge_all_scenarios(question: str, scenarios: list[int]) -> None:
+    """
+    Merges classification results for multiple scenarios into the source data.
+
+    :param question: Question identifier (e.g., "Q1")
+    :param scenarios: List of scenario numbers to process
+    """
+    for scenario in scenarios:
+        print(f"\n{'=' * 60}")
+        print(f"Processing Scenario {scenario}, Question {question}")
+        print(f"{'=' * 60}")
+
+        classification_results_path = f"./output/S{scenario}_{question}_classification_results.csv"
+        original_data_path = './input/normalised_all_responses.csv'
+        output_path = f"./output/S{scenario}_{question}_normalised_classified_responses.csv"
+
+        try:
+            merge_classifications_to_source(
+                classification_results_path=classification_results_path,
+                original_data_path=original_data_path,
+                output_path=output_path
+            )
+        except FileNotFoundError as e:
+            print(f"Warning: Could not process Scenario {scenario} - {e}")
+            continue
+
+
+def create_master_classified_file(question: str, scenarios: list[int]) -> None:
+    """
+    Creates a single master file with classifications from all scenarios.
+    Each scenario's classifications are added as separate columns.
+
+    :param question: Question identifier (e.g. "Q1")
+    :param scenarios: List of scenario numbers to include
+    """
+    # Load original data
+    master_df = pd.read_csv('./input/normalised_all_responses.csv')
+
+    # Merge classifications from each scenario
+    for scenario in scenarios:
+        classification_path = f"./output/S{scenario}_{question}_classification_results.csv"
+
+        try:
+            # Load and aggregate classifications for this scenario
+            classifications_df = pd.read_csv(classification_path)
+
+            # Aggregate unique categories per ResponseID
+            aggregated = classifications_df.groupby('ResponseID').agg({
+                'predicted_category': lambda x: '|'.join(sorted(set(x)))
+            }).reset_index()
+
+            # Rename column with scenario number
+            column_name = f'S{scenario}_{question}_Categories'
+            aggregated.rename(columns={'predicted_category': column_name}, inplace=True)
+
+            # Merge to master
+            master_df = master_df.merge(
+                aggregated,
+                on='ResponseID',
+                how='left'
+            )
+
+            # Fill NaN
+            master_df[column_name].fillna('', inplace=True)
+
+            print(f"Added classifications for Scenario {scenario}")
+
+        except FileNotFoundError:
+            print(f"Warning: Classification file not found for Scenario {scenario}")
+            continue
+
+    # Save the master file
+    output_path = './output/normalised_all_classified_responses.csv'
+    master_df.to_csv(output_path, index=False)
+
+    print(f"\n{'=' * 60}")
+    print(f"Master classified file saved to: {output_path}")
+    print(f"{'=' * 60}")
+    print(f"\nColumns added:")
+    for scenario in scenarios:
+        col_name = f'S{scenario}_{question}_Categories'
+        if col_name in master_df.columns:
+            print(f"  - {col_name}")
+
+    print(f"\nTotal responses: {len(master_df)}")
+
+
+def merge_all_classifications_single_column(
+        classification_files: list[tuple[int, str]],
+        original_data_path: str,
+        output_path: str
+) -> None:
+    """
+    Merges all classification results into the original data with a single classification column.
+    Each response belongs to only one Scenario+Question combination, so only one classification applies.
+
+    Updates version control fields for classified responses:
+    - Classification: The predicted category/categories
+    - Version: Updated to "v0.2" for classified responses
+    - ChangeNote: Set to "Initial classification" for classified responses
+    - ChangeDate: Set to current date for classified responses
+
+    :param classification_files: List of tuples (scenario_number, question) to process.
+    :param original_data_path: Path to original normalised responses CSV.
+    :param output_path: Path to save merged output CSV.
+    """
+    # Load original data
+    original_df = pd.read_csv(original_data_path)
+
+    # Initialise classification column if it doesn't exist
+    if 'Classification' not in original_df.columns:
+        original_df['Classification'] = 'not_classified'
+
+    # Ensure version control columns exist
+    if 'Version' not in original_df.columns:
+        original_df['Version'] = original_df.get('Version', 'v0.1')
+    if 'ChangeNote' not in original_df.columns:
+        original_df['ChangeNote'] = original_df.get('ChangeNote', 'Initial merge')
+    if 'ChangeDate' not in original_df.columns:
+        original_df['ChangeDate'] = ''
+
+    # Get current date for change tracking
+    current_date = datetime.now().strftime("%Y-%m-%d")
+
+    # Process each classification file
+    for scenario, question in classification_files:
+        classification_path = f"./output/S{scenario}_{question}_classification_results.csv"
+
+        try:
+            # Load classifications
+            classifications_df = pd.read_csv(classification_path)
+
+            # Aggregate unique categories per ResponseID
+            # (handles augmentation where same ResponseID appears multiple times)
+            aggregated = classifications_df.groupby('ResponseID').agg({
+                'predicted_category': lambda x: '|'.join(sorted(set(x)))
+            }).reset_index()
+
+            # For each ResponseID in this scenario+question, update the classification
+            for _, row in aggregated.iterrows():
+                response_id = row['ResponseID']
+                category = row['predicted_category']
+
+                # Update only rows matching this ResponseID
+                mask = original_df['ResponseID'] == response_id
+
+                # Update classification
+                original_df.loc[mask, 'Classification'] = category
+
+                # Update version control fields ONLY for classified responses
+                # (i.e., not 'uncategorised' or 'not_classified')
+                if category not in ['uncategorised', 'not_classified', '']:
+                    original_df.loc[mask, 'Version'] = 'v0.2'
+                    original_df.loc[mask, 'ChangeNote'] = 'Initial classification'
+                    original_df.loc[mask, 'ChangeDate'] = current_date
+
+            print(f"✓ Merged classifications for Scenario {scenario}, {question}")
+
+        except FileNotFoundError:
+            print(f"⚠ Classification file not found for Scenario {scenario}, {question}")
+            continue
+
+    # Save merged data
+    original_df.to_csv(output_path, index=False)
+
+    # Print statistics
+    print(f"\n{'=' * 60}")
+    print(f"Merged file saved to: {output_path}")
+    print(f"{'=' * 60}")
+    print(f"\nTotal responses: {len(original_df)}")
+
+    # Count classified responses (excluding 'not_classified' and 'uncategorised')
+    classified = original_df[
+        (original_df['Classification'] != 'not_classified') &
+        (original_df['Classification'] != 'uncategorised') &
+        (original_df['Classification'] != '')
+        ]
+    print(f"Classified responses: {len(classified)}")
+    print(f"Unclassified responses: {len(original_df) - len(classified)}")
+
+    # Show version distribution
+    print(f"\nVersion distribution:")
+    print(original_df['Version'].value_counts())
+
+    # Show distribution of classification patterns
+    print(f"\nTop 10 classification patterns:")
+    print(original_df['Classification'].value_counts().head(10))
+
+    # Count multi-category responses
+    multi_category = original_df[original_df['Classification'].str.contains('\|', na=False)]
+    print(f"\nResponses with multiple categories: {len(multi_category)}")
+
+    # Show summary of updated records
+    updated_records = original_df[original_df['Version'] == 'v0.2']
+    print(f"\nRecords updated to v0.2: {len(updated_records)}")
+    print(f"Classification date: {current_date}")
+
+
+def merge_all_classifications():
+    """
+    Convenience function to merge multiple question classifications from multiple scenarios.
+    """
+    classification_files = [
+        (1, 'Q1'),
+        (2, 'Q1'),
+        (3, 'Q1')
+    ]
+
+    merge_all_classifications_single_column(
+        classification_files=classification_files,
+        original_data_path='./input/normalised_all_responses.csv',
+        output_path='./output/normalised_all_classified_responses.csv'
     )
 
 
 if __name__ == "__main__":
-    main("Q1", 3)
+    # Run classification for all scenarios
+    for scenario_num in [1, 2, 3]:
+        print(f"\n{'#' * 60}")
+        print(f"# Processing Scenario {scenario_num}")
+        print(f"{'#' * 60}\n")
+        main("Q1", scenario_num, merge_to_source=False)
+
+    # After all scenarios are classified, merge into single file
+    print(f"\n{'#' * 60}")
+    print(f"# Merging all classifications into master file")
+    print(f"{'#' * 60}\n")
+    merge_all_classifications()

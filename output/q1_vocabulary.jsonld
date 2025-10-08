@@ -1,0 +1,70 @@
+{
+  "@context": {
+    "mp": "https://example.org/missionplanning#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "schema": "https://schema.org/",
+    "geo": "http://www.opengis.net/ont/geosparql#"
+  },
+  "@graph": [
+    {
+      "@id": "mp:TerrainBathymetry",
+      "@type": "rdfs:Class",
+      "rdfs:label": "Terrain and Bathymetry",
+      "rdfs:comment": "Describes the seafloor, slopes, gradients, and physical underwater features relevant to navigation and mission feasibility."
+    },
+    {
+      "@id": "mp:EnvironmentalCondition",
+      "@type": "rdfs:Class",
+      "rdfs:label": "Environmental and Oceanographic Conditions",
+      "rdfs:comment": "Describes oceanographic factors like currents, tides, and environmental conditions affecting mission planning."
+    },
+    {
+      "@id": "mp:VehicleCapability",
+      "@type": "rdfs:Class",
+      "rdfs:label": "Vehicle Capabilities and Constraints",
+      "rdfs:comment": "Technical and operational characteristics or limitations of the vehicles used in missions."
+    },
+    {
+      "@id": "mp:NavigationPositioning",
+      "@type": "rdfs:Class",
+      "rdfs:label": "Navigation and Positioning",
+      "rdfs:comment": "Navigation data, accuracy requirements, and geolocation systems relevant to mission routes."
+    },
+    {
+      "@id": "mp:MissionObjective",
+      "@type": "rdfs:Class",
+      "rdfs:label": "Mission Parameters and Objectives",
+      "rdfs:comment": "Describes mission goals, evaluation criteria, and measurable outcomes for planning."
+    },
+    {
+      "@id": "mp:ThreatRisk",
+      "@type": "rdfs:Class",
+      "rdfs:label": "Threats and Risk Management",
+      "rdfs:comment": "Covers cyber, operational, and environmental risks affecting missions."
+    },
+    {
+      "@id": "mp:HistoricalContext",
+      "@type": "rdfs:Class",
+      "rdfs:label": "Historical and Contextual Data",
+      "rdfs:comment": "Reference information from prior missions used to inform planning and evaluation."
+    },
+    {
+      "@id": "mp:DataProduct",
+      "@type": "rdfs:Class",
+      "rdfs:label": "Data Products and Requirements",
+      "rdfs:comment": "Data types, formats, and supporting materials required for mission planning and analysis."
+    },
+    {
+      "@id": "mp:CommunicationControl",
+      "@type": "rdfs:Class",
+      "rdfs:label": "Communications and Control",
+      "rdfs:comment": "Communication, telemetry, and control aspects of mission execution."
+    },
+    {
+      "@id": "mp:OperationalLogistics",
+      "@type": "rdfs:Class",
+      "rdfs:label": "Operational Logistics",
+      "rdfs:comment": "Deployment, recovery, and logistical management of mission activities."
+    }
+  ]
+}
