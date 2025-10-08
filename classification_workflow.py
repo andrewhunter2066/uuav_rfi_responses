@@ -98,60 +98,139 @@ Q1_CATEGORY_KEYWORDS = {
 # Domain-specific controlled synonyms (safe replacements for technical text)
 DOMAIN_SYNONYMS = {
     # Navigation & positioning
-    "location": ["position", "coordinates"],
-    "path": ["route", "trajectory"],
-    "area": ["region", "zone"],
+    "location": ["position", "coordinates", "fix", "geo-location"],
+    "path": ["route", "trajectory", "track", "course", "transit"],
+    "area": ["region", "zone", "sector", "operating area", "AOI", "area of operation"],
+    "navigation": ["piloting", "routing", "pathfinding", "wayfinding"],
+    "hazard": ["obstacle", "danger", "no-go zone", "restriction", "constraint"],
 
     # Marine environment
-    "water": ["marine", "aquatic"],
-    "depth": ["underwater depth"],
-    "surface": ["sea surface"],
+    "water": ["marine", "aquatic", "hydrographic", "oceanic"],
+    "depth": ["underwater depth", "bathymetry", "seafloor elevation"],
+    "surface": ["sea surface", "ocean surface", "top layer"],
+    "current": ["flow", "stream", "drift", "tide", "EAC", "East Australian Current"],
+    "tide": ["tidal stream", "tidal current", "tidal flow"],
+    "wave": ["sea state", "swell", "wave height"],
+    "seabed": ["seafloor", "bottom", "substrate"],
+    "gradient": ["slope", "incline", "angle"],
+    "environment": ["conditions", "weather", "climate", "hydrodynamics"],
 
-    # Operations
-    "mission": ["operation", "task"],
-    "survey": ["assessment", "examination"],
-    "data": ["information"],
-    "collection": ["gathering", "acquisition"],
+    # Operations & planning
+    "mission": ["operation", "task", "objective", "sortie", "assignment"],
+    "survey": ["assessment", "examination", "mapping", "reconnaissance"],
+    "data": ["information", "dataset", "records"],
+    "collection": ["gathering", "acquisition", "measurement", "sampling"],
+    "planning": ["preparation", "scheduling", "mission design"],
+    "evaluation": ["assessment", "analysis", "review", "appraisal"],
 
-    # Capabilities
-    "capability": ["ability", "capacity"],
-    "limitation": ["constraint", "restriction"],
-    "requirement": ["need", "specification"],
+    # Capabilities & vehicle characteristics
+    "capability": ["ability", "capacity", "performance", "functionality"],
+    "limitation": ["constraint", "restriction", "bound", "threshold"],
+    "requirement": ["need", "specification", "criterion", "parameter"],
+    "vehicle": ["platform", "AUV", "UUV", "ROV", "vessel", "craft"],
+    "sensor": ["instrument", "payload", "detector"],
+    "speed": ["velocity", "cruise speed", "transit speed"],
+    "endurance": ["range", "duration", "loiter time"],
+    "launch": ["deployment", "release"],
+    "recovery": ["retrieval", "return", "rescue", "restoration"],
+    "communication": ["comms", "link", "data link", "telemetry", "signal"],
+    "abort": ["terminate", "cancel", "cease operation"],
 
-    # Temporal
-    "duration": ["timeframe", "period"],
-    "time": ["timing"],
+    # Data products & mapping
+    "chart": ["map", "navigational chart", "ENC", "electronic chart"],
+    "coverage": ["extent", "area covered", "swath"],
+    "resolution": ["granularity", "detail", "precision"],
+    "overlap": ["redundancy", "intersection"],
+    "metadata": ["data descriptor", "annotation"],
 
-    # General safe terms
-    "important": ["critical", "essential", "significant"],
-    "needed": ["required", "necessary"],
-    "provide": ["supply", "furnish"],
-    "use": ["utilize", "employ"],
-    "show": ["display", "indicate"],
-    "large": ["substantial", "significant"],
-    "small": ["minimal", "limited"],
+    # Risk & contingency
+    "risk": ["hazard", "threat", "danger", "exposure", "vulnerability"],
+    "threat": ["risk", "hazard", "cyber risk", "environmental risk"],
+    "loss": ["failure", "breakdown", "malfunction", "outage"],
+    "contingency": ["backup", "fallback", "emergency plan"],
+    "safety": ["protection", "security"],
+
+    # Temporal & performance
+    "duration": ["timeframe", "period", "interval"],
+    "time": ["timing", "elapsed time"],
+    "estimate": ["approximation", "projection", "forecast"],
+    "efficiency": ["performance", "effectiveness"],
+
+    # General analytical & operational terms
+    "analysis": ["assessment", "evaluation", "study", "review"],
+    "model": ["simulation", "representation", "algorithm"],
+    "system": ["platform", "application", "software"],
+    "important": ["critical", "essential", "significant", "vital"],
+    "needed": ["required", "necessary", "essential"],
+    "provide": ["supply", "furnish", "deliver"],
+    "use": ["utilize", "employ", "apply"],
+    "show": ["display", "indicate", "demonstrate"],
+    "large": ["substantial", "significant", "major"],
+    "small": ["minimal", "limited", "minor"]
 }
 
 # Words to NEVER replace (protected terms)
 PROTECTED_TERMS = {
-    # Technical acronyms (already expanded)
-    "unmanned underwater vehicle", "uuv", "global positioning system", "gps",
-    "multibeam echo sounder", "mbes", "area of operations",
-
-    # Domain-specific technical terms
+    # --- Existing Core Terms ---
+    "unmanned underwater vehicle", "uuv",
+    "global positioning system", "gps",
+    "multibeam echo sounder", "mbes",
+    "area of operations",
     "seafloor", "seabed", "bathymetry", "sonar", "acoustic",
     "navigation", "positioning", "sensor", "endurance",
     "tide", "tidal", "current", "ephemeral",
     "depth", "range", "speed", "vehicle",
     "terrain", "topography", "gradient",
-
-    # Quantitative terms
     "minimum", "maximum", "accuracy", "resolution",
-
-    # Key operational terms
     "launch", "recovery", "deployment", "transit",
-    "threat", "hazard", "risk", "surveillance"
+    "threat", "hazard", "risk", "surveillance",
+
+    # --- Navigation & Geospatial ---
+    "waypoint", "route", "trackline", "fix", "heading",
+    "bearing", "geofence", "ais", "chart datum", "coordinate reference system",
+    "epsg", "gnss", "ins", "dvl", "doppler velocity log", "inertial navigation system",
+
+    # --- Environmental & Oceanographic ---
+    "salinity", "temperature", "conductivity", "ctd", "water column",
+    "wave height", "sea state", "currents", "east australian current", "eac",
+    "sediment", "substrate", "turbidity", "density", "pressure", "hydrography",
+    "hydrodynamics", "bathymetric grid",
+
+    # --- Vehicle, Platform & System Terms ---
+    "auv", "rov", "usv", "asv", "vessel", "autonomous surface vehicle",
+    "autonomous underwater vehicle", "remotely operated vehicle",
+    "launch and recovery system", "lars",
+    "payload", "hull", "propulsion", "battery", "thruster", "ballast",
+    "comms", "telemetry", "acoustic modem", "satellite link",
+    "mission controller", "operator console",
+
+    # --- Survey & Mapping ---
+    "survey line", "survey grid", "swath", "coverage map",
+    "overlap", "track spacing", "line plan", "mosaic", "geotiff",
+    "digital elevation model", "dem", "point cloud",
+    "metadata", "data quality flag", "ping rate", "ping",
+
+    # --- Risk, Safety & Regulation ---
+    "no-go zone", "restricted area", "exclusion zone",
+    "collision avoidance", "safety case", "risk assessment", "fail-safe",
+    "redundancy", "contingency plan",
+
+    # --- Temporal & Mission Management ---
+    "time on task", "mission duration", "mission segment", "mission phase",
+    "launch window", "recovery window", "time synchronization", "utc", "timestamp",
+
+    # --- Analytical & Data Management ---
+    "machine learning", "artificial intelligence", "ai", "ml",
+    "training data", "test set", "validation data",
+    "geospatial data", "netcdf", "geojson", "json-ld", "metadata schema",
+    "knowledge graph", "ontology", "taxonomy", "semantic model",
+
+    # --- Programmatic / Org-specific Terms (found in RFI responses) ---
+    "imos", "emii", "aodn", "nmea", "csv", "api", "sdk",
+    "postgis", "geoserver", "arcgis", "qgis", "python", "r",
+    "matlab", "pandas", "xarray", "geopandas",
 }
+
 # Which method to use, domain-specific (True) or general NLP (False)
 DOMAIN_SPECIFIC = True
 

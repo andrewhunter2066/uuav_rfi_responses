@@ -1,0 +1,189 @@
+{
+  "MissionPlanningTaxonomy": {
+    "TerrainAndBathymetry": {
+      "description": "Physical and geological properties of the seafloor and terrain affecting navigation and mission feasibility.",
+      "keywords": [
+        "terrain", "bathymetry", "seabed", "bottom texture", "slope", "gradient",
+        "topography", "complexity", "seafloor", "multibeam", "coverage", "resolution",
+        "overlap", "gap", "vector electronic navigational charts", "zone of confidence"
+      ],
+      "subcategories": {
+        "SeafloorCharacterization": {
+          "description": "Describes physical seabed properties including texture, hardness, and structure."
+        },
+        "TerrainGradientAnalysis": {
+          "description": "Captures slope, gradient, and elevation data relevant to vehicle operation or survey feasibility."
+        },
+        "SurveyCoverageAssessment": {
+          "description": "Includes mapping resolution, overlap, and data completeness for survey areas."
+        }
+      }
+    },
+    "EnvironmentalAndOceanographicConditions": {
+      "description": "Dynamic environmental factors influencing route selection and mission timing.",
+      "keywords": [
+        "current", "tidal", "stream", "EAC", "East Australian Current", "tide",
+        "ephemeral", "wave height", "water column", "temperature", "salinity",
+        "environmental", "ocean", "conditions"
+      ],
+      "subcategories": {
+        "CurrentsAndTides": {
+          "description": "Ocean current and tidal data including predictions and models."
+        },
+        "SeaStateAndWeather": {
+          "description": "Wave height, swell, and environmental conditions affecting access and operations."
+        },
+        "WaterColumnProperties": {
+          "description": "Temperature, salinity, and density factors influencing vehicle navigation or sensor performance."
+        }
+      }
+    },
+    "VehicleCapabilitiesAndConstraints": {
+      "description": "Vehicle-specific operational parameters and limitations affecting route feasibility.",
+      "keywords": [
+        "speed", "endurance", "maximum depth", "minimum depth", "sensor range",
+        "communication", "launch and recovery", "abort angles", "OEM",
+        "equipment limitations", "vehicle", "range", "parameters"
+      ],
+      "subcategories": {
+        "PerformanceParameters": {
+          "description": "Speed, endurance, and depth capabilities under mission conditions."
+        },
+        "SensorAndSystemLimits": {
+          "description": "Sensor range, accuracy, and integration with mission parameters."
+        },
+        "LaunchRecoveryConstraints": {
+          "description": "Constraints and procedures for deployment and recovery."
+        }
+      }
+    },
+    "NavigationAndPositioning": {
+      "description": "Positional accuracy, route planning, and geospatial data essential to mission navigation.",
+      "keywords": [
+        "GPS", "Global Positioning System", "navigation", "accuracy", "fixing frequency",
+        "navigational hazards", "route", "depth", "position", "electronic navigational chart",
+        "no-go zones", "vector chart", "coordinates"
+      ],
+      "subcategories": {
+        "PositioningSystems": {
+          "description": "GPS and navigation system configuration, accuracy, and reliability."
+        },
+        "RouteSafetyAndHazards": {
+          "description": "Hazards, obstructions, and no-go zones impacting navigation."
+        },
+        "ChartingAndGeospatialData": {
+          "description": "Digital and vector chart data supporting mission planning."
+        }
+      }
+    },
+    "MissionParametersAndObjectives": {
+      "description": "Defines mission intent, constraints, and evaluation metrics for route and task performance.",
+      "keywords": [
+        "mission", "objective", "task", "time-on-task", "timings", "hard left right",
+        "collection requirements", "search area", "zone of operation", "area of operation",
+        "survey", "planning", "transit time", "route options", "survey feasibility"
+      ],
+      "subcategories": {
+        "OperationalObjectives": {
+          "description": "Mission-specific goals, deliverables, and success criteria."
+        },
+        "TaskSchedulingAndTiming": {
+          "description": "Time-on-task estimates, timing constraints, and operational windows."
+        },
+        "EvaluationCriteria": {
+          "description": "Measurable performance indicators for assessing mission success."
+        }
+      }
+    },
+    "ThreatsAndRiskManagement": {
+      "description": "Operational and cyber risk factors that must be identified, assessed, and mitigated.",
+      "keywords": [
+        "threat", "cyber", "risk", "assessment", "loss of communications",
+        "loss of vehicle", "safety", "abort", "no-go", "failure", "contingency",
+        "recovery", "hazard"
+      ],
+      "subcategories": {
+        "OperationalRisk": {
+          "description": "Risks associated with equipment failure, loss, or unsafe operating conditions."
+        },
+        "CyberRisk": {
+          "description": "Information security and communication vulnerabilities affecting mission execution."
+        },
+        "ContingencyPlanning": {
+          "description": "Abort and recovery strategies to mitigate mission failure."
+        }
+      }
+    },
+    "HistoricalAndContextualData": {
+      "description": "Prior mission data, operational benchmarks, and historical references informing planning.",
+      "keywords": [
+        "historical", "previous mission", "similar mission", "reference data",
+        "legacy", "archive", "past operations", "benchmark"
+      ],
+      "subcategories": {
+        "PreviousMissionData": {
+          "description": "Records and performance data from past missions."
+        },
+        "OperationalBenchmarks": {
+          "description": "Comparative data for assessing current mission parameters."
+        }
+      }
+    },
+    "DataProductsAndRequirements": {
+      "description": "Data types, formats, and quality metrics necessary for supporting mission planning and evaluation.",
+      "keywords": [
+        "coverage maps", "survey data", "data product", "sensor data", "multibeam",
+        "swath width", "resolution", "classification", "infrastructure", "overlap",
+        "metadata", "data format", "supporting data", "zone of confidence"
+      ],
+      "subcategories": {
+        "SensorDataProducts": {
+          "description": "Primary data outputs such as multibeam, sonar, or optical datasets."
+        },
+        "DerivedDataProducts": {
+          "description": "Processed or analytic data derived from sensor inputs."
+        },
+        "DataQualityAndMetadata": {
+          "description": "Quality indicators, confidence zones, and metadata requirements."
+        }
+      }
+    },
+    "CommunicationsAndControl": {
+      "description": "Information transfer, telemetry, and command-control mechanisms supporting mission coordination.",
+      "keywords": [
+        "communication", "link", "telemetry", "control", "signal", "frequency",
+        "loss of communications", "vehicle communication requirements", "bandwidth"
+      ],
+      "subcategories": {
+        "TelemetrySystems": {
+          "description": "Data link and telemetry infrastructure for vehicle monitoring."
+        },
+        "ControlSystems": {
+          "description": "Command and control protocols for mission and vehicle operations."
+        },
+        "CommunicationsResilience": {
+          "description": "Procedures for managing loss of communication or degraded signal environments."
+        }
+      }
+    },
+    "OperationalLogistics": {
+      "description": "Physical deployment, access, and operational coordination for mission execution.",
+      "keywords": [
+        "launch", "recovery", "deployment", "transit", "area of operation",
+        "survey planning", "constraints", "200 metre width", "approach route",
+        "landing", "access", "launch point", "recovery location"
+      ],
+      "subcategories": {
+        "DeploymentAndRecovery": {
+          "description": "Physical processes for launching and retrieving assets."
+        },
+        "OperationalConstraints": {
+          "description": "Spatial, temporal, and environmental limitations on mission operations."
+        },
+        "AccessAndMobility": {
+          "description": "Approach, transit, and access conditions affecting operational readiness."
+        }
+      }
+    }
+  }
+}
