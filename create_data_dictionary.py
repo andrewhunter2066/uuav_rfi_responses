@@ -21,11 +21,13 @@ column_descriptions = {
     "Status": "Status of the record (e.g., Draft, Reviewed, Final).",
     "Version": "Version label assigned to this merged data batch.",
     "ChangeNote": "Short note describing what changed in this merge or version.",
+    "Classification": "Classification results for each scenario and question. Only included in classified outputs.",
+    "ChangeDate": "Date of last change to this record. Only included when first change is made."
 }
 
 
 # Load the merged data
-df = pd.read_csv("./input/normalised_all_responses.csv", dtype=dtype_overrides)
+df = pd.read_csv("./output/normalised_all_classified_responses.csv", dtype=dtype_overrides)
 
 # Generate auto summary
 data_dict = pd.DataFrame({

@@ -10,5 +10,7 @@ ResponseText,object,339,155,"Optimal terrain analysis, particularly identifying 
 SourceDate,object,339,1,2025-10-06,Date Excel file received from RAM/SME. (ISO format).
 FollowupNeeded,boolean,0,0,,Indicates whether further clarification or follow-up with the SME is required.
 Status,string,339,1,Draft,"Status of the record (e.g., Draft, Reviewed, Final)."
-Version,string,339,1,v0.1,Version label assigned to this merged data batch.
-ChangeNote,string,339,1,Initial merge,Short note describing what changed in this merge or version.
+Version,string,339,2,v0.2,Version label assigned to this merged data batch.
+ChangeNote,string,339,2,Initial classification,Short note describing what changed in this merge or version.
+Classification,object,339,11,Terrain and Bathymetry,Classification results for each scenario and question. Only included in classified outputs.
+ChangeDate,object,92,1,2025-10-08,Date of last change to this record. Only included when first change is made.

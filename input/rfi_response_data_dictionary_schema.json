@@ -54,6 +54,14 @@
     "ChangeNote": {
       "type": "string",
       "description": "Short note describing what changed in this merge or version."
+    },
+    "Classification": {
+      "type": "string",
+      "description": "Classification results for each scenario and question. Only included in classified outputs."
+    },
+    "ChangeDate": {
+      "type": "string",
+      "description": "Date of last change to this record. Only included when first change is made."
     }
   }
 }
