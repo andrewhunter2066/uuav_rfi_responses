@@ -1,0 +1,59 @@
+Terrain analysis feature detection (identify features that exceed sensor capability)
+Ocean currents
+Vehicle mobility characteristics
+Surface/subsea traffic
+Seafloor topography
+Infrastructure on route
+UUV limits depth, range, speed, etc.
+Seafloor texture
+Cyber threat
+Environmental factors (water column)
+Launch/recovery locations
+Sensor collection requirements
+GPS requirements
+Hazards along route
+Navigation accuracy
+UUV communication requirements
+No-go zones
+Mission collection requirements
+Search areas
+Swept channel planning
+MBES sensor coverage consider sensor specifications
+resolution
+overlap
+gaps
+Survey duration based on 
+speed
+swath width
+environmental conditions
+Seabed complexity
+Surface/subsurface traffic
+Sensor specification
+Seafloor texture
+Ocean currents
+Threats to a mission
+Environmental conditions
+Launch and recovery locations
+UUV limits
+Sensor collection requirements
+GPS requirements
+Hazards along route
+Navigation accuracy
+UUV communication requirements
+No-go zones
+Mission collection requirements
+Transit time to beach
+Seafloor complexity
+Environmental conditions
+wave height
+current
+Historical data for similar beaches
+Surface/sub sea traffic
+UUV limits
+Sensor collection requirements
+GPS requirements
+Hazards along route
+Navigation accuracy
+UUV communication requirements
+No-go zones
+Mission collection requirements 
