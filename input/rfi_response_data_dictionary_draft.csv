@@ -1,4 +1,5 @@
 FieldName,DataType,NonNullCount,UniqueCount,ExampleValue,Description
+ResponseID,int64,339,339,1,Unique identifier for each response record.
 Respondent,object,339,2,R001,Anonymized identifier for the subject matter expert (SME).
 Scenario,object,339,4,Scenario 1 - Route to AOA,UUAV Scenario name
 ScenarioNumber,int64,339,4,1,Sequential number representing the scenario order.

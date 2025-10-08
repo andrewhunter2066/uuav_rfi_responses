@@ -8,6 +8,7 @@ dtype_overrides = {
 }
 
 column_descriptions = {
+    "ResponseID": "Unique identifier for each response record.",
     "Respondent": "Anonymized identifier for the subject matter expert (SME).",
     "Scenario": "UUAV Scenario name",
     "ScenarioNumber": "Sequential number representing the scenario order.",

@@ -383,14 +383,101 @@ def _process_excel_files(input_folder: Path, output_folder: Path, per_respondent
     return all_data
 
 
+def _create_response_id_column(df: pd.DataFrame) -> None:
+    """
+    Creates and populates the ResponseID column with sequential integers starting from 1.
+
+    :param df: The DataFrame to modify in-place.
+    :type df: pd.DataFrame
+    :return: None
+    """
+    df.insert(0, "ResponseID", range(1, len(df) + 1))
+
+
+def _get_next_available_id(df: pd.DataFrame) -> int:
+    """
+    Determines the next available ResponseID based on the maximum existing ID.
+
+    :param df: The DataFrame containing ResponseID column.
+    :type df: pd.DataFrame
+    :return: The next available integer ID (max_id + 1, or 1 if no valid IDs exist).
+    :rtype: int
+    """
+    max_id = df["ResponseID"].max()
+    return 1 if pd.isna(max_id) else int(max_id) + 1
+
+
+def _fill_missing_response_ids(df: pd.DataFrame) -> None:
+    """
+    Identifies and fills missing ResponseID values with unique sequential integers.
+    Prints the number of missing IDs that were populated.
+
+    :param df: The DataFrame to modify in-place.
+    :type df: pd.DataFrame
+    :return: None
+    """
+    missing_ids = df["ResponseID"].isna()
+    if not missing_ids.any():
+        return
+
+    next_id = _get_next_available_id(df)
+    num_missing = missing_ids.sum()
+    new_ids = range(next_id, next_id + num_missing)
+
+    df.loc[missing_ids, "ResponseID"] = list(new_ids)
+    print(f"Populated {num_missing} missing ResponseID(s)")
+
+
+def _ensure_response_id_integrity(df: pd.DataFrame) -> None:
+    """
+    Ensures ResponseID column exists, fills missing values, and converts to integer type.
+
+    :param df: The DataFrame to modify in-place.
+    :type df: pd.DataFrame
+    :return: None
+    """
+    if "ResponseID" not in df.columns:
+        _create_response_id_column(df)
+    else:
+        _fill_missing_response_ids(df)
+        df["ResponseID"] = df["ResponseID"].astype(int)
+
+
+def add_id(df: pd.DataFrame) -> pd.DataFrame:
+    """
+    Adds a unique "ResponseID" to the provided DataFrame and ensures its consistency.
+    If the "ResponseID" column does not exist, it will be created and populated with
+    unique sequential integers starting from 1. If existing "ResponseID" entries have
+    missing values, those will be filled with unique values based on the maximum
+    existing "ResponseID". Additionally, an "id" column is added, corresponding
+    to the 1-based index of the DataFrame.
+
+    :param df: The input DataFrame to be modified.
+    :type df: pd.DataFrame
+    :return: The modified DataFrame with the ensured "ResponseID" and added "id" column.
+    :rtype: pd.DataFrame
+    """
+    _ensure_response_id_integrity(df)
+    return df
+
+
 def _save_consolidated_data(df: pd.DataFrame, output_csv: Path, output_json: Path = None) -> None:
     """
-    Save the consolidated and anonymised data to CSV and optionally to JSON.
+    Saves the consolidated and normalized DataFrame to specified CSV file and optionally to a
+    JSON file. The DataFrame is first processed with an identifier added. Once processed, it
+    is saved as a CSV file to the specified path. If an optional JSON output path is provided,
+    the DataFrame is also serialized and saved in JSON format.
 
-    :param df: DataFrame containing the normalised and anonymised data
-    :param output_csv: Path to save the consolidated CSV file
-    :param output_json: an optional path to save the consolidated JSON file
+    :param df: DataFrame to be processed and saved
+    :type df: pd.DataFrame
+    :param output_csv: Path to save the processed DataFrame as a CSV file
+    :type output_csv: Path
+    :param output_json: Optional path to save the processed DataFrame as a JSON file
+    :type output_json: Path, optional
+    :return: None
+    :rtype: None
     """
+    df = add_id(df)
     df.to_csv(output_csv, index=False)
     print(f"Saved combined normalised CSV → {output_csv}")
 
@@ -400,7 +487,7 @@ def _save_consolidated_data(df: pd.DataFrame, output_csv: Path, output_json: Pat
         print(f"Saved combined JSON → {output_json}")
 
 
-def batch_normalize_rfi(input_folder: str,
+def batch_normalise_rfi(input_folder: str,
                         output_folder: str,
                         output_csv: str,
                         output_json=None,
@@ -465,7 +552,7 @@ def run_batch_normalization() -> None:
     Processes Excel files from the input folder and generates normalised outputs
     with pseudonymized respondent data.
     """
-    batch_normalize_rfi(
+    batch_normalise_rfi(
         input_folder=INPUT_FOLDER,
         output_folder=OUTPUT_FOLDER,
         output_csv=OUTPUT_CSV,

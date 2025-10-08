@@ -3,6 +3,10 @@
   "title": "RFI Merged Data Schema",
   "type": "object",
   "properties": {
+    "ResponseID": {
+      "type": "integer",
+      "description": "Unique identifier for each response record."
+    },
     "Respondent": {
       "type": "string",
       "description": "Anonymized identifier for the subject matter expert (SME)."
