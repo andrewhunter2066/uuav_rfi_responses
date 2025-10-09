@@ -231,8 +231,53 @@ PROTECTED_TERMS = {
     "matlab", "pandas", "xarray", "geopandas",
 }
 
+# Synonym–Protection conflict rules
+CONFLICT_RULES = {
+    "temporal": {"protected": ["current", "tidal", "tide", "eac", "east australian current"],
+                 "synonyms": ["time", "duration"]},
+    "survey": {"protected": ["survey", "multibeam echo sounder", "mbes", "coverage map"],
+               "synonyms": ["survey", "data"]},
+    "spatial": {"protected": ["navigation", "route", "trackline", "trajectory", "heading"],
+                "synonyms": ["path", "location"]},
+    "vertical": {"protected": ["depth", "bathymetry", "seafloor", "seabed"],
+                 "synonyms": ["area", "water"]},
+    "risk": {"protected": ["risk", "threat", "hazard", "cyber risk", "no-go zone"],
+             "synonyms": ["important", "limitation"]},
+    "mission_ops": {"protected": ["launch", "recovery", "transit", "endurance"],
+                    "synonyms": ["mission", "time"]},
+    "navigation": {"protected": ["gps", "gnss", "positioning", "navigation"],
+                   "synonyms": ["accuracy", "location"]},
+    "sensors": {"protected": ["sensor", "sonar", "acoustic", "telemetry"],
+                "synonyms": ["data", "collection"]},
+    "semantic_data": {"protected": ["knowledge graph", "ontology", "taxonomy", "json-ld"],
+                      "synonyms": ["data", "collection"]},
+    "platform": {"protected": ["launch and recovery system", "lars", "auv", "usv", "rov"],
+                 "synonyms": ["vehicle", "capability"]}
+}
 # Which method to use, domain-specific (True) or general NLP (False)
 DOMAIN_SPECIFIC = True
+
+# Suppression Log
+SUPPRESSION_LOG = []
+
+
+def log_suppression(word, protected, context_snippet):
+    SUPPRESSION_LOG.append({
+        "word": word,
+        "protected_trigger": protected,
+        "context_snippet": context_snippet[:120]
+    })
+
+
+def should_skip_synonym(text, synonym_group, conflict_rules):
+    """Check if a synonym group should be skipped based on protected term co-occurrence."""
+    text_lower = text.lower()
+    for rule in conflict_rules.values():
+        if synonym_group in rule["synonyms"]:
+            for protected in rule["protected"]:
+                if protected in text_lower:
+                    return True
+    return False
 
 
 def augment_text_minimal(text: str, aug_prob=0.1) -> str:
@@ -299,11 +344,13 @@ def augment_text_structural(text: str) -> str:
     return augmented
 
 
-def get_domain_synonyms(word: str) -> list[str]:
+def get_domain_synonyms(word: str, context: str = "") -> list[str]:
     """
-    Retrieve domain-appropriate synonyms from controlled dictionary.
+    Retrieve domain-appropriate synonyms from a controlled dictionary,
+    respecting protected terms and conflict rules.
 
     :param word: The word to find synonyms for.
+    :param context: Optional text context for conflict detection.
     :return: List of safe domain-specific synonyms, or empty list if none.
     """
     word_lower = word.lower()
@@ -311,6 +358,18 @@ def get_domain_synonyms(word: str) -> list[str]:
     # Never replace protected terms
     if word_lower in PROTECTED_TERMS:
         return []
+
+    # Context-sensitive suppression
+    if context:
+        text_lower = context.lower()
+        for rule in CONFLICT_RULES.values():
+            if word_lower in rule["synonyms"]:
+                for protected in rule["protected"]:
+                    if protected in text_lower:
+                        # Optional: log suppression
+                        print(f"Suppressed '{word_lower}' due to '{protected}' in context")
+                        log_suppression(word_lower, protected, context)
+                        return []
 
     # Return controlled synonyms if available
     return DOMAIN_SYNONYMS.get(word_lower, [])
@@ -991,3 +1050,11 @@ if __name__ == "__main__":
     print(f"# Merging all classifications into master file")
     print(f"{'#' * 60}\n")
     merge_all_classifications()
+
+    # Save a suppression report
+    if len(SUPPRESSION_LOG) > 0:
+        suppression_log_path = './output/suppression_log.csv'
+        with open(suppression_log_path, 'w') as f:
+            f.write('\n'.join(SUPPRESSION_LOG))
+        print(f"\nSuppression log saved to: {suppression_log_path}")
+

@@ -18,7 +18,8 @@ FILES_TO_MOVE_TO_OUTPUT = [
     "output/S1_Q1_classification_results.csv",
     "output/S2_Q1_classification_results.csv",
     "output/S3_Q1_classification_results.csv",
-    "docs/mission_planning_taxonomy.json"
+    "docs/mission_planning_taxonomy.json",
+    "docs/synonym-protection pairing matrix.md",
 ]
 
 # Target repo (can be local or remote)
