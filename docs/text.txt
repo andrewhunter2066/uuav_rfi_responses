@@ -1,59 +1,95 @@
-Terrain analysis feature detection (identify features that exceed sensor capability)
-Ocean currents
-Vehicle mobility characteristics
-Surface/subsea traffic
-Seafloor topography
-Infrastructure on route
-UUV limits depth, range, speed, etc.
-Seafloor texture
-Cyber threat
-Environmental factors (water column)
-Launch/recovery locations
-Sensor collection requirements
-GPS requirements
-Hazards along route
-Navigation accuracy
-UUV communication requirements
-No-go zones
-Mission collection requirements
-Search areas
-Swept channel planning
-MBES sensor coverage consider sensor specifications
-resolution
-overlap
-gaps
-Survey duration based on 
-speed
-swath width
-environmental conditions
-Seabed complexity
-Surface/subsurface traffic
-Sensor specification
-Seafloor texture
-Ocean currents
-Threats to a mission
-Environmental conditions
-Launch and recovery locations
-UUV limits
-Sensor collection requirements
-GPS requirements
-Hazards along route
-Navigation accuracy
-UUV communication requirements
-No-go zones
-Mission collection requirements
-Transit time to beach
-Seafloor complexity
-Environmental conditions
-wave height
-current
-Historical data for similar beaches
-Surface/sub sea traffic
-UUV limits
-Sensor collection requirements
-GPS requirements
-Hazards along route
-Navigation accuracy
-UUV communication requirements
-No-go zones
-Mission collection requirements 
+Optimal terrain analysis particularly identifying areas exceeding original equipment manufacturer-stipulated avoidance or abort angles.
+Current and tidal stream predictions especially East Australian Current influence.
+Input speed requirements to achieve mission objectives
+Swept-channel survey planning with 200 metre width constraints.
+Multibeam Echosounder coverage maps showing resolution overlap and gaps.
+Time-on-task estimates based on unmanned underwater vehicle speed swath width and environmental conditions.
+Terrain complexity and seabed gradient data to assess survey feasibility
+Transit time to beach from launch point.
+Terrain and seabed gradient data for approach routes.
+Environmental conditions wave height current strength affecting access.
+Historical mission data for similar beach landings
+surface subsea traffic of route
+depth slope or route and  area of operation
+equipment limitations of in service capabilities
+bottom texture or route and  area of operation
+seafloor classification infrastructure of route and  area of operation
+ephemeral current tides of route and  area of operation
+threat assessment cyber risk of mission
+timings hard left right
+water column data of route and  area of operation
+launch and recovery locations and parameters
+sensor range fitted to vehicle
+endurance of vehicle
+maximum depth of vehicle
+active sensor collection requirements
+Global Positioning System GPS fixing requirements frequency
+accuracy requirements sensors
+accuracy requirements navigation
+minimum depth of vehicle
+vector electronic navigational charts data of route and  area of operation
+vehicle speed limitations and parameters
+vehicle communication requirements
+navigational hazards of route and  area of operation
+no-go zones of route and  area of operation
+dive ascent process time
+actions on loss of communications loss of vehicle etc.
+search area  area of operation coordinates
+mission collection requirements
+zone of confidence of route and  area of operation
+surface subsea traffic of route
+depth slope or route and  area of operation
+equipment limitations of in service capabilities
+bottom texture or route and  area of operation
+seafloor classification infrastructure of route and  area of operation
+ephemeral current tides of route and  area of operation
+threat assessment cyber risk of mission
+timings hard left right
+water column data of route and  area of operation
+launch and recovery locations and parameters
+sensor range fitted to vehicle
+endurance of vehicle
+maximum depth of vehicle
+active sensor collection requirements
+Global Positioning System GPS fixing requirements frequency
+accuracy requirements sensors
+accuracy requirements navigation
+minimum depth of vehicle
+vector electronic navigational charts data of route and  area of operation
+vehicle speed limitations and parameters
+vehicle communication requirements
+navigational hazards of route and  area of operation
+no-go zones of route and  area of operation
+dive ascent process time
+actions on loss of communications loss of vehicle etc.
+search area  area of operation coordinates
+mission collection requirements
+zone of confidence of route and  area of operation
+surface subsea traffic of route
+depth slope or route and  area of operation
+equipment limitations of in service capabilities
+bottom texture or route and  area of operation
+seafloor classification infrastructure of route and  area of operation
+ephemeral current tides of route and  area of operation
+threat assessment cyber risk of mission
+timings hard left right
+water column data of route and  area of operation
+launch and recovery locations and parameters
+sensor range fitted to vehicle
+endurance of vehicle
+maximum depth of vehicle
+active sensor collection requirements
+Global Positioning System GPS fixing requirements frequency
+accuracy requirements sensors
+accuracy requirements navigation
+minimum depth of vehicle
+vector electronic navigational charts data of route and  area of operation
+vehicle speed limitations and parameters
+vehicle communication requirements
+navigational hazards of route and  area of operation
+no-go zones of route and  area of operation
+dive ascent process time
+actions on loss of communications loss of vehicle etc.
+search area  area of operation coordinates
+mission collection requirements
+zone of confidence of route and  area of operation
