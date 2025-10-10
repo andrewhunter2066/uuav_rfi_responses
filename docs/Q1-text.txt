@@ -1,3 +1,12 @@
+A request for information for the development of a mission planning application received the following responses to the
+question "Q1 - What test scenarios and supporting data does the system need to provide to support mission planners in
+evaluating route options, based on calculable or estimable factors (e.g., time, usage)? The responses:
+
+To improve classification given the RFI responses are jargon dense and specific to marine navigation planning, I have
+incorporated a set of domain-specific controlled synonyms:
+
+Given the RFI Q1 responses, are there elements that should be added to the domain synonyms?
+
 Optimal terrain analysis particularly identifying areas exceeding original equipment manufacturer-stipulated avoidance or abort angles.
 Current and tidal stream predictions especially East Australian Current influence.
 Input speed requirements to achieve mission objectives

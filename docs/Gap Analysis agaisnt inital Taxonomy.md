@@ -1,0 +1,11 @@
+| Gap | Description                                                                                                    | Recommended Addition                                                                     |
+| --- | -------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- |
+| A.1 | No subcategory explicitly for **Acoustic Positioning Systems** (distinct from GPS)                             | Add `AcousticPositioningSystems` under `NavigationAndPositioning`                        |
+| B.1 | Endurance and power management not explicitly modelled                                                         | Add `PowerAndEnergyManagement` under `VehicleCapabilitiesAndConstraints`                 |
+| B.2 | Coordination of multiple UUVs                                                                                  | Add `MultiVehicleCoordination` under `OperationalLogistics`                              |
+| C.1 | Calibration and sensor reliability are underrepresented                                                        | Add `SensorCalibrationAndReliability` under `DataProductsAndRequirements`                |
+| D.1 | Acoustic interference and turbidity missing                                                                    | Add `AcousticPropagationAndInterference` under `EnvironmentalAndOceanographicConditions` |
+| E.1 | Environmental/habitat protection zones                                                                         | Add `HabitatSensitivityAndRestrictions` under `EnvironmentalAndOceanographicConditions`  |
+| F.1 | Risk linked to navigation (“zone of confidence”, “no-go zones”) exists but could be tied to confidence metrics | Extend `RouteSafetyAndHazards` with explicit “confidence and validation metrics”         |
+| H.1 | “In-service equipment limitations” overlaps several areas but deserves operational context                     | Add `OperationalEquipmentStatus` under `OperationalLogistics`                            |
+| I.1 | “Timings hard left right” — operational maneuver or turning constraint                                         | Add `VehicleManeuverabilityAndTurningLimits` under `VehicleCapabilitiesAndConstraints`   |

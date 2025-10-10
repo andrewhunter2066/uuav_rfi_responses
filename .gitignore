@@ -6,7 +6,7 @@
 secure/sme_mapping.csv
 
 # Do not upload raw text
-docs/text.txt
+docs/Q1-text.txt
 
 # User-specific stuff
 .idea/**/workspace.xml
