@@ -5,8 +5,10 @@ import random
 import re
 import nltk
 import os
+import json
 from nltk.corpus import stopwords, wordnet
 from datetime import datetime
+from typing import List
 
 # Download required corpora
 nltk.download('stopwords')
@@ -30,341 +32,252 @@ ACRONYM_EXPANSIONS = {
     r'\bcomms\b': 'communications',
     r'\bhipap\b': 'high precision acoustic positioning',
     r'\be.g.\b': '',
+    r'\b%\b': 'percent',
 }
 
 # Regex pattern to keep only word characters, spaces, and hyphens
 PUNCTUATION_PATTERN = r'[^\w\s\-]'
 
-# Define keywords for each category as a module constant
-CATEGORY_KEYWORDS = {
-
-    "Terrain and Bathymetry": [
-        "terrain", "bathymetry", "seabed", "bottom texture", "slope", "gradient",
-        "topography", "complexity", "seafloor", "multibeam", "coverage", "resolution",
-        "overlap", "gap", "vector electronic navigational charts", "zone of confidence",
-        "bathymetric model", "surface model", "digital elevation model", "DEM",
-        "depth profile", "bottom type", "substrate", "geomorphology"
-    ],
-
-    "Environmental and Oceanographic Conditions": [
-        "current", "tidal", "stream", "EAC", "East Australian Current", "tide",
-        "ephemeral", "wave height", "water column", "temperature", "salinity",
-        "environmental", "ocean", "conditions", "hydrodynamics", "sea state",
-        "wind", "drift", "surface current", "subsurface current", "turbidity",
-        "pressure", "density", "conductivity", "CTD", "environmental forecast",
-        "metocean", "hindcast", "oceanographic model"
-    ],
-
-    "Vehicle Capabilities and Constraints": [
-        "speed", "endurance", "maximum depth", "minimum depth", "sensor range",
-        "communication", "launch and recovery", "abort angles", "OEM",
-        "equipment limitations", "vehicle", "range", "fitted", "parameters",
-        "speed requirements", "battery capacity", "payload", "thruster",
-        "autonomy", "navigation limits", "operating envelope", "mission duration",
-        "power consumption", "fail-safe", "mission abort", "stability"
-    ],
-
-    "Navigation and Positioning": [
-        "GPS", "Global Positioning System", "navigation", "accuracy", "fixing frequency",
-        "navigational hazards", "route", "depth", "position", "electronic navigational chart",
-        "no-go zones", "vector chart", "coordinates", "waypoint", "geofence", "heading",
-        "bearing", "trajectory", "trackline", "positioning system", "INS", "DVL",
-        "GNSS", "localization", "georeferencing", "datum", "EPSG", "coordinate reference system"
-    ],
-
-    "Mission Parameters and Objectives": [
-        "mission", "objective", "task", "time-on-task", "timings", "hard left right",
-        "collection requirements", "search area", "zone of operation", "area of operation",
-        "survey", "planning", "transit time", "route options", "evaluation",
-        "mission planning", "survey feasibility", "mission phase", "mission profile",
-        "mission goal", "operational constraint", "time window", "launch window",
-        "recovery window", "time synchronization", "UTC", "timestamp",
-        "mission segment", "mission schedule"
-    ],
-
-    "Threats and Risk Management": [
-        "threat", "cyber", "risk", "assessment", "loss of communications",
-        "loss of vehicle", "safety", "abort", "no-go", "failure", "contingency",
-        "recovery", "hazard", "collision avoidance", "redundancy", "fail-safe",
-        "safety case", "emergency procedure", "risk mitigation", "contingency plan",
-        "system failure", "environmental risk"
-    ],
-
-    "Historical and Contextual Data": [
-        "historical", "previous mission", "similar mission", "reference data",
-        "legacy", "archive", "past operations", "benchmark", "mission archive",
-        "data provenance", "historical record", "baseline", "mission report",
-        "comparative analysis", "trend", "reference dataset"
-    ],
-
-    "Data Products and Requirements": [
-        "coverage maps", "survey data", "data product", "sensor data", "multibeam",
-        "swath width", "resolution", "classification", "infrastructure", "overlap",
-        "metadata", "data format", "supporting data", "zone of confidence",
-        "data quality", "data standard", "data validation", "quality control",
-        "data fusion", "post-processing", "data product specification",
-        "geotiff", "point cloud", "DEM", "bathymetric grid", "file format"
-    ],
-
-    "Communications and Control": [
-        "communication", "link", "telemetry", "control", "signal", "frequency",
-        "loss of communications", "vehicle communication requirements", "bandwidth",
-        "uplink", "downlink", "satellite", "acoustic modem", "data link",
-        "network", "latency", "reliability", "comms channel", "signal loss"
-    ],
-
-    "Operational Logistics": [
-        "launch", "recovery", "deployment", "transit", "area of operation",
-        "survey planning", "constraints", "200 metre width", "approach route",
-        "landing", "access", "launch point", "recovery location",
-        "staging area", "support vessel", "crew", "equipment transport",
-        "operational window", "base port", "site access", "mobilization",
-        "demobilization", "mission setup", "field logistics"
-    ],
-}
-
-
-# Domain-specific controlled synonyms (safe replacements for technical text)
-DOMAIN_SYNONYMS = {
-    # Navigation & positioning
-    "location": ["position", "coordinates", "fix", "geo-location"],
-    "path": ["route", "trajectory", "track", "course", "transit"],
-    "area": ["region", "zone", "sector", "operating area", "AOI", "area of operation"],
-    "navigation": ["piloting", "routing", "pathfinding", "wayfinding"],
-    "hazard": ["obstacle", "danger", "no-go zone", "restriction", "constraint"],
-    "positioning": ["fixing", "localization", "geolocation", "position estimate"],
-    "accuracy": ["precision", "error", "uncertainty", "deviation"],
-    "drift": ["offset", "position drift", "bias"],
-
-    # Marine environment
-    "water": ["marine", "aquatic", "hydrographic", "oceanic"],
-    "depth": ["underwater depth", "bathymetry", "seafloor elevation"],
-    "surface": ["sea surface", "ocean surface", "top layer"],
-    "current": ["flow", "stream", "drift", "tide", "EAC", "East Australian Current", "circulation"],
-    "tide": ["tidal stream", "tidal current", "tidal flow"],
-    "wave": ["sea state", "swell", "wave height", "wave period"],
-    "seabed": ["seafloor", "bottom", "substrate"],
-    "gradient": ["slope", "incline", "angle"],
-    "environment": ["conditions", "weather", "climate", "hydrodynamics",  "ocean conditions"],
-    "temperature": ["sea temperature", "water temperature", "thermal gradient"],
-    "salinity": ["salt concentration", "conductivity"],
-    "turbidity": ["clarity", "suspended sediment", "visibility"],
-
-    # Operations & planning
-    "mission": ["operation", "task", "objective", "sortie", "assignment"],
-    "survey": ["assessment", "examination", "mapping", "reconnaissance"],
-    "data": ["information", "dataset", "records",  "telemetry", "signal data"],
-    "collection": ["gathering", "acquisition", "measurement", "sampling"],
-    "planning": ["preparation", "scheduling", "mission design"],
-    "evaluation": ["assessment", "analysis", "review", "appraisal"],
-    "operation": ["mission", "activity", "undertaking"],
-    "maintenance": ["servicing", "upkeep", "repair"],
-    "logistics": ["supply chain", "support", "replenishment"],
-    "latency": ["delay", "lag", "transmission delay"],
-    "availability": ["uptime", "readiness", "serviceability"],
-    "resource": ["asset", "supply", "input"],
-
-    # Capabilities & vehicle characteristics
-    "capability": ["ability", "capacity", "performance", "functionality"],
-    "limitation": ["constraint", "restriction", "bound", "threshold"],
-    "requirement": ["need", "specification", "criterion", "parameter"],
-    "vehicle": ["platform", "AUV", "UUV", "ROV", "vessel", "craft"],
-    "sensor": ["instrument", "payload", "detector"],
-    "speed": ["velocity", "cruise speed", "transit speed"],
-    "endurance": ["range", "duration", "loiter time"],
-    "launch": ["deployment", "release"],
-    "recovery": ["retrieval", "return", "rescue", "restoration"],
-    "communication": ["comms", "link", "data link", "telemetry", "signal"],
-    "abort": ["terminate", "cancel", "cease operation"],
-    "power": ["energy", "battery capacity", "consumption", "load"],
-    "payload": ["sensor package", "instrument load", "carried sensors"],
-    "autonomy": ["automation", "self-operation", "independence"],
-    "stability": ["control", "balance", "steady state"],
-    "maneuverability": ["agility", "handling", "turn radius"],
-
-    # Data products & mapping
-    "chart": ["map", "navigational chart", "ENC", "electronic chart"],
-    "coverage": ["extent", "area covered", "swath"],
-    "resolution": ["granularity", "detail", "precision"],
-    "overlap": ["redundancy", "intersection"],
-    "metadata": ["data descriptor", "annotation"],
-    "frequency": ["update rate", "sampling rate", "temporal resolution"],
-    "uncertainty": ["error", "variance", "confidence"],
-    "processing": ["analysis", "filtering", "post-processing", "fusion"],
-    "fusion": ["integration", "combination", "data merging"],
-
-    # Risk & contingency
-    "risk": ["hazard", "threat", "danger", "exposure", "vulnerability"],
-    "threat": ["risk", "hazard", "cyber risk", "environmental risk"],
-    "loss": ["failure", "breakdown", "malfunction", "outage"],
-    "contingency": ["backup", "fallback", "emergency plan"],
-    "safety": ["protection", "security"],
-    "probability": ["likelihood", "chance", "possibility"],
-    "severity": ["impact", "consequence", "magnitude"],
-    "mitigation": ["control", "prevention", "response"],
-    "redundancy": ["backup", "fallback", "failover"],
-    "reliability": ["robustness", "dependability", "resilience"],
-
-    # Temporal & performance
-    "duration": ["timeframe", "period", "interval", "timespan",],
-    "time": ["timing", "elapsed time"],
-    "estimate": ["approximation", "projection", "forecast"],
-    "efficiency": ["performance", "effectiveness"],
-    "timing": ["schedule", "interval", "timeframe"],
-    "delay": ["latency", "hold-up", "pause"],
-    "performance": ["efficiency", "effectiveness", "throughput"],
-
-    # General analytical & operational terms
-    "analysis": ["assessment", "evaluation", "study", "review"],
-    "model": ["simulation", "representation", "algorithm", "forecast model"],
-    "system": ["platform", "application", "software"],
-    "important": ["critical", "essential", "significant", "vital"],
-    "needed": ["required", "necessary", "essential"],
-    "provide": ["supply", "furnish", "deliver"],
-    "use": ["utilize", "employ", "apply"],
-    "show": ["display", "indicate", "demonstrate"],
-    "large": ["substantial", "significant", "major"],
-    "small": ["minimal", "limited", "minor"],
-    "estimation": ["approximation", "prediction", "inference"],
-    "parameter": ["variable", "input", "factor"],
-    "trend": ["pattern", "tendency", "trajectory"],
-    "validation": ["verification", "cross-check", "benchmarking"],
-}
 
 # Words to NEVER replace (protected terms)
 PROTECTED_TERMS = {
-    # --- Existing Core Terms ---
-    "unmanned underwater vehicle", "uuv",
-    "global positioning system", "gps",
-    "multibeam echo sounder", "mbes",
-    "area of operations",
-    "seafloor", "seabed", "bathymetry", "sonar", "acoustic",
-    "navigation", "positioning", "sensor", "endurance",
-    "tide", "tidal", "current", "ephemeral",
-    "depth", "range", "speed", "vehicle",
-    "terrain", "topography", "gradient",
-    "minimum", "maximum", "accuracy", "resolution",
-    "launch", "recovery", "deployment", "transit",
-    "threat", "hazard", "risk", "surveillance",
+    # --- Analytical & Data Management ---
+    "ai", "artificial intelligence", "cf convention", "confidence interval",
+    "data lineage", "data provenance", "error budget", "estimation factor",
+    "geojson", "geospatial data", "json-ld", "knowledge graph",
+    "machine learning", "metadata", "metadata schema", "ml",
+    "netcdf", "netcdf-cf", "ontology", "performance model",
+    "probability distribution", "python", "r", "sdk", "semantic model",
+    "sensitivity analysis", "taxonomy", "test set", "training data",
+    "uncertainty model", "validation data",
 
-    # --- Navigation & Geospatial ---
-    "waypoint", "route", "trackline", "fix", "heading",
-    "bearing", "geofence", "ais", "chart datum", "coordinate reference system",
-    "epsg", "gnss", "ins", "dvl", "doppler velocity log", "inertial navigation system",
+    # --- Communications & Control ---
+    "acoustic modem", "bandwidth allocation", "command and control", "command latency",
+    "comms", "communication handshake", "communication outage",
+    "communications plan", "control architecture", "control interface",
+    "control loop", "c2", "downlink", "latency", "link stability",
+    "mission controller", "mission monitoring", "mission planning system",
+    "operator console", "real-time control", "telemetry", "telemetry link",
+    "uplink", "uplink path",
+
+    # --- Data Products & Requirements ---
+    "classified map", "coverage map", "coverage polygon", "data deliverable",
+    "data fusion", "data product", "deliverable product", "geotiff",
+    "point cloud", "sensor fusion", "survey deliverable", "survey footprint",
 
     # --- Environmental & Oceanographic ---
-    "salinity", "temperature", "conductivity", "ctd", "water column",
-    "wave height", "sea state", "currents", "east australian current", "eac",
-    "sediment", "substrate", "turbidity", "density", "pressure", "hydrography",
-    "hydrodynamics", "bathymetric grid",
-    "turbidity", "visibility", "swell", "surf zone",
-    "sediment transport", "beach gradient", "substrate composition",
-    "habitat zone", "sensitive habitat", "environmental restriction",
-    "oceanographic conditions", "sea floor roughness",
+    "bathymetric grid", "beach gradient", "conductivity", "ctd",
+    "current", "current shear", "density", "downwelling", "east australian current",
+    "eac", "environmental restriction", "halocline", "habitat zone",
+    "hydrodynamics", "hydrography", "hydrostatic pressure",
+    "internal wave", "ocean front", "oceanographic conditions",
+    "pressure", "salinity", "sea floor roughness", "sea state",
+    "sediment", "sediment transport", "sensitive habitat", "substrate",
+    "substrate composition", "swell", "temperature", "thermocline",
+    "tidal", "tide", "turbidity", "turbulent kinetic energy",
+    "upwelling", "visibility", "water column", "wave height",
 
-    # --- Vehicle, Platform & System Terms ---
-    "auv", "rov", "usv", "asv", "vessel", "autonomous surface vehicle",
-    "autonomous underwater vehicle", "remotely operated vehicle",
-    "launch and recovery system", "lars",
-    "payload", "hull", "propulsion", "battery", "thruster", "ballast",
-    "comms", "telemetry", "acoustic modem", "satellite link",
-    "mission controller", "operator console",
-    "battery life", "power consumption", "power budget",
-    "autonomy", "maneuverability", "stability",
-    "pitch", "roll", "yaw", "altitude", "attitude",
-    "turnaround time", "maintenance interval",
-    "payload capacity", "sensor payload",
-    "mission endurance", "duty cycle", "mission tempo",
+    # --- Historical & Contextual ---
+    "archival data", "baseline dataset", "historical", "historical bathymetry",
+    "historical survey", "legacy mission", "mission archive", "past operations",
+    "reference dataset", "reference data",
 
-    # --- Survey & Mapping ---
-    "survey line", "survey grid", "swath", "coverage map",
-    "overlap", "track spacing", "line plan", "mosaic", "geotiff",
-    "digital elevation model", "dem", "point cloud",
-    "metadata", "data quality flag", "ping rate", "ping",
+    # --- Mission Parameters & Objectives ---
+    "area coverage rate", "coverage requirement", "mission", "mission duration",
+    "mission feasibility", "mission objective", "mission phase",
+    "mission profile", "mission readiness", "mission rehearsal",
+    "mission risk", "mission sequencing", "mission segment",
+    "mission tempo", "mission timeline", "mission validation",
+    "search pattern", "survey objective", "time on task",
 
-    # --- Navigation ---
-    "survey speed", "survey coverage", "route safety",
-    "area of operation", "zone of confidence", "no-go zone", "restricted zone",
-    "navigational hazard", "submerged hazard", "route plan",
+    # --- Navigation & Positioning ---
+    "accuracy", "ais", "bearing", "chart datum", "chart projection",
+    "coordinate reference system", "depth", "doppler velocity log",
+    "dvl", "epsg", "fix", "fix accuracy", "geo-reference", "gnss",
+    "gps", "heading", "inertial drift", "inertial navigation system",
+    "ins", "local datum", "navigation", "navigation solution",
+    "no-go zone", "navigational hazard", "position", "position fix",
+    "position uncertainty", "route", "route plan", "survey coverage",
+    "survey speed", "trackline", "waypoint", "zone of confidence",
 
-    # --- Sensor & Data Quality ---
-    "sensor calibration", "calibration status", "calibration coefficient",
-    "update frequency", "fix frequency", "sampling rate",
-    "data quality", "data resolution", "signal to noise ratio", "snr",
-    "acoustic interference", "positional uncertainty", "confidence zone",
+    # --- Operational Logistics ---
+    "access corridor", "area of interest", "area of operation", "area of operations",
+    "deployment", "deployment vessel", "launch", "launch point",
+    "launch sequence", "launch site", "mission logistics", "operation window",
+    "operational area", "recovery", "recovery location", "recovery operation",
+    "recovery point", "recovery track", "staging area", "support vessel",
+    "survey planning", "transit", "transit corridor",
+
+    # --- Organisational / Workflow & Control ---
+    "command latency", "control architecture", "mission control",
+    "system configuration", "system validation",
+
+    # --- Programmatic / Org-Specific ---
+    "api", "arcgis", "aodn", "emii", "geopandas", "geoserver", "imos",
+    "matlab", "nmea", "pandas", "postgis", "qgis",
 
     # --- Risk, Safety & Regulation ---
-    "no-go zone", "restricted area", "exclusion zone",
-    "collision avoidance", "safety case", "risk assessment", "fail-safe",
-    "redundancy", "contingency plan", "risk factor", "risk likelihood", "risk severity",
-    "mitigation measure", "contingency procedure", "safety margin",
-    "failure mode", "critical system", "redundant system",
+    "collision avoidance", "contingency plan", "contingency procedure",
+    "critical system", "environmental hazard", "exclusion zone",
+    "fail-safe", "failure mode", "loss of communications", "loss of signal",
+    "mitigation measure", "redundancy", "redundant system",
+    "restricted area", "restricted zone", "risk", "risk assessment",
+    "risk factor", "risk likelihood", "risk mitigation strategy",
+    "risk severity", "safety", "safety case", "safety margin",
+    "submerged hazard", "threat",
+
+    # --- Sensor & Data Quality ---
+    "acoustic", "acoustic interference", "calibration coefficient",
+    "calibration status", "confidence zone", "data quality",
+    "data quality flag", "data resolution", "fix frequency",
+    "ping", "ping rate", "positional uncertainty", "sampling rate",
+    "sensor", "sensor calibration", "signal to noise ratio", "snr",
+    "update frequency",
+
+    # --- Survey & Mapping ---
+    "coverage", "digital elevation model", "dem", "line plan",
+    "metadata", "mosaic", "overlap", "survey", "survey grid",
+    "survey line", "swath", "track spacing",
 
     # --- Temporal & Mission Management ---
-    "time on task", "mission duration", "mission segment", "mission phase",
-    "launch window", "recovery window", "time synchronization", "utc", "timestamp",
+    "launch window", "mission debrief", "mission execution",
+    "mission window", "recovery window", "time synchronization",
+    "timestamp", "utc",
 
-    # --- Analytical & Data Management ---
-    "machine learning", "artificial intelligence", "ai", "ml",
-    "training data", "test set", "validation data",
-    "geospatial data", "netcdf", "geojson", "json-ld", "metadata schema",
-    "knowledge graph", "ontology", "taxonomy", "semantic model",
-    "estimation factor", "estimated parameter", "performance model",
-    "error budget", "uncertainty model", "probability distribution",
-    "confidence interval", "sensitivity analysis",
+    # --- Terrain & Bathymetry ---
+    "bathy grid", "bathymetry", "bottom texture", "bottom type",
+    "complexity", "gradient", "multibeam", "seabed", "seabed morphology",
+    "seafloor", "seafloor complexity", "slope", "terrain", "terrain model",
+    "topography", "vector electronic navigational charts",
 
-    # --- Organisational / Workflow & Control terms
-    "mission planning system", "mission control", "control interface",
-    "vehicle controller", "command and control", "c2", "telemetry link",
-    "communications plan", "uplink", "downlink", "latency",
-
-    # --- Programmatic / Org-specific Terms (found in RFI responses) ---
-    "imos", "emii", "aodn", "nmea", "csv", "api", "sdk",
-    "postgis", "geoserver", "arcgis", "qgis", "python", "r",
-    "matlab", "pandas", "xarray", "geopandas",
-
-    # --- Operational Areas ---
-    "area of interest", "operational area", "search area",
-    "launch point", "recovery point", "access corridor",
-    "mission window", "deployment window", "survey corridor",
+    # --- Vehicle, Platform & System Terms ---
+    "altitude", "asv", "attitude", "auv", "autonomous surface vehicle",
+    "autonomous underwater vehicle", "battery", "battery endurance",
+    "battery life", "ballast", "climb rate", "communication",
+    "descent rate", "duty cycle", "endurance", "equipment limitations",
+    "hover capability", "hull", "launch and recovery system", "lars",
+    "maneuverability", "maximum", "minimum", "mission abort condition",
+    "mission endurance", "oem", "payload", "payload bay",
+    "payload capacity", "pitch", "platform", "power budget",
+    "power consumption", "power constraint", "propulsion", "range",
+    "roll", "rov", "speed", "stability", "thruster", "turn radius",
+    "turnaround time", "usv", "vehicle", "vehicle controller",
+    "vehicle fault", "vessel", "yaw", "unmanned underwater vehicle",
 }
 
-# Synonym–Protection conflict rules
+
+# Synonym - Protection conflict rules
 CONFLICT_RULES = {
     # --- Temporal / Oceanographic context ---
     "temporal": {
         "protected": [
             "current", "tidal", "tide", "eac", "east australian current",
-            "temporal resolution", "time series", "timestamp", "utc"
+            "temporal resolution", "time series", "timestamp", "utc",
+            "time synchronization", "mission timeline"
         ],
-        "synonyms": ["time", "duration", "interval", "period"]
+        "synonyms": ["time", "duration", "interval", "period", "timespan"]
+    },
+
+    # --- Terrain / Bathymetric context ---
+    "terrain_bathymetry": {
+        "protected": [
+            "depth", "bathymetry", "bathymetric grid", "seafloor", "seabed",
+            "gradient", "slope", "topography", "terrain", "bathy grid",
+            "chart datum", "vertical datum", "bottom texture"
+        ],
+        "synonyms": ["depth", "area", "layer", "zone", "surface"]
+    },
+
+    # --- Environmental / Oceanographic context ---
+    "environmental": {
+        "protected": [
+            "sea state", "wave height", "turbidity", "sediment", "substrate",
+            "temperature", "salinity", "water column", "density", "conductivity",
+            "eac", "east australian current", "hydrodynamics", "hydrography"
+        ],
+        "synonyms": ["environment", "conditions", "ocean", "marine", "weather"]
     },
 
     # --- Survey / Mapping context ---
     "survey": {
         "protected": [
             "survey", "multibeam echo sounder", "mbes", "coverage map",
-            "swath", "line plan", "track spacing", "geotiff", "digital elevation model"
+            "swath", "line plan", "track spacing", "geotiff",
+            "digital elevation model", "dem", "survey grid", "coverage polygon"
         ],
-        "synonyms": ["survey", "data", "mapping", "collection"]
+        "synonyms": ["mapping", "data", "collection", "surveying", "charting"]
     },
 
-    # --- Spatial / Geospatial context ---
-    "spatial": {
+    # --- Navigation / Positioning context ---
+    "navigation_and_positioning": {
         "protected": [
-            "navigation", "route", "trackline", "trajectory", "heading",
-            "geofence", "waypoint", "coordinate reference system", "epsg"
+            "gps", "gnss", "positioning", "navigation", "ins",
+            "inertial navigation system", "doppler velocity log", "dvl",
+            "fix", "bearing", "waypoint", "route", "trackline",
+            "coordinate reference system", "epsg", "geofence", "chart datum"
         ],
-        "synonyms": ["path", "location", "position", "space"]
+        "synonyms": ["location", "path", "trajectory", "movement", "space"]
     },
 
-    # --- Vertical / Bathymetric context ---
-    "vertical": {
+    # --- Mission Operations context ---
+    "mission_ops": {
         "protected": [
-            "depth", "bathymetry", "seafloor", "seabed", "vertical datum",
-            "chart datum", "gradient", "topography"
+            "launch", "recovery", "transit", "endurance", "mission duration",
+            "mission phase", "mission controller", "operator console",
+            "mission segment", "mission readiness", "mission objective"
         ],
-        "synonyms": ["depth", "area", "layer", "zone"]
+        "synonyms": ["mission", "operation", "activity", "task", "objective"]
+    },
+
+    # --- Vehicle / Platform context ---
+    "platform": {
+        "protected": [
+            "launch and recovery system", "lars", "auv", "usv", "rov", "asv", "uuv",
+            "autonomous underwater vehicle", "autonomous surface vehicle",
+            "remotely operated vehicle", "vessel", "platform", "hull", "payload",
+            "unmanned underwater vehicle",
+        ],
+        "synonyms": ["vehicle", "capability", "system", "asset"]
+    },
+
+    # --- Propulsion / Power context ---
+    "propulsion": {
+        "protected": [
+            "propulsion", "thruster", "battery", "ballast", "energy",
+            "power system", "power budget", "battery endurance"
+        ],
+        "synonyms": ["drive", "movement", "motor", "thrust"]
+    },
+
+    # --- Communications / Networking context ---
+    "comms": {
+        "protected": [
+            "comms", "telemetry", "acoustic modem", "satellite link",
+            "uplink", "downlink", "api", "sdk", "network interface", "data uplink",
+            "bandwidth allocation", "link stability", "latency"
+        ],
+        "synonyms": ["communication", "connectivity", "link", "signal"]
+    },
+
+    # --- Data Processing / Modeling context ---
+    "data_processing": {
+        "protected": [
+            "machine learning", "artificial intelligence", "ai", "ml",
+            "training data", "test set", "validation data",
+            "python", "r", "matlab", "pandas", "xarray", "geopandas",
+            "data fusion", "data pipeline"
+        ],
+        "synonyms": ["analytics", "modeling", "processing", "prediction"]
+    },
+
+    # --- Semantic / Integration context ---
+    "semantic_data": {
+        "protected": [
+            "knowledge graph", "ontology", "taxonomy", "json-ld",
+            "metadata schema", "controlled vocabulary", "data dictionary",
+            "semantic model", "cf convention", "netcdf-cf"
+        ],
+        "synonyms": ["data", "classification", "schema", "structure"]
     },
 
     # --- Risk / Safety / Compliance context ---
@@ -372,99 +285,231 @@ CONFLICT_RULES = {
         "protected": [
             "risk", "threat", "hazard", "cyber risk", "no-go zone",
             "collision avoidance", "restricted area", "safety case", "fail-safe",
-            "redundancy", "contingency plan"
+            "redundancy", "contingency plan", "risk assessment",
+            "risk likelihood", "risk severity", "mitigation measure"
         ],
-        "synonyms": ["important", "limitation", "consideration", "danger"]
+        "synonyms": ["important", "limitation", "consideration", "danger", "vulnerability"]
     },
 
-    # --- Mission Operations context ---
-    "mission_ops": {
+    # --- Logistics / Operational Planning context (NEW) ---
+    "logistics": {
         "protected": [
-            "launch", "recovery", "transit", "endurance", "mission duration",
-            "mission phase", "mission controller", "operator console"
+            "deployment", "launch point", "recovery point", "access corridor",
+            "mission window", "staging area", "support vessel", "turnaround time"
         ],
-        "synonyms": ["mission", "operation", "activity", "task"]
+        "synonyms": ["planning", "coordination", "support", "setup"]
     },
 
-    # --- Navigation / Positioning context ---
-    "navigation": {
+    # --- Data Products / Deliverables context (NEW) ---
+    "data_products": {
         "protected": [
-            "gps", "gnss", "positioning", "navigation", "ins", "inertial navigation system",
-            "doppler velocity log", "dvl", "fix", "bearing"
+            "data product", "survey deliverable", "coverage polygon",
+            "data quality", "zone of confidence", "confidence zone"
         ],
-        "synonyms": ["accuracy", "location", "tracking", "movement"]
+        "synonyms": ["output", "dataset", "map", "deliverable"]
     },
 
-    # --- Sensors / Instrumentation context ---
-    "sensors": {
+    # --- Performance / Evaluation context (NEW) ---
+    "performance": {
         "protected": [
-            "sensor", "sonar", "acoustic", "telemetry", "ctd", "conductivity",
-            "temperature", "pressure", "salinity", "hydrography", "hydrodynamics"
+            "efficiency", "throughput", "latency", "accuracy",
+            "timing", "delay", "performance model"
         ],
-        "synonyms": ["data", "collection", "measurement"]
+        "synonyms": ["speed", "effectiveness", "responsiveness"]
     },
 
-    # --- Semantic / Data Integration context ---
-    "semantic_data": {
+    # --- Historical / Contextual Data context (NEW) ---
+    "historical": {
         "protected": [
-            "knowledge graph", "ontology", "taxonomy", "json-ld", "metadata schema",
-            "controlled vocabulary", "data dictionary", "semantic model"
+            "historical", "legacy mission", "past operations",
+            "reference data", "archive", "baseline dataset"
         ],
-        "synonyms": ["data", "classification", "schema"]
-    },
-
-    # --- Platform / Vehicle context ---
-    "platform": {
-        "protected": [
-            "launch and recovery system", "lars", "auv", "usv", "rov", "asv", "uuv",
-            "autonomous underwater vehicle", "autonomous surface vehicle",
-            "remotely operated vehicle", "vessel", "platform"
-        ],
-        "synonyms": ["vehicle", "capability", "system"]
-    },
-
-    # --- Power / Propulsion context (NEW) ---
-    "propulsion": {
-        "protected": [
-            "propulsion", "thruster", "battery", "ballast", "energy", "power system"
-        ],
-        "synonyms": ["drive", "movement", "motor"]
-    },
-
-    # --- Communication / Network context (NEW) ---
-    "comms": {
-        "protected": [
-            "comms", "telemetry", "acoustic modem", "satellite link",
-            "api", "sdk", "network interface", "data uplink"
-        ],
-        "synonyms": ["communication", "connectivity", "link"]
-    },
-
-    # --- Data Science / Processing context (NEW) ---
-    "data_processing": {
-        "protected": [
-            "machine learning", "artificial intelligence", "ai", "ml",
-            "training data", "test set", "validation data",
-            "python", "r", "matlab", "pandas", "xarray", "geopandas"
-        ],
-        "synonyms": ["analytics", "modeling", "processing"]
-    },
-
-    # --- Environmental / Oceanographic context (NEW) ---
-    "environmental": {
-        "protected": [
-            "sea state", "wave height", "turbidity", "sediment", "substrate",
-            "density", "temperature", "salinity", "water column", "eac"
-        ],
-        "synonyms": ["environment", "conditions", "ocean"]
+        "synonyms": ["previous", "contextual", "reference", "benchmark"]
     }
 }
+
 
 # Which method to use, domain-specific (True) or general NLP (False)
 DOMAIN_SPECIFIC = True
 
 # Suppression Log
 SUPPRESSION_LOG = []
+
+
+def build_category_keywords(taxonomy: dict, lowercase: bool = True, deduplicate: bool = True) -> dict[str, list[str]]:
+    """
+    Build flat keyword lists per taxonomy category for classification.
+    Traverses the taxonomy hierarchy and collects all terms under 'Concepts'.
+
+    Args:
+        taxonomy (dict): The full taxonomy dict.
+        lowercase (bool): Whether to normalise keywords to lowercase.
+        deduplicate (bool): Whether to deduplicate keyword lists.
+
+    Returns:
+        dict[str, list[str]]: Mapping of category → keyword list.
+    """
+    category_keywords = {}
+
+    # Expect the taxonomy to be unwrapped at this point
+    # Each top-level key should be a category with a "Concepts" sub-dictionary
+    for category, content in taxonomy.items():
+        keywords = []
+        if isinstance(content, dict) and "Concepts" in content:
+            for group_terms in content["Concepts"].values():
+                if isinstance(group_terms, list):
+                    keywords.extend(group_terms)
+
+        # Optional normalization
+        if lowercase:
+            keywords = [kw.lower().strip() for kw in keywords]
+
+        # Optional deduplication while preserving order
+        if deduplicate:
+            seen = set()
+            keywords = [kw for kw in keywords if not (kw in seen or seen.add(kw))]
+
+        category_keywords[category] = keywords
+
+    return category_keywords
+
+
+def tokenize_text(text: str) -> List[str]:
+    """
+    Split text into candidate tokens/phrases for validation.
+    Keeps multi-word domain terms intact if possible.
+    """
+    # Normalise and keep multi-word phrases (basic approach)
+    tokens = re.findall(r"[A-Za-z0-9\-\s]+", text)
+    tokens = [t.strip().lower() for t in tokens if t.strip()]
+    return tokens
+
+
+def document_validate(text: str,
+                      context: str,
+                      CONFLICT_RULES: dict,
+                      PROTECTED_TERMS: set,
+                      DOMAIN_SYNONYMS: dict,
+                      strict_mode: bool = False,
+                      export_csv: str = None,
+                      export_json: str = None) -> dict:
+    """
+    Validate a whole text document against conflict rules, with composite context support.
+
+    Args:
+        text (str): Raw document text.
+        context (str): Context (single or composite like 'mission_ops+vehicle').
+        CONFLICT_RULES (dict): Context conflict rules.
+        PROTECTED_TERMS (set): Global protected terms.
+        DOMAIN_SYNONYMS (dict): Domain synonym mappings.
+        strict_mode (bool): If True, cross-context validation is enabled.
+        export_csv (str): Path to export CSV results.
+        export_json (str): Path to export JSON results.
+
+    Returns:
+        dict: Structured validation report.
+    """
+
+    tokens = tokenize_text(text)
+    report = batch_validate(tokens, context, CONFLICT_RULES, PROTECTED_TERMS, DOMAIN_SYNONYMS, strict_mode)
+
+    # Export if requested
+    df = pd.DataFrame(report["results"])
+    if export_csv:
+        df.to_csv(export_csv, index=False)
+    if export_json:
+        df.to_json(export_json, orient="records", indent=2)
+
+    return report
+
+
+def validate_responses_csv(input_csv,
+                           output_dir,
+                           CONFLICT_RULES,
+                           PROTECTED_TERMS,
+                           DOMAIN_SYNONYMS,
+                           strict_mode=False):
+    """
+    Validate all responses in a normalised SME CSV (e.g. normalised_all_responses.csv).
+    Generates per-scenario, per-question conflict reports.
+
+    Args:
+        input_csv (str): Path to the normalised responses CSV.
+        output_dir (str): Directory to store validation reports.
+        CONFLICT_RULES (dict): Context-specific conflict rules.
+        PROTECTED_TERMS (set): Global protected terms.
+        DOMAIN_SYNONYMS (dict): Domain-level synonym mappings.
+        strict_mode (bool): If True, check for cross-context conflicts.
+
+    Returns:
+        dict: Summary statistics across all scenarios/questions.
+    """
+    os.makedirs(output_dir, exist_ok=True)
+
+    df = pd.read_csv(input_csv)
+
+    all_summary = {}
+
+    for (scenario, question), group in df.groupby(["ScenarioNumber", "Question"]):
+        context = map_question_to_context(question)  # You need a mapping fn
+        text_block = " ".join(group["ResponseText"].dropna().astype(str))
+
+        # Validate document-level
+        report = document_validate(
+            text=text_block,
+            context=context,
+            CONFLICT_RULES=CONFLICT_RULES,
+            PROTECTED_TERMS=PROTECTED_TERMS,
+            DOMAIN_SYNONYMS=DOMAIN_SYNONYMS,
+            strict_mode=strict_mode,
+            export_csv=os.path.join(output_dir, f"S{scenario}_{question}_conflict_report.csv"),
+            export_json=os.path.join(output_dir, f"S{scenario}_{question}_conflict_report.json")
+        )
+
+        # Store summary
+        all_summary[(scenario, question)] = report["summary"]
+
+    return all_summary
+
+
+def map_question_to_context(question: str) -> str:
+    """
+    Map RFI question text to taxonomy-aligned validation context.
+    Returns a taxonomy category key (or a composite label if multi-domain).
+    """
+
+    q = question.lower().strip()
+
+    # --- Q1: Data required for a scenario (what inputs are needed)
+    # Covers terrain, environmental data, vehicle constraints, and navigation safety
+    if q.startswith("q1"):
+        return "terrain_bathymetry+environmental+vehicle+navigation"
+
+    # --- Q2: Estimated factors (what variables should be considered)
+    # Aligns strongly with mission ops, vehicle performance, and environmental conditions
+    elif q.startswith("q2"):
+        return "mission_ops+vehicle+environmental+performance"
+
+    # --- Q3: Estimation guidance (what methods/models should be used)
+    # Links to data processing, modelling, historical data, and risk assessment
+    elif q.startswith("q3"):
+        return "data_processing+historical+risk+performance"
+
+    # --- Q4: Risks to be assessed (risk identification and assessment methods)
+    elif q.startswith("q4"):
+        return "risk+environmental+vehicle"
+
+    # --- Q5: Specific risks flagged (hazards, safety, mission-critical risk)
+    elif q.startswith("q5"):
+        return "risk+threats+mission_ops"
+
+    # --- Q6: Documentation & records (knowledge management and data quality)
+    elif q.startswith("q6"):
+        return "semantic_data+data_products+historical"
+
+    # --- Fallback
+    else:
+        return "general"
 
 
 def log_suppression(word, protected, context_snippet):
@@ -540,7 +585,7 @@ def augment_text_structural(text: str) -> str:
     ]
 
     augmented = text
-    # Apply one random transformation if pattern matches
+    # Apply one random transformation if a pattern matches
     random.shuffle(transformations)
     for pattern, replacement in transformations:
         if re.search(pattern, augmented, re.IGNORECASE):
@@ -548,6 +593,224 @@ def augment_text_structural(text: str) -> str:
             break
 
     return augmented
+
+
+def check_conflict(word, context, conflict_rules):
+    """
+    Validate whether a given word conflicts with the protected or synonym sets
+    of a specific semantic context.
+
+    Parameters
+    ----------
+    word : str
+        The candidate word or phrase to test.
+    context : str
+        The domain context (e.g. 'temporal', 'survey', 'mission_ops').
+    conflict_rules : dict
+        The CONFLICT_RULES structure defining protected/synonym sets.
+
+    Returns
+    -------
+    dict
+        A structured validation result:
+        {
+            "status": "protected" | "synonym_conflict" | "allowed" | "unknown_context",
+            "context": context,
+            "reason": str
+        }
+
+    Examples
+    --------
+    >>> check_conflict("bathymetry", "terrain_bathymetry", CONFLICT_RULES)
+    {'status': 'protected', 'context': 'terrain_bathymetry', 'reason': 'Exact match in protected terms.'}
+
+    >>> check_conflict("time", "temporal", CONFLICT_RULES)
+    {'status': 'synonym_conflict', 'context': 'temporal', 'reason': 'Matches synonym list; may conflict semantically.'}
+
+    >>> check_conflict("fish", "environmental", CONFLICT_RULES)
+    {'status': 'allowed', 'context': 'environmental', 'reason': 'No match found in protected or synonym lists.'}
+    """
+    # Normalise inputs
+    word = word.strip().lower()
+    context = context.strip().lower()
+
+    # Validate context
+    if context not in conflict_rules:
+        return {
+            "status": "unknown_context",
+            "context": context,
+            "reason": f"Context '{context}' not defined in conflict rules."
+        }
+
+    rules = conflict_rules[context]
+    protected = set(w.lower() for w in rules.get("protected", []))
+    synonyms = set(w.lower() for w in rules.get("synonyms", []))
+
+    # Exact match checks
+    if word in protected:
+        return {
+            "status": "protected",
+            "context": context,
+            "reason": "Exact match in protected terms."
+        }
+
+    if word in synonyms:
+        return {
+            "status": "synonym_conflict",
+            "context": context,
+            "reason": "Matches synonym list; may conflict semantically."
+        }
+
+    # Partial match heuristic (e.g., "mission phase" contains "mission")
+    for p in protected:
+        if re.search(rf"\b{re.escape(p)}\b", word):
+            return {
+                "status": "protected",
+                "context": context,
+                "reason": f"Contains protected token '{p}'."
+            }
+
+    for s in synonyms:
+        if re.search(rf"\b{re.escape(s)}\b", word):
+            return {
+                "status": "synonym_conflict",
+                "context": context,
+                "reason": f"Contains synonym token '{s}'."
+            }
+
+    # Otherwise safe
+    return {
+        "status": "allowed",
+        "context": context,
+        "reason": "No match found in protected or synonym lists."
+    }
+
+
+def check_conflict_all(word, conflict_rules):
+    """
+    Run check_conflict across all defined contexts and return all conflicts found.
+    """
+    results = []
+    for ctx in conflict_rules.keys():
+        result = check_conflict(word, ctx, conflict_rules)
+        if result["status"] in ("protected", "synonym_conflict"):
+            results.append(result)
+    return results or [{
+        "status": "allowed",
+        "context": None,
+        "reason": "No conflicts found in any context."
+    }]
+
+
+def validate_term(term, context, CONFLICT_RULES, PROTECTED_TERMS, DOMAIN_SYNONYMS, strict_mode=False):
+    """
+    Validate a term against protected terms and conflict rules.
+    Supports composite contexts separated by '+' (e.g. "mission_ops+vehicle").
+    """
+
+    term_lower = term.lower().strip()
+    contexts = [c.strip().lower() for c in context.split("+")]
+
+    all_results = []
+    final_status = "valid"
+    final_details = []
+
+    # --- Global protection check
+    if term_lower in PROTECTED_TERMS:
+        return {
+            "term": term,
+            "context": context,
+            "status": "protected",
+            "details": f"Globally protected technical term – must not be replaced."
+        }
+
+    # --- Check each context individually
+    for ctx in contexts:
+        if ctx not in CONFLICT_RULES:
+            continue
+
+        rules = CONFLICT_RULES[ctx]
+        protected = [p.lower() for p in rules.get("protected", [])]
+        synonyms = [s.lower() for s in rules.get("synonyms", [])]
+
+        if term_lower in protected:
+            all_results.append(("protected", f"Protected within context '{ctx}'."))
+        elif term_lower in synonyms:
+            all_results.append(("conflict", f"Potential synonym conflict in context '{ctx}'."))
+
+        # Strict mode: check cross-context conflicts
+        if strict_mode:
+            cross_conflicts = []
+            for other_ctx, other_rules in CONFLICT_RULES.items():
+                if other_ctx == ctx:
+                    continue
+                if term_lower in [p.lower() for p in other_rules.get("protected", [])]:
+                    cross_conflicts.append(other_ctx)
+            if cross_conflicts:
+                all_results.append(("cross_conflict", f"Protected in other context(s): {', '.join(cross_conflicts)}"))
+
+    # --- Domain-level synonym conflict
+    for key, syns in DOMAIN_SYNONYMS.items():
+        all_syns = [s.lower() for s in syns] + [key.lower()]
+        if term_lower in all_syns and key.lower() in PROTECTED_TERMS:
+            all_results.append(("conflict", f"'{term}' overlaps with protected domain term '{key}'."))
+
+    # --- Merge results
+    if all_results:
+        # Priority: protected > cross_conflict > conflict > valid
+        priorities = {"protected": 3, "cross_conflict": 2, "conflict": 1, "valid": 0}
+        final_status = max(all_results, key=lambda x: priorities[x[0]])[0]
+        final_details = [msg for _, msg in all_results]
+    else:
+        final_status = "valid"
+        final_details = ["No conflict detected."]
+
+    return {
+        "term": term,
+        "context": context,
+        "status": final_status,
+        "details": "; ".join(final_details)
+    }
+
+
+def batch_validate(terms, context, CONFLICT_RULES, PROTECTED_TERMS, DOMAIN_SYNONYMS, strict_mode=False):
+    """
+    Batch-validate a list of terms against protected and conflict rules.
+    Handles composite contexts (split by '+').
+
+    Args:
+        terms (list[str]): Words or phrases to validate.
+        context (str): Active domain context (or composite, e.g. 'mission_ops+vehicle').
+        CONFLICT_RULES (dict): Context rules containing 'protected' and 'synonyms' lists.
+        PROTECTED_TERMS (set): Globally protected terms.
+        DOMAIN_SYNONYMS (dict): Domain-level synonym mappings.
+        strict_mode (bool): If True, check for cross-context conflicts.
+
+    Returns:
+        dict: {
+            "context": str,
+            "results": [ {"term": str, "status": str, "details": str} ],
+            "summary": {"valid": int, "protected": int, "conflict": int, "cross_conflict": int}
+        }
+    """
+
+    results = []
+    summary = {"valid": 0, "protected": 0, "conflict": 0, "cross_conflict": 0}
+
+    for term in terms:
+        result = validate_term(term, context, CONFLICT_RULES, PROTECTED_TERMS, DOMAIN_SYNONYMS, strict_mode)
+        results.append({
+            "term": result["term"],
+            "status": result["status"],
+            "details": result["details"]
+        })
+        summary[result["status"]] = summary.get(result["status"], 0) + 1
+
+    return {
+        "context": context,
+        "results": results,
+        "summary": summary
+    }
 
 
 def get_domain_synonyms(word: str, domain_synonyms: dict[str, list[str]], protected_terms: set[str]) -> list[str]:
@@ -559,12 +822,12 @@ def get_domain_synonyms(word: str, domain_synonyms: dict[str, list[str]], protec
       - Normalizes input for consistent matching
       - Handles plural/singular equivalence
       - Ensures synonyms are safe and not recursive
-      - Optionally supports fuzzy matching for near-misses (e.g., 'depths' → 'depth')
+      - Optionally supports fuzzy matching for near-misses (e.g. 'depths' → 'depth')
 
     :param word: The word or phrase to find synonyms for.
     :param domain_synonyms: Controlled mapping of domain terms → synonym lists.
     :param protected_terms: Set of protected technical or domain-specific terms.
-    :return: List of domain-safe synonyms, or [] if none found or term is protected.
+    :return: List of domain-safe synonyms, or [] if none is found, or the term is protected.
     """
 
     # Normalize input
@@ -741,7 +1004,7 @@ def augment_text(text: str, aug_prob=0.3, max_synonyms=2) -> str:
 
     augmented_text = ' '.join(augmented_words)
 
-    # Optionally apply minimal structural variation
+    # Optionally, apply minimal structural variation
     if random.random() < 0.3:  # 30% chance of structural change
         augmented_text = augment_text_structural(augmented_text)
 
@@ -750,29 +1013,17 @@ def augment_text(text: str, aug_prob=0.3, max_synonyms=2) -> str:
 
 # --- Simple keyword-based classification ---
 # Since transformers may also have dependency issues, implementing a keyword-based classifier
-def _calculate_category_scores(text_lower: str, q: str) -> dict[str, int]:
+def _calculate_category_scores(text_lower: str, category_keywords: dict[str, list[str]]) -> dict[str, int]:
     """
-    Calculates and returns category scores based on a text and a specific query.
+    Calculates category scores based on keyword matches in text.
 
-    This function computes a score for each category based on the occurrence of
-    keywords in the given text. The category keywords are selected based on the
-    provided query. The score for a category is the total count of keywords from
-    that category that appear in the text.
+    Args:
+        text_lower (str): Input text (lowercased).
+        category_keywords (dict): Mapping of category -> keyword list.
 
-    :param text_lower: A lowercase string to be evaluated against category
-        keywords.
-        Example: "this is a sample text".
-    :param q: A string representing the query to determine which category
-        keywords to use. Example: "Q1".
-    :return: A dictionary where keys are categories (strings) and values are
-        scores (integers) representing the count of matching keywords for
-        each category.
-    :rtype: dict[str, int]
+    Returns:
+        dict[str, int]: Scores per category.
     """
-    if q[0] == "Q":
-        category_keywords = CATEGORY_KEYWORDS
-    else:
-        raise ValueError("Invalid question. Please provide a valid question to assess.")
     scores = {}
     for category, keywords in category_keywords.items():
         score = sum(1 for keyword in keywords if keyword in text_lower)
@@ -780,31 +1031,33 @@ def _calculate_category_scores(text_lower: str, q: str) -> dict[str, int]:
     return scores
 
 
-def classify_response(text: str, question: str) -> tuple[str, dict[str, float]]:
+def classify_response(text: str, taxonomy: dict) -> tuple[str, dict[str, float]]:
     """
-    Analyses a given response text and a question to classify the response into a category
-    based on calculated scores. The function returns the predicted category as well as
-    the normalised scores for all potential categories.
+    Classify a response into a taxonomy category using keywords from taxonomy.
 
-    :param text: Input response text for classification
-    :type text: str
-    :param question: The reference question to help in classification
-    :type question: str
-    :return: A tuple containing the predicted category as a string and a dictionary of
-             normalised scores for all categories.
-    :rtype: tuple[str, dict[str, float]]
+    Args:
+        text (str): Response text.
+        taxonomy (dict): Full taxonomy dict.
+
+    Returns:
+        tuple[str, dict[str, float]]:
+            - predicted category
+            - normalized scores
     """
     text_lower = text.lower()
 
-    # Calculate scores for each category
-    scores = _calculate_category_scores(text_lower, question)
+    # Build category keywords dynamically from taxonomy
+    category_keywords = build_category_keywords(taxonomy, lowercase=True, deduplicate=True)
 
-    # Get the category with the highest score
+    # Score categories
+    scores = _calculate_category_scores(text_lower, category_keywords)
+
+    # Pick best-scoring category
     predicted_category = max(scores, key=scores.get, default='uncategorised')
     if scores.get(predicted_category, 0) == 0:
         predicted_category = 'uncategorised'
 
-    # Normalise scores
+    # Normalize scores
     total_score = sum(scores.values()) if sum(scores.values()) > 0 else 1
     normalized_scores = {k: v / total_score for k, v in scores.items()}
 
@@ -887,27 +1140,26 @@ def augment_response_dataset(responses: pd.DataFrame, aug_prob: float = 0.3,
     return augmented_df
 
 
-def classify_responses(responses: pd.DataFrame, question: str) -> list[dict]:
+def classify_responses(responses: pd.DataFrame, taxonomy: dict ) -> list[dict]:
     """
-    Classifies a list of responses based on a given question. Each response is
-    analysed to determine its predicted category and associated scores, which
-    are then aggregated into a structured list of dictionaries.
-
-    :param responses: A list of textual responses to be classified.
-    :param question: A string representing the question related to the responses.
-    :return: A list of dictionaries, each containing the response, its predicted
-             category, and associated scores.
+    Classify responses with optional validation flags attached.
     """
     results = []
     for _, resp in responses.iterrows():
         resp_id = resp['ResponseID']
         text = resp['ResponseText']
-        predicted_category, all_scores = classify_response(text, question)
+        predicted_category, all_scores = classify_response(text, taxonomy)
+
         results.append({
             'ResponseID': resp_id,
             'response': text,
             'predicted_category': predicted_category,
-            'all_scores': str(all_scores)
+            'all_scores': str(all_scores),
+            # --- carry validation flags if present ---
+            'has_protected': resp.get('has_protected', False),
+            'has_conflict': resp.get('has_conflict', False),
+            'has_cross_conflict': resp.get('has_cross_conflict', False),
+            'validation_summary': str(resp.get('validation_summary', {}))
         })
     return results
 
@@ -929,27 +1181,18 @@ def save_and_display_results(results: list[dict], output_path: str) -> None:
     print(df['predicted_category'].value_counts())
 
 
-def main(question: str, scenario: int, merge_to_source: bool = False):
+def main(question: str, scenario: int, taxonomy: dict, merge_to_source: bool = False, strict_mode: bool = True):
     """
-    Executes the main process for loading, filtering, preprocessing, augmenting,
-    classifying responses, and saving results based on input question and scenario.
-
-    The function undergoes several steps:
-    1. Loads and filters a dataset of responses based on input criteria.
-    2. Preprocesses filtered responses for further processing.
-    3. Augments the dataset by introducing controlled variations (e.g. synonyms).
-    4. Classifies the augmented responses using a classification model.
-    5. Saves the classification results to an output file.
-    6. Optionally merges classifications back to the source data (call separately after all scenarios).
-
-    :param question: The question is used to filter and classify responses.
-    :type question: str
-    :param scenario: The scenario number used for filtering and naming output files.
-    :type scenario: int
-    :param merge_to_source: Whether to merge ALL classifications back to source (do this after running all scenarios).
-    :type merge_to_source: bool
-    :return: None
+    Extended main pipeline:
+      1. Load and filter responses
+      2. Preprocess responses
+      3. Augment dataset
+      4. Validate responses (protected/conflict terms)
+      5. Classify validated responses
+      6. Save classification results
+      7. Optionally merge results to source
     """
+
     # Load and filter data
     filtered_responses = load_and_filter_responses(
         file_path='./input/normalised_all_responses.csv',
@@ -968,22 +1211,65 @@ def main(question: str, scenario: int, merge_to_source: bool = False):
         sample_size=500
     )
 
-    # Classify responses
-    results = classify_responses(responses_aug, question)
+    # --- Run validation before classification ---
+    context = map_question_to_context(question)
+    validation_reports = {}
 
-    # Save and display results
+    enriched_responses = []
+    for _, row in responses_aug.iterrows():
+        text = row['ResponseText']
+        report = document_validate(
+            text=text,
+            context=context,
+            CONFLICT_RULES=CONFLICT_RULES,
+            PROTECTED_TERMS=PROTECTED_TERMS,
+            DOMAIN_SYNONYMS=DOMAIN_SYNONYMS,
+            strict_mode=strict_mode
+        )
+        flags = extract_validation_flags(report)
+
+        enriched_responses.append({
+            "ResponseID": row["ResponseID"],
+            "ResponseText": text,
+            **flags
+        })
+
+    validated_df = pd.DataFrame(enriched_responses)
+
+    # Save validation logs per scenario/question
+    validation_output_path = f"./output/S{scenario}_{question}_validation_summary.json"
+    pd.DataFrame(validation_reports).to_json(validation_output_path, orient="records", indent=2)
+    print(f"Validation report saved: {validation_output_path}")
+
+    # --- Classify only validated responses ---
+    results = classify_responses(validated_df, taxonomy)
+
     classification_output_path = f"./output/S{scenario}_{question}_classification_results.csv"
-    save_and_display_results(
-        results=results,
-        output_path=classification_output_path
-    )
+    save_and_display_results(results, classification_output_path)
 
-    # Optionally merge all classifications (do this after running all scenarios)
+    # Create a summary report
+    summary_output_path = f"./output/S{scenario}_{question}_classification_summary.csv"
+    save_summary_report(results, summary_output_path)
+
+    # Optionally merge classifications to source
     if merge_to_source:
         print("\n" + "=" * 60)
         print("Merging ALL classifications back to source data...")
         print("=" * 60)
         merge_all_classifications()
+
+
+def extract_validation_flags(report: dict) -> dict:
+    """
+    Extracts simple boolean flags from a validation report summary.
+    """
+    summary = report.get("summary", {})
+    return {
+        "has_protected": summary.get("protected", 0) > 0,
+        "has_conflict": summary.get("conflict", 0) > 0,
+        "has_cross_conflict": summary.get("cross_conflict", 0) > 0,
+        "validation_summary": summary
+    }
 
 
 def merge_classifications_to_source(
@@ -1009,7 +1295,7 @@ def merge_classifications_to_source(
     # This handles the case where augmentation created multiple entries per ResponseID
     aggregated_classifications = classifications_df.groupby('ResponseID').agg({
         'predicted_category': lambda x: '|'.join(sorted(set(x))),  # Unique categories separated by |
-        'all_scores': 'first'  # Take first scores (they should be similar for same ResponseID)
+        'all_scores': 'first'  # Take first scores (they should be similar for the same ResponseID)
     }).reset_index()
 
     # Rename columns for clarity
@@ -1027,7 +1313,7 @@ def merge_classifications_to_source(
     # Fill NaN values for responses that weren't classified
     merged_df['PredictedCategories'].fillna('not_classified', inplace=True)
 
-    # Save to new file
+    # Save to a new file
     merged_df.to_csv(output_path, index=False)
 
     print(f"\n{'=' * 60}")
@@ -1037,7 +1323,7 @@ def merge_classifications_to_source(
     print(f"Classified responses: {len(merged_df[merged_df['PredictedCategories'] != 'not_classified'])}")
     print(f"Unclassified responses: {len(merged_df[merged_df['PredictedCategories'] == 'not_classified'])}")
 
-    # Show distribution of classification patterns
+    # Show the distribution of classification patterns
     print(f"\nClassification patterns:")
     category_counts = merged_df['PredictedCategories'].value_counts().head(10)
     print(category_counts)
@@ -1051,7 +1337,7 @@ def batch_merge_all_scenarios(question: str, scenarios: list[int]) -> None:
     """
     Merges classification results for multiple scenarios into the source data.
 
-    :param question: Question identifier (e.g., "Q1")
+    :param question: Question identifier (e.g. "Q1")
     :param scenarios: List of scenario numbers to process
     """
     for scenario in scenarios:
@@ -1147,7 +1433,7 @@ def merge_all_classifications_single_column(
     - Classification: The predicted category/categories
     - Version: Updated to "v0.2" for classified responses
     - ChangeNote: Set to "Initial classification" for classified responses
-    - ChangeDate: Set to current date for classified responses
+    - ChangeDate: Set to the current date for classified responses
 
     :param classification_files: List of tuples (scenario_number, question) to process.
     :param original_data_path: Path to original normalised responses CSV.
@@ -1200,7 +1486,7 @@ def merge_all_classifications_single_column(
                     original_df.loc[mask, 'Classification'] = category
 
                     # Update version control fields ONLY for classified responses
-                    # (i.e., not 'uncategorised' or 'not_classified')
+                    # (i.e. not 'uncategorised' or 'not_classified')
                     if category not in ['uncategorised', 'not_classified', '']:
                         original_df.loc[mask, 'Version'] = 'v0.2'
                         original_df.loc[mask, 'ChangeNote'] = 'Initial classification'
@@ -1257,7 +1543,10 @@ def merge_all_classifications():
         (3, 'Q1'),
         (1, 'Q2'),
         (2, 'Q2'),
-        (3, 'Q2')
+        (3, 'Q2'),
+        (1, 'Q3'),
+        (2, 'Q3'),
+        (3, 'Q3')
     ]
 
     merge_all_classifications_single_column(
@@ -1267,15 +1556,192 @@ def merge_all_classifications():
     )
 
 
+def save_summary_report(results: list[dict], summary_path: str) -> None:
+    """
+    Creates a summary CSV report of classification results with validation flags.
+
+    Args:
+        results (list[dict]): Per-response classification and validation results.
+        summary_path (str): Path to save the summary CSV.
+    """
+    df = pd.DataFrame(results)
+
+    # Group by category and flag states
+    summary = df.groupby(
+        ["predicted_category", "has_protected", "has_conflict", "has_cross_conflict"]
+    ).size().reset_index(name="count")
+
+    # Save to CSV
+    summary.to_csv(summary_path, index=False)
+
+    print(f"\nSummary report saved to: {summary_path}")
+    print(summary.head(10))
+
+
+def validate_domain_synonyms(file_path: str) -> dict:
+    """
+    Validate the structure of the DOMAIN_SYNONYMS JSON file.
+
+    Expected structure:
+    {
+        "term": ["synonym1", "synonym2", ...],
+        ...
+    }
+
+    Rules:
+    - Keys must be strings.
+    - Values must be lists.
+    - Each list item must be a string.
+    """
+
+    errors = []
+    with open(file_path, "r", encoding="utf-8") as f:
+        data = json.load(f)
+
+    if not isinstance(data, dict):
+        raise ValueError("DOMAIN_SYNONYMS file must contain a dictionary at the top level.")
+
+    for key, value in data.items():
+        if not isinstance(key, str):
+            errors.append(f"Key {key} is not a string.")
+
+        if not isinstance(value, list):
+            errors.append(f"Value for key '{key}' must be a list, got {type(value).__name__}.")
+            continue
+
+        for i, item in enumerate(value):
+            if not isinstance(item, str):
+                errors.append(
+                    f"Value at {key}[{i}] must be a string, got {type(item).__name__}."
+                )
+
+    return {
+        "is_valid": len(errors) == 0,
+        "errors": errors,
+        "count_terms": len(data),
+        "count_synonyms": sum(len(v) for v in data.values() if isinstance(v, list))
+    }
+
+
+def build_category_key_map(category_keywords: dict) -> dict:
+    """
+    Build a normalisation map from many possible variants (camelCase, snake_case,
+    no-spaces, etc.) to the canonical CATEGORY_KEYWORDS labels.
+
+    Args:
+        category_keywords (dict): The canonical category keywords dict where keys are
+                                  human-readable category labels (e.g. "Terrain and Bathymetry").
+
+    Returns:
+        dict: Mapping of normalised variants → canonical labels.
+    """
+    key_map = {}
+
+    for canonical in category_keywords.keys():
+        base = canonical.lower()
+
+        # Normalise by removing spaces, hyphens, underscores
+        normalized = re.sub(r'[^a-z0-9]', '', base)
+        key_map[normalized] = canonical
+
+        # Variants: camelCase style, snake_case, kebab-case
+        camel = ''.join(word.capitalize() for word in base.split())
+        key_map[camel.lower()] = canonical  # terrainandbathymetry
+        key_map[camel] = canonical          # TerrainAndBathymetry
+
+        snake = '_'.join(base.split())
+        key_map[snake] = canonical          # terrain_and_bathymetry
+
+        kebab = '-'.join(base.split())
+        key_map[kebab] = canonical          # terrain-and-bathymetry
+
+    return key_map
+
+
+def normalise_category_keys(imported_dict: dict, category_keywords: dict) -> dict:
+    """
+    Remap imported category keys (in arbitrary formatting) to the canonical keys
+    from CATEGORY_KEYWORDS.
+
+    Args:
+        imported_dict (dict): Imported dictionary with potentially inconsistent keys.
+        category_keywords (dict): Canonical CATEGORY_KEYWORDS dict.
+
+    Returns:
+        dict: Dictionary with keys remapped to canonical labels.
+    """
+    key_map = build_category_key_map(category_keywords)
+
+    def normalise_key(key: str) -> str:
+        return re.sub(r'[^a-z0-9]', '', key.lower())
+
+    normalized_dict = {}
+    for k, v in imported_dict.items():
+        norm_k = normalise_key(k)
+        mapped_key = key_map.get(norm_k, k)  # fallback to original if not found
+        normalized_dict[mapped_key] = v
+
+    return normalized_dict
+
+
+def humanise_key(key: str) -> str:
+    """
+    Convert taxonomy keys like 'MissionPlanningTaxonomy'
+    into 'Mission Planning Taxonomy'.
+    Handles CamelCase, PascalCase, snake_case, and kebab-case.
+    """
+    # Replace underscores and hyphens with spaces
+    key = key.replace("_", " ").replace("-", " ")
+    # Add spaces before capital letters (but not at start)
+    key = re.sub(r'(?<!^)(?=[A-Z])', ' ', key)
+    # Normalise whitespace and title case
+    key = re.sub(r'\s+', ' ', key).strip()
+    return key
+
+
 if __name__ == "__main__":
+    # Define keywords for each category as a module constant
+    # Load the JSON file
+    with open('./docs/mission_planning_taxonomy.json', 'r') as f:
+        marine_planning_taxonomy_raw = json.load(f)
+
+    # Extract the actual taxonomy data from the wrapper
+    if "MissionPlanningTaxonomy" in marine_planning_taxonomy_raw:
+        marine_planning_taxonomy = marine_planning_taxonomy_raw["MissionPlanningTaxonomy"]
+    else:
+        marine_planning_taxonomy = marine_planning_taxonomy_raw
+
+    CATEGORY_KEYWORDS = {humanise_key(k): v for k, v in marine_planning_taxonomy.items()}
+    # Debug print
+    print("\nCategory Keyword Summary")
+    print("==========================")
+    for cat, kws in CATEGORY_KEYWORDS.items():
+        print(f"{cat}: {len(kws)} keywords")
+
+    # Load DOMAIN_SYNONYMS from JSON file
+    report = validate_domain_synonyms("./docs/domain_synonyms.json")
+    print("\nDomain Synonym Validation Report:")
+    print("====================================")
+    print(f"  Valid: {report['is_valid']}")
+    print(f"  Terms: {report['count_terms']}")
+    print(f"  Synonyms: {report['count_synonyms']}")
+    if not report["is_valid"]:
+        print("\nErrors found:")
+        for err in report["errors"]:
+            print(f"  - {err}")
+
+    with open('./docs/domain_synonyms.json', 'r', encoding='utf-8') as f:
+        DOMAIN_SYNONYMS = {k.lower(): [s.lower() for s in v] for k, v in json.load(f).items()}
+    print("Loaded terms:", len(DOMAIN_SYNONYMS))
+    print("Sample mission synonyms:", DOMAIN_SYNONYMS.get("mission"))
     # Run classification for all scenarios
     for scenario_num in [1, 2, 3]:
         print(f"\n{'#' * 60}")
         print(f"# Processing Scenario {scenario_num}")
         print(f"{'#' * 60}\n")
-        main("Q2", scenario_num, merge_to_source=False)
+        main("Q3", scenario_num, CATEGORY_KEYWORDS, merge_to_source=False)
 
-    # After all scenarios are classified, merge into single file
+    # After all scenarios are classified, merge into a single file
     print(f"\n{'#' * 60}")
     print(f"# Merging all classifications into master file")
     print(f"{'#' * 60}\n")

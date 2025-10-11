@@ -23,7 +23,7 @@ FILES_TO_MOVE_TO_OUTPUT = [
     "output/S3_Q2_classification_results.csv",
     "docs/mission_planning_taxonomy.json",
     "docs/synonym-protection pairing matrix.md",
-    "docs/Gap Analysis against inital Taxonomy.md",
+    "docs/Gap Analysis against initial Taxonomy.md",
     "docs/Q2 Classification Schema.md"
 ]
 

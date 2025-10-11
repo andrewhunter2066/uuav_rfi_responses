@@ -1,0 +1,7 @@
+predicted_category,has_protected,has_conflict,has_cross_conflict,count
+Environmental and Oceanographic Conditions,False,False,False,2
+Historical and Contextual Data,False,False,False,2
+Mission Parameters and Objectives,False,False,False,2
+Navigation and Positioning,False,False,False,12
+Terrain and Bathymetry,False,False,False,2
+Vehicle Capabilities and Constraints,False,False,False,14

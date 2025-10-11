@@ -5,9 +5,9 @@
         "SurfaceFeatures": ["terrain", "topography", "slope", "gradient", "complexity"],
         "SeafloorCharacterization": ["bathymetry", "seabed", "seafloor", "bottom texture", "substrate", "geomorphology"],
         "BathymetricDataProducts": ["multibeam", "coverage", "resolution", "overlap", "gap", "bathymetric grid", "digital elevation model", "DEM", "surface model"],
-        "QualityAndConfidence": ["vector electronic navigational charts", "zone of confidence", "depth profile"]
+        "QualityAndConfidence": ["vector electronic navigational charts", "zone of confidence", "depth profile", "bathymetric uncertainty model", "feature detection confidence", "standard deviation limits", "standard deviation thresholds"]
       },
-      "RelatedTo": ["EnvironmentalAndOceanographicConditions", "DataProductsAndRequirements"]
+      "RelatedTo": ["EstimationAndUncertaintyModeling", "EnvironmentalAndOceanographicConditions", "DataProductsAndRequirements"]
     },
 
     "EnvironmentalAndOceanographicConditions": {
@@ -15,9 +15,9 @@
         "PhysicalProcesses": ["current", "tidal", "stream", "wave height", "wind", "drift", "sea state", "EAC", "East Australian Current"],
         "WaterProperties": ["temperature", "salinity", "pressure", "density", "conductivity", "turbidity"],
         "MeasurementAndModels": ["CTD", "water column", "hydrodynamics", "metocean", "hindcast", "forecast", "oceanographic model"],
-        "EnvironmentalContext": ["environmental", "ocean", "conditions"]
+        "EnvironmentalContext": ["environmental", "ocean", "conditions", "environmental uncertainty model", "predictive environmental modelling"]
       },
-      "RelatedTo": ["TerrainAndBathymetry", "VehicleCapabilitiesAndConstraints"]
+      "RelatedTo": ["EstimationAndUncertaintyModeling", "TerrainAndBathymetry", "VehicleCapabilitiesAndConstraints"]
     },
 
     "VehicleCapabilitiesAndConstraints": {
@@ -25,75 +25,84 @@
         "Performance": ["speed", "range", "endurance", "mission duration", "operating envelope", "stability", "autonomy"],
         "Hardware": ["thruster", "battery capacity", "payload", "sensor range", "communication"],
         "SystemConstraints": ["equipment limitations", "parameters", "abort angles", "OEM", "fail-safe"],
-        "OperationalLimits": ["launch and recovery", "mission abort", "power consumption"]
+        "OperationalLimits": ["launch and recovery", "mission abort", "power consumption", "rules of engagement", "operational constraints", "stealth speed", "covert operation"]
       },
-      "RelatedTo": ["NavigationAndPositioning", "MissionParametersAndObjectives"]
+      "RelatedTo": ["NavigationAndPositioning", "MissionParametersAndObjectives", "EstimationAndUncertaintyModeling"]
     },
 
     "NavigationAndPositioning": {
       "Concepts": {
         "NavigationSystems": ["GPS", "GNSS", "Global Positioning System", "INS", "DVL"],
         "SpatialReference": ["coordinates", "datum", "EPSG", "coordinate reference system", "georeferencing"],
-        "RouteAndTrajectory": ["navigation", "route", "trackline", "trajectory", "heading", "bearing", "geofence", "waypoint"],
+        "RouteAndTrajectory": ["navigation", "route", "trackline", "trajectory", "heading", "bearing", "geofence", "waypoint", "route selection", "route confidence", "confidence in maintaining position"],
         "AccuracyAndHazards": ["accuracy", "fixing frequency", "navigational hazards", "no-go zones", "vector chart", "positioning system"]
       },
-      "RelatedTo": ["VehicleCapabilitiesAndConstraints", "OperationalLogistics"]
+      "RelatedTo": ["EstimationAndUncertaintyModeling", "VehicleCapabilitiesAndConstraints", "OperationalLogistics"]
     },
 
     "MissionParametersAndObjectives": {
       "Concepts": {
         "Objectives": ["mission", "objective", "task", "evaluation", "mission goal"],
-        "TemporalAspects": ["time-on-task", "timings", "mission phase", "mission segment", "mission schedule", "mission profile"],
+        "TemporalAspects": ["time-on-task", "timings", "mission phase", "mission segment", "mission schedule", "mission profile", "time on surface", "risk to surfacing", "timing uncertainty"],
         "SpatialAspects": ["search area", "zone of operation", "area of operation", "route options", "survey feasibility"],
         "OperationalWindows": ["launch window", "recovery window", "time synchronization", "UTC", "timestamp"]
       },
-      "RelatedTo": ["NavigationAndPositioning", "ThreatsAndRiskManagement", "OperationalLogistics"]
+      "RelatedTo": ["EstimationAndUncertaintyModeling", "ThreatsAndRiskManagement", "OperationalLogistics"]
     },
 
     "ThreatsAndRiskManagement": {
       "Concepts": {
-        "Hazards": ["threat", "risk", "hazard", "failure", "loss of communications", "loss of vehicle", "environmental risk"],
+        "Hazards": ["threat", "risk", "hazard", "failure", "loss of communications", "loss of vehicle", "environmental risk", "navigational hazards", "potential adversary influence"],
         "ResponseAndRecovery": ["abort", "recovery", "contingency", "contingency plan", "emergency procedure"],
-        "SafetyAndMitigation": ["safety", "safety case", "redundancy", "fail-safe", "collision avoidance", "risk mitigation", "cyber risk"]
+        "SafetyAndMitigation": ["safety", "safety case", "redundancy", "fail-safe", "collision avoidance", "risk mitigation", "cyber risk", "safety vessel requirement", "improves safety", "safety confidence"]
       },
-      "RelatedTo": ["MissionParametersAndObjectives", "VehicleCapabilitiesAndConstraints"]
+      "RelatedTo": ["MissionParametersAndObjectives", "EstimationAndUncertaintyModeling", "VehicleCapabilitiesAndConstraints"]
     },
 
     "HistoricalAndContextualData": {
       "Concepts": {
         "MissionHistory": ["historical", "previous mission", "similar mission", "past operations", "mission archive", "mission report"],
         "DataContext": ["reference data", "legacy", "archive", "baseline", "benchmark", "reference dataset"],
-        "AnalysisAndLearning": ["comparative analysis", "trend", "data provenance"]
+        "AnalysisAndLearning": ["comparative analysis", "trend", "data provenance", "historical performance", "known defects", "historical beach assessments", "landing success rates"]
       },
-      "RelatedTo": ["DataProductsAndRequirements", "MissionParametersAndObjectives"]
+      "RelatedTo": ["EstimationAndUncertaintyModeling", "DataProductsAndRequirements", "MissionParametersAndObjectives"]
     },
 
     "DataProductsAndRequirements": {
       "Concepts": {
         "SurveyData": ["survey data", "coverage maps", "swath width", "classification", "infrastructure"],
-        "DataQuality": ["resolution", "overlap", "zone of confidence", "data validation", "quality control", "data fusion"],
+        "DataQuality": ["resolution", "overlap", "zone of confidence", "data validation", "quality control", "data fusion", "feature classification reliability", "confidence scoring"],
         "MetadataAndFormat": ["metadata", "data format", "supporting data", "data standard", "geotiff", "point cloud", "file format"],
         "Outputs": ["data product", "post-processing", "bathymetric grid", "digital elevation model"]
       },
-      "RelatedTo": ["TerrainAndBathymetry", "HistoricalAndContextualData"]
+      "RelatedTo": ["TerrainAndBathymetry", "HistoricalAndContextualData", "EstimationAndUncertaintyModeling"]
     },
 
     "CommunicationsAndControl": {
       "Concepts": {
         "CommsInfrastructure": ["communication", "link", "network", "bandwidth", "frequency", "signal", "acoustic modem"],
         "ControlSystems": ["telemetry", "control", "command", "signal loss", "data link"],
-        "Reliability": ["uplink", "downlink", "satellite", "latency", "reliability", "comms channel"]
+        "Reliability": ["uplink", "downlink", "satellite", "latency", "reliability", "comms channel", "acoustic communications range", "communication confidence"]
       },
-      "RelatedTo": ["VehicleCapabilitiesAndConstraints", "ThreatsAndRiskManagement"]
+      "RelatedTo": ["VehicleCapabilitiesAndConstraints", "ThreatsAndRiskManagement", "EstimationAndUncertaintyModeling"]
     },
 
     "OperationalLogistics": {
       "Concepts": {
         "Deployment": ["launch", "recovery", "deployment", "transit", "mobilization", "demobilization"],
-        "AccessAndSupport": ["approach route", "landing", "access", "launch point", "recovery location", "support vessel", "crew", "base port"],
+        "AccessAndSupport": ["approach route", "landing", "access", "launch point", "recovery location", "support vessel", "crew", "base port", "beach access", "beach viability"],
         "FieldOperations": ["survey planning", "constraints", "area of operation", "operational window", "staging area", "field logistics"]
       },
       "RelatedTo": ["MissionParametersAndObjectives", "NavigationAndPositioning"]
+    },
+
+    "EstimationAndUncertaintyModeling": {
+      "Concepts": {
+        "UncertaintyModeling": ["environmental uncertainty model", "bathymetric uncertainty model", "predictive modeling", "variance analysis", "standard deviation thresholds", "standard deviation limits"],
+        "ConfidenceScoring": ["feature detection confidence", "classification reliability", "route confidence", "confidence in maintaining position", "confidence in understanding area of operations"],
+        "PredictiveEstimation": ["predictive modeling for sonar performance", "predictive modeling for beach access", "viability scoring", "benchmark performance using historical data"]
+      },
+      "RelatedTo": ["TerrainAndBathymetry", "EnvironmentalAndOceanographicConditions", "DataProductsAndRequirements", "HistoricalAndContextualData", "NavigationAndPositioning", "ThreatsAndRiskManagement"]
     }
   }
 }

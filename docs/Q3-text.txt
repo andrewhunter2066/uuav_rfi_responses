@@ -1,0 +1,157 @@
+A request for information for the development of a mission planning application received the following responses to the
+question "Q3 - What guidance can be provided regarding the estimation approach?" The responses so far are:
+
+Use of standard deviation limits to define acceptable variance in route planning
+Incorporation of environmental uncertainty models to refine estimations
+Use bathymetric uncertainty models to estimate feature detection confidence
+Apply standard deviation thresholds for feature classification reliability
+Reference historical multibeam echo sounder datasets under similar conditions to benchmark performance
+Incorporate predictive modelling for sonar performance based on mission parameters
+Use base map models with layered environmental and hydrographic data
+Apply viability scoring based on mission parameters  stealth speed safety
+Incorporate predictive modelling for beach access under varying conditions
+Reference historical beach assessments and landing success rates
+Understanding historical performance and known defects of equipment
+Understanding environmental conditions endurance Launch and Recovery Systems mission speed sensor performance rules of engagement
+rules of engagement coverage percent Inform of timings
+Time on surface risk to surfacing covert surface traffic accuracy
+rules of engagement line spacing
+Confidence in route planning and maintaining position
+Informs area of operations Informs if other assets are required
+Informs area of operations Informs if other assets are required
+Range of host vessel range of acoustic communications requirement for safety vessel
+Improves safety of vehicle collision avoidance tactics route selection
+Navigational hazards to inform potential adversary influence
+Confidence in understanding of area of operations
+Understanding historical performance and known defects of equipment
+Understanding environmental conditions endurance Launch and Recovery Systems mission speed sensor performance rules of engagement
+rules of engagement coverage percent Inform of timings
+Time on surface risk to surfacing covert surface traffic accuracy
+rules of engagement line spacing
+Confidence in route planning and maintaining position
+Informs area of operations Informs if other assets are required
+Informs area of operations Informs if other assets are required
+Range of host vessel range of acoustic communications requirement for safety vessel
+Improves safety of vehicle collision avoidance tactics route selection
+Navigational hazards to inform potential adversary influence
+Confidence in understanding of area of operations
+Understanding historical performance and known defects of equipment
+Understanding environmental conditions endurance Launch and Recovery Systems mission speed sensor performance rules of engagement
+rules of engagement coverage percent Inform of timings
+Time on surface risk to surfacing covert surface traffic accuracy
+rules of engagement line spacing
+Confidence in route planning and maintaining position
+Informs area of operations Informs if other assets are required
+Informs area of operations Informs if other assets are required
+Range of host vessel range of acoustic communications requirement for safety vessel
+Improves safety of vehicle collision avoidance tactics route selection
+Navigational hazards to inform potential adversary influence
+Confidence in understanding of area of operations
+
+
+Given the existing Mission Planning Taxonomy:
+
+{
+  "MissionPlanningTaxonomy": {
+    "TerrainAndBathymetry": {
+      "Concepts": {
+        "SurfaceFeatures": ["terrain", "topography", "slope", "gradient", "complexity"],
+        "SeafloorCharacterization": ["bathymetry", "seabed", "seafloor", "bottom texture", "substrate", "geomorphology"],
+        "BathymetricDataProducts": ["multibeam", "coverage", "resolution", "overlap", "gap", "bathymetric grid", "digital elevation model", "DEM", "surface model"],
+        "QualityAndConfidence": ["vector electronic navigational charts", "zone of confidence", "depth profile"]
+      },
+      "RelatedTo": ["EnvironmentalAndOceanographicConditions", "DataProductsAndRequirements"]
+    },
+
+    "EnvironmentalAndOceanographicConditions": {
+      "Concepts": {
+        "PhysicalProcesses": ["current", "tidal", "stream", "wave height", "wind", "drift", "sea state", "EAC", "East Australian Current"],
+        "WaterProperties": ["temperature", "salinity", "pressure", "density", "conductivity", "turbidity"],
+        "MeasurementAndModels": ["CTD", "water column", "hydrodynamics", "metocean", "hindcast", "forecast", "oceanographic model"],
+        "EnvironmentalContext": ["environmental", "ocean", "conditions"]
+      },
+      "RelatedTo": ["TerrainAndBathymetry", "VehicleCapabilitiesAndConstraints"]
+    },
+
+    "VehicleCapabilitiesAndConstraints": {
+      "Concepts": {
+        "Performance": ["speed", "range", "endurance", "mission duration", "operating envelope", "stability", "autonomy"],
+        "Hardware": ["thruster", "battery capacity", "payload", "sensor range", "communication"],
+        "SystemConstraints": ["equipment limitations", "parameters", "abort angles", "OEM", "fail-safe"],
+        "OperationalLimits": ["launch and recovery", "mission abort", "power consumption"]
+      },
+      "RelatedTo": ["NavigationAndPositioning", "MissionParametersAndObjectives", "DataProductsAndRequirements"]
+    },
+
+    "NavigationAndPositioning": {
+      "Concepts": {
+        "NavigationSystems": ["GPS", "GNSS", "Global Positioning System", "INS", "DVL"],
+        "SpatialReference": ["coordinates", "datum", "EPSG", "coordinate reference system", "georeferencing"],
+        "RouteAndTrajectory": ["navigation", "route", "trackline", "trajectory", "heading", "bearing", "geofence", "waypoint"],
+        "AccuracyAndHazards": ["accuracy", "fixing frequency", "navigational hazards", "no-go zones", "vector chart", "positioning system"]
+      },
+      "RelatedTo": ["VehicleCapabilitiesAndConstraints", "OperationalLogistics"]
+    },
+
+    "MissionParametersAndObjectives": {
+      "Concepts": {
+        "Objectives": ["mission", "objective", "task", "evaluation", "mission goal"],
+        "TemporalAspects": ["time-on-task", "timings", "mission phase", "mission segment", "mission schedule", "mission profile"],
+        "SpatialAspects": ["search area", "zone of operation", "area of operation", "route options", "survey feasibility"],
+        "OperationalWindows": ["launch window", "recovery window", "time Add gap analysis document for initial taxonomy comparison and recommendationssynchronisation", "UTC", "timestamp"]
+      },
+      "RelatedTo": ["NavigationAndPositioning", "ThreatsAndRiskManagement", "OperationalLogistics"]
+    },
+
+    "ThreatsAndRiskManagement": {
+      "Concepts": {
+        "Hazards": ["threat", "risk", "hazard", "failure", "loss of communications", "loss of vehicle", "environmental risk"],
+        "ResponseAndRecovery": ["abort", "recovery", "contingency", "contingency plan", "emergency procedure"],
+        "SafetyAndMitigation": ["safety", "safety case", "redundancy", "fail-safe", "collision avoidance", "risk mitigation", "cyber risk"]
+      },
+      "RelatedTo": ["MissionParametersAndObjectives", "VehicleCapabilitiesAndConstraints"]
+    },
+
+    "HistoricalAndContextualData": {
+      "Concepts": {
+        "MissionHistory": ["historical", "previous mission", "similar mission", "past operations", "mission archive", "mission report"],
+        "DataContext": ["reference data", "legacy", "archive", "baseline", "benchmark", "reference dataset"],
+        "AnalysisAndLearning": ["comparative analysis", "trend", "data provenance"]
+      },
+      "RelatedTo": ["DataProductsAndRequirements", "MissionParametersAndObjectives"]
+    },
+
+    "DataProductsAndRequirements": {
+      "Concepts": {
+        "SurveyData": ["survey data", "coverage maps", "swath width", "classification", "infrastructure"],
+        "DataQuality": ["resolution", "overlap", "zone of confidence", "data validation", "quality control", "data fusion"],
+        "MetadataAndFormat": ["metadata", "data format", "supporting data", "data standard", "geotiff", "point cloud", "file format"],
+        "Outputs": ["data product", "post-processing", "bathymetric grid", "digital elevation model"]
+      },
+      "RelatedTo": ["TerrainAndBathymetry", "HistoricalAndContextualData", "VehicleCapabilitiesAndConstraints"]
+    },
+
+    "CommunicationsAndControl": {
+      "Concepts": {
+        "CommsInfrastructure": ["communication", "link", "network", "bandwidth", "frequency", "signal", "acoustic modem"],
+        "ControlSystems": ["telemetry", "control", "command", "signal loss", "data link"],
+        "Reliability": ["uplink", "downlink", "satellite", "latency", "reliability", "comms channel"]
+      },
+      "RelatedTo": ["VehicleCapabilitiesAndConstraints", "ThreatsAndRiskManagement"]
+    },
+
+    "OperationalLogistics": {
+      "Concepts": {
+        "Deployment": ["launch", "recovery", "deployment", "transit", "mobilisation", "demobilization"],
+        "AccessAndSupport": ["approach route", "landing", "access", "launch point", "recovery location", "support vessel", "crew", "base port"],
+        "FieldOperations": ["survey planning", "constraints", "area of operation", "operational window", "staging area", "field logistics"]
+      },
+      "RelatedTo": ["MissionParametersAndObjectives", "NavigationAndPositioning"]
+    }
+  }
+}
+
+
+
+Can you suggest extensions to the taxonomy to cover Q3 responses?
+
