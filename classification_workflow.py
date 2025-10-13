@@ -39,170 +39,6 @@ ACRONYM_EXPANSIONS = {
 # Regex pattern to keep only word characters, spaces, and hyphens
 PUNCTUATION_PATTERN = r'[^\w\s\-]'
 
-# Synonym - Protection conflict rules
-CONFLICT_RULES = {
-    # --- Temporal / Oceanographic context ---
-    "temporal": {
-        "protected": [
-            "current", "tidal", "tide", "eac", "east australian current",
-            "temporal resolution", "time series", "timestamp", "utc",
-            "time synchronization", "mission timeline"
-        ],
-        "synonyms": ["time", "duration", "interval", "period", "timespan"]
-    },
-
-    # --- Terrain / Bathymetric context ---
-    "terrain_bathymetry": {
-        "protected": [
-            "depth", "bathymetry", "bathymetric grid", "seafloor", "seabed",
-            "gradient", "slope", "topography", "terrain", "bathy grid",
-            "chart datum", "vertical datum", "bottom texture"
-        ],
-        "synonyms": ["depth", "area", "layer", "zone", "surface"]
-    },
-
-    # --- Environmental / Oceanographic context ---
-    "environmental": {
-        "protected": [
-            "sea state", "wave height", "turbidity", "sediment", "substrate",
-            "temperature", "salinity", "water column", "density", "conductivity",
-            "eac", "east australian current", "hydrodynamics", "hydrography"
-        ],
-        "synonyms": ["environment", "conditions", "ocean", "marine", "weather"]
-    },
-
-    # --- Survey / Mapping context ---
-    "survey": {
-        "protected": [
-            "survey", "multibeam echo sounder", "mbes", "coverage map",
-            "swath", "line plan", "track spacing", "geotiff",
-            "digital elevation model", "dem", "survey grid", "coverage polygon"
-        ],
-        "synonyms": ["mapping", "data", "collection", "surveying", "charting"]
-    },
-
-    # --- Navigation / Positioning context ---
-    "navigation_and_positioning": {
-        "protected": [
-            "gps", "gnss", "positioning", "navigation", "ins",
-            "inertial navigation system", "doppler velocity log", "dvl",
-            "fix", "bearing", "waypoint", "route", "trackline",
-            "coordinate reference system", "epsg", "geofence", "chart datum"
-        ],
-        "synonyms": ["location", "path", "trajectory", "movement", "space"]
-    },
-
-    # --- Mission Operations context ---
-    "mission_ops": {
-        "protected": [
-            "launch", "recovery", "transit", "endurance", "mission duration",
-            "mission phase", "mission controller", "operator console",
-            "mission segment", "mission readiness", "mission objective",
-            "understanding of area of operations", "informs area of operations"
-        ],
-        "synonyms": ["mission", "operation", "activity", "task", "objective"]
-    },
-
-    # --- Vehicle / Platform context ---
-    "platform": {
-        "protected": [
-            "launch and recovery system", "lars", "auv", "usv", "rov", "asv", "uuv",
-            "autonomous underwater vehicle", "autonomous surface vehicle",
-            "remotely operated vehicle", "vessel", "platform", "hull", "payload",
-            "unmanned underwater vehicle",
-        ],
-        "synonyms": ["vehicle", "capability", "system", "asset"]
-    },
-
-    # --- Propulsion / Power context ---
-    "propulsion": {
-        "protected": [
-            "propulsion", "thruster", "battery", "ballast", "energy",
-            "power system", "power budget", "battery endurance"
-        ],
-        "synonyms": ["drive", "movement", "motor", "thrust"]
-    },
-
-    # --- Communications / Networking context ---
-    "comms": {
-        "protected": [
-            "comms", "telemetry", "acoustic modem", "satellite link",
-            "uplink", "downlink", "api", "sdk", "network interface", "data uplink",
-            "bandwidth allocation", "link stability", "latency"
-        ],
-        "synonyms": ["communication", "connectivity", "link", "signal"]
-    },
-
-    # --- Data Processing / Modeling context ---
-    "data_processing": {
-        "protected": [
-            "machine learning", "artificial intelligence", "ai", "ml",
-            "training data", "test set", "validation data",
-            "python", "r", "matlab", "pandas", "xarray", "geopandas",
-            "data fusion", "data pipeline"
-        ],
-        "synonyms": ["analytics", "modeling", "processing", "prediction"]
-    },
-
-    # --- Semantic / Integration context ---
-    "semantic_data": {
-        "protected": [
-            "knowledge graph", "ontology", "taxonomy", "json-ld",
-            "metadata schema", "controlled vocabulary", "data dictionary",
-            "semantic model", "cf convention", "netcdf-cf"
-        ],
-        "synonyms": ["data", "classification", "schema", "structure"]
-    },
-
-    # --- Risk / Safety / Compliance context ---
-    "risk": {
-        "protected": [
-            "risk", "threat", "hazard", "cyber risk", "no-go zone",
-            "collision avoidance", "restricted area", "safety case", "fail-safe",
-            "redundancy", "contingency plan", "risk assessment",
-            "risk likelihood", "risk severity", "mitigation measure"
-        ],
-        "synonyms": ["important", "limitation", "consideration", "danger", "vulnerability"]
-    },
-
-    # --- Logistics / Operational Planning context (NEW) ---
-    "logistics": {
-        "protected": [
-            "deployment", "launch point", "recovery point", "access corridor",
-            "mission window", "staging area", "support vessel", "turnaround time"
-        ],
-        "synonyms": ["planning", "coordination", "support", "setup"]
-    },
-
-    # --- Data Products / Deliverables context (NEW) ---
-    "data_products": {
-        "protected": [
-            "data product", "survey deliverable", "coverage polygon",
-            "data quality", "zone of confidence", "confidence zone"
-        ],
-        "synonyms": ["output", "dataset", "map", "deliverable"]
-    },
-
-    # --- Performance / Evaluation context (NEW) ---
-    "performance": {
-        "protected": [
-            "efficiency", "throughput", "latency", "accuracy",
-            "timing", "delay", "performance model"
-        ],
-        "synonyms": ["speed", "effectiveness", "responsiveness"]
-    },
-
-    # --- Historical / Contextual Data context (NEW) ---
-    "historical": {
-        "protected": [
-            "historical", "legacy mission", "past operations",
-            "reference data", "archive", "baseline dataset"
-        ],
-        "synonyms": ["previous", "contextual", "reference", "benchmark"]
-    }
-}
-
-
 # Which method to use, domain-specific (True) or general NLP (False)
 DOMAIN_SPECIFIC = True
 
@@ -1441,32 +1277,126 @@ def create_master_classified_file(question: str, scenarios: list[int]) -> None:
 def merge_all_classifications_single_column(
         classification_files: list[tuple[int, str]],
         original_data_path: str,
+        output_path: str,
+        combine_child_parent: bool = True
+) -> None:
+    """
+    Merges classification results into the original dataset.
+    Uses PredictedChild / PredictedParent instead of predicted_category.
+
+    :param classification_files: List of (scenario, question) tuples.
+    :param original_data_path: Path to normalised responses CSV.
+    :param output_path: Path to save merged output.
+    :param combine_child_parent: If True, combines Child and Parent into a single string (Child|Parent).
+    """
+
+    original_df = pd.read_csv(original_data_path)
+    current_date = datetime.now().strftime('%Y-%m-%d')
+
+    if 'Classification' not in original_df.columns:
+        original_df['Classification'] = 'not_classified'
+    if 'Version' not in original_df.columns:
+        original_df['Version'] = 'v0.1'
+    if 'ChangeNote' not in original_df.columns:
+        original_df['ChangeNote'] = 'Initial merge'
+    if 'ChangeDate' not in original_df.columns:
+        original_df['ChangeDate'] = ''
+
+    for scenario, question in classification_files:
+        classification_path = f"./output/S{scenario}_{question}_classification_results.csv"
+
+        try:
+            file_mod_timestamp = os.path.getmtime(classification_path)
+            file_mod_date = datetime.fromtimestamp(file_mod_timestamp).strftime("%Y-%m-%d")
+
+            classifications_df = pd.read_csv(classification_path)
+
+            # Ensure required cols exist
+            if not {"PredictedChild", "PredictedParent"}.issubset(classifications_df.columns):
+                print(f"Warning: Expected classification columns not found in {classification_path}")
+                print(f"Available columns: {classifications_df.columns.tolist()}")
+                continue
+
+            # Create a unified column
+            if combine_child_parent:
+                classifications_df['ClassificationCombined'] = (
+                    classifications_df['PredictedChild'].astype(str) + "|" +
+                    classifications_df['PredictedParent'].astype(str)
+                )
+            else:
+                classifications_df['ClassificationCombined'] = classifications_df.apply(
+                    lambda r: r['PredictedChild'] if r['PredictedChild'] != 'uncategorised' else r['PredictedParent'],
+                    axis=1
+                )
+
+            aggregated = classifications_df.groupby('ResponseID').agg({
+                'ClassificationCombined': lambda x: '|'.join(sorted(set(x)))
+            }).reset_index()
+
+            for _, row in aggregated.iterrows():
+                response_id = row['ResponseID']
+                category = row['ClassificationCombined']
+                mask = original_df['ResponseID'] == response_id
+
+                original_df.loc[mask, 'Classification'] = category
+                if category not in ['uncategorised', 'not_classified', '']:
+                    original_df.loc[mask, 'Version'] = 'v0.2'
+                    original_df.loc[mask, 'ChangeNote'] = 'Initial classification'
+                    original_df.loc[mask, 'ChangeDate'] = file_mod_date
+
+            print(f"Merged classifications for Scenario {scenario}, {question} (file date: {file_mod_date})")
+
+        except FileNotFoundError:
+            print(f"Classification file not found for Scenario {scenario}, {question}")
+            continue
+        except Exception as e:
+            print(f"Error processing Scenario {scenario}, {question}: {str(e)}")
+            continue
+
+    original_df.to_csv(output_path, index=False)
+
+    print(f"\n{'=' * 60}")
+    print(f"Merged file saved to: {output_path}")
+    print(f"{'=' * 60}")
+    print(f"\nTotal responses: {len(original_df)}")
+    classified = original_df[
+        (original_df['Classification'] != 'not_classified') &
+        (original_df['Classification'] != 'uncategorised') &
+        (original_df['Classification'] != '')
+    ]
+    print(f"Classified responses: {len(classified)}")
+    print(f"Unclassified responses: {len(original_df) - len(classified)}")
+    print(f"\nVersion distribution:\n{original_df['Version'].value_counts()}")
+    print(f"\nTop 10 classification patterns:\n{original_df['Classification'].value_counts().head(10)}")
+    multi_category = original_df[original_df['Classification'].str.contains('\|', na=False)]
+    print(f"\nResponses with multiple categories: {len(multi_category)}")
+    updated_records = original_df[original_df['Version'] == 'v0.2']
+    print(f"\nRecords updated to v0.2: {len(updated_records)}")
+    print(f"Classification date: {current_date}")
+
+
+def merge_all_classifications_multi_column(
+        classification_files: list[tuple[int, str]],
+        original_data_path: str,
         output_path: str
 ) -> None:
     """
-    Merges all classification results into the original data with a single classification column.
-    Each response belongs to only one Scenario+Question combination, so only one classification applies.
+    Merges classification results into the original data with TWO columns:
+    - PredictedChilds: all child categories (deduplicated, joined with "|")
+    - PredictedParents: all parent categories (deduplicated, joined with "|")
 
-    Updates version control fields for classified responses:
-    - Classification: The predicted category/categories
-    - Version: Updated to "v0.2" for classified responses
-    - ChangeNote: Set to "Initial classification" for classified responses
-    - ChangeDate: Set to the current date for classified responses
-
-    :param classification_files: List of tuples (scenario_number, question) to process.
-    :param original_data_path: Path to original normalised responses CSV.
-    :param output_path: Path to save merged output CSV.
+    Handles multiple scenario/question classification files and preserves version control fields.
     """
     # Load original data
     original_df = pd.read_csv(original_data_path)
 
     current_date = datetime.now().strftime('%Y-%m-%d')
 
-    # Initialise classification column if it doesn't exist
-    if 'Classification' not in original_df.columns:
-        original_df['Classification'] = 'not_classified'
-
-    # Ensure version control columns exist
+    # Ensure columns exist
+    if 'PredictedChilds' not in original_df.columns:
+        original_df['PredictedChilds'] = 'not_classified'
+    if 'PredictedParents' not in original_df.columns:
+        original_df['PredictedParents'] = 'not_classified'
     if 'Version' not in original_df.columns:
         original_df['Version'] = original_df.get('Version', 'v0.1')
     if 'ChangeNote' not in original_df.columns:
@@ -1479,44 +1409,42 @@ def merge_all_classifications_single_column(
         classification_path = f"./output/S{scenario}_{question}_classification_results.csv"
 
         try:
-            # Get the last modified date of the classification file
             file_mod_timestamp = os.path.getmtime(classification_path)
             file_mod_date = datetime.fromtimestamp(file_mod_timestamp).strftime("%Y-%m-%d")
 
-            # Load classifications
             classifications_df = pd.read_csv(classification_path)
 
-            # Check if the required column exists
-            if 'predicted_category' not in classifications_df.columns:
-                print(f"Warning: 'predicted_category' column not found in {classification_path}")
+            # Check columns exist
+            if not {"PredictedChild", "PredictedParent"}.issubset(classifications_df.columns):
+                print(f"Warning: required columns not found in {classification_path}")
                 print(f"Available columns: {classifications_df.columns.tolist()}")
                 continue
 
-            # Aggregate unique categories per ResponseID
-            # (handles augmentation where same ResponseID appears multiple times)
-            aggregated = classifications_df.groupby('ResponseID').agg({
-                'predicted_category': lambda x: '|'.join(sorted(set(x)))
+            # Aggregate all unique child and parent classifications per ResponseID
+            aggregated = classifications_df.groupby("ResponseID").agg({
+                "PredictedChild": lambda x: "|".join(sorted(set(x))),
+                "PredictedParent": lambda x: "|".join(sorted(set(x)))
             }).reset_index()
 
-            # For each ResponseID in this scenario+question, update the classification
+            # Update original_df with merged classifications
             for _, row in aggregated.iterrows():
-                response_id = row['ResponseID']
-                category = row['predicted_category']
+                response_id = row["ResponseID"]
+                child_cats = row["PredictedChild"]
+                parent_cats = row["PredictedParent"]
 
-                # Update only rows matching this ResponseID
                 mask = original_df['ResponseID'] == response_id
 
-                # Update classification
-                original_df.loc[mask, 'Classification'] = category
+                original_df.loc[mask, 'PredictedChilds'] = child_cats
+                original_df.loc[mask, 'PredictedParents'] = parent_cats
 
-                # Update version control fields ONLY for classified responses
-                # (i.e. not 'uncategorised' or 'not_classified')
-                if category not in ['uncategorised', 'not_classified', '']:
+                if (child_cats not in ['uncategorised', 'not_classified', '']) or \
+                   (parent_cats not in ['uncategorised', 'not_classified', '']):
                     original_df.loc[mask, 'Version'] = 'v0.2'
                     original_df.loc[mask, 'ChangeNote'] = 'Initial classification'
                     original_df.loc[mask, 'ChangeDate'] = file_mod_date
 
             print(f"Merged classifications for Scenario {scenario}, {question} (file date: {file_mod_date})")
+
         except FileNotFoundError:
             print(f"Classification file not found for Scenario {scenario}, {question}")
             continue
@@ -1524,37 +1452,31 @@ def merge_all_classifications_single_column(
             print(f"Error processing Scenario {scenario}, {question}: {str(e)}")
             continue
 
-    # Save merged data
+    # Save merged file
     original_df.to_csv(output_path, index=False)
 
-    # Print statistics
+    # Print stats
     print(f"\n{'=' * 60}")
     print(f"Merged file saved to: {output_path}")
     print(f"{'=' * 60}")
     print(f"\nTotal responses: {len(original_df)}")
 
-    # Count classified responses (excluding 'not_classified' and 'uncategorised')
     classified = original_df[
-        (original_df['Classification'] != 'not_classified') &
-        (original_df['Classification'] != 'uncategorised') &
-        (original_df['Classification'] != '')
-        ]
+        (original_df['PredictedChilds'] != 'not_classified') |
+        (original_df['PredictedParents'] != 'not_classified')
+    ]
     print(f"Classified responses: {len(classified)}")
     print(f"Unclassified responses: {len(original_df) - len(classified)}")
 
-    # Show version distribution
     print(f"\nVersion distribution:")
     print(original_df['Version'].value_counts())
 
-    # Show distribution of classification patterns
-    print(f"\nTop 10 classification patterns:")
-    print(original_df['Classification'].value_counts().head(10))
+    print(f"\nTop 10 child classification patterns:")
+    print(original_df['PredictedChilds'].value_counts().head(10))
 
-    # Count multi-category responses
-    multi_category = original_df[original_df['Classification'].str.contains('\|', na=False)]
-    print(f"\nResponses with multiple categories: {len(multi_category)}")
+    print(f"\nTop 10 parent classification patterns:")
+    print(original_df['PredictedParents'].value_counts().head(10))
 
-    # Show summary of updated records
     updated_records = original_df[original_df['Version'] == 'v0.2']
     print(f"\nRecords updated to v0.2: {len(updated_records)}")
     print(f"Classification date: {current_date}")
@@ -1562,7 +1484,10 @@ def merge_all_classifications_single_column(
 
 def merge_all_classifications():
     """
-    Convenience function to merge multiple question classifications from multiple scenarios.
+    Convenience function to merge multiple question classifications from multiple scenarios
+    into the source dataset, outputting *two* classification columns:
+    - PredictedChilds
+    - PredictedParents
     """
     classification_files = [
         (1, 'Q1'),
@@ -1576,11 +1501,12 @@ def merge_all_classifications():
         (3, 'Q3')
     ]
 
-    merge_all_classifications_single_column(
+    merge_all_classifications_multi_column(
         classification_files=classification_files,
         original_data_path='./input/normalised_all_responses.csv',
         output_path='./output/normalised_all_classified_responses.csv'
     )
+
 
 
 def save_summary_report(results: list[dict], summary_path: str) -> None:
@@ -1790,6 +1716,20 @@ def load_protected_terms(path: str, flatten: bool = True) -> set[str] | dict[str
     return grouped
 
 
+def load_conflict_rules(path: str) -> dict:
+    with open(path, "r", encoding="utf-8") as f:
+        data = json.load(f)
+
+    # normalise to lowercase for consistent matching
+    normalized = {}
+    for ctx, rules in data.items():
+        normalized[ctx.lower()] = {
+            "protected": [p.lower().strip() for p in rules.get("protected", [])],
+            "synonyms": [s.lower().strip() for s in rules.get("synonyms", [])]
+        }
+    return normalized
+
+
 if __name__ == "__main__":
     # Define keywords for each category as a module constant
     # Load the JSON file
@@ -1826,14 +1766,17 @@ if __name__ == "__main__":
     print("Loaded terms:", len(DOMAIN_SYNONYMS))
     print("Sample mission synonyms:", DOMAIN_SYNONYMS.get("mission"))
 
-    # Load protected terms from JSON file
+    # Load protected terms from the JSON file
     PROTECTED_TERMS = load_protected_terms("./docs/protected_terms.json", flatten=False)
+    # Load conflict rules from a JSON file
+    CONFLICT_RULES = load_conflict_rules("./docs/conflict_rules.json")
+
     # Run classification for all scenarios
     for scenario_num in [1, 2, 3]:
         print(f"\n{'#' * 60}")
-        print(f"# Processing Scenario {scenario_num}")
-        print(f"{'#' * 60}\n")
-        main("Q1", scenario_num, marine_planning_taxonomy_raw, merge_to_source=False)
+        for question_num in ["Q1", "Q2", "Q3"]:
+            print(f"Running classification for Scenario {scenario_num}, Question {question_num}")
+            main(question_num, scenario_num, marine_planning_taxonomy_raw, merge_to_source=False)
 
     # After all scenarios are classified, merge into a single file
     print(f"\n{'#' * 60}")

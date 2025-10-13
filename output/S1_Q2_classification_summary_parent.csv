@@ -2,5 +2,5 @@ PredictedParent,has_protected,has_conflict,has_cross_conflict,count
 Communications And Control,False,False,False,1
 Mission Parameters And Objectives,False,False,False,1
 Navigation And Positioning,False,False,False,13
-Vehicle Capabilities And Constraints,False,False,False,10
-uncategorised,False,False,False,7
+Vehicle Capabilities And Constraints,False,False,False,8
+uncategorised,False,False,False,9

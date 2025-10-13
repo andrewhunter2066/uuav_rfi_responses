@@ -1,0 +1,145 @@
+{
+  "temporal": {
+    "protected": [
+      "current", "tidal", "tide", "eac", "east australian current",
+      "temporal resolution", "time series", "timestamp", "utc",
+      "time synchronization", "mission timeline"
+    ],
+    "synonyms": ["time", "duration", "interval", "period", "timespan"]
+  },
+
+  "terrain_bathymetry": {
+    "protected": [
+      "depth", "bathymetry", "bathymetric grid", "seafloor", "seabed",
+      "gradient", "slope", "topography", "terrain", "bathy grid",
+      "chart datum", "vertical datum", "bottom texture"
+    ],
+    "synonyms": ["depth", "area", "layer", "zone", "surface"]
+  },
+
+  "environmental": {
+    "protected": [
+      "sea state", "wave height", "turbidity", "sediment", "substrate",
+      "temperature", "salinity", "water column", "density", "conductivity",
+      "eac", "east australian current", "hydrodynamics", "hydrography"
+    ],
+    "synonyms": ["environment", "conditions", "ocean", "marine", "weather"]
+  },
+
+  "survey": {
+    "protected": [
+      "survey", "multibeam echo sounder", "mbes", "coverage map",
+      "swath", "line plan", "track spacing", "geotiff",
+      "digital elevation model", "dem", "survey grid", "coverage polygon"
+    ],
+    "synonyms": ["mapping", "data", "collection", "surveying", "charting"]
+  },
+
+  "navigation_and_positioning": {
+    "protected": [
+      "gps", "gnss", "positioning", "navigation", "ins",
+      "inertial navigation system", "doppler velocity log", "dvl",
+      "fix", "bearing", "waypoint", "route", "trackline",
+      "coordinate reference system", "epsg", "geofence", "chart datum"
+    ],
+    "synonyms": ["location", "path", "trajectory", "movement", "space"]
+  },
+
+  "mission_ops": {
+    "protected": [
+      "launch", "recovery", "transit", "endurance", "mission duration",
+      "mission phase", "mission controller", "operator console",
+      "mission segment", "mission readiness", "mission objective",
+      "understanding of area of operations", "informs area of operations"
+    ],
+    "synonyms": ["mission", "operation", "activity", "task", "objective"]
+  },
+
+  "platform": {
+    "protected": [
+      "launch and recovery system", "lars", "auv", "usv", "rov", "asv", "uuv",
+      "autonomous underwater vehicle", "autonomous surface vehicle",
+      "remotely operated vehicle", "vessel", "platform", "hull", "payload",
+      "unmanned underwater vehicle"
+    ],
+    "synonyms": ["vehicle", "capability", "system", "asset"]
+  },
+
+  "propulsion": {
+    "protected": [
+      "propulsion", "thruster", "battery", "ballast", "energy",
+      "power system", "power budget", "battery endurance"
+    ],
+    "synonyms": ["drive", "movement", "motor", "thrust"]
+  },
+
+  "comms": {
+    "protected": [
+      "comms", "telemetry", "acoustic modem", "satellite link",
+      "uplink", "downlink", "api", "sdk", "network interface", "data uplink",
+      "bandwidth allocation", "link stability", "latency"
+    ],
+    "synonyms": ["communication", "connectivity", "link", "signal"]
+  },
+
+  "data_processing": {
+    "protected": [
+      "machine learning", "artificial intelligence", "ai", "ml",
+      "training data", "test set", "validation data",
+      "python", "r", "matlab", "pandas", "xarray", "geopandas",
+      "data fusion", "data pipeline"
+    ],
+    "synonyms": ["analytics", "modeling", "processing", "prediction"]
+  },
+
+  "semantic_data": {
+    "protected": [
+      "knowledge graph", "ontology", "taxonomy", "json-ld",
+      "metadata schema", "controlled vocabulary", "data dictionary",
+      "semantic model", "cf convention", "netcdf-cf"
+    ],
+    "synonyms": ["data", "classification", "schema", "structure"]
+  },
+
+  "risk": {
+    "protected": [
+      "risk", "threat", "hazard", "cyber risk", "no-go zone",
+      "collision avoidance", "restricted area", "safety case", "fail-safe",
+      "redundancy", "contingency plan", "risk assessment",
+      "risk likelihood", "risk severity", "mitigation measure"
+    ],
+    "synonyms": ["important", "limitation", "consideration", "danger", "vulnerability"]
+  },
+
+  "logistics": {
+    "protected": [
+      "deployment", "launch point", "recovery point", "access corridor",
+      "mission window", "staging area", "support vessel", "turnaround time"
+    ],
+    "synonyms": ["planning", "coordination", "support", "setup"]
+  },
+
+  "data_products": {
+    "protected": [
+      "data product", "survey deliverable", "coverage polygon",
+      "data quality", "zone of confidence", "confidence zone"
+    ],
+    "synonyms": ["output", "dataset", "map", "deliverable"]
+  },
+
+  "performance": {
+    "protected": [
+      "efficiency", "throughput", "latency", "accuracy",
+      "timing", "delay", "performance model"
+    ],
+    "synonyms": ["speed", "effectiveness", "responsiveness"]
+  },
+
+  "historical": {
+    "protected": [
+      "historical", "legacy mission", "past operations",
+      "reference data", "archive", "baseline dataset"
+    ],
+    "synonyms": ["previous", "contextual", "reference", "benchmark"]
+  }
+}

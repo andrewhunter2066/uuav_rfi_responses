@@ -1,22 +1,22 @@
 PredictedChild,has_protected,has_conflict,has_cross_conflict,count
 Accuracy And Hazards,False,False,False,2
 Bathymetric Data Products,False,False,False,2
-Comms Infrastructure,False,False,False,1
-Deployment,False,False,False,2
-Environmental Context,False,False,False,2
+Comms Infrastructure,False,False,False,2
+Deployment,False,False,False,1
+Environmental Context,False,False,False,1
 Field Operations,False,False,False,2
-Hardware,False,False,False,4
-Hazards,False,False,False,2
-Measurement And Models,False,False,False,2
+Hardware,False,False,False,3
+Hazards,False,False,False,1
+Measurement And Models,False,False,False,3
 Navigation Systems,False,False,False,1
-Objectives,False,False,False,2
-Performance,False,False,False,6
+Objectives,False,False,False,3
+Performance,False,False,False,5
 Physical Processes,False,False,False,2
 Route And Trajectory,False,False,False,12
-Seafloor Characterization,False,False,False,2
+Seafloor Characterization,False,False,False,4
 Spatial Reference,False,False,False,2
 Surface Features,False,False,False,4
-Survey Data,False,False,False,2
-System Constraints,False,False,False,2
-Temporal Aspects,False,False,False,2
-uncategorised,False,False,False,8
+Survey Data,False,False,False,1
+System Constraints,False,False,False,3
+Temporal Aspects,False,False,False,1
+uncategorised,False,False,False,9

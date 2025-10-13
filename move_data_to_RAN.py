@@ -16,7 +16,7 @@ FILES_TO_MOVE_TO_OUTPUT = [
     "docs/mission_planning_taxonomy.json",
     "docs/synonym-protection pairing matrix.md",
     "docs/Gap Analysis against initial Taxonomy.md",
-    "docs/Q2 Classification Schema.md"
+    "docs/Q2 Classification Schema.md",
     "output/normalised_all_classified_responses.csv",
     "output/q1_vocabulary.jsonld",
     "output/S1_Q1_classification_results.csv",

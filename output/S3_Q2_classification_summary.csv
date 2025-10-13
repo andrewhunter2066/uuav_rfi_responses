@@ -1,8 +1,0 @@
-predicted_category,has_protected,has_conflict,has_cross_conflict,count
-Data Products and Requirements,False,False,False,2
-Environmental and Oceanographic Conditions,False,False,False,4
-Mission Parameters and Objectives,False,False,False,1
-Navigation and Positioning,False,False,False,12
-Terrain and Bathymetry,False,False,False,3
-Threats and Risk Management,False,False,False,2
-Vehicle Capabilities and Constraints,False,False,False,10
