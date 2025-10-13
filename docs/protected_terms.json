@@ -1,0 +1,140 @@
+{
+  "AnalyticalAndDataManagement": [
+    "ai", "artificial intelligence", "cf convention", "confidence interval",
+    "data lineage", "data provenance", "error budget", "estimation factor",
+    "geojson", "geospatial data", "json-ld", "knowledge graph",
+    "machine learning", "metadata", "metadata schema", "ml",
+    "netcdf", "netcdf-cf", "ontology", "performance model",
+    "probability distribution", "python", "r", "sdk", "semantic model",
+    "sensitivity analysis", "taxonomy", "test set", "training data",
+    "uncertainty model", "validation data"
+  ],
+
+  "CommunicationsAndControl": [
+    "acoustic modem", "bandwidth allocation", "command and control", "command latency",
+    "comms", "communication handshake", "communication outage",
+    "communications plan", "control architecture", "control interface",
+    "control loop", "c2", "downlink", "latency", "link stability",
+    "mission controller", "mission monitoring", "mission planning system",
+    "operator console", "real-time control", "telemetry", "telemetry link",
+    "uplink", "uplink path"
+  ],
+
+  "DataProductsAndRequirements": [
+    "classified map", "coverage map", "coverage polygon", "data deliverable",
+    "data fusion", "data product", "deliverable product", "geotiff",
+    "point cloud", "sensor fusion", "survey deliverable", "survey footprint"
+  ],
+
+  "EnvironmentalAndOceanographic": [
+    "bathymetric grid", "beach gradient", "conductivity", "ctd",
+    "current", "current shear", "density", "downwelling", "east australian current",
+    "eac", "environmental restriction", "halocline", "habitat zone",
+    "hydrodynamics", "hydrography", "hydrostatic pressure",
+    "internal wave", "ocean front", "oceanographic conditions",
+    "pressure", "salinity", "sea floor roughness", "sea state",
+    "sediment", "sediment transport", "sensitive habitat", "substrate",
+    "substrate composition", "swell", "temperature", "thermocline",
+    "tidal", "tide", "turbidity", "turbulent kinetic energy",
+    "upwelling", "visibility", "water column", "wave height"
+  ],
+
+  "HistoricalAndContextual": [
+    "archival data", "baseline dataset", "historical", "historical bathymetry",
+    "historical survey", "legacy mission", "mission archive", "past operations",
+    "reference dataset", "reference data"
+  ],
+
+  "MissionParametersAndObjectives": [
+    "area coverage rate", "coverage requirement", "mission", "mission duration",
+    "mission feasibility", "mission objective", "mission phase",
+    "mission profile", "mission readiness", "mission rehearsal",
+    "mission risk", "mission sequencing", "mission segment",
+    "mission tempo", "mission timeline", "mission validation",
+    "search pattern", "survey objective", "time on task"
+  ],
+
+  "NavigationAndPositioning": [
+    "accuracy", "ais", "bearing", "chart datum", "chart projection",
+    "coordinate reference system", "depth", "doppler velocity log",
+    "dvl", "epsg", "fix", "fix accuracy", "geo-reference", "gnss",
+    "gps", "heading", "inertial drift", "inertial navigation system",
+    "ins", "local datum", "navigation", "navigation solution",
+    "no-go zone", "navigational hazard", "position", "position fix",
+    "position uncertainty", "route", "route plan", "survey coverage",
+    "survey speed", "trackline", "waypoint", "zone of confidence"
+  ],
+
+  "OperationalLogistics": [
+    "access corridor", "area of interest", "area of operation", "area of operations",
+    "deployment", "deployment vessel", "launch", "launch point",
+    "launch sequence", "launch site", "mission logistics", "operation window",
+    "operational area", "recovery", "recovery location", "recovery operation",
+    "recovery point", "recovery track", "staging area", "support vessel",
+    "survey planning", "transit", "transit corridor"
+  ],
+
+  "OrganisationalWorkflowControl": [
+    "command latency", "control architecture", "mission control",
+    "system configuration", "system validation"
+  ],
+
+  "ProgrammaticOrgSpecific": [
+    "api", "arcgis", "aodn", "emii", "geopandas", "geoserver", "imos",
+    "matlab", "nmea", "pandas", "postgis", "qgis"
+  ],
+
+  "RiskSafetyRegulation": [
+    "collision avoidance", "contingency plan", "contingency procedure",
+    "critical system", "environmental hazard", "exclusion zone",
+    "fail-safe", "failure mode", "loss of communications", "loss of signal",
+    "mitigation measure", "redundancy", "redundant system",
+    "restricted area", "restricted zone", "risk", "risk assessment",
+    "risk factor", "risk likelihood", "risk mitigation strategy",
+    "risk severity", "safety", "safety case", "safety margin",
+    "submerged hazard", "threat"
+  ],
+
+  "SensorAndDataQuality": [
+    "acoustic", "acoustic interference", "calibration coefficient",
+    "calibration status", "confidence zone", "data quality",
+    "data quality flag", "data resolution", "fix frequency",
+    "ping", "ping rate", "positional uncertainty", "sampling rate",
+    "sensor", "sensor calibration", "signal to noise ratio", "snr",
+    "update frequency"
+  ],
+
+  "SurveyAndMapping": [
+    "coverage", "digital elevation model", "dem", "line plan",
+    "metadata", "mosaic", "overlap", "survey", "survey grid",
+    "survey line", "swath", "track spacing"
+  ],
+
+  "TemporalMissionManagement": [
+    "launch window", "mission debrief", "mission execution",
+    "mission window", "recovery window", "time synchronization",
+    "timestamp", "utc"
+  ],
+
+  "TerrainAndBathymetry": [
+    "bathy grid", "bathymetry", "bottom texture", "bottom type",
+    "complexity", "gradient", "multibeam", "seabed", "seabed morphology",
+    "seafloor", "seafloor complexity", "slope", "terrain", "terrain model",
+    "topography", "vector electronic navigational charts"
+  ],
+
+  "VehiclePlatformSystem": [
+    "altitude", "asv", "attitude", "auv", "autonomous surface vehicle",
+    "autonomous underwater vehicle", "battery", "battery endurance",
+    "battery life", "ballast", "climb rate", "communication",
+    "descent rate", "duty cycle", "endurance", "equipment limitations",
+    "hover capability", "hull", "launch and recovery system", "lars",
+    "maneuverability", "maximum", "minimum", "mission abort condition",
+    "mission endurance", "oem", "payload", "payload bay",
+    "payload capacity", "pitch", "platform", "power budget",
+    "power consumption", "power constraint", "propulsion", "range",
+    "roll", "rov", "speed", "stability", "thruster", "turn radius",
+    "turnaround time", "usv", "vehicle", "vehicle controller",
+    "vehicle fault", "vessel", "yaw", "unmanned underwater vehicle"
+  ]
+}

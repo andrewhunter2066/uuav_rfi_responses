@@ -39,134 +39,6 @@ ACRONYM_EXPANSIONS = {
 # Regex pattern to keep only word characters, spaces, and hyphens
 PUNCTUATION_PATTERN = r'[^\w\s\-]'
 
-
-# Words to NEVER replace (protected terms)
-PROTECTED_TERMS = {
-    # --- Analytical & Data Management ---
-    "ai", "artificial intelligence", "cf convention", "confidence interval",
-    "data lineage", "data provenance", "error budget", "estimation factor",
-    "geojson", "geospatial data", "json-ld", "knowledge graph",
-    "machine learning", "metadata", "metadata schema", "ml",
-    "netcdf", "netcdf-cf", "ontology", "performance model",
-    "probability distribution", "python", "r", "sdk", "semantic model",
-    "sensitivity analysis", "taxonomy", "test set", "training data",
-    "uncertainty model", "validation data",
-
-    # --- Communications & Control ---
-    "acoustic modem", "bandwidth allocation", "command and control", "command latency",
-    "comms", "communication handshake", "communication outage",
-    "communications plan", "control architecture", "control interface",
-    "control loop", "c2", "downlink", "latency", "link stability",
-    "mission controller", "mission monitoring", "mission planning system",
-    "operator console", "real-time control", "telemetry", "telemetry link",
-    "uplink", "uplink path",
-
-    # --- Data Products & Requirements ---
-    "classified map", "coverage map", "coverage polygon", "data deliverable",
-    "data fusion", "data product", "deliverable product", "geotiff",
-    "point cloud", "sensor fusion", "survey deliverable", "survey footprint",
-
-    # --- Environmental & Oceanographic ---
-    "bathymetric grid", "beach gradient", "conductivity", "ctd",
-    "current", "current shear", "density", "downwelling", "east australian current",
-    "eac", "environmental restriction", "halocline", "habitat zone",
-    "hydrodynamics", "hydrography", "hydrostatic pressure",
-    "internal wave", "ocean front", "oceanographic conditions",
-    "pressure", "salinity", "sea floor roughness", "sea state",
-    "sediment", "sediment transport", "sensitive habitat", "substrate",
-    "substrate composition", "swell", "temperature", "thermocline",
-    "tidal", "tide", "turbidity", "turbulent kinetic energy",
-    "upwelling", "visibility", "water column", "wave height",
-
-    # --- Historical & Contextual ---
-    "archival data", "baseline dataset", "historical", "historical bathymetry",
-    "historical survey", "legacy mission", "mission archive", "past operations",
-    "reference dataset", "reference data",
-
-    # --- Mission Parameters & Objectives ---
-    "area coverage rate", "coverage requirement", "mission", "mission duration",
-    "mission feasibility", "mission objective", "mission phase",
-    "mission profile", "mission readiness", "mission rehearsal",
-    "mission risk", "mission sequencing", "mission segment",
-    "mission tempo", "mission timeline", "mission validation",
-    "search pattern", "survey objective", "time on task",
-
-    # --- Navigation & Positioning ---
-    "accuracy", "ais", "bearing", "chart datum", "chart projection",
-    "coordinate reference system", "depth", "doppler velocity log",
-    "dvl", "epsg", "fix", "fix accuracy", "geo-reference", "gnss",
-    "gps", "heading", "inertial drift", "inertial navigation system",
-    "ins", "local datum", "navigation", "navigation solution",
-    "no-go zone", "navigational hazard", "position", "position fix",
-    "position uncertainty", "route", "route plan", "survey coverage",
-    "survey speed", "trackline", "waypoint", "zone of confidence",
-
-    # --- Operational Logistics ---
-    "access corridor", "area of interest", "area of operation", "area of operations",
-    "deployment", "deployment vessel", "launch", "launch point",
-    "launch sequence", "launch site", "mission logistics", "operation window",
-    "operational area", "recovery", "recovery location", "recovery operation",
-    "recovery point", "recovery track", "staging area", "support vessel",
-    "survey planning", "transit", "transit corridor",
-
-    # --- Organisational / Workflow & Control ---
-    "command latency", "control architecture", "mission control",
-    "system configuration", "system validation",
-
-    # --- Programmatic / Org-Specific ---
-    "api", "arcgis", "aodn", "emii", "geopandas", "geoserver", "imos",
-    "matlab", "nmea", "pandas", "postgis", "qgis",
-
-    # --- Risk, Safety & Regulation ---
-    "collision avoidance", "contingency plan", "contingency procedure",
-    "critical system", "environmental hazard", "exclusion zone",
-    "fail-safe", "failure mode", "loss of communications", "loss of signal",
-    "mitigation measure", "redundancy", "redundant system",
-    "restricted area", "restricted zone", "risk", "risk assessment",
-    "risk factor", "risk likelihood", "risk mitigation strategy",
-    "risk severity", "safety", "safety case", "safety margin",
-    "submerged hazard", "threat",
-
-    # --- Sensor & Data Quality ---
-    "acoustic", "acoustic interference", "calibration coefficient",
-    "calibration status", "confidence zone", "data quality",
-    "data quality flag", "data resolution", "fix frequency",
-    "ping", "ping rate", "positional uncertainty", "sampling rate",
-    "sensor", "sensor calibration", "signal to noise ratio", "snr",
-    "update frequency",
-
-    # --- Survey & Mapping ---
-    "coverage", "digital elevation model", "dem", "line plan",
-    "metadata", "mosaic", "overlap", "survey", "survey grid",
-    "survey line", "swath", "track spacing",
-
-    # --- Temporal & Mission Management ---
-    "launch window", "mission debrief", "mission execution",
-    "mission window", "recovery window", "time synchronization",
-    "timestamp", "utc",
-
-    # --- Terrain & Bathymetry ---
-    "bathy grid", "bathymetry", "bottom texture", "bottom type",
-    "complexity", "gradient", "multibeam", "seabed", "seabed morphology",
-    "seafloor", "seafloor complexity", "slope", "terrain", "terrain model",
-    "topography", "vector electronic navigational charts",
-
-    # --- Vehicle, Platform & System Terms ---
-    "altitude", "asv", "attitude", "auv", "autonomous surface vehicle",
-    "autonomous underwater vehicle", "battery", "battery endurance",
-    "battery life", "ballast", "climb rate", "communication",
-    "descent rate", "duty cycle", "endurance", "equipment limitations",
-    "hover capability", "hull", "launch and recovery system", "lars",
-    "maneuverability", "maximum", "minimum", "mission abort condition",
-    "mission endurance", "oem", "payload", "payload bay",
-    "payload capacity", "pitch", "platform", "power budget",
-    "power consumption", "power constraint", "propulsion", "range",
-    "roll", "rov", "speed", "stability", "thruster", "turn radius",
-    "turnaround time", "usv", "vehicle", "vehicle controller",
-    "vehicle fault", "vessel", "yaw", "unmanned underwater vehicle",
-}
-
-
 # Synonym - Protection conflict rules
 CONFLICT_RULES = {
     # --- Temporal / Oceanographic context ---
@@ -1906,6 +1778,18 @@ def load_taxonomy(json_path: str):
     return parent_keywords, child_keywords
 
 
+def load_protected_terms(path: str, flatten: bool = True) -> set[str] | dict[str, set[str]]:
+    with open(path, "r", encoding="utf-8") as f:
+        data = json.load(f)
+
+    grouped = {k: {t.lower().strip() for t in v} for k, v in data.items()}
+
+    if flatten:
+        # Merge into one global set
+        return set().union(*grouped.values())
+    return grouped
+
+
 if __name__ == "__main__":
     # Define keywords for each category as a module constant
     # Load the JSON file
@@ -1941,6 +1825,9 @@ if __name__ == "__main__":
         DOMAIN_SYNONYMS = {k.lower(): [s.lower() for s in v] for k, v in json.load(f).items()}
     print("Loaded terms:", len(DOMAIN_SYNONYMS))
     print("Sample mission synonyms:", DOMAIN_SYNONYMS.get("mission"))
+
+    # Load protected terms from JSON file
+    PROTECTED_TERMS = load_protected_terms("./docs/protected_terms.json", flatten=False)
     # Run classification for all scenarios
     for scenario_num in [1, 2, 3]:
         print(f"\n{'#' * 60}")
