@@ -1,0 +1,21 @@
+{
+  "child_summary": {
+    "Bathymetric Data Products": 4,
+    "Physical Processes": 1,
+    "uncategorised": 7,
+    "Seafloor Characterization": 2,
+    "Environmental Context": 2,
+    "Objectives": 2,
+    "Hardware": 2,
+    "Control Systems": 1,
+    "Measurement And Models": 1
+  },
+  "parent_summary": {
+    "Terrain And Bathymetry": 6,
+    "Environmental And Oceanographic Conditions": 4,
+    "uncategorised": 7,
+    "Mission Parameters And Objectives": 2,
+    "Vehicle Capabilities And Constraints": 2,
+    "Communications And Control": 1
+  }
+}

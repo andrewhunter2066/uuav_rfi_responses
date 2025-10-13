@@ -1,0 +1,187 @@
+A request for information for the development of a mission planning application received the following responses to the
+question "Q6 - What test scenarios and supporting data does the system  need to provide to support mission planners in
+recording mission planning  data for future review, reuse,  or refinement?" The responses so far are:
+
+Logging of all route decisions, sensor performance, and environmental conditions.
+Timestamped mission events and deviations.
+Integration with post-mission analysis tools for feedback into future planning cycles.
+MBES metadata logs (e.g., ping rate, swath width, coverage maps).
+Annotated feature detection outputs with confidence scores.
+Survey track overlays with timestamps and environmental conditions.
+Post-mission analysis reports highlighting anomalies and lessons learned.
+Annotated beach selection rationale with environmental overlays.
+Mission logs detailing approach conditions and outcomes.
+Feature detection records with confidence scores.
+Post-mission feedback on beach viability and landing success.
+Initial test check lists (pre-dive, etc.)
+Signatory or user account information
+Specific job files to load into a template
+Time on task vs completion factors/ratio
+holes in data, sensor performance issues
+depth discrepancies
+track of interest
+Automated procedure to record contacts
+Initial test check lists (pre-dive, etc.)
+Signatory or user account information
+Specific job files to load into a template
+Time on task vs completion factors/ratio
+holes in data, sensor performance issues
+depth discrepancies
+track of interest
+Automated procedure to record contacts
+Initial test check lists (pre-dive, etc.)
+Signatory or user account information
+Specific job files to load into a template
+Time on task vs completion factors/ratio
+holes in data, sensor performance issues
+depth discrepancies
+track of interest
+Automated procedure to record contacts
+
+
+Given the existing Mission Planning Taxonomy:
+
+{
+  "MissionPlanningTaxonomy": {
+    "TerrainAndBathymetry": {
+      "Concepts": {
+        "SurfaceFeatures": ["terrain", "topography", "slope", "gradient", "complexity"],
+        "SeafloorCharacterization": ["bathymetry", "seabed", "seafloor", "bottom texture", "substrate", "geomorphology"],
+        "BathymetricDataProducts": ["multibeam", "coverage", "resolution", "overlap", "gap", "bathymetric grid", "digital elevation model", "DEM", "surface model"],
+        "QualityAndConfidence": ["vector electronic navigational charts", "zone of confidence", "depth profile", "bathymetric uncertainty model", "feature detection confidence", "standard deviation limits", "standard deviation thresholds"],
+        "CoverageRisks": ["incomplete coverage due to terrain shadowing", "coverage loss from sensor limitations"],
+        "SeafloorAndInfrastructure": ["seafloor classification of route", "infrastructure of route and AO"]
+      },
+      "RelatedTo": ["EstimationAndUncertaintyModeling", "EnvironmentalAndOceanographicConditions", "DataProductsAndRequirements"]
+    },
+
+    "EnvironmentalAndOceanographicConditions": {
+      "Concepts": {
+        "PhysicalProcesses": ["current", "tidal", "stream", "wave height", "wind", "drift", "sea state", "EAC", "East Australian Current"],
+        "WaterProperties": ["temperature", "salinity", "pressure", "density", "conductivity", "turbidity"],
+        "MeasurementAndModels": ["CTD", "water column", "hydrodynamics", "metocean", "hindcast", "forecast", "oceanographic model"],
+        "EnvironmentalContext": ["environmental", "ocean", "conditions", "environmental uncertainty model", "predictive environmental modelling"],
+        "EphemeralsAndDynamics": ["ephemerals of route", "currents of route", "tides of route"],
+        "EnvironmentalRisks": ["habitat disruption risk", "environmental compliance requirements", "sensitive habitat protection"]
+      },
+      "RelatedTo": ["EstimationAndUncertaintyModeling", "TerrainAndBathymetry", "VehicleCapabilitiesAndConstraints"]
+    },
+
+    "VehicleCapabilitiesAndConstraints": {
+      "Concepts": {
+        "Performance": ["speed", "range", "endurance", "mission duration", "operating envelope", "stability", "autonomy"],
+        "Hardware": ["thruster", "battery capacity", "payload", "sensor range", "communication"],
+        "SystemConstraints": ["equipment limitations", "parameters", "abort angles", "OEM", "fail-safe"],
+        "OperationalLimits": ["launch and recovery", "mission abort", "power consumption", "rules of engagement", "operational constraints", "stealth speed", "covert operation"],
+        "DepthLimits": ["maximum depth of vehicle", "minimum depth of vehicle", "surf zone dynamics", "vehicle instability in surf zone"],
+        "PerformanceConstraints": ["vehicle endurance", "vehicle communication requirements", "pre-mission bench test of sensors"]
+      },
+      "RelatedTo": ["NavigationAndPositioning", "MissionParametersAndObjectives", "EstimationAndUncertaintyModeling"]
+    },
+
+    "NavigationAndPositioning": {
+      "Concepts": {
+        "NavigationSystems": ["GPS", "GNSS", "Global Positioning System", "INS", "DVL"],
+        "SpatialReference": ["coordinates", "datum", "EPSG", "coordinate reference system", "georeferencing"],
+        "RouteAndTrajectory": ["navigation", "route", "trackline", "trajectory", "heading", "bearing", "geofence", "waypoint", "route selection", "route confidence", "confidence in maintaining position"],
+        "AccuracyAndHazards": ["accuracy", "fixing frequency", "navigational hazards", "no-go zones", "vector chart", "positioning system"],
+        "DeniedEnvironments": ["GPS-denied environments", "acoustically denied environments", "communication-denied environments"],
+        "FailureScenarios": ["sensor failure", "DVL failure", "INS drift", "off-track drift potential"],
+        "OperationalRisks": ["surfacing for GPS fix in high-traffic areas", "navigation drift affecting survey alignment", "overlap errors between adjacent survey lanes"]
+      },
+      "RelatedTo": ["EstimationAndUncertaintyModeling", "VehicleCapabilitiesAndConstraints", "OperationalLogistics"]
+    },
+
+    "MissionParametersAndObjectives": {
+      "Concepts": {
+        "Objectives": ["mission", "objective", "task", "evaluation", "mission goal"],
+        "TemporalAspects": ["time-on-task", "timings", "mission phase", "mission segment", "mission schedule", "mission profile", "time on surface", "risk to surfacing", "timing uncertainty"],
+        "SpatialAspects": ["search area", "zone of operation", "area of operation", "route options", "survey feasibility"],
+        "OperationalWindows": ["launch window", "recovery window", "time synchronization", "UTC", "timestamp"]
+      },
+      "RelatedTo": ["EstimationAndUncertaintyModeling", "ThreatsAndRiskManagement", "OperationalLogistics"]
+    },
+
+    "ThreatsAndRiskManagement": {
+      "Concepts": {
+        "Hazards": ["threat", "risk", "hazard", "failure", "loss of communications", "loss of vehicle", "environmental risk", "navigational hazards", "potential adversary influence"],
+        "ResponseAndRecovery": ["abort", "recovery", "contingency", "contingency plan", "emergency procedure"],
+        "SafetyAndMitigation": ["safety", "safety case", "redundancy", "fail-safe", "collision avoidance", "risk mitigation", "cyber risk", "safety vessel requirement", "improves safety", "safety confidence"],
+        "AdversarialAndDetectionRisks": ["risk of detection", "interference in high-traffic zones", "interference in sensitive zones", "cyber risk of mission"],
+        "FailureResponse": ["actions on loss of communications", "actions on loss of vehicle", "system fault response", "systematic anomaly reporting", "automated procedure to record contacts"],
+        "CollisionAndObstruction": ["collision avoidance", "bottom object interference", "navigational hazard interference"]
+      },
+      "RelatedTo": ["MissionParametersAndObjectives", "EstimationAndUncertaintyModeling", "VehicleCapabilitiesAndConstraints"]
+    },
+
+    "HistoricalAndContextualData": {
+      "Concepts": {
+        "MissionHistory": ["historical", "previous mission", "similar mission", "past operations", "mission archive", "mission report"],
+        "DataContext": ["reference data", "legacy", "archive", "baseline", "benchmark", "reference dataset"],
+        "AnalysisAndLearning": ["comparative analysis", "trend", "data provenance", "historical performance", "known defects", "historical beach assessments", "landing success rates", "post-mission feedback", "post-mission analysis reports", "lessons learned from anomalies", "feedback into planning cycles"]
+      },
+      "RelatedTo": ["EstimationAndUncertaintyModeling", "DataProductsAndRequirements", "MissionParametersAndObjectives"]
+    },
+
+    "DataProductsAndRequirements": {
+      "Concepts": {
+        "SurveyData": ["survey data", "coverage maps", "swath width", "classification", "infrastructure"],
+        "DataQuality": ["resolution", "overlap", "zone of confidence", "data validation", "quality control", "data fusion", "feature classification reliability", "confidence scoring"],
+        "MetadataAndFormat": ["metadata", "data format", "supporting data", "data standard", "geotiff", "point cloud", "file format"],
+        "Outputs": ["data product", "post-processing", "bathymetric grid", "digital elevation model"],
+        "DataIntegrityAndResilience": ["data dropouts from MBES", "environmental interference in data", "sensor fault-related data gaps", "holes in data", "sensor performance issues", "depth discrepancies", "track of interest", "automated contact recording"]
+      },
+      "RelatedTo": ["TerrainAndBathymetry", "HistoricalAndContextualData", "EstimationAndUncertaintyModeling"]
+    },
+
+    "CommunicationsAndControl": {
+      "Concepts": {
+        "CommsInfrastructure": ["communication", "link", "network", "bandwidth", "frequency", "signal", "acoustic modem"],
+        "ControlSystems": ["telemetry", "control", "command", "signal loss", "data link"],
+        "Reliability": ["uplink", "downlink", "satellite", "latency", "reliability", "comms channel", "acoustic communications range", "communication confidence"]
+      },
+      "RelatedTo": ["VehicleCapabilitiesAndConstraints", "ThreatsAndRiskManagement", "EstimationAndUncertaintyModeling"]
+    },
+
+    "OperationalLogistics": {
+      "Concepts": {
+        "Deployment": ["launch", "recovery", "deployment", "transit", "mobilization", "demobilization"],
+        "AccessAndSupport": ["approach route", "landing", "access", "launch point", "recovery location", "support vessel", "crew", "base port", "beach access", "beach viability"],
+        "FieldOperations": ["survey planning", "constraints", "area of operation", "operational window", "staging area", "field logistics"]
+      },
+      "RelatedTo": ["MissionParametersAndObjectives", "NavigationAndPositioning"]
+    },
+
+    "EstimationAndUncertaintyModeling": {
+      "Concepts": {
+        "UncertaintyModeling": ["environmental uncertainty model", "bathymetric uncertainty model", "predictive modeling", "variance analysis", "standard deviation thresholds", "standard deviation limits"],
+        "ConfidenceScoring": ["feature detection confidence", "classification reliability", "route confidence", "confidence in maintaining position", "confidence in understanding area of operations", "annotated confidence scores", "confidence scores for feature detection", "confidence in beach viability"],
+        "PredictiveEstimation": ["predictive modeling for sonar performance", "predictive modeling for beach access", "viability scoring", "benchmark performance using historical data"]
+      },
+      "RelatedTo": ["TerrainAndBathymetry", "EnvironmentalAndOceanographicConditions", "DataProductsAndRequirements", "HistoricalAndContextualData", "NavigationAndPositioning", "ThreatsAndRiskManagement"]
+    },
+
+    "TestAndEvaluationScenarios": {
+      "Concepts": {
+        "SystemBenchmarks": ["sensor performance prior to mission start", "bench test requirements", "initial test checklists"],
+        "OperationalScenarios": ["failure scenarios", "GPS-denied test", "acoustic-denied test", "drift test", "coverage gap test"]
+      },
+      "RelatedTo": ["ThreatsAndRiskManagement", "VehicleCapabilitiesAndConstraints", "DataProductsAndRequirements"]
+    },
+
+    "AuditAndAccountability": {
+      "Concepts": {
+        "MissionLogging": ["logging of route decisions", "timestamped mission events", "mission logs", "survey track overlays", "approach conditions logs"],
+        "MetadataAndRecords": ["MBES metadata logs", "ping rate logs", "swath width logs", "annotated feature detection outputs", "annotated beach selection rationale", "feature detection records with confidence scores"],
+        "Accountability": ["signatory information", "user account information", "job file templates", "initial test checklists"]
+      },
+      "RelatedTo": ["DataProductsAndRequirements", "ThreatsAndRiskManagement", "EstimationAndUncertaintyModeling"]
+    }
+  }
+}
+
+
+
+
+Can you suggest extensions to the taxonomy to cover Q6 responses? Think deeply
+

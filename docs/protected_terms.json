@@ -7,7 +7,7 @@
     "netcdf", "netcdf-cf", "ontology", "performance model",
     "probability distribution", "python", "r", "sdk", "semantic model",
     "sensitivity analysis", "taxonomy", "test set", "training data",
-    "uncertainty model", "validation data"
+    "uncertainty model", "validation data", "metadata log", "annotation"
   ],
 
   "CommunicationsAndControl": [
@@ -17,13 +17,14 @@
     "control loop", "c2", "downlink", "latency", "link stability",
     "mission controller", "mission monitoring", "mission planning system",
     "operator console", "real-time control", "telemetry", "telemetry link",
-    "uplink", "uplink path"
+    "uplink", "uplink path", "contact recording"
   ],
 
   "DataProductsAndRequirements": [
     "classified map", "coverage map", "coverage polygon", "data deliverable",
     "data fusion", "data product", "deliverable product", "geotiff",
-    "point cloud", "sensor fusion", "survey deliverable", "survey footprint"
+    "point cloud", "sensor fusion", "survey deliverable", "survey footprint",
+    "data anomaly", "data dropout"
   ],
 
   "EnvironmentalAndOceanographic": [
@@ -42,7 +43,7 @@
   "HistoricalAndContextual": [
     "archival data", "baseline dataset", "historical", "historical bathymetry",
     "historical survey", "legacy mission", "mission archive", "past operations",
-    "reference dataset", "reference data"
+    "reference dataset", "reference data", "mission log", "feedback"
   ],
 
   "MissionParametersAndObjectives": [
@@ -51,7 +52,7 @@
     "mission profile", "mission readiness", "mission rehearsal",
     "mission risk", "mission sequencing", "mission segment",
     "mission tempo", "mission timeline", "mission validation",
-    "search pattern", "survey objective", "time on task"
+    "search pattern", "survey objective", "time on task", "checklist"
   ],
 
   "NavigationAndPositioning": [
@@ -62,7 +63,8 @@
     "ins", "local datum", "navigation", "navigation solution",
     "no-go zone", "navigational hazard", "position", "position fix",
     "position uncertainty", "route", "route plan", "survey coverage",
-    "survey speed", "trackline", "waypoint", "zone of confidence"
+    "survey speed", "trackline", "waypoint", "zone of confidence",
+    "track of interest"
   ],
 
   "OperationalLogistics": [
@@ -72,16 +74,6 @@
     "operational area", "recovery", "recovery location", "recovery operation",
     "recovery point", "recovery track", "staging area", "support vessel",
     "survey planning", "transit", "transit corridor"
-  ],
-
-  "OrganisationalWorkflowControl": [
-    "command latency", "control architecture", "mission control",
-    "system configuration", "system validation"
-  ],
-
-  "ProgrammaticOrgSpecific": [
-    "api", "arcgis", "aodn", "emii", "geopandas", "geoserver", "imos",
-    "matlab", "nmea", "pandas", "postgis", "qgis"
   ],
 
   "RiskSafetyRegulation": [
@@ -95,46 +87,34 @@
     "submerged hazard", "threat"
   ],
 
-  "SensorAndDataQuality": [
-    "acoustic", "acoustic interference", "calibration coefficient",
-    "calibration status", "confidence zone", "data quality",
-    "data quality flag", "data resolution", "fix frequency",
-    "ping", "ping rate", "positional uncertainty", "sampling rate",
-    "sensor", "sensor calibration", "signal to noise ratio", "snr",
-    "update frequency"
+  "audit_and_accountability": [
+    "logging of route decisions",
+    "timestamped mission events",
+    "mission logs",
+    "survey track overlays",
+    "approach conditions logs",
+    "MBES metadata logs",
+    "ping rate logs",
+    "swath width logs",
+    "annotated feature detection outputs",
+    "annotated beach selection rationale",
+    "feature detection records with confidence scores",
+    "signatory information",
+    "user account information",
+    "job file templates",
+    "initial test checklists"
   ],
 
-  "SurveyAndMapping": [
-    "coverage", "digital elevation model", "dem", "line plan",
-    "metadata", "mosaic", "overlap", "survey", "survey grid",
-    "survey line", "swath", "track spacing"
+  "integration_and_feedback": [
+    "integration with post-mission analysis tools",
+    "post-mission feedback loops",
+    "future planning refinement",
+    "lessons learned integration",
+    "feedback into mission planning cycles"
   ],
 
-  "TemporalMissionManagement": [
-    "launch window", "mission debrief", "mission execution",
-    "mission window", "recovery window", "time synchronization",
-    "timestamp", "utc"
-  ],
-
-  "TerrainAndBathymetry": [
-    "bathy grid", "bathymetry", "bottom texture", "bottom type",
-    "complexity", "gradient", "multibeam", "seabed", "seabed morphology",
-    "seafloor", "seafloor complexity", "slope", "terrain", "terrain model",
-    "topography", "vector electronic navigational charts"
-  ],
-
-  "VehiclePlatformSystem": [
-    "altitude", "asv", "attitude", "auv", "autonomous surface vehicle",
-    "autonomous underwater vehicle", "battery", "battery endurance",
-    "battery life", "ballast", "climb rate", "communication",
-    "descent rate", "duty cycle", "endurance", "equipment limitations",
-    "hover capability", "hull", "launch and recovery system", "lars",
-    "maneuverability", "maximum", "minimum", "mission abort condition",
-    "mission endurance", "oem", "payload", "payload bay",
-    "payload capacity", "pitch", "platform", "power budget",
-    "power consumption", "power constraint", "propulsion", "range",
-    "roll", "rov", "speed", "stability", "thruster", "turn radius",
-    "turnaround time", "usv", "vehicle", "vehicle controller",
-    "vehicle fault", "vessel", "yaw", "unmanned underwater vehicle"
+  "performance_metrics": [
+    "time on task vs completion ratio",
+    "mission efficiency ratios"
   ]
 }

@@ -1,11 +1,11 @@
 PredictedParent,has_protected,has_conflict,has_cross_conflict,count
 Communications And Control,False,False,False,1
-Data Products And Requirements,False,False,False,2
+Data Products And Requirements,False,False,False,1
 Environmental And Oceanographic Conditions,False,False,False,8
-Mission Parameters And Objectives,False,False,False,3
+Mission Parameters And Objectives,False,False,False,4
 Navigation And Positioning,False,False,False,17
 Operational Logistics,False,False,False,4
-Terrain And Bathymetry,False,False,False,6
-Threats And Risk Management,False,False,False,1
+Terrain And Bathymetry,False,False,False,7
+Threats And Risk Management,False,False,False,2
 Vehicle Capabilities And Constraints,False,False,False,11
-uncategorised,False,False,False,11
+uncategorised,False,False,False,9

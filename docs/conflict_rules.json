@@ -12,7 +12,8 @@
     "protected": [
       "depth", "bathymetry", "bathymetric grid", "seafloor", "seabed",
       "gradient", "slope", "topography", "terrain", "bathy grid",
-      "chart datum", "vertical datum", "bottom texture"
+      "chart datum", "vertical datum", "bottom texture",
+      "terrain shadowing"
     ],
     "synonyms": ["depth", "area", "layer", "zone", "surface"]
   },
@@ -21,7 +22,9 @@
     "protected": [
       "sea state", "wave height", "turbidity", "sediment", "substrate",
       "temperature", "salinity", "water column", "density", "conductivity",
-      "eac", "east australian current", "hydrodynamics", "hydrography"
+      "eac", "east australian current", "hydrodynamics", "hydrography",
+      "surf zone dynamics", "vehicle instability in surf zone",
+      "habitat disruption risk", "environmental compliance"
     ],
     "synonyms": ["environment", "conditions", "ocean", "marine", "weather"]
   },
@@ -30,7 +33,8 @@
     "protected": [
       "survey", "multibeam echo sounder", "mbes", "coverage map",
       "swath", "line plan", "track spacing", "geotiff",
-      "digital elevation model", "dem", "survey grid", "coverage polygon"
+      "digital elevation model", "dem", "survey grid", "coverage polygon",
+      "overlap error", "coverage error", "adjacent survey lane mismatch"
     ],
     "synonyms": ["mapping", "data", "collection", "surveying", "charting"]
   },
@@ -40,7 +44,8 @@
       "gps", "gnss", "positioning", "navigation", "ins",
       "inertial navigation system", "doppler velocity log", "dvl",
       "fix", "bearing", "waypoint", "route", "trackline",
-      "coordinate reference system", "epsg", "geofence", "chart datum"
+      "coordinate reference system", "epsg", "geofence", "chart datum",
+      "track of interest"
     ],
     "synonyms": ["location", "path", "trajectory", "movement", "space"]
   },
@@ -77,7 +82,7 @@
     "protected": [
       "comms", "telemetry", "acoustic modem", "satellite link",
       "uplink", "downlink", "api", "sdk", "network interface", "data uplink",
-      "bandwidth allocation", "link stability", "latency"
+      "bandwidth allocation", "link stability", "latency", "contact recording"
     ],
     "synonyms": ["communication", "connectivity", "link", "signal"]
   },
@@ -96,17 +101,20 @@
     "protected": [
       "knowledge graph", "ontology", "taxonomy", "json-ld",
       "metadata schema", "controlled vocabulary", "data dictionary",
-      "semantic model", "cf convention", "netcdf-cf"
+      "semantic model", "cf convention", "netcdf-cf",
+      "annotation", "metadata log"
     ],
     "synonyms": ["data", "classification", "schema", "structure"]
   },
 
   "risk": {
     "protected": [
-      "risk", "threat", "hazard", "cyber risk", "no-go zone",
-      "collision avoidance", "restricted area", "safety case", "fail-safe",
-      "redundancy", "contingency plan", "risk assessment",
-      "risk likelihood", "risk severity", "mitigation measure"
+      "risk", "threat", "hazard", "cyber risk", "cyber threat",
+      "no-go zone", "collision avoidance", "restricted area",
+      "safety case", "fail-safe", "redundancy", "contingency plan",
+      "risk assessment", "risk likelihood", "risk severity",
+      "mitigation measure", "risk of detection", "high-traffic zone risk",
+      "actions on loss of vehicle", "emergency action"
     ],
     "synonyms": ["important", "limitation", "consideration", "danger", "vulnerability"]
   },
@@ -122,7 +130,8 @@
   "data_products": {
     "protected": [
       "data product", "survey deliverable", "coverage polygon",
-      "data quality", "zone of confidence", "confidence zone"
+      "data quality", "zone of confidence", "confidence zone",
+      "data anomaly", "data dropout"
     ],
     "synonyms": ["output", "dataset", "map", "deliverable"]
   },
@@ -138,8 +147,58 @@
   "historical": {
     "protected": [
       "historical", "legacy mission", "past operations",
-      "reference data", "archive", "baseline dataset"
+      "reference data", "archive", "baseline dataset",
+      "mission log", "feedback"
     ],
     "synonyms": ["previous", "contextual", "reference", "benchmark"]
+  },
+
+  "sensor_quality": {
+    "protected": [
+      "sensor failure", "sensor failure scenario", "doppler velocity log failure",
+      "mbes dropout", "data dropout", "bench test", "pre-mission sensor check"
+    ],
+    "synonyms": ["test", "measurement", "trial"]
+  },
+
+  "audit_and_accountability": {
+    "protected": [
+      "logging of route decisions",
+      "timestamped mission events",
+      "mission logs",
+      "survey track overlays",
+      "approach conditions logs",
+      "MBES metadata logs",
+      "ping rate logs",
+      "swath width logs",
+      "annotated feature detection outputs",
+      "annotated beach selection rationale",
+      "feature detection records with confidence scores",
+      "signatory information",
+      "user account information",
+      "job file templates",
+      "initial test checklists"
+    ],
+    "synonyms": ["record", "record keeping", "audit", "documentation", "log", "checklist"]
+  },
+
+  "integration_and_feedback": {
+    "protected": [
+      "integration with post-mission analysis tools",
+      "post-mission feedback loops",
+      "future planning refinement",
+      "lessons learned integration",
+      "feedback into mission planning cycles"
+    ],
+    "synonyms": ["feedback", "review", "after-action report", "evaluation", "input"]
+  },
+
+  "performance_metrics": {
+    "protected": [
+      "time on task vs completion ratio",
+      "mission efficiency ratios"
+    ],
+    "synonyms": ["performance ratio", "efficiency ratio", "time ratio", "output ratio"]
   }
 }
+

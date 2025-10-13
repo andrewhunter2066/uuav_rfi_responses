@@ -1,0 +1,24 @@
+{
+  "child_summary": {
+    "Navigation Systems": 3,
+    "Failure Scenarios": 2,
+    "uncategorised": 6,
+    "Safety And Mitigation": 2,
+    "Objectives": 3,
+    "Physical Processes": 2,
+    "Hazards": 1,
+    "Survey Data": 2,
+    "Performance": 2,
+    "Route And Trajectory": 5,
+    "Hardware": 4
+  },
+  "parent_summary": {
+    "Navigation And Positioning": 10,
+    "uncategorised": 6,
+    "Threats And Risk Management": 3,
+    "Mission Parameters And Objectives": 3,
+    "Environmental And Oceanographic Conditions": 2,
+    "Data Products And Requirements": 2,
+    "Vehicle Capabilities And Constraints": 6
+  }
+}

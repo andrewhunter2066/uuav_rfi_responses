@@ -1,0 +1,19 @@
+{
+  "child_summary": {
+    "Surface Features": 2,
+    "uncategorised": 10,
+    "Physical Processes": 1,
+    "Seafloor Characterization": 1,
+    "Objectives": 2,
+    "Hardware": 2,
+    "Bathymetric Data Products": 2,
+    "Measurement And Models": 2
+  },
+  "parent_summary": {
+    "Terrain And Bathymetry": 4,
+    "uncategorised": 10,
+    "Environmental And Oceanographic Conditions": 4,
+    "Mission Parameters And Objectives": 2,
+    "Vehicle Capabilities And Constraints": 2
+  }
+}

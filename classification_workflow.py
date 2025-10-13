@@ -1498,7 +1498,16 @@ def merge_all_classifications():
         (3, 'Q2'),
         (1, 'Q3'),
         (2, 'Q3'),
-        (3, 'Q3')
+        (3, 'Q3'),
+        (1, 'Q4'),
+        (2, 'Q4'),
+        (3, 'Q4'),
+        (1, 'Q5'),
+        (2, 'Q5'),
+        (3, 'Q5'),
+        (1, 'Q6'),
+        (2, 'Q6'),
+        (3, 'Q6'),
     ]
 
     merge_all_classifications_multi_column(
@@ -1506,7 +1515,6 @@ def merge_all_classifications():
         original_data_path='./input/normalised_all_responses.csv',
         output_path='./output/normalised_all_classified_responses.csv'
     )
-
 
 
 def save_summary_report(results: list[dict], summary_path: str) -> None:
@@ -1774,7 +1782,7 @@ if __name__ == "__main__":
     # Run classification for all scenarios
     for scenario_num in [1, 2, 3]:
         print(f"\n{'#' * 60}")
-        for question_num in ["Q1", "Q2", "Q3"]:
+        for question_num in ["Q1", "Q2", "Q3", "Q4", "Q5", "Q6"]:
             print(f"Running classification for Scenario {scenario_num}, Question {question_num}")
             main(question_num, scenario_num, marine_planning_taxonomy_raw, merge_to_source=False)
 
@@ -1790,4 +1798,3 @@ if __name__ == "__main__":
         with open(suppression_log_path, 'w') as f:
             f.write('\n'.join(SUPPRESSION_LOG))
         print(f"\nSuppression log saved to: {suppression_log_path}")
-

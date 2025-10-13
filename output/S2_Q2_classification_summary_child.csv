@@ -1,15 +1,13 @@
 PredictedChild,has_protected,has_conflict,has_cross_conflict,count
-Accuracy And Hazards,False,False,False,3
+Accuracy And Hazards,False,False,False,2
 Bathymetric Data Products,False,False,False,2
 Comms Infrastructure,False,False,False,1
-Control Systems,False,False,False,1
-Hardware,False,False,False,1
-Hazards,False,False,False,1
-Mission History,False,False,False,2
-Navigation Systems,False,False,False,1
-Performance,False,False,False,5
-Route And Trajectory,False,False,False,6
+Hardware,False,False,False,2
+Mission History,False,False,False,1
+Navigation Systems,False,False,False,2
+Performance,False,False,False,6
+Route And Trajectory,False,False,False,8
 Seafloor Characterization,False,False,False,2
-System Constraints,False,False,False,1
-Temporal Aspects,False,False,False,2
-uncategorised,False,False,False,6
+System Constraints,False,False,False,2
+Temporal Aspects,False,False,False,1
+uncategorised,False,False,False,5

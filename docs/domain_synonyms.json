@@ -1,757 +1,233 @@
 {
-  "location": [
-    "position",
-    "coordinates",
-    "fix",
-    "geo-location"
+  "location": ["position", "coordinates", "fix", "geo-location"],
+  "path": ["route", "trajectory", "track", "course", "transit"],
+  "area": ["region", "zone", "sector", "operating area", "AOI", "area of operation"],
+  "navigation": ["piloting", "routing", "pathfinding", "wayfinding"],
+  "hazard": ["obstacle", "danger", "no-go zone", "restriction", "constraint"],
+  "positioning": ["fixing", "localization", "geolocation", "position estimate"],
+  "accuracy": ["precision", "error", "uncertainty", "deviation"],
+  "drift": ["offset", "position drift", "bias", "navigation drift", "off-track drift"],
+  "trajectory": ["path", "trackline", "course", "route"],
+  "fix": ["position", "coordinate", "geo-fix"],
+  "waypoint": ["navigation point", "reference point"],
+  "route": ["path", "track", "corridor", "planned line"],
+  "heading": ["bearing", "direction", "orientation"],
+  "georeference": ["spatial reference", "coordinate system"],
+  "no-go zone": ["restricted area", "hazard zone", "exclusion zone"],
+
+  "denied environment": ["GPS-denied", "acoustic-denied", "comm-denied", "denied navigation environment"],
+  "coverage error": ["overlap error", "lane overlap issue", "coverage gap", "coverage mismatch"],
+
+  "water": ["marine", "aquatic", "hydrographic", "oceanic"],
+  "depth": ["underwater depth", "bathymetry", "seafloor elevation"],
+  "surface": ["sea surface", "ocean surface", "top layer"],
+  "current": ["flow", "stream", "drift", "tide", "EAC", "East Australian Current", "circulation"],
+  "tide": ["tidal stream", "tidal current", "tidal flow"],
+  "wave": ["sea state", "swell", "wave height", "wave period"],
+  "seabed": ["seafloor", "bottom", "substrate"],
+  "gradient": ["slope", "incline", "angle"],
+  "environment": ["conditions", "weather", "climate", "hydrodynamics", "ocean conditions"],
+  "temperature": ["sea temperature", "water temperature", "thermal gradient"],
+  "salinity": ["salt concentration", "conductivity"],
+  "turbidity": ["clarity", "suspended sediment", "visibility"],
+  "hydrodynamics": ["flow regime", "current behavior", "circulation pattern"],
+  "oceanography": ["marine science", "sea state analysis"],
+  "wave height": ["significant wave height", "swell height"],
+  "sea state": ["wave condition", "surface condition"],
+  "turbulence": ["flow instability", "eddy motion"],
+  "meteorology": ["weather data", "atmospheric condition"],
+  "sediment": ["substrate", "bed material", "seafloor composition"],
+  "hydrography": ["seafloor mapping", "marine surveying"],
+  "ephemerals": ["ephemeral currents", "ephemeral tides", "ephemeral conditions"],
+  "surf zone": ["surf zone dynamics", "wave breaking zone", "surf instability"],
+  "compliance": ["environmental compliance", "regulatory compliance"],
+
+  "mission": ["operation", "task", "objective", "sortie", "assignment"],
+  "survey": ["assessment", "examination", "mapping", "reconnaissance"],
+  "data": ["information", "dataset", "records", "telemetry", "signal data"],
+  "collection": ["gathering", "acquisition", "measurement", "sampling"],
+  "planning": ["preparation", "scheduling", "mission design"],
+  "evaluation": ["assessment", "analysis", "review", "appraisal"],
+  "operation": ["mission", "activity", "undertaking"],
+  "maintenance": ["servicing", "upkeep", "repair"],
+  "logistics": ["supply chain", "support", "replenishment"],
+  "latency": ["delay", "lag", "transmission delay", "response time"],
+  "availability": ["uptime", "readiness", "serviceability"],
+  "resource": ["asset", "supply", "input"],
+  "objective": ["goal", "aim", "purpose", "target"],
+  "scenario": ["mission case", "operational case", "use case", "case", "example"],
+  "strategy": ["approach", "plan", "scheme"],
+  "timeline": ["schedule", "mission duration", "execution window", "chronology", "sequence"],
+  "constraint": ["limitation", "boundary", "restriction"],
+
+  "bench test": ["pre-mission test", "sensor performance check", "system bench test"],
+  "instability": ["vehicle instability", "surf zone instability", "loss of stability"],
+  "depth limits": ["maximum depth limit", "minimum depth limit"],
+
+  "capability": ["ability", "capacity", "performance", "functionality"],
+  "limitation": ["constraint", "restriction", "bound", "threshold"],
+  "requirement": ["need", "specification", "criterion", "parameter"],
+  "vehicle": ["platform", "AUV", "UUV", "ROV", "vessel", "craft"],
+  "sensor": ["instrument", "payload", "detector"],
+  "speed": ["velocity", "cruise speed", "transit speed"],
+  "endurance": ["range", "duration", "loiter time"],
+  "launch": ["deployment", "release"],
+  "recovery": ["retrieval", "return", "rescue", "restoration"],
+  "communication": ["comms", "link", "data link", "telemetry", "signal"],
+  "abort": ["terminate", "cancel", "cease operation"],
+  "power": ["energy", "battery capacity", "consumption", "load"],
+  "payload": ["sensor package", "instrument load", "carried sensors"],
+  "autonomy": ["automation", "self-operation", "independence"],
+  "stability": ["control", "balance", "steady state"],
+  "maneuverability": ["agility", "handling", "turn radius"],
+  "mobility": ["movement", "maneuverability", "locomotion"],
+  "payload capacity": ["sensor load", "equipment capacity"],
+  "control": ["guidance", "command", "stability management"],
+  "autopilot": ["auto-navigation", "self-guidance"],
+  "launch system": ["deployment system", "LARS"],
+  "propulsion": ["thruster", "drive system"],
+  "stamina": ["endurance", "operational duration"],
+  "battery": ["power source", "energy storage"],
+
+  "chart": ["map", "navigational chart", "ENC", "electronic chart"],
+  "coverage": ["extent", "area covered", "swath"],
+  "resolution": ["granularity", "detail", "precision"],
+  "overlap": ["redundancy", "intersection"],
+  "metadata": ["data descriptor", "annotation", "metadata log"],
+  "frequency": ["update rate", "sampling rate", "temporal resolution"],
+  "uncertainty": ["error", "variance", "confidence"],
+  "processing": ["analysis", "filtering", "post-processing", "fusion"],
+  "fusion": ["integration", "combination", "data merging"],
+  "dataset": ["data collection", "data product", "information set"],
+  "visualization": ["display", "representation", "plot"],
+  "classification": ["categorization", "labeling", "clustering"],
+  "output": ["result", "product", "deliverable"],
+  "data dropout": ["data gap", "data loss", "MBES dropout", "system fault data gap"],
+  "integrity": ["data integrity", "survey integrity", "alignment confidence"],
+  "confidence": ["route confidence", "safety confidence", "classification confidence"],
+
+  "risk": ["hazard", "threat", "danger", "exposure", "vulnerability"],
+  "threat": ["risk", "hazard", "cyber risk", "environmental risk", "mission cyber threat", "system intrusion risk"],
+  "loss": ["failure", "breakdown", "malfunction", "outage"],
+  "contingency": ["backup", "fallback", "emergency plan"],
+  "safety": ["protection", "security"],
+  "probability": ["likelihood", "chance", "possibility"],
+  "severity": ["impact", "consequence", "magnitude"],
+  "mitigation": ["control", "prevention", "response", "safeguard"],
+  "redundancy": ["backup", "fallback", "failover", "duplication"],
+  "reliability": ["robustness", "dependability", "resilience", "durability"],
+  "failure": ["breakdown", "loss", "defect"],
+  "anomaly": ["irregularity", "deviation", "fault"],
+  "resilience": ["robustness", "recovery ability", "durability"],
+  "incident": ["event", "occurrence", "failure"],
+  "detection risk": ["risk of detection", "risk of interference", "adversary detection"],
+  "response actions": ["loss of comms actions", "loss of vehicle actions", "mission failure response"],
+  "obstruction": ["bottom object interference", "sensor obstruction", "object hazard"],
+
+  "telemetry": ["data link", "signal transmission", "feedback channel"],
+  "bandwidth": ["data rate", "throughput capacity"],
+  "signal": ["transmission", "communication", "ping"],
+  "uplink": ["command link", "control signal"],
+  "downlink": ["data stream", "return signal"],
+  "link": ["connection", "channel", "interface"],
+  "command": ["instruction", "control input"],
+
+  "deployment": ["launch", "dispatch", "fielding"],
+  "transit": ["travel", "passage", "movement"],
+  "landing": ["arrival", "recovery", "touchdown"],
+  "access": ["entry", "approach", "availability"],
+  "support": ["assistance", "maintenance", "logistics"],
+  "base": ["station", "home port", "launch site"],
+  "schedule": ["timetable", "mission plan", "program"],
+
+  "duration": ["timeframe", "period", "interval", "timespan"],
+  "time": ["timing", "elapsed time"],
+  "estimate": ["approximation", "projection", "forecast"],
+  "efficiency": ["performance", "effectiveness"],
+  "timing": ["schedule", "interval", "timeframe"],
+  "delay": ["latency", "hold-up", "pause"],
+  "performance": ["efficiency", "effectiveness", "throughput"],
+  "interval": ["period", "duration", "gap"],
+  "update": ["refresh", "revision", "recalculation"],
+  "response": ["reaction", "output", "feedback"],
+
+  "analysis": ["assessment", "evaluation", "study", "review", "computation", "processing"],
+  "model": ["simulation", "representation", "algorithm", "forecast model"],
+  "system": ["platform", "application", "software"],
+  "important": ["critical", "essential", "significant", "vital"],
+  "needed": ["required", "necessary", "essential"],
+  "provide": ["supply", "furnish", "deliver"],
+  "use": ["utilize", "employ", "apply"],
+  "show": ["display", "indicate", "demonstrate"],
+  "large": ["substantial", "significant", "major"],
+  "small": ["minimal", "limited", "minor"],
+  "estimation": ["approximation", "prediction", "inference"],
+  "parameter": ["variable", "input", "factor", "attribute"],
+  "trend": ["pattern", "tendency", "trajectory"],
+  "validation": ["verification", "cross-check", "benchmarking"],
+  "modeling": ["simulation", "representation", "approximation"],
+  "framework": ["structure", "system", "architecture"],
+  "metric": ["measure", "indicator", "parameter"],
+  "scenario testing": ["failure scenario", "risk scenario", "test case", "operational case"],
+  "infrastructure": ["seafloor infrastructure", "route infrastructure"],
+  "audit": [
+    "logging",
+    "record keeping",
+    "audit trail",
+    "mission log",
+    "traceability",
+    "documentation"
   ],
-  "path": [
-    "route",
-    "trajectory",
-    "track",
-    "course",
-    "transit"
+  "accountability": [
+    "signatory",
+    "user responsibility",
+    "authorship",
+    "traceability",
+    "operator accountability"
   ],
-  "area": [
-    "region",
-    "zone",
-    "sector",
-    "operating area",
-    "AOI",
-    "area of operation"
+  "logging": [
+    "recording",
+    "journaling",
+    "mission logging",
+    "data logging",
+    "system log"
   ],
-  "navigation": [
-    "piloting",
-    "routing",
-    "pathfinding",
-    "wayfinding"
+  "record": [
+    "log entry",
+    "data record",
+    "recording",
+    "mission record",
+    "tracking entry"
   ],
-  "hazard": [
-    "obstacle",
-    "danger",
-    "no-go zone",
-    "restriction",
-    "constraint"
+  "template": [
+    "job file",
+    "checklist",
+    "mission form",
+    "configuration file"
   ],
-  "positioning": [
-    "fixing",
-    "localization",
-    "geolocation",
-    "position estimate"
-  ],
-  "accuracy": [
-    "precision",
-    "error",
-    "uncertainty",
-    "deviation"
-  ],
-  "drift": [
-    "offset",
-    "position drift",
-    "bias"
-  ],
-  "trajectory": [
-    "path",
-    "trackline",
-    "course",
-    "route"
-  ],
-  "fix": [
-    "position",
-    "coordinate",
-    "geo-fix"
-  ],
-  "waypoint": [
-    "navigation point",
-    "reference point"
-  ],
-  "route": [
-    "path",
-    "track",
-    "corridor",
-    "planned line"
-  ],
-  "heading": [
-    "bearing",
-    "direction",
-    "orientation"
-  ],
-  "georeference": [
-    "spatial reference",
-    "coordinate system"
-  ],
-  "no-go zone": [
-    "restricted area",
-    "hazard zone",
-    "exclusion zone"
-  ],
-  "water": [
-    "marine",
-    "aquatic",
-    "hydrographic",
-    "oceanic"
-  ],
-  "depth": [
-    "underwater depth",
-    "bathymetry",
-    "seafloor elevation"
-  ],
-  "surface": [
-    "sea surface",
-    "ocean surface",
-    "top layer"
-  ],
-  "current": [
-    "flow",
-    "stream",
-    "drift",
-    "tide",
-    "EAC",
-    "East Australian Current",
-    "circulation"
-  ],
-  "tide": [
-    "tidal stream",
-    "tidal current",
-    "tidal flow"
-  ],
-  "wave": [
-    "sea state",
-    "swell",
-    "wave height",
-    "wave period"
-  ],
-  "seabed": [
-    "seafloor",
-    "bottom",
-    "substrate"
-  ],
-  "gradient": [
-    "slope",
-    "incline",
-    "angle"
-  ],
-  "environment": [
-    "conditions",
-    "weather",
-    "climate",
-    "hydrodynamics",
-    "ocean conditions"
-  ],
-  "temperature": [
-    "sea temperature",
-    "water temperature",
-    "thermal gradient"
-  ],
-  "salinity": [
-    "salt concentration",
-    "conductivity"
-  ],
-  "turbidity": [
-    "clarity",
-    "suspended sediment",
-    "visibility"
-  ],
-  "hydrodynamics": [
-    "flow regime",
-    "current behavior",
-    "circulation pattern"
-  ],
-  "oceanography": [
-    "marine science",
-    "sea state analysis"
-  ],
-  "wave height": [
-    "significant wave height",
-    "swell height"
-  ],
-  "sea state": [
-    "wave condition",
-    "surface condition"
-  ],
-  "turbulence": [
-    "flow instability",
-    "eddy motion"
-  ],
-  "meteorology": [
-    "weather data",
-    "atmospheric condition"
-  ],
-  "sediment": [
-    "substrate",
-    "bed material",
-    "seafloor composition"
-  ],
-  "hydrography": [
-    "seafloor mapping",
-    "marine surveying"
-  ],
-  "mission": [
-    "operation",
-    "task",
-    "objective",
-    "sortie",
-    "assignment"
-  ],
-  "survey": [
-    "assessment",
-    "examination",
-    "mapping",
-    "reconnaissance"
-  ],
-  "data": [
-    "information",
-    "dataset",
-    "records",
-    "telemetry",
-    "signal data"
-  ],
-  "collection": [
-    "gathering",
-    "acquisition",
-    "measurement",
-    "sampling"
-  ],
-  "planning": [
-    "preparation",
-    "scheduling",
-    "mission design"
-  ],
-  "evaluation": [
-    "assessment",
-    "analysis",
+  "feedback": [
     "review",
-    "appraisal"
-  ],
-  "operation": [
-    "mission",
-    "activity",
-    "undertaking"
-  ],
-  "maintenance": [
-    "servicing",
-    "upkeep",
-    "repair"
-  ],
-  "logistics": [
-    "supply chain",
-    "support",
-    "replenishment"
-  ],
-  "latency": [
-    "delay",
-    "lag",
-    "transmission delay",
-    "response time"
-  ],
-  "availability": [
-    "uptime",
-    "readiness",
-    "serviceability"
-  ],
-  "resource": [
-    "asset",
-    "supply",
-    "input"
-  ],
-  "objective": [
-    "goal",
-    "aim",
-    "purpose",
-    "target"
-  ],
-  "scenario": [
-    "mission case",
-    "operational case",
-    "use case",
-    "case",
-    "example"
-  ],
-  "strategy": [
-    "approach",
-    "plan",
-    "scheme"
-  ],
-  "timeline": [
-    "schedule",
-    "mission duration",
-    "execution window",
-    "chronology",
-    "sequence"
-  ],
-  "constraint": [
-    "limitation",
-    "boundary",
-    "restriction"
-  ],
-  "capability": [
-    "ability",
-    "capacity",
-    "performance",
-    "functionality"
-  ],
-  "limitation": [
-    "constraint",
-    "restriction",
-    "bound",
-    "threshold"
-  ],
-  "requirement": [
-    "need",
-    "specification",
-    "criterion",
-    "parameter"
-  ],
-  "vehicle": [
-    "platform",
-    "AUV",
-    "UUV",
-    "ROV",
-    "vessel",
-    "craft"
-  ],
-  "sensor": [
-    "instrument",
-    "payload",
-    "detector"
-  ],
-  "speed": [
-    "velocity",
-    "cruise speed",
-    "transit speed"
-  ],
-  "endurance": [
-    "range",
-    "duration",
-    "loiter time"
-  ],
-  "launch": [
-    "deployment",
-    "release"
-  ],
-  "recovery": [
-    "retrieval",
-    "return",
-    "rescue",
-    "restoration"
-  ],
-  "communication": [
-    "comms",
-    "link",
-    "data link",
-    "telemetry",
-    "signal"
-  ],
-  "abort": [
-    "terminate",
-    "cancel",
-    "cease operation"
-  ],
-  "power": [
-    "energy",
-    "battery capacity",
-    "consumption",
-    "load"
-  ],
-  "payload": [
-    "sensor package",
-    "instrument load",
-    "carried sensors"
-  ],
-  "autonomy": [
-    "automation",
-    "self-operation",
-    "independence"
-  ],
-  "stability": [
-    "control",
-    "balance",
-    "steady state"
-  ],
-  "maneuverability": [
-    "agility",
-    "handling",
-    "turn radius"
-  ],
-  "mobility": [
-    "movement",
-    "maneuverability",
-    "locomotion"
-  ],
-  "payload capacity": [
-    "sensor load",
-    "equipment capacity"
-  ],
-  "control": [
-    "guidance",
-    "command",
-    "stability management"
-  ],
-  "autopilot": [
-    "auto-navigation",
-    "self-guidance"
-  ],
-  "launch system": [
-    "deployment system",
-    "LARS"
-  ],
-  "propulsion": [
-    "thruster",
-    "drive system"
-  ],
-  "stamina": [
-    "endurance",
-    "operational duration"
-  ],
-  "battery": [
-    "power source",
-    "energy storage"
-  ],
-  "chart": [
-    "map",
-    "navigational chart",
-    "ENC",
-    "electronic chart"
-  ],
-  "coverage": [
-    "extent",
-    "area covered",
-    "swath"
-  ],
-  "resolution": [
-    "granularity",
-    "detail",
-    "precision"
-  ],
-  "overlap": [
-    "redundancy",
-    "intersection"
-  ],
-  "metadata": [
-    "data descriptor",
-    "annotation"
-  ],
-  "frequency": [
-    "update rate",
-    "sampling rate",
-    "temporal resolution"
-  ],
-  "uncertainty": [
-    "error",
-    "variance",
-    "confidence"
-  ],
-  "processing": [
-    "analysis",
-    "filtering",
-    "post-processing",
-    "fusion"
-  ],
-  "fusion": [
-    "integration",
-    "combination",
-    "data merging"
-  ],
-  "dataset": [
-    "data collection",
-    "data product",
-    "information set"
-  ],
-  "visualization": [
-    "display",
-    "representation",
-    "plot"
-  ],
-  "classification": [
-    "categorization",
-    "labeling",
-    "clustering"
-  ],
-  "output": [
-    "result",
-    "product",
-    "deliverable"
-  ],
-  "risk": [
-    "hazard",
-    "threat",
-    "danger",
-    "exposure",
-    "vulnerability"
-  ],
-  "threat": [
-    "risk",
-    "hazard",
-    "cyber risk",
-    "environmental risk"
-  ],
-  "loss": [
-    "failure",
-    "breakdown",
-    "malfunction",
-    "outage"
-  ],
-  "contingency": [
-    "backup",
-    "fallback",
-    "emergency plan"
-  ],
-  "safety": [
-    "protection",
-    "security"
-  ],
-  "probability": [
-    "likelihood",
-    "chance",
-    "possibility"
-  ],
-  "severity": [
-    "impact",
-    "consequence",
-    "magnitude"
-  ],
-  "mitigation": [
-    "control",
-    "prevention",
-    "response",
-    "safeguard"
-  ],
-  "redundancy": [
-    "backup",
-    "fallback",
-    "failover",
-    "duplication"
-  ],
-  "reliability": [
-    "robustness",
-    "dependability",
-    "resilience",
-    "durability"
-  ],
-  "failure": [
-    "breakdown",
-    "loss",
-    "defect"
-  ],
-  "anomaly": [
-    "irregularity",
-    "deviation",
-    "fault"
-  ],
-  "resilience": [
-    "robustness",
-    "recovery ability",
-    "durability"
-  ],
-  "incident": [
-    "event",
-    "occurrence",
-    "failure"
-  ],
-  "telemetry": [
-    "data link",
-    "signal transmission",
-    "feedback channel"
-  ],
-  "bandwidth": [
-    "data rate",
-    "throughput capacity"
-  ],
-  "signal": [
-    "transmission",
-    "communication",
-    "ping"
-  ],
-  "uplink": [
-    "command link",
-    "control signal"
-  ],
-  "downlink": [
-    "data stream",
-    "return signal"
-  ],
-  "link": [
-    "connection",
-    "channel",
-    "interface"
-  ],
-  "command": [
-    "instruction",
-    "control input"
-  ],
-  "deployment": [
-    "launch",
-    "dispatch",
-    "fielding"
-  ],
-  "transit": [
-    "travel",
-    "passage",
-    "movement"
-  ],
-  "landing": [
-    "arrival",
-    "recovery",
-    "touchdown"
-  ],
-  "access": [
-    "entry",
-    "approach",
-    "availability"
-  ],
-  "support": [
-    "assistance",
-    "maintenance",
-    "logistics"
-  ],
-  "base": [
-    "station",
-    "home port",
-    "launch site"
-  ],
-  "schedule": [
-    "timetable",
-    "mission plan",
-    "program"
-  ],
-  "duration": [
-    "timeframe",
-    "period",
-    "interval",
-    "timespan"
-  ],
-  "time": [
-    "timing",
-    "elapsed time"
-  ],
-  "estimate": [
-    "approximation",
-    "projection",
-    "forecast"
-  ],
-  "efficiency": [
-    "performance",
-    "effectiveness"
-  ],
-  "timing": [
-    "schedule",
-    "interval",
-    "timeframe"
-  ],
-  "delay": [
-    "latency",
-    "hold-up",
-    "pause"
-  ],
-  "performance": [
-    "efficiency",
-    "effectiveness",
-    "throughput"
-  ],
-  "interval": [
-    "period",
-    "duration",
-    "gap"
-  ],
-  "update": [
-    "refresh",
-    "revision",
-    "recalculation"
-  ],
-  "response": [
-    "reaction",
-    "output",
-    "feedback"
-  ],
-  "analysis": [
-    "assessment",
-    "evaluation",
-    "study",
-    "review",
-    "computation",
-    "processing"
-  ],
-  "model": [
-    "simulation",
-    "representation",
-    "algorithm",
-    "forecast model"
-  ],
-  "system": [
-    "platform",
-    "application",
-    "software"
-  ],
-  "important": [
-    "critical",
-    "essential",
-    "significant",
-    "vital"
-  ],
-  "needed": [
-    "required",
-    "necessary",
-    "essential"
-  ],
-  "provide": [
-    "supply",
-    "furnish",
-    "deliver"
-  ],
-  "use": [
-    "utilize",
-    "employ",
-    "apply"
-  ],
-  "show": [
-    "display",
-    "indicate",
-    "demonstrate"
-  ],
-  "large": [
-    "substantial",
-    "significant",
-    "major"
-  ],
-  "small": [
-    "minimal",
-    "limited",
-    "minor"
-  ],
-  "estimation": [
-    "approximation",
-    "prediction",
-    "inference"
-  ],
-  "parameter": [
-    "variable",
-    "input",
-    "factor",
-    "attribute"
-  ],
-  "trend": [
-    "pattern",
-    "tendency",
-    "trajectory"
-  ],
-  "validation": [
-    "verification",
-    "cross-check",
-    "benchmarking"
-  ],
-  "modeling": [
-    "simulation",
-    "representation",
-    "approximation"
-  ],
-  "framework": [
-    "structure",
-    "system",
-    "architecture"
-  ],
-  "metric": [
-    "measure",
-    "indicator",
-    "parameter"
+    "lessons learned",
+    "after-action report",
+    "evaluation feedback",
+    "mission refinement input"
+  ],
+  "integration": [
+    "post-mission analysis",
+    "data merging",
+    "toolchain linkage",
+    "workflow integration"
+  ],
+  "performance ratio": [
+    "time on task vs completion",
+    "efficiency metric",
+    "mission efficiency ratio",
+    "output ratio"
+  ],
+  "refinement": [
+    "iteration",
+    "improvement",
+    "enhancement",
+    "adjustment"
   ]
 }

@@ -1,28 +1,26 @@
 {
   "child_summary": {
     "Bathymetric Data Products": 2,
-    "Performance": 5,
+    "Performance": 6,
     "Seafloor Characterization": 2,
-    "Mission History": 2,
-    "System Constraints": 1,
-    "uncategorised": 6,
-    "Temporal Aspects": 2,
-    "Navigation Systems": 1,
+    "Mission History": 1,
+    "Navigation Systems": 2,
+    "System Constraints": 2,
+    "Temporal Aspects": 1,
+    "uncategorised": 5,
     "Comms Infrastructure": 1,
-    "Accuracy And Hazards": 3,
-    "Route And Trajectory": 6,
-    "Hardware": 1,
-    "Control Systems": 1,
-    "Hazards": 1
+    "Accuracy And Hazards": 2,
+    "Route And Trajectory": 8,
+    "Hardware": 2
   },
   "parent_summary": {
     "Terrain And Bathymetry": 2,
-    "Vehicle Capabilities And Constraints": 7,
+    "Vehicle Capabilities And Constraints": 10,
     "Environmental And Oceanographic Conditions": 2,
     "Historical And Contextual Data": 2,
-    "uncategorised": 6,
-    "Mission Parameters And Objectives": 2,
+    "Mission Parameters And Objectives": 1,
+    "uncategorised": 5,
     "Navigation And Positioning": 11,
-    "Communications And Control": 2
+    "Communications And Control": 1
   }
 }

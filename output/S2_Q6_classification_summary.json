@@ -1,0 +1,22 @@
+{
+  "child_summary": {
+    "Bathymetric Data Products": 2,
+    "Metadata And Records": 1,
+    "Safety And Mitigation": 1,
+    "Environmental Context": 2,
+    "Objectives": 4,
+    "uncategorised": 8,
+    "Accountability": 2,
+    "Data Integrity And Resilience": 3,
+    "Seafloor Characterization": 1
+  },
+  "parent_summary": {
+    "Data Products And Requirements": 4,
+    "Terrain And Bathymetry": 2,
+    "Audit And Accountability": 3,
+    "Threats And Risk Management": 1,
+    "Environmental And Oceanographic Conditions": 2,
+    "Mission Parameters And Objectives": 4,
+    "uncategorised": 8
+  }
+}
