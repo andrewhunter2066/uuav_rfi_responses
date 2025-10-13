@@ -1,9 +1,10 @@
 PredictedChild,has_protected,has_conflict,has_cross_conflict,count
-Bathymetric Data Products,False,False,False,4
+Bathymetric Data Products,False,False,False,3
+Control Systems,False,False,False,1
 Environmental Context,False,False,False,2
 Hardware,False,False,False,2
-Measurement And Models,False,False,False,2
+Measurement And Models,False,False,False,1
 Objectives,False,False,False,2
 Physical Processes,False,False,False,2
 Seafloor Characterization,False,False,False,2
-uncategorised,False,False,False,6
+uncategorised,False,False,False,7

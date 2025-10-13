@@ -1,11 +1,10 @@
 PredictedChild,has_protected,has_conflict,has_cross_conflict,count
-Accuracy And Hazards,False,False,False,1
-Comms Infrastructure,False,False,False,1
-Hardware,False,False,False,2
+Accuracy And Hazards,False,False,False,3
+Hardware,False,False,False,1
 Hazards,False,False,False,1
 Navigation Systems,False,False,False,4
 Performance,False,False,False,6
 Route And Trajectory,False,False,False,6
 System Constraints,False,False,False,1
-Temporal Aspects,False,False,False,1
-uncategorised,False,False,False,9
+Temporal Aspects,False,False,False,2
+uncategorised,False,False,False,8

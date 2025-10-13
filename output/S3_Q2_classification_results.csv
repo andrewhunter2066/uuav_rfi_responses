@@ -1,35 +1,35 @@
 ResponseID,ResponseText,PredictedChild,PredictedParent,ChildScores,ParentScores,has_protected,has_conflict,has_cross_conflict
 47,beach gradient substrate composition,Surface Features,Terrain And Bathymetry,"{'Surface Features': 1, 'Seafloor Characterization': 1, 'Physical Processes': 1}","{'Terrain And Bathymetry': 2, 'Environmental And Oceanographic Conditions': 1}",False,False,False
-47,beach gradient substrate composition,Surface Features,Terrain And Bathymetry,"{'Surface Features': 1, 'Seafloor Characterization': 1, 'Physical Processes': 1}","{'Terrain And Bathymetry': 2, 'Environmental And Oceanographic Conditions': 1}",False,False,False
+47,beach gradient bottom composition,Surface Features,Terrain And Bathymetry,"{'Surface Features': 1, 'Physical Processes': 1}","{'Terrain And Bathymetry': 1, 'Environmental And Oceanographic Conditions': 1}",False,False,False
 48,habitat zone sensitivity restrictions,uncategorised,uncategorised,{},{},False,False,False
-48,habitat zone sensitivity restrictions,uncategorised,uncategorised,{},{},False,False,False
+48,habitat region sensitivity restrictions,uncategorised,uncategorised,{},{},False,False,False
 49,oceanographic conditions eg swell tides sediment transport,Environmental Context,Environmental And Oceanographic Conditions,{'Environmental Context': 2},{'Environmental And Oceanographic Conditions': 2},False,False,False
-49,sea state analysis conditions eg swell tidal stream sediment transport,Physical Processes,Environmental And Oceanographic Conditions,"{'Physical Processes': 3, 'Environmental Context': 1}",{'Environmental And Oceanographic Conditions': 4},False,False,False
+49,sea state analysis ocean conditions eg swell tides sediment transport,Environmental Context,Environmental And Oceanographic Conditions,"{'Physical Processes': 1, 'Environmental Context': 2}",{'Environmental And Oceanographic Conditions': 3},False,False,False
 50,bottom object density distribution,Water Properties,Environmental And Oceanographic Conditions,{'Water Properties': 1},{'Environmental And Oceanographic Conditions': 1},False,False,False
 50,bottom object density distribution,Water Properties,Environmental And Oceanographic Conditions,{'Water Properties': 1},{'Environmental And Oceanographic Conditions': 1},False,False,False
 51,navigational risk factors eg submerged hazards surf zone dynamics,Hazards,Threats And Risk Management,"{'Depth Limits': 1, 'Route And Trajectory': 1, 'Hazards': 2}","{'Vehicle Capabilities And Constraints': 1, 'Navigation And Positioning': 1, 'Threats And Risk Management': 2}",False,False,False
-51,navigational risk factors trajectory submerged hazards surf operating area dynamics,Route And Trajectory,Navigation And Positioning,"{'Route And Trajectory': 2, 'Hazards': 2}","{'Navigation And Positioning': 2, 'Threats And Risk Management': 2}",False,False,False
+51,navigational exposure factors course submerged hazards surf zone dynamics,Depth Limits,Vehicle Capabilities And Constraints,"{'Depth Limits': 1, 'Route And Trajectory': 1, 'Hazards': 1}","{'Vehicle Capabilities And Constraints': 1, 'Navigation And Positioning': 1, 'Threats And Risk Management': 1}",False,False,False
 274,equipment limitations service capabilities,System Constraints,Vehicle Capabilities And Constraints,{'System Constraints': 1},{'Vehicle Capabilities And Constraints': 1},False,False,False
 274,equipment limitations service capabilities,System Constraints,Vehicle Capabilities And Constraints,{'System Constraints': 1},{'Vehicle Capabilities And Constraints': 1},False,False,False
 275,timings hard left right,Temporal Aspects,Mission Parameters And Objectives,{'Temporal Aspects': 1},{'Mission Parameters And Objectives': 1},False,False,False
-275,timings hard left position,Temporal Aspects,Mission Parameters And Objectives,{'Temporal Aspects': 1},{'Mission Parameters And Objectives': 1},False,False,False
+275,timings restriction left right,Temporal Aspects,Mission Parameters And Objectives,{'Temporal Aspects': 1},{'Mission Parameters And Objectives': 1},False,False,False
 276,endurance vehicle,Performance,Vehicle Capabilities And Constraints,{'Performance': 1},{'Vehicle Capabilities And Constraints': 1},False,False,False
-276,endurance platform,Performance,Vehicle Capabilities And Constraints,{'Performance': 1},{'Vehicle Capabilities And Constraints': 1},False,False,False
+276,loiter time vehicle,uncategorised,uncategorised,{},{},False,False,False
 277,global positioning system fixing requirements frequency,Navigation Systems,Navigation And Positioning,"{'Navigation Systems': 1, 'Accuracy And Hazards': 1, 'Comms Infrastructure': 1}","{'Navigation And Positioning': 2, 'Communications And Control': 1}",False,False,False
-277,global positioning system geolocation requirements frequency,Navigation Systems,Navigation And Positioning,"{'Navigation Systems': 1, 'Accuracy And Hazards': 1, 'Comms Infrastructure': 1}","{'Navigation And Positioning': 2, 'Communications And Control': 1}",False,False,False
+277,global positioning system fixing parameter frequency,Navigation Systems,Navigation And Positioning,"{'Navigation Systems': 1, 'Accuracy And Hazards': 1, 'Comms Infrastructure': 1}","{'Navigation And Positioning': 2, 'Communications And Control': 1}",False,False,False
 278,accuracy requirements sensors,Accuracy And Hazards,Navigation And Positioning,{'Accuracy And Hazards': 1},{'Navigation And Positioning': 1},False,False,False
-278,accuracy criterion sensors,Accuracy And Hazards,Navigation And Positioning,{'Accuracy And Hazards': 1},{'Navigation And Positioning': 1},False,False,False
+278,error requirements sensors,uncategorised,uncategorised,{},{},False,False,False
 279,accuracy requirements navigation,Route And Trajectory,Navigation And Positioning,"{'Route And Trajectory': 1, 'Accuracy And Hazards': 1}",{'Navigation And Positioning': 2},False,False,False
-279,accuracy requirements pathfinding,Accuracy And Hazards,Navigation And Positioning,{'Accuracy And Hazards': 1},{'Navigation And Positioning': 1},False,False,False
+279,uncertainty requirements navigation,Route And Trajectory,Navigation And Positioning,{'Route And Trajectory': 1},{'Navigation And Positioning': 1},False,False,False
 280,maximum depth vehicle,uncategorised,uncategorised,{},{},False,False,False
-280,maximum depth uuv,uncategorised,uncategorised,{},{},False,False,False
+280,maximum underwater depth vehicle,uncategorised,uncategorised,{},{},False,False,False
 281,minimum depth vehicle,uncategorised,uncategorised,{},{},False,False,False
-281,minimum depth vehicle,uncategorised,uncategorised,{},{},False,False,False
+281,minimum bathymetry vehicle,Seafloor Characterization,Terrain And Bathymetry,{'Seafloor Characterization': 1},{'Terrain And Bathymetry': 1},False,False,False
 282,vehicle communication requirements,Hardware,Vehicle Capabilities And Constraints,"{'Hardware': 1, 'Performance Constraints': 1, 'Comms Infrastructure': 1}","{'Vehicle Capabilities And Constraints': 2, 'Communications And Control': 1}",False,False,False
-282,vehicle link requirements,Comms Infrastructure,Communications And Control,{'Comms Infrastructure': 1},{'Communications And Control': 1},False,False,False
+282,vessel communication requirements,Hardware,Vehicle Capabilities And Constraints,"{'Hardware': 1, 'Comms Infrastructure': 1}","{'Vehicle Capabilities And Constraints': 1, 'Communications And Control': 1}",False,False,False
 283,navigational hazards route area operations,Route And Trajectory,Navigation And Positioning,"{'Route And Trajectory': 2, 'Accuracy And Hazards': 1, 'Hazards': 2}","{'Navigation And Positioning': 3, 'Threats And Risk Management': 2}",False,False,False
-283,navigational hazards track area operations,Hazards,Navigation And Positioning,"{'Route And Trajectory': 1, 'Accuracy And Hazards': 1, 'Hazards': 2}","{'Navigation And Positioning': 2, 'Threats And Risk Management': 2}",False,False,False
+283,navigational no-go zone route area operations,Route And Trajectory,Navigation And Positioning,{'Route And Trajectory': 2},{'Navigation And Positioning': 2},False,False,False
 284,no-go zones route area operations,Route And Trajectory,Navigation And Positioning,"{'Route And Trajectory': 1, 'Accuracy And Hazards': 1}",{'Navigation And Positioning': 2},False,False,False
-284,no-go zones route area undertaking,Route And Trajectory,Navigation And Positioning,"{'Route And Trajectory': 1, 'Accuracy And Hazards': 1}",{'Navigation And Positioning': 2},False,False,False
+284,no-go zones route area mission,Route And Trajectory,Navigation And Positioning,"{'Route And Trajectory': 1, 'Accuracy And Hazards': 1, 'Objectives': 1}","{'Navigation And Positioning': 2, 'Mission Parameters And Objectives': 1}",False,False,False
 285,zone confidence route area operations,Route And Trajectory,Navigation And Positioning,{'Route And Trajectory': 1},{'Navigation And Positioning': 1},False,False,False
-285,zone confidence route region operations,Route And Trajectory,Navigation And Positioning,{'Route And Trajectory': 1},{'Navigation And Positioning': 1},False,False,False
+285,zone safety confidence route area operations,Safety And Mitigation,Threats And Risk Management,"{'Route And Trajectory': 1, 'Safety And Mitigation': 2}","{'Navigation And Positioning': 1, 'Threats And Risk Management': 2}",False,False,False

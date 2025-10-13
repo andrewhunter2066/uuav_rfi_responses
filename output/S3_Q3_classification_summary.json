@@ -1,24 +1,27 @@
 {
   "child_summary": {
-    "Environmental Context": 4,
+    "Environmental Context": 5,
     "Performance": 4,
-    "Access And Support": 2,
-    "Analysis And Learning": 3,
+    "Access And Support": 1,
     "Physical Processes": 1,
-    "Bathymetric Data Products": 2,
-    "Accuracy And Hazards": 2,
-    "uncategorised": 6,
+    "Analysis And Learning": 4,
+    "Bathymetric Data Products": 1,
+    "Temporal Aspects": 1,
+    "Accuracy And Hazards": 1,
+    "uncategorised": 5,
     "Route And Trajectory": 2,
     "Safety And Mitigation": 2,
-    "Hazards": 2
+    "Hazards": 2,
+    "Objectives": 1
   },
   "parent_summary": {
-    "Environmental And Oceanographic Conditions": 6,
+    "Environmental And Oceanographic Conditions": 7,
     "Vehicle Capabilities And Constraints": 4,
     "Historical And Contextual Data": 4,
-    "Terrain And Bathymetry": 2,
-    "Navigation And Positioning": 4,
-    "uncategorised": 6,
+    "Terrain And Bathymetry": 1,
+    "Mission Parameters And Objectives": 2,
+    "Navigation And Positioning": 3,
+    "uncategorised": 5,
     "Threats And Risk Management": 4
   }
 }
