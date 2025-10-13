@@ -1,0 +1,24 @@
+{
+  "child_summary": {
+    "Bathymetric Data Products": 2,
+    "Performance": 6,
+    "Seafloor Characterization": 3,
+    "Mission History": 2,
+    "System Constraints": 2,
+    "Temporal Aspects": 1,
+    "Navigation Systems": 2,
+    "Accuracy And Hazards": 2,
+    "Route And Trajectory": 8,
+    "uncategorised": 4,
+    "Hardware": 2
+  },
+  "parent_summary": {
+    "Terrain And Bathymetry": 3,
+    "Vehicle Capabilities And Constraints": 10,
+    "Environmental And Oceanographic Conditions": 2,
+    "Historical And Contextual Data": 2,
+    "Mission Parameters And Objectives": 1,
+    "Navigation And Positioning": 12,
+    "uncategorised": 4
+  }
+}

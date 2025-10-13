@@ -9,6 +9,7 @@ import json
 from nltk.corpus import stopwords, wordnet
 from datetime import datetime
 from typing import List
+from collections import defaultdict
 
 # Download required corpora
 nltk.download('stopwords')
@@ -224,7 +225,8 @@ CONFLICT_RULES = {
         "protected": [
             "launch", "recovery", "transit", "endurance", "mission duration",
             "mission phase", "mission controller", "operator console",
-            "mission segment", "mission readiness", "mission objective"
+            "mission segment", "mission readiness", "mission objective",
+            "understanding of area of operations", "informs area of operations"
         ],
         "synonyms": ["mission", "operation", "activity", "task", "objective"]
     },
@@ -472,44 +474,62 @@ def validate_responses_csv(input_csv,
     return all_summary
 
 
-def map_question_to_context(question: str) -> str:
+def expand_contexts(taxonomy: dict, seeds: list[str], depth: int = 1, normalise: bool = True) -> list[str]:
     """
-    Map RFI question text to taxonomy-aligned validation context.
-    Returns a taxonomy category key (or a composite label if multi-domain).
+    Expand seed taxonomy domains via 'RelatedTo' links, with optional normalisation.
     """
+    expanded = set(seeds)
+    frontier = set(seeds)
 
+    for _ in range(depth):
+        new_frontier = set()
+        for domain in frontier:
+            related = taxonomy.get(domain, {}).get("RelatedTo", [])
+            for rel in related:
+                if rel not in expanded:
+                    expanded.add(rel)
+                    new_frontier.add(rel)
+        frontier = new_frontier
+
+    if normalise:
+        return sorted([camel_to_title(x) for x in expanded])
+    else:
+        return sorted(expanded)
+
+
+def map_question_to_context(question: str, taxonomy: dict) -> str:
+    """
+    Map RFI question to taxonomy-aligned context by auto-expanding seeds.
+    Returns normalised (human-readable) categories.
+    """
     q = question.lower().strip()
 
-    # --- Q1: Data required for a scenario (what inputs are needed)
-    # Covers terrain, environmental data, vehicle constraints, and navigation safety
-    if q.startswith("q1"):
-        return "terrain_bathymetry+environmental+vehicle+navigation"
+    seed_map = {
+        "q1": ["TerrainAndBathymetry", "EnvironmentalAndOceanographicConditions"],
+        "q2": ["VehicleCapabilitiesAndConstraints", "MissionParametersAndObjectives"],
+        "q3": ["EstimationAndUncertaintyModeling", "DataProductsAndRequirements"],
+        "q4": ["ThreatsAndRiskManagement"],
+        "q5": ["ThreatsAndRiskManagement", "MissionParametersAndObjectives"],
+        "q6": ["HistoricalAndContextualData", "DataProductsAndRequirements"],
+    }
 
-    # --- Q2: Estimated factors (what variables should be considered)
-    # Aligns strongly with mission ops, vehicle performance, and environmental conditions
-    elif q.startswith("q2"):
-        return "mission_ops+vehicle+environmental+performance"
+    for prefix, seeds in seed_map.items():
+        if q.startswith(prefix):
+            expanded = expand_contexts(taxonomy["MissionPlanningTaxonomy"], seeds, depth=1, normalise=True)
+            return "+".join(expanded)
 
-    # --- Q3: Estimation guidance (what methods/models should be used)
-    # Links to data processing, modelling, historical data, and risk assessment
-    elif q.startswith("q3"):
-        return "data_processing+historical+risk+performance"
+    return "General"
 
-    # --- Q4: Risks to be assessed (risk identification and assessment methods)
-    elif q.startswith("q4"):
-        return "risk+environmental+vehicle"
 
-    # --- Q5: Specific risks flagged (hazards, safety, mission-critical risk)
-    elif q.startswith("q5"):
-        return "risk+threats+mission_ops"
+def camel_to_title(name: str) -> str:
+    """
+    Convert CamelCase (e.g. 'MissionParametersAndObjectives')
+    into a human-readable title (e.g. 'Mission Parameters And Objectives').
+    """
+    # Split on capital letters
+    s = re.sub(r'([a-z])([A-Z])', r'\1 \2', name)
+    return s.strip()
 
-    # --- Q6: Documentation & records (knowledge management and data quality)
-    elif q.startswith("q6"):
-        return "semantic_data+data_products+historical"
-
-    # --- Fallback
-    else:
-        return "general"
 
 
 def log_suppression(word, protected, context_snippet):
@@ -1140,28 +1160,109 @@ def augment_response_dataset(responses: pd.DataFrame, aug_prob: float = 0.3,
     return augmented_df
 
 
-def classify_responses(responses: pd.DataFrame, taxonomy: dict ) -> list[dict]:
+def classify_with_taxonomy(text: str, child_keywords: dict, parent_keywords: dict):
     """
-    Classify responses with optional validation flags attached.
+    Classify text against taxonomy at both child and parent levels.
+
+    Args:
+        text (str): Input text.
+        child_keywords (dict): Mapping of child categories to keywords + parent reference.
+        parent_keywords (dict): Mapping of parent categories to keyword lists.
+
+    Returns:
+        dict: {
+            "child_scores": {child_category: score, ...},
+            "parent_scores": {parent_category: score, ...},
+            "predicted_child": str,
+            "predicted_parent": str
+        }
     """
+    text_lower = text.lower()
+
+    # --- Child-level scores
+    child_scores = {}
+    parent_scores = defaultdict(int)
+
+    for child, data in child_keywords.items():
+        keywords = [kw.lower() for kw in data["keywords"]]
+        parent = data["parent"]
+        score = sum(1 for kw in keywords if kw in text_lower)
+        if score > 0:
+            child_scores[child] = score
+            parent_scores[parent] += score
+
+    # --- Parent-only scan (fallback if no child hits)
+    if not child_scores:
+        for parent, keywords in parent_keywords.items():
+            score = sum(1 for kw in [kw.lower() for kw in keywords] if kw in text_lower)
+            if score > 0:
+                parent_scores[parent] += score
+
+    # --- Pick best matches
+    predicted_child = max(child_scores, key=child_scores.get) if child_scores else "uncategorised"
+    predicted_parent = max(parent_scores, key=parent_scores.get) if parent_scores else "uncategorised"
+
+    return {
+        "child_scores": dict(child_scores),
+        "parent_scores": dict(parent_scores),
+        "predicted_child": predicted_child,
+        "predicted_parent": predicted_parent
+    }
+
+
+def classify_responses(responses: pd.DataFrame, child_keywords: dict, parent_keywords: dict) -> list[dict]:
+    """
+    Classifies a list of responses against taxonomy (child + parent).
+    Adds both predicted child and predicted parent categories.
+    """
+
     results = []
     for _, resp in responses.iterrows():
         resp_id = resp['ResponseID']
         text = resp['ResponseText']
-        predicted_category, all_scores = classify_response(text, taxonomy)
+
+        # Run hybrid taxonomy classifier
+        classification = classify_with_taxonomy(text, child_keywords, parent_keywords)
 
         results.append({
             'ResponseID': resp_id,
             'response': text,
-            'predicted_category': predicted_category,
-            'all_scores': str(all_scores),
-            # --- carry validation flags if present ---
-            'has_protected': resp.get('has_protected', False),
-            'has_conflict': resp.get('has_conflict', False),
-            'has_cross_conflict': resp.get('has_cross_conflict', False),
-            'validation_summary': str(resp.get('validation_summary', {}))
+            'PredictedChild': classification["predicted_child"],
+            'PredictedParent': classification["predicted_parent"],
+            'ChildScores': str(classification["child_scores"]),
+            'ParentScores': str(classification["parent_scores"])
         })
+
     return results
+
+
+def summarise_classifications(results: list[dict]) -> dict:
+    """
+    Summarises classification results at both child and parent levels.
+
+    Args:
+        results (list[dict]): Classification results with 'PredictedChild' and 'PredictedParent'.
+
+    Returns:
+        dict: {
+            "child_summary": {category: count},
+            "parent_summary": {category: count}
+        }
+    """
+    child_counts = {}
+    parent_counts = {}
+
+    for row in results:
+        child = row.get("PredictedChild", "uncategorised")
+        parent = row.get("PredictedParent", "uncategorised")
+
+        child_counts[child] = child_counts.get(child, 0) + 1
+        parent_counts[parent] = parent_counts.get(parent, 0) + 1
+
+    return {
+        "child_summary": child_counts,
+        "parent_summary": parent_counts
+    }
 
 
 def save_and_display_results(results: list[dict], output_path: str) -> None:
@@ -1178,7 +1279,11 @@ def save_and_display_results(results: list[dict], output_path: str) -> None:
     print(df.head())
     print(f"\nTotal responses classified: {len(df)}")
     print(f"\nCategory distribution:")
-    print(df['predicted_category'].value_counts())
+    print("\nPredicted Child distribution:")
+    print(df['PredictedChild'].value_counts())
+
+    print("\nPredicted Parent distribution:")
+    print(df['PredictedParent'].value_counts())
 
 
 def main(question: str, scenario: int, taxonomy: dict, merge_to_source: bool = False, strict_mode: bool = True):
@@ -1192,6 +1297,12 @@ def main(question: str, scenario: int, taxonomy: dict, merge_to_source: bool = F
       6. Save classification results
       7. Optionally merge results to source
     """
+
+    # Extract the inner taxonomy for classification if wrapped
+    if "MissionPlanningTaxonomy" in taxonomy:
+        category_keywords = {humanise_key(k): v for k, v in taxonomy["MissionPlanningTaxonomy"].items()}
+    else:
+        category_keywords = {humanise_key(k): v for k, v in taxonomy.items()}
 
     # Load and filter data
     filtered_responses = load_and_filter_responses(
@@ -1212,7 +1323,7 @@ def main(question: str, scenario: int, taxonomy: dict, merge_to_source: bool = F
     )
 
     # --- Run validation before classification ---
-    context = map_question_to_context(question)
+    context = map_question_to_context(question, taxonomy)
     validation_reports = {}
 
     enriched_responses = []
@@ -1241,8 +1352,30 @@ def main(question: str, scenario: int, taxonomy: dict, merge_to_source: bool = F
     pd.DataFrame(validation_reports).to_json(validation_output_path, orient="records", indent=2)
     print(f"Validation report saved: {validation_output_path}")
 
+    # Load taxonomy
+    parent_keywords, child_keywords = load_taxonomy("./docs/mission_planning_taxonomy.json")
+
+    # Run classification for each scenario
+    results = []
+    for _, row in validated_df.iterrows():
+        text = row['ResponseText']
+        classification = classify_with_taxonomy(text, child_keywords, parent_keywords)
+
+        results.append({
+            "ResponseID": row["ResponseID"],
+            "ResponseText": text,
+            "PredictedChild": classification["predicted_child"],
+            "PredictedParent": classification["predicted_parent"],
+            "ChildScores": str(classification["child_scores"]),
+            "ParentScores": str(classification["parent_scores"]),
+            # keep validation flags
+            "has_protected": row["has_protected"],
+            "has_conflict": row["has_conflict"],
+            "has_cross_conflict": row["has_cross_conflict"],
+        })
+
     # --- Classify only validated responses ---
-    results = classify_responses(validated_df, taxonomy)
+    #results = classify_responses(validated_df, category_keywords)
 
     classification_output_path = f"./output/S{scenario}_{question}_classification_results.csv"
     save_and_display_results(results, classification_output_path)
@@ -1250,6 +1383,19 @@ def main(question: str, scenario: int, taxonomy: dict, merge_to_source: bool = F
     # Create a summary report
     summary_output_path = f"./output/S{scenario}_{question}_classification_summary.csv"
     save_summary_report(results, summary_output_path)
+
+    # Summarise both child and parent distributions
+    summary = summarise_classifications(results)
+
+    # Save summaries to JSON for reuse
+    summary_path = f"./output/S{scenario}_{question}_classification_summary.json"
+    with open(summary_path, "w") as f:
+        import json
+        json.dump(summary, f, indent=2)
+
+    print(f"\nSummary for Scenario {scenario}, {question}:")
+    print("Child categories:", summary["child_summary"])
+    print("Parent categories:", summary["parent_summary"])
 
     # Optionally merge classifications to source
     if merge_to_source:
@@ -1448,54 +1594,63 @@ def merge_all_classifications_single_column(
     if 'Classification' not in original_df.columns:
         original_df['Classification'] = 'not_classified'
 
-        # Ensure version control columns exist
-        if 'Version' not in original_df.columns:
-            original_df['Version'] = original_df.get('Version', 'v0.1')
-        if 'ChangeNote' not in original_df.columns:
-            original_df['ChangeNote'] = original_df.get('ChangeNote', 'Initial merge')
-        if 'ChangeDate' not in original_df.columns:
-            original_df['ChangeDate'] = ''
+    # Ensure version control columns exist
+    if 'Version' not in original_df.columns:
+        original_df['Version'] = original_df.get('Version', 'v0.1')
+    if 'ChangeNote' not in original_df.columns:
+        original_df['ChangeNote'] = original_df.get('ChangeNote', 'Initial merge')
+    if 'ChangeDate' not in original_df.columns:
+        original_df['ChangeDate'] = ''
 
-        # Process each classification file
-        for scenario, question in classification_files:
-            classification_path = f"./output/S{scenario}_{question}_classification_results.csv"
+    # Process each classification file
+    for scenario, question in classification_files:
+        classification_path = f"./output/S{scenario}_{question}_classification_results.csv"
 
-            try:
-                # Get the last modified date of the classification file
-                file_mod_timestamp = os.path.getmtime(classification_path)
-                file_mod_date = datetime.fromtimestamp(file_mod_timestamp).strftime("%Y-%m-%d")
+        try:
+            # Get the last modified date of the classification file
+            file_mod_timestamp = os.path.getmtime(classification_path)
+            file_mod_date = datetime.fromtimestamp(file_mod_timestamp).strftime("%Y-%m-%d")
 
-                # Load classifications
-                classifications_df = pd.read_csv(classification_path)
+            # Load classifications
+            classifications_df = pd.read_csv(classification_path)
 
-                # Aggregate unique categories per ResponseID
-                # (handles augmentation where same ResponseID appears multiple times)
-                aggregated = classifications_df.groupby('ResponseID').agg({
-                    'predicted_category': lambda x: '|'.join(sorted(set(x)))
-                }).reset_index()
-
-                # For each ResponseID in this scenario+question, update the classification
-                for _, row in aggregated.iterrows():
-                    response_id = row['ResponseID']
-                    category = row['predicted_category']
-
-                    # Update only rows matching this ResponseID
-                    mask = original_df['ResponseID'] == response_id
-
-                    # Update classification
-                    original_df.loc[mask, 'Classification'] = category
-
-                    # Update version control fields ONLY for classified responses
-                    # (i.e. not 'uncategorised' or 'not_classified')
-                    if category not in ['uncategorised', 'not_classified', '']:
-                        original_df.loc[mask, 'Version'] = 'v0.2'
-                        original_df.loc[mask, 'ChangeNote'] = 'Initial classification'
-                        original_df.loc[mask, 'ChangeDate'] = file_mod_date
-
-                print(f"Merged classifications for Scenario {scenario}, {question} (file date: {file_mod_date})")
-            except FileNotFoundError:
-                print(f"Classification file not found for Scenario {scenario}, {question}")
+            # Check if the required column exists
+            if 'predicted_category' not in classifications_df.columns:
+                print(f"Warning: 'predicted_category' column not found in {classification_path}")
+                print(f"Available columns: {classifications_df.columns.tolist()}")
                 continue
+
+            # Aggregate unique categories per ResponseID
+            # (handles augmentation where same ResponseID appears multiple times)
+            aggregated = classifications_df.groupby('ResponseID').agg({
+                'predicted_category': lambda x: '|'.join(sorted(set(x)))
+            }).reset_index()
+
+            # For each ResponseID in this scenario+question, update the classification
+            for _, row in aggregated.iterrows():
+                response_id = row['ResponseID']
+                category = row['predicted_category']
+
+                # Update only rows matching this ResponseID
+                mask = original_df['ResponseID'] == response_id
+
+                # Update classification
+                original_df.loc[mask, 'Classification'] = category
+
+                # Update version control fields ONLY for classified responses
+                # (i.e. not 'uncategorised' or 'not_classified')
+                if category not in ['uncategorised', 'not_classified', '']:
+                    original_df.loc[mask, 'Version'] = 'v0.2'
+                    original_df.loc[mask, 'ChangeNote'] = 'Initial classification'
+                    original_df.loc[mask, 'ChangeDate'] = file_mod_date
+
+            print(f"Merged classifications for Scenario {scenario}, {question} (file date: {file_mod_date})")
+        except FileNotFoundError:
+            print(f"Classification file not found for Scenario {scenario}, {question}")
+            continue
+        except Exception as e:
+            print(f"Error processing Scenario {scenario}, {question}: {str(e)}")
+            continue
 
     # Save merged data
     original_df.to_csv(output_path, index=False)
@@ -1567,15 +1722,25 @@ def save_summary_report(results: list[dict], summary_path: str) -> None:
     df = pd.DataFrame(results)
 
     # Group by category and flag states
-    summary = df.groupby(
-        ["predicted_category", "has_protected", "has_conflict", "has_cross_conflict"]
+    summary_child = df.groupby(
+        ["PredictedChild", "has_protected", "has_conflict", "has_cross_conflict"]
     ).size().reset_index(name="count")
 
-    # Save to CSV
-    summary.to_csv(summary_path, index=False)
+    summary_parent = df.groupby(
+        ["PredictedParent", "has_protected", "has_conflict", "has_cross_conflict"]
+    ).size().reset_index(name="count")
 
-    print(f"\nSummary report saved to: {summary_path}")
-    print(summary.head(10))
+    # Save child summary
+    child_path = summary_path.replace('.csv', '_child.csv')
+    summary_child.to_csv(child_path, index=False)
+    print(f"\nChild summary report saved to: {child_path}")
+    print(summary_child.head(10))
+
+    # Save parent summary
+    parent_path = summary_path.replace('.csv', '_parent.csv')
+    summary_parent.to_csv(parent_path, index=False)
+    print(f"\nParent summary report saved to: {parent_path}")
+    print(summary_parent.head(10))
 
 
 def validate_domain_synonyms(file_path: str) -> dict:
@@ -1699,6 +1864,48 @@ def humanise_key(key: str) -> str:
     return key
 
 
+def normalise_key(name: str) -> str:
+    """
+    Convert CamelCase or mixed keys to a human-readable form.
+    Example: "TerrainAndBathymetry" -> "Terrain and Bathymetry"
+    """
+    s1 = re.sub('(.)([A-Z][a-z]+)', r'\1 \2', name)
+    return re.sub('([a-z0-9])([A-Z])', r'\1 \2', s1).strip()
+
+
+def load_taxonomy(json_path: str):
+    """
+    Load mission planning taxonomy JSON and build hybrid CATEGORY_KEYWORDS.
+
+    Returns:
+        parent_keywords (dict): Parent categories with union of child keywords.
+        child_keywords (dict): Child categories with their specific keywords + parent reference.
+    """
+    with open(json_path, "r") as f:
+        taxonomy = json.load(f)
+
+    taxonomy = taxonomy.get("MissionPlanningTaxonomy", taxonomy)
+
+    parent_keywords = {}
+    child_keywords = {}
+
+    for parent_key, parent_val in taxonomy.items():
+        parent_name = normalise_key(parent_key)
+        parent_set = set()
+
+        for child_key, keywords in parent_val.get("Concepts", {}).items():
+            child_name = normalise_key(child_key)
+            child_keywords[child_name] = {
+                "keywords": keywords,
+                "parent": parent_name
+            }
+            parent_set.update(keywords)
+
+        parent_keywords[parent_name] = sorted(list(parent_set))
+
+    return parent_keywords, child_keywords
+
+
 if __name__ == "__main__":
     # Define keywords for each category as a module constant
     # Load the JSON file
@@ -1739,7 +1946,7 @@ if __name__ == "__main__":
         print(f"\n{'#' * 60}")
         print(f"# Processing Scenario {scenario_num}")
         print(f"{'#' * 60}\n")
-        main("Q3", scenario_num, CATEGORY_KEYWORDS, merge_to_source=False)
+        main("Q1", scenario_num, marine_planning_taxonomy_raw, merge_to_source=False)
 
     # After all scenarios are classified, merge into a single file
     print(f"\n{'#' * 60}")

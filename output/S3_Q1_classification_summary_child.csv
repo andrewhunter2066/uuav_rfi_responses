@@ -1,0 +1,18 @@
+PredictedChild,has_protected,has_conflict,has_cross_conflict,count
+Accuracy And Hazards,False,False,False,2
+Deployment,False,False,False,4
+Hardware,False,False,False,4
+Hazards,False,False,False,2
+Measurement And Models,False,False,False,2
+Navigation Systems,False,False,False,2
+Objectives,False,False,False,2
+Performance,False,False,False,6
+Physical Processes,False,False,False,6
+Route And Trajectory,False,False,False,12
+Seafloor Characterization,False,False,False,3
+Spatial Reference,False,False,False,2
+Surface Features,False,False,False,4
+Survey Data,False,False,False,2
+System Constraints,False,False,False,1
+Temporal Aspects,False,False,False,1
+uncategorised,False,False,False,9

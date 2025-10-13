@@ -1,0 +1,13 @@
+PredictedChild,has_protected,has_conflict,has_cross_conflict,count
+Accuracy And Hazards,False,False,False,2
+Environmental Context,False,False,False,2
+Hardware,False,False,False,2
+Hazards,False,False,False,1
+Navigation Systems,False,False,False,2
+Performance,False,False,False,2
+Route And Trajectory,False,False,False,9
+Surface Features,False,False,False,2
+System Constraints,False,False,False,1
+Temporal Aspects,False,False,False,2
+Water Properties,False,False,False,2
+uncategorised,False,False,False,7

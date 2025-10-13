@@ -1,0 +1,25 @@
+{
+  "child_summary": {
+    "Surface Features": 2,
+    "uncategorised": 7,
+    "Environmental Context": 2,
+    "Water Properties": 2,
+    "Hazards": 1,
+    "Route And Trajectory": 9,
+    "System Constraints": 1,
+    "Temporal Aspects": 2,
+    "Performance": 2,
+    "Navigation Systems": 2,
+    "Accuracy And Hazards": 2,
+    "Hardware": 2
+  },
+  "parent_summary": {
+    "Terrain And Bathymetry": 2,
+    "uncategorised": 7,
+    "Environmental And Oceanographic Conditions": 4,
+    "Threats And Risk Management": 1,
+    "Navigation And Positioning": 13,
+    "Vehicle Capabilities And Constraints": 5,
+    "Mission Parameters And Objectives": 2
+  }
+}
