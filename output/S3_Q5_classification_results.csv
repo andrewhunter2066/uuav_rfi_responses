@@ -1,23 +1,23 @@
 ResponseID,ResponseText,PredictedChild,PredictedParent,ChildScores,ParentScores,has_protected,has_conflict,has_cross_conflict
 60,unsuitable beach gradient substrate landing,Surface Features,Terrain And Bathymetry,"{'Surface Features': 1, 'Seafloor Characterization': 1, 'Physical Processes': 1, 'Access And Support': 1}","{'Terrain And Bathymetry': 2, 'Environmental And Oceanographic Conditions': 1, 'Operational Logistics': 1}",False,False,False
-60,unsuitable beach slope substrate landing,Surface Features,Terrain And Bathymetry,"{'Surface Features': 1, 'Seafloor Characterization': 1, 'Physical Processes': 1, 'Access And Support': 1}","{'Terrain And Bathymetry': 2, 'Environmental And Oceanographic Conditions': 1, 'Operational Logistics': 1}",False,False,False
+60,unsuitable beach incline substrate landing,Seafloor Characterization,Terrain And Bathymetry,"{'Seafloor Characterization': 1, 'Physical Processes': 1, 'Access And Support': 1}","{'Terrain And Bathymetry': 1, 'Environmental And Oceanographic Conditions': 1, 'Operational Logistics': 1}",False,False,False
 61,presence marine life protected habitat zones,uncategorised,uncategorised,{},{},False,False,False
-61,presence hydrographic life protected habitat zones,uncategorised,uncategorised,{},{},False,False,False
+61,presence marine life protected habitat zones,uncategorised,uncategorised,{},{},False,False,False
 62,oceanographic anomalies eg rip currents sediment plumes,Physical Processes,Environmental And Oceanographic Conditions,"{'Physical Processes': 1, 'Environmental Context': 1}",{'Environmental And Oceanographic Conditions': 2},False,False,False
-62,oceanographic anomalies eg rip currents substrate plumes,Seafloor Characterization,Environmental And Oceanographic Conditions,"{'Seafloor Characterization': 1, 'Physical Processes': 1, 'Environmental Context': 1}","{'Terrain And Bathymetry': 1, 'Environmental And Oceanographic Conditions': 2}",False,False,False
+62,oceanographic anomalies eg position currents seafloor composition plumes,Seafloor Characterization,Environmental And Oceanographic Conditions,"{'Seafloor Characterization': 1, 'Physical Processes': 1, 'Environmental Context': 1}","{'Terrain And Bathymetry': 1, 'Environmental And Oceanographic Conditions': 2}",False,False,False
 63,sensor interference bottom clutter acoustic shadowing,uncategorised,uncategorised,{},{},False,False,False
 63,sensor interference bottom clutter acoustic shadowing,uncategorised,uncategorised,{},{},False,False,False
 311,potential likelihood collision,uncategorised,uncategorised,{},{},False,False,False
 311,potential likelihood collision,uncategorised,uncategorised,{},{},False,False,False
 312,estimated battery completion mission,Objectives,Mission Parameters And Objectives,{'Objectives': 1},{'Mission Parameters And Objectives': 1},False,False,False
-312,estimated energy storage completion mission,Objectives,Mission Parameters And Objectives,{'Objectives': 1},{'Mission Parameters And Objectives': 1},False,False,False
+312,estimated battery completion sortie,uncategorised,uncategorised,{},{},False,False,False
 313,potential acoustic communications performance issues,Hardware,Vehicle Capabilities And Constraints,"{'Hardware': 1, 'Comms Infrastructure': 1}","{'Vehicle Capabilities And Constraints': 1, 'Communications And Control': 1}",False,False,False
 313,potential acoustic communications performance issues,Hardware,Vehicle Capabilities And Constraints,"{'Hardware': 1, 'Comms Infrastructure': 1}","{'Vehicle Capabilities And Constraints': 1, 'Communications And Control': 1}",False,False,False
 314,factor damage grounding event occurs,uncategorised,uncategorised,{},{},False,False,False
-314,factor records grounding event occurs,uncategorised,uncategorised,{},{},False,False,False
+314,factor damage grounding event occurs,uncategorised,uncategorised,{},{},False,False,False
 315,coverage area operations achievable time limitations,Bathymetric Data Products,Terrain And Bathymetry,{'Bathymetric Data Products': 1},{'Terrain And Bathymetry': 1},False,False,False
-315,coverage aoi operations achievable time limitations,Bathymetric Data Products,Terrain And Bathymetry,{'Bathymetric Data Products': 1},{'Terrain And Bathymetry': 1},False,False,False
+315,coverage area operations achievable timing limitations,Bathymetric Data Products,Terrain And Bathymetry,{'Bathymetric Data Products': 1},{'Terrain And Bathymetry': 1},False,False,False
 316,potential buoyancy factors water column information,Measurement And Models,Environmental And Oceanographic Conditions,{'Measurement And Models': 1},{'Environmental And Oceanographic Conditions': 1},False,False,False
-316,potential buoyancy factors water column information,Measurement And Models,Environmental And Oceanographic Conditions,{'Measurement And Models': 1},{'Environmental And Oceanographic Conditions': 1},False,False,False
+316,potential buoyancy factors water column dataset,Measurement And Models,Environmental And Oceanographic Conditions,{'Measurement And Models': 1},{'Environmental And Oceanographic Conditions': 1},False,False,False
 317,total time location surface,uncategorised,uncategorised,{},{},False,False,False
-317,total elapsed time location surface,uncategorised,uncategorised,{},{},False,False,False
+317,total timing location surface,uncategorised,uncategorised,{},{},False,False,False

@@ -4,18 +4,18 @@
     "Environmental Context": 2,
     "uncategorised": 11,
     "Access And Support": 2,
+    "Seafloor Characterization": 2,
     "Accountability": 1,
     "Objectives": 2,
-    "Data Integrity And Resilience": 3,
-    "Seafloor Characterization": 1
+    "Data Integrity And Resilience": 2
   },
   "parent_summary": {
-    "Environmental And Oceanographic Conditions": 2,
-    "Mission Parameters And Objectives": 4,
+    "Environmental And Oceanographic Conditions": 3,
+    "Mission Parameters And Objectives": 3,
     "uncategorised": 11,
     "Operational Logistics": 2,
+    "Terrain And Bathymetry": 2,
     "Audit And Accountability": 1,
-    "Data Products And Requirements": 3,
-    "Terrain And Bathymetry": 1
+    "Data Products And Requirements": 2
   }
 }

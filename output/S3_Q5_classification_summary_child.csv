@@ -2,8 +2,8 @@ PredictedChild,has_protected,has_conflict,has_cross_conflict,count
 Bathymetric Data Products,False,False,False,2
 Hardware,False,False,False,2
 Measurement And Models,False,False,False,2
-Objectives,False,False,False,2
+Objectives,False,False,False,1
 Physical Processes,False,False,False,1
-Seafloor Characterization,False,False,False,1
-Surface Features,False,False,False,2
-uncategorised,False,False,False,10
+Seafloor Characterization,False,False,False,2
+Surface Features,False,False,False,1
+uncategorised,False,False,False,11

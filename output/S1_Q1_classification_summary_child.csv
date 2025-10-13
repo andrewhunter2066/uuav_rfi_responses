@@ -1,19 +1,21 @@
 PredictedChild,has_protected,has_conflict,has_cross_conflict,count
-Accuracy And Hazards,False,False,False,2
+Accuracy And Hazards,False,False,False,1
+Comms Infrastructure,False,False,False,1
 Deployment,False,False,False,2
-Hardware,False,False,False,3
-Hazards,False,False,False,1
-Measurement And Models,False,False,False,2
-Navigation Systems,False,False,False,2
-Objectives,False,False,False,5
+Environmental Context,False,False,False,1
+Hardware,False,False,False,4
+Hazards,False,False,False,2
+Measurement And Models,False,False,False,1
+Navigation Systems,False,False,False,1
+Objectives,False,False,False,4
 Performance,False,False,False,6
 Physical Processes,False,False,False,4
-Quality And Confidence,False,False,False,1
-Route And Trajectory,False,False,False,10
-Seafloor Characterization,False,False,False,4
+Route And Trajectory,False,False,False,11
+Safety And Mitigation,False,False,False,1
+Seafloor Characterization,False,False,False,3
 Spatial Reference,False,False,False,2
-Surface Features,False,False,False,3
+Surface Features,False,False,False,4
 Survey Data,False,False,False,1
-System Constraints,False,False,False,1
+System Constraints,False,False,False,2
 Temporal Aspects,False,False,False,2
-uncategorised,False,False,False,11
+uncategorised,False,False,False,9

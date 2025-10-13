@@ -1,7 +1,7 @@
 PredictedChild,has_protected,has_conflict,has_cross_conflict,count
-Accountability,False,False,False,1
+Accountability,False,False,False,2
 Data Integrity And Resilience,False,False,False,3
 Environmental Context,False,False,False,2
-Objectives,False,False,False,6
-Seafloor Characterization,False,False,False,2
-uncategorised,False,False,False,8
+Objectives,False,False,False,5
+Seafloor Characterization,False,False,False,1
+uncategorised,False,False,False,9

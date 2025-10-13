@@ -1,13 +1,12 @@
 {
   "child_summary": {
-    "Deployment": 4,
+    "Deployment": 3,
     "Surface Features": 4,
-    "Physical Processes": 5,
-    "Environmental Context": 1,
+    "Physical Processes": 6,
     "Route And Trajectory": 10,
-    "uncategorised": 9,
+    "uncategorised": 10,
     "System Constraints": 2,
-    "Seafloor Characterization": 3,
+    "Seafloor Characterization": 4,
     "Survey Data": 1,
     "Hazards": 2,
     "Temporal Aspects": 1,
@@ -17,21 +16,19 @@
     "Bathymetric Data Products": 1,
     "Accuracy And Hazards": 3,
     "Hardware": 3,
-    "Comms Infrastructure": 1,
     "Spatial Reference": 1,
     "Spatial Aspects": 1,
     "Objectives": 2
   },
   "parent_summary": {
-    "Operational Logistics": 4,
-    "Terrain And Bathymetry": 7,
+    "Operational Logistics": 3,
+    "Terrain And Bathymetry": 8,
     "Environmental And Oceanographic Conditions": 8,
     "Navigation And Positioning": 17,
-    "uncategorised": 9,
+    "uncategorised": 10,
     "Vehicle Capabilities And Constraints": 11,
     "Data Products And Requirements": 1,
     "Threats And Risk Management": 2,
-    "Mission Parameters And Objectives": 4,
-    "Communications And Control": 1
+    "Mission Parameters And Objectives": 4
   }
 }

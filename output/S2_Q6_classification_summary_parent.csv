@@ -1,8 +1,6 @@
 PredictedParent,has_protected,has_conflict,has_cross_conflict,count
-Audit And Accountability,False,False,False,3
-Data Products And Requirements,False,False,False,4
+Audit And Accountability,False,False,False,4
+Data Products And Requirements,False,False,False,6
 Environmental And Oceanographic Conditions,False,False,False,2
-Mission Parameters And Objectives,False,False,False,4
-Terrain And Bathymetry,False,False,False,2
-Threats And Risk Management,False,False,False,1
-uncategorised,False,False,False,8
+Mission Parameters And Objectives,False,False,False,3
+uncategorised,False,False,False,9

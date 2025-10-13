@@ -2,19 +2,20 @@
   "child_summary": {
     "Performance": 6,
     "Navigation Systems": 4,
-    "uncategorised": 6,
-    "System Constraints": 2,
-    "Temporal Aspects": 2,
+    "uncategorised": 9,
+    "System Constraints": 1,
+    "Temporal Aspects": 1,
+    "Comms Infrastructure": 1,
     "Accuracy And Hazards": 1,
-    "Route And Trajectory": 8,
-    "Seafloor Characterization": 1,
-    "Hardware": 2
+    "Route And Trajectory": 6,
+    "Hardware": 2,
+    "Hazards": 1
   },
   "parent_summary": {
-    "Vehicle Capabilities And Constraints": 10,
-    "Navigation And Positioning": 13,
-    "uncategorised": 6,
-    "Mission Parameters And Objectives": 2,
-    "Terrain And Bathymetry": 1
+    "Vehicle Capabilities And Constraints": 9,
+    "Navigation And Positioning": 12,
+    "uncategorised": 9,
+    "Mission Parameters And Objectives": 1,
+    "Communications And Control": 1
   }
 }

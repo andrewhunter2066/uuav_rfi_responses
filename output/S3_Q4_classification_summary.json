@@ -1,25 +1,30 @@
 {
   "child_summary": {
-    "Environmental Context": 2,
+    "Environmental Context": 1,
+    "Environmental Risks": 1,
     "Collision And Obstruction": 1,
-    "Navigation Systems": 1,
-    "Performance": 4,
-    "Hazards": 3,
+    "Seafloor Characterization": 1,
+    "Performance": 3,
+    "Hazards": 5,
     "Safety And Mitigation": 2,
-    "Objectives": 2,
-    "Hardware": 5,
+    "Objectives": 1,
+    "Navigation Systems": 1,
     "Physical Processes": 2,
     "Survey Data": 2,
-    "uncategorised": 4,
-    "Route And Trajectory": 6
+    "uncategorised": 5,
+    "Route And Trajectory": 5,
+    "Hardware": 3,
+    "Comms Infrastructure": 1
   },
   "parent_summary": {
     "Environmental And Oceanographic Conditions": 4,
-    "Threats And Risk Management": 6,
+    "Threats And Risk Management": 7,
+    "Terrain And Bathymetry": 1,
+    "Vehicle Capabilities And Constraints": 6,
+    "Mission Parameters And Objectives": 1,
     "Navigation And Positioning": 7,
-    "Vehicle Capabilities And Constraints": 9,
-    "Mission Parameters And Objectives": 2,
     "Data Products And Requirements": 2,
-    "uncategorised": 4
+    "uncategorised": 5,
+    "Communications And Control": 1
   }
 }

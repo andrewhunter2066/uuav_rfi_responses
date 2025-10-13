@@ -1,11 +1,12 @@
 PredictedChild,has_protected,has_conflict,has_cross_conflict,count
+Comms Infrastructure,False,False,False,1
 Failure Scenarios,False,False,False,2
-Hardware,False,False,False,4
-Hazards,False,False,False,1
+Hardware,False,False,False,3
+Hazards,False,False,False,3
 Navigation Systems,False,False,False,3
-Objectives,False,False,False,3
-Performance,False,False,False,2
-Physical Processes,False,False,False,2
+Objectives,False,False,False,1
+Performance,False,False,False,3
+Physical Processes,False,False,False,1
 Route And Trajectory,False,False,False,5
 Safety And Mitigation,False,False,False,2
 Survey Data,False,False,False,2
