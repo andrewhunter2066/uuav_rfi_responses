@@ -1,0 +1,106 @@
+[
+  {
+    "ResponseID":"74",
+    "ResponseText":"sounding quality affected unmanned underwater vehicle altitude pitch roll environmental noise",
+    "has_protected":false,
+    "has_conflict":false,
+    "has_cross_conflict":false,
+    "validation_summary":{
+      "valid":1,
+      "protected":0,
+      "conflict":0,
+      "cross_conflict":0
+    }
+  },
+  {
+    "ResponseID":"74",
+    "ResponseText":"sounding quality affected unmanned underwater vehicle altitude pitch roll environmental noise",
+    "has_protected":false,
+    "has_conflict":false,
+    "has_cross_conflict":false,
+    "validation_summary":{
+      "valid":1,
+      "protected":0,
+      "conflict":0,
+      "cross_conflict":0
+    }
+  },
+  {
+    "ResponseID":"75",
+    "ResponseText":"multibeam echo sounder doppler velocity log performance benchmarked expected resolution coverage",
+    "has_protected":false,
+    "has_conflict":false,
+    "has_cross_conflict":false,
+    "validation_summary":{
+      "valid":1,
+      "protected":0,
+      "conflict":0,
+      "cross_conflict":0
+    }
+  },
+  {
+    "ResponseID":"75",
+    "ResponseText":"multibeam echo sounder doppler velocity log performance expected vs actual expected resolution coverage",
+    "has_protected":false,
+    "has_conflict":false,
+    "has_cross_conflict":false,
+    "validation_summary":{
+      "valid":1,
+      "protected":0,
+      "conflict":0,
+      "cross_conflict":0
+    }
+  },
+  {
+    "ResponseID":"76",
+    "ResponseText":"data gaps anomalies must flagged post-mission review future planning",
+    "has_protected":false,
+    "has_conflict":false,
+    "has_cross_conflict":false,
+    "validation_summary":{
+      "valid":1,
+      "protected":0,
+      "conflict":0,
+      "cross_conflict":0
+    }
+  },
+  {
+    "ResponseID":"76",
+    "ResponseText":"data gaps anomalies must flagged post-mission analysis future mission design",
+    "has_protected":false,
+    "has_conflict":false,
+    "has_cross_conflict":false,
+    "validation_summary":{
+      "valid":1,
+      "protected":0,
+      "conflict":0,
+      "cross_conflict":0
+    }
+  },
+  {
+    "ResponseID":"333",
+    "ResponseText":"data fit purpose could better",
+    "has_protected":false,
+    "has_conflict":false,
+    "has_cross_conflict":false,
+    "validation_summary":{
+      "valid":1,
+      "protected":0,
+      "conflict":0,
+      "cross_conflict":0
+    }
+  },
+  {
+    "ResponseID":"333",
+    "ResponseText":"data track purpose could better",
+    "has_protected":false,
+    "has_conflict":false,
+    "has_cross_conflict":false,
+    "validation_summary":{
+      "valid":1,
+      "protected":0,
+      "conflict":0,
+      "cross_conflict":0
+    }
+  }
+]

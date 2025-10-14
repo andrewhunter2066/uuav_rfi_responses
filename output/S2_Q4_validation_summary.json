@@ -14,7 +14,7 @@
   },
   {
     "ResponseID":"31",
-    "ResponseText":"risk incomplete coverage due terrain shadowing sensor limitations",
+    "ResponseText":"vulnerability incomplete coverage due terrain shadowing instrument limitations",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -40,7 +40,7 @@
   },
   {
     "ResponseID":"32",
-    "ResponseText":"records dropouts multibeam echo sounder region environmental interference system faults",
+    "ResponseText":"data dropouts multibeam echo sounder due environmental interference system faults",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -66,7 +66,7 @@
   },
   {
     "ResponseID":"33",
-    "ResponseText":"navigation drift affecting survey alignment telemetry integrity",
+    "ResponseText":"piloting drift affecting survey alignment data integrity",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -92,7 +92,7 @@
   },
   {
     "ResponseID":"34",
-    "ResponseText":"overlap errors adjacent survey swell",
+    "ResponseText":"overlap errors adjacent survey wave height",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -144,7 +144,7 @@
   },
   {
     "ResponseID":"219",
-    "ResponseText":"sensor performance prior operation start bench test",
+    "ResponseText":"sensor effectiveness prior mission start bench test",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -170,7 +170,7 @@
   },
   {
     "ResponseID":"220",
-    "ResponseText":"ephemeral current tides route aoi operations",
+    "ResponseText":"ephemeral tide tides route area operations",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -196,7 +196,7 @@
   },
   {
     "ResponseID":"221",
-    "ResponseText":"threat survey cyber risk mission",
+    "ResponseText":"threat assessment cyber exposure mission",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -248,7 +248,7 @@
   },
   {
     "ResponseID":"223",
-    "ResponseText":"endurance uuv",
+    "ResponseText":"duration vehicle",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -274,7 +274,7 @@
   },
   {
     "ResponseID":"224",
-    "ResponseText":"maximum underwater depth vehicle",
+    "ResponseText":"maximum depth vehicle",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -300,7 +300,7 @@
   },
   {
     "ResponseID":"225",
-    "ResponseText":"minimum depth uuv",
+    "ResponseText":"minimum seafloor elevation vehicle",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -326,7 +326,7 @@
   },
   {
     "ResponseID":"226",
-    "ResponseText":"piloting hazards route area operations",
+    "ResponseText":"navigational hazards route area undertaking",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -352,7 +352,7 @@
   },
   {
     "ResponseID":"227",
-    "ResponseText":"vehicle telemetry requirements",
+    "ResponseText":"vehicle communication need",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -378,7 +378,7 @@
   },
   {
     "ResponseID":"228",
-    "ResponseText":"no-go zones route area undertaking",
+    "ResponseText":"no-go zones route sector operations",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -404,7 +404,7 @@
   },
   {
     "ResponseID":"229",
-    "ResponseText":"actions loss comms loss vehicle etc",
+    "ResponseText":"actions breakdown communications loss vehicle etc",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,

@@ -14,7 +14,7 @@
   },
   {
     "ResponseID":"47",
-    "ResponseText":"beach gradient bottom composition",
+    "ResponseText":"beach gradient substrate composition",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -40,7 +40,7 @@
   },
   {
     "ResponseID":"48",
-    "ResponseText":"habitat region sensitivity restrictions",
+    "ResponseText":"habitat zone sensitivity restrictions",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -66,7 +66,7 @@
   },
   {
     "ResponseID":"49",
-    "ResponseText":"sea state analysis ocean conditions eg swell tides sediment transport",
+    "ResponseText":"oceanographic hydrodynamics eg swell tidal current sediment transport",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -118,7 +118,7 @@
   },
   {
     "ResponseID":"51",
-    "ResponseText":"navigational exposure factors course submerged hazards surf zone dynamics",
+    "ResponseText":"piloting risk factors transit submerged hazards surf zone dynamics",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -144,7 +144,7 @@
   },
   {
     "ResponseID":"274",
-    "ResponseText":"equipment limitations service capabilities",
+    "ResponseText":"equipment constraint service capabilities",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -170,7 +170,7 @@
   },
   {
     "ResponseID":"275",
-    "ResponseText":"timings restriction left right",
+    "ResponseText":"timings hard bathymetry right",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -222,7 +222,7 @@
   },
   {
     "ResponseID":"277",
-    "ResponseText":"global positioning system fixing parameter frequency",
+    "ResponseText":"global positioning system fixing requirements update rate",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -248,7 +248,7 @@
   },
   {
     "ResponseID":"278",
-    "ResponseText":"error requirements sensors",
+    "ResponseText":"precision requirements sensors",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -274,7 +274,7 @@
   },
   {
     "ResponseID":"279",
-    "ResponseText":"uncertainty requirements navigation",
+    "ResponseText":"error requirements navigation",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -326,7 +326,7 @@
   },
   {
     "ResponseID":"281",
-    "ResponseText":"minimum bathymetry vehicle",
+    "ResponseText":"minimum depth vehicle",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -352,7 +352,7 @@
   },
   {
     "ResponseID":"282",
-    "ResponseText":"vessel communication requirements",
+    "ResponseText":"vehicle data link requirements",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -378,7 +378,7 @@
   },
   {
     "ResponseID":"283",
-    "ResponseText":"navigational no-go zone route area operations",
+    "ResponseText":"navigational hazards planned line area operations",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -404,7 +404,7 @@
   },
   {
     "ResponseID":"284",
-    "ResponseText":"no-go zones route area mission",
+    "ResponseText":"no-go zones path area operations",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -430,7 +430,7 @@
   },
   {
     "ResponseID":"285",
-    "ResponseText":"zone safety confidence route area operations",
+    "ResponseText":"zone confidence route operating area operations",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,

@@ -1,6 +1,5 @@
 PredictedChild,has_protected,has_conflict,has_cross_conflict,count
-Bathymetric Data Products,False,False,False,3
-Control Systems,False,False,False,1
+Bathymetric Data Products,False,False,False,4
 Environmental Context,False,False,False,2
 Hardware,False,False,False,2
 Measurement And Models,False,False,False,1

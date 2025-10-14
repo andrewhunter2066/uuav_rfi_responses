@@ -1,0 +1,106 @@
+[
+  {
+    "ResponseID":"83",
+    "ResponseText":"current standards functional lack flexibility emerging data types eg ai-generated insights",
+    "has_protected":false,
+    "has_conflict":false,
+    "has_cross_conflict":false,
+    "validation_summary":{
+      "valid":1,
+      "protected":0,
+      "conflict":0,
+      "cross_conflict":0
+    }
+  },
+  {
+    "ResponseID":"83",
+    "ResponseText":"current standards functional lack flexibility emerging information types eg ai-generated insights",
+    "has_protected":false,
+    "has_conflict":false,
+    "has_cross_conflict":false,
+    "validation_summary":{
+      "valid":1,
+      "protected":0,
+      "conflict":0,
+      "cross_conflict":0
+    }
+  },
+  {
+    "ResponseID":"84",
+    "ResponseText":"format support structured unstructured data including imagery acoustic logs",
+    "has_protected":false,
+    "has_conflict":false,
+    "has_cross_conflict":false,
+    "validation_summary":{
+      "valid":1,
+      "protected":0,
+      "conflict":0,
+      "cross_conflict":0
+    }
+  },
+  {
+    "ResponseID":"84",
+    "ResponseText":"format support structured unstructured data including imagery acoustic logs",
+    "has_protected":false,
+    "has_conflict":false,
+    "has_cross_conflict":false,
+    "validation_summary":{
+      "valid":1,
+      "protected":0,
+      "conflict":0,
+      "cross_conflict":0
+    }
+  },
+  {
+    "ResponseID":"85",
+    "ResponseText":"capacity must scale multi-unmanned underwater vehicle operations high-resolution datasets",
+    "has_protected":false,
+    "has_conflict":false,
+    "has_cross_conflict":false,
+    "validation_summary":{
+      "valid":1,
+      "protected":0,
+      "conflict":0,
+      "cross_conflict":0
+    }
+  },
+  {
+    "ResponseID":"85",
+    "ResponseText":"capacity must scale multi-unmanned underwater uuv operations high-resolution datasets",
+    "has_protected":false,
+    "has_conflict":false,
+    "has_cross_conflict":false,
+    "validation_summary":{
+      "valid":1,
+      "protected":0,
+      "conflict":0,
+      "cross_conflict":0
+    }
+  },
+  {
+    "ResponseID":"339",
+    "ResponseText":"currently adequate improved",
+    "has_protected":false,
+    "has_conflict":false,
+    "has_cross_conflict":false,
+    "validation_summary":{
+      "valid":1,
+      "protected":0,
+      "conflict":0,
+      "cross_conflict":0
+    }
+  },
+  {
+    "ResponseID":"339",
+    "ResponseText":"currently adequate improved",
+    "has_protected":false,
+    "has_conflict":false,
+    "has_cross_conflict":false,
+    "validation_summary":{
+      "valid":1,
+      "protected":0,
+      "conflict":0,
+      "cross_conflict":0
+    }
+  }
+]

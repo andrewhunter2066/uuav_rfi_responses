@@ -5,19 +5,19 @@
     "Environmental Context": 4,
     "Analysis And Learning": 2,
     "Bathymetric Data Products": 2,
-    "Accuracy And Hazards": 2,
-    "uncategorised": 7,
+    "Accuracy And Hazards": 1,
+    "Hazards": 3,
+    "uncategorised": 6,
     "Performance": 2,
-    "Safety And Mitigation": 2,
-    "Hazards": 1
+    "Safety And Mitigation": 2
   },
   "parent_summary": {
     "Terrain And Bathymetry": 3,
-    "Navigation And Positioning": 5,
+    "Navigation And Positioning": 4,
     "Environmental And Oceanographic Conditions": 4,
     "Historical And Contextual Data": 2,
-    "uncategorised": 7,
-    "Vehicle Capabilities And Constraints": 2,
-    "Threats And Risk Management": 3
+    "Threats And Risk Management": 5,
+    "uncategorised": 6,
+    "Vehicle Capabilities And Constraints": 2
   }
 }

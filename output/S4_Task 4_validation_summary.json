@@ -1,0 +1,132 @@
+[
+  {
+    "ResponseID":"77",
+    "ResponseText":"mission plans include timestamped task identifiers objectives environmental overlays",
+    "has_protected":false,
+    "has_conflict":false,
+    "has_cross_conflict":false,
+    "validation_summary":{
+      "valid":1,
+      "protected":0,
+      "conflict":0,
+      "cross_conflict":0
+    }
+  },
+  {
+    "ResponseID":"77",
+    "ResponseText":"mission plans include timestamped task identifiers goal environmental overlays",
+    "has_protected":false,
+    "has_conflict":false,
+    "has_cross_conflict":false,
+    "validation_summary":{
+      "valid":1,
+      "protected":0,
+      "conflict":0,
+      "cross_conflict":0
+    }
+  },
+  {
+    "ResponseID":"78",
+    "ResponseText":"metadata tagging mission phase enables traceability reuse",
+    "has_protected":false,
+    "has_conflict":false,
+    "has_cross_conflict":false,
+    "validation_summary":{
+      "valid":1,
+      "protected":0,
+      "conflict":0,
+      "cross_conflict":0
+    }
+  },
+  {
+    "ResponseID":"78",
+    "ResponseText":"metadata data logging objective phase enables traceability reuse",
+    "has_protected":false,
+    "has_conflict":false,
+    "has_cross_conflict":false,
+    "validation_summary":{
+      "valid":1,
+      "protected":0,
+      "conflict":0,
+      "cross_conflict":0
+    }
+  },
+  {
+    "ResponseID":"79",
+    "ResponseText":"integration defence data standards ensures consistency interoperability",
+    "has_protected":false,
+    "has_conflict":false,
+    "has_cross_conflict":false,
+    "validation_summary":{
+      "valid":1,
+      "protected":0,
+      "conflict":0,
+      "cross_conflict":0
+    }
+  },
+  {
+    "ResponseID":"79",
+    "ResponseText":"post-mission analysis defence data standards ensures consistency interoperability",
+    "has_protected":false,
+    "has_conflict":false,
+    "has_cross_conflict":false,
+    "validation_summary":{
+      "valid":1,
+      "protected":0,
+      "conflict":0,
+      "cross_conflict":0
+    }
+  },
+  {
+    "ResponseID":"334",
+    "ResponseText":"area operations search",
+    "has_protected":false,
+    "has_conflict":false,
+    "has_cross_conflict":false,
+    "validation_summary":{
+      "valid":1,
+      "protected":0,
+      "conflict":0,
+      "cross_conflict":0
+    }
+  },
+  {
+    "ResponseID":"334",
+    "ResponseText":"region operations search",
+    "has_protected":false,
+    "has_conflict":false,
+    "has_cross_conflict":false,
+    "validation_summary":{
+      "valid":1,
+      "protected":0,
+      "conflict":0,
+      "cross_conflict":0
+    }
+  },
+  {
+    "ResponseID":"336",
+    "ResponseText":"acquire target",
+    "has_protected":false,
+    "has_conflict":false,
+    "has_cross_conflict":false,
+    "validation_summary":{
+      "valid":1,
+      "protected":0,
+      "conflict":0,
+      "cross_conflict":0
+    }
+  },
+  {
+    "ResponseID":"336",
+    "ResponseText":"acquire objective",
+    "has_protected":false,
+    "has_conflict":false,
+    "has_cross_conflict":false,
+    "validation_summary":{
+      "valid":1,
+      "protected":0,
+      "conflict":0,
+      "cross_conflict":0
+    }
+  }
+]

@@ -2,24 +2,24 @@ ResponseID,ResponseText,PredictedChild,PredictedParent,ChildScores,ParentScores,
 64,annotated beach selection rationale environmental overlays,Physical Processes,Environmental And Oceanographic Conditions,"{'Physical Processes': 1, 'Environmental Context': 1, 'Metadata And Records': 1}","{'Environmental And Oceanographic Conditions': 2, 'Audit And Accountability': 1}",False,False,False
 64,annotated beach selection rationale environmental overlays,Physical Processes,Environmental And Oceanographic Conditions,"{'Physical Processes': 1, 'Environmental Context': 1, 'Metadata And Records': 1}","{'Environmental And Oceanographic Conditions': 2, 'Audit And Accountability': 1}",False,False,False
 65,mission logs detailing approach conditions outcomes,Environmental Context,Mission Parameters And Objectives,"{'Environmental Context': 1, 'Objectives': 1, 'Operational Windows': 1, 'Mission Logging': 1}","{'Environmental And Oceanographic Conditions': 1, 'Mission Parameters And Objectives': 2, 'Audit And Accountability': 1}",False,False,False
-65,mission breakdown detailing approach conditions outcomes,Environmental Context,Mission Parameters And Objectives,"{'Environmental Context': 1, 'Objectives': 1, 'Operational Windows': 1}","{'Environmental And Oceanographic Conditions': 1, 'Mission Parameters And Objectives': 2}",False,False,False
+65,mission logs detailing approach climate outcomes,Objectives,Mission Parameters And Objectives,"{'Objectives': 1, 'Operational Windows': 1, 'Mission Logging': 1}","{'Mission Parameters And Objectives': 2, 'Audit And Accountability': 1}",False,False,False
 66,feature detection records confidence scores,uncategorised,uncategorised,{},{},False,False,False
-66,feature detection records confidence indicate,uncategorised,uncategorised,{},{},False,False,False
+66,feature detection records confidence display,uncategorised,uncategorised,{},{},False,False,False
 67,post-mission feedback beach viability landing success,Access And Support,Operational Logistics,"{'Physical Processes': 1, 'Objectives': 1, 'Analysis And Learning': 1, 'Access And Support': 2}","{'Environmental And Oceanographic Conditions': 1, 'Mission Parameters And Objectives': 1, 'Historical And Contextual Data': 1, 'Operational Logistics': 2}",False,False,False
-67,post-mission feedback beach viability landing success,Access And Support,Operational Logistics,"{'Physical Processes': 1, 'Objectives': 1, 'Analysis And Learning': 1, 'Access And Support': 2}","{'Environmental And Oceanographic Conditions': 1, 'Mission Parameters And Objectives': 1, 'Historical And Contextual Data': 1, 'Operational Logistics': 2}",False,False,False
+67,post-mission after-action report beach viability landing success,Access And Support,Operational Logistics,"{'Physical Processes': 1, 'Objectives': 1, 'Access And Support': 2}","{'Environmental And Oceanographic Conditions': 1, 'Mission Parameters And Objectives': 1, 'Operational Logistics': 2}",False,False,False
 318,initial test check lists pre-dive etc,uncategorised,uncategorised,{},{},False,False,False
 318,initial test check lists pre-dive etc,uncategorised,uncategorised,{},{},False,False,False
-319,signatory user account information,Accountability,Audit And Accountability,{'Accountability': 1},{'Audit And Accountability': 1},False,False,False
-319,signatory user account information,Accountability,Audit And Accountability,{'Accountability': 1},{'Audit And Accountability': 1},False,False,False
+319,signatory user account information,Accountability,Audit And Accountability,"{'Accountability': 1, 'Identity And Signoff': 1}","{'Audit And Accountability': 1, 'Governance Security And Access': 1}",False,False,False
+319,signatory utilize account information,uncategorised,uncategorised,{},{},False,False,False
 320,specific job files load template,uncategorised,uncategorised,{},{},False,False,False
-320,specific job files power template,uncategorised,uncategorised,{},{},False,False,False
+320,specific job files consumption template,uncategorised,uncategorised,{},{},False,False,False
 321,time task versus completion factors ratio,Objectives,Mission Parameters And Objectives,{'Objectives': 1},{'Mission Parameters And Objectives': 1},False,False,False
-321,timing task versus completion factors ratio,Objectives,Mission Parameters And Objectives,{'Objectives': 1},{'Mission Parameters And Objectives': 1},False,False,False
-322,holes data sensor performance issues,Data Integrity And Resilience,Data Products And Requirements,{'Data Integrity And Resilience': 1},{'Data Products And Requirements': 1},False,False,False
-322,holes data instrument performance issues,Navigation Systems,Navigation And Positioning,{'Navigation Systems': 1},{'Navigation And Positioning': 1},False,False,False
-323,depth discrepancies,Data Integrity And Resilience,Data Products And Requirements,{'Data Integrity And Resilience': 1},{'Data Products And Requirements': 1},False,False,False
-323,depth discrepancies,Data Integrity And Resilience,Data Products And Requirements,{'Data Integrity And Resilience': 1},{'Data Products And Requirements': 1},False,False,False
+321,time task versus completion factors course,Objectives,Mission Parameters And Objectives,{'Objectives': 1},{'Mission Parameters And Objectives': 1},False,False,False
+322,holes data sensor performance issues,Data Integrity And Resilience,Data Products And Requirements,"{'Data Integrity And Resilience': 1, 'Mission Data Integrity': 1}",{'Data Products And Requirements': 2},False,False,False
+322,holes data sensor performance issues,Data Integrity And Resilience,Data Products And Requirements,"{'Data Integrity And Resilience': 1, 'Mission Data Integrity': 1}",{'Data Products And Requirements': 2},False,False,False
+323,depth discrepancies,Data Integrity And Resilience,Data Products And Requirements,"{'Data Integrity And Resilience': 1, 'Mission Data Integrity': 1}",{'Data Products And Requirements': 2},False,False,False
+323,depth discrepancies,Data Integrity And Resilience,Data Products And Requirements,"{'Data Integrity And Resilience': 1, 'Mission Data Integrity': 1}",{'Data Products And Requirements': 2},False,False,False
 324,track interest,uncategorised,uncategorised,{},{},False,False,False
 324,track interest,uncategorised,uncategorised,{},{},False,False,False
 325,automated procedure record contacts,uncategorised,uncategorised,{},{},False,False,False
-325,automated procedure record contacts,uncategorised,uncategorised,{},{},False,False,False
+325,automated procedure log entry contacts,uncategorised,uncategorised,{},{},False,False,False

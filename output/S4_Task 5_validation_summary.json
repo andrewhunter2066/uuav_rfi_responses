@@ -1,0 +1,132 @@
+[
+  {
+    "ResponseID":"80",
+    "ResponseText":"incident logging include root cause analysis operational impact",
+    "has_protected":false,
+    "has_conflict":false,
+    "has_cross_conflict":false,
+    "validation_summary":{
+      "valid":1,
+      "protected":0,
+      "conflict":0,
+      "cross_conflict":0
+    }
+  },
+  {
+    "ResponseID":"80",
+    "ResponseText":"incident logging include root cause analysis operational impact",
+    "has_protected":false,
+    "has_conflict":false,
+    "has_cross_conflict":false,
+    "validation_summary":{
+      "valid":1,
+      "protected":0,
+      "conflict":0,
+      "cross_conflict":0
+    }
+  },
+  {
+    "ResponseID":"81",
+    "ResponseText":"communications dropouts sensor failures navigation drift must recorded geospatial context",
+    "has_protected":false,
+    "has_conflict":false,
+    "has_cross_conflict":false,
+    "validation_summary":{
+      "valid":1,
+      "protected":0,
+      "conflict":0,
+      "cross_conflict":0
+    }
+  },
+  {
+    "ResponseID":"81",
+    "ResponseText":"communications dropouts sensor failures navigation drift integration recorded geospatial context",
+    "has_protected":false,
+    "has_conflict":false,
+    "has_cross_conflict":false,
+    "validation_summary":{
+      "valid":1,
+      "protected":0,
+      "conflict":0,
+      "cross_conflict":0
+    }
+  },
+  {
+    "ResponseID":"82",
+    "ResponseText":"risk flags trigger automated alerts post-mission debrief requirements",
+    "has_protected":false,
+    "has_conflict":false,
+    "has_cross_conflict":false,
+    "validation_summary":{
+      "valid":1,
+      "protected":0,
+      "conflict":0,
+      "cross_conflict":0
+    }
+  },
+  {
+    "ResponseID":"82",
+    "ResponseText":"risk flags trigger automated sector post-mission debrief requirements",
+    "has_protected":false,
+    "has_conflict":false,
+    "has_cross_conflict":false,
+    "validation_summary":{
+      "valid":1,
+      "protected":0,
+      "conflict":0,
+      "cross_conflict":0
+    }
+  },
+  {
+    "ResponseID":"337",
+    "ResponseText":"current incompatibility solutions exist",
+    "has_protected":false,
+    "has_conflict":false,
+    "has_cross_conflict":false,
+    "validation_summary":{
+      "valid":1,
+      "protected":0,
+      "conflict":0,
+      "cross_conflict":0
+    }
+  },
+  {
+    "ResponseID":"337",
+    "ResponseText":"current incompatibility solutions exist",
+    "has_protected":false,
+    "has_conflict":false,
+    "has_cross_conflict":false,
+    "validation_summary":{
+      "valid":1,
+      "protected":0,
+      "conflict":0,
+      "cross_conflict":0
+    }
+  },
+  {
+    "ResponseID":"338",
+    "ResponseText":"deconfliction communication channels achieved liaison mission orders",
+    "has_protected":false,
+    "has_conflict":false,
+    "has_cross_conflict":false,
+    "validation_summary":{
+      "valid":1,
+      "protected":0,
+      "conflict":0,
+      "cross_conflict":0
+    }
+  },
+  {
+    "ResponseID":"338",
+    "ResponseText":"deconfliction communication channels achieved liaison operation tidal current",
+    "has_protected":false,
+    "has_conflict":false,
+    "has_cross_conflict":false,
+    "validation_summary":{
+      "valid":1,
+      "protected":0,
+      "conflict":0,
+      "cross_conflict":0
+    }
+  }
+]

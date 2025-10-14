@@ -14,7 +14,7 @@
   },
   {
     "ResponseID":"35",
-    "ResponseText":"gaps multibeam echo sounder area covered sortie features",
+    "ResponseText":"gaps multibeam echo sounder area covered missed features",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -40,7 +40,7 @@
   },
   {
     "ResponseID":"36",
-    "ResponseText":"detector degradation calibration drift",
+    "ResponseText":"payload degradation calibration drift",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -66,7 +66,7 @@
   },
   {
     "ResponseID":"37",
-    "ResponseText":"inability detect significant seafloor features due resolution limits",
+    "ResponseText":"inability detect critical seabed features area of operation granularity limits",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -92,7 +92,7 @@
   },
   {
     "ResponseID":"38",
-    "ResponseText":"conditions anomalies affecting acoustic performance",
+    "ResponseText":"environmental anomalies affecting acoustic performance",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -144,7 +144,7 @@
   },
   {
     "ResponseID":"232",
-    "ResponseText":"estimated power source completion mission",
+    "ResponseText":"projection battery completion mission",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -196,7 +196,7 @@
   },
   {
     "ResponseID":"234",
-    "ResponseText":"factor damage grounding event precision",
+    "ResponseText":"factor damage grounding event error",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -222,7 +222,7 @@
   },
   {
     "ResponseID":"235",
-    "ResponseText":"area covered area operations achievable time limitations",
+    "ResponseText":"coverage area mission achievable time limitations",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -274,7 +274,7 @@
   },
   {
     "ResponseID":"237",
-    "ResponseText":"telemetry time location surface",
+    "ResponseText":"total time location sea surface",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,

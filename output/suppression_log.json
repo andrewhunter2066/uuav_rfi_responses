@@ -1,18 +1,68 @@
 [
   {
-    "word": "identifying",
+    "word": "equipment",
     "protected_trigger": false,
-    "context_snippet": "No synonyms available for augmentation of 'identifying'"
+    "context_snippet": "No synonyms available for augmentation of 'equipment'"
   },
   {
-    "word": "manufacturer-stipulated",
+    "word": "original",
     "protected_trigger": false,
-    "context_snippet": "No synonyms available for augmentation of 'manufacturer-stipulated'"
+    "context_snippet": "No synonyms available for augmentation of 'original'"
   },
   {
-    "word": "influence",
+    "word": "achieve",
     "protected_trigger": false,
-    "context_snippet": "No synonyms available for augmentation of 'influence'"
+    "context_snippet": "No synonyms available for augmentation of 'achieve'"
+  },
+  {
+    "word": "column",
+    "protected_trigger": false,
+    "context_snippet": "No synonyms available for augmentation of 'column'"
+  },
+  {
+    "word": "vector",
+    "protected_trigger": false,
+    "context_snippet": "No synonyms available for augmentation of 'vector'"
+  },
+  {
+    "word": "electronic",
+    "protected_trigger": false,
+    "context_snippet": "No synonyms available for augmentation of 'electronic'"
+  },
+  {
+    "word": "no-go",
+    "protected_trigger": false,
+    "context_snippet": "No synonyms available for augmentation of 'no-go'"
+  },
+  {
+    "word": "search",
+    "protected_trigger": false,
+    "context_snippet": "No synonyms available for augmentation of 'search'"
+  },
+  {
+    "word": "including",
+    "protected_trigger": false,
+    "context_snippet": "No synonyms available for augmentation of 'including'"
+  },
+  {
+    "word": "maximum",
+    "protected_trigger": false,
+    "context_snippet": "No synonyms available for augmentation of 'maximum'"
+  },
+  {
+    "word": "historical",
+    "protected_trigger": false,
+    "context_snippet": "No synonyms available for augmentation of 'historical'"
+  },
+  {
+    "word": "etc",
+    "protected_trigger": false,
+    "context_snippet": "No synonyms available for augmentation of 'etc'"
+  },
+  {
+    "word": "engagement",
+    "protected_trigger": false,
+    "context_snippet": "No synonyms available for augmentation of 'engagement'"
   },
   {
     "word": "traffic",
@@ -20,34 +70,109 @@
     "context_snippet": "No synonyms available for augmentation of 'traffic'"
   },
   {
-    "word": "equipment",
+    "word": "rules",
     "protected_trigger": false,
-    "context_snippet": "No synonyms available for augmentation of 'equipment'"
+    "context_snippet": "No synonyms available for augmentation of 'rules'"
   },
   {
-    "word": "texture",
+    "word": "selection",
     "protected_trigger": false,
-    "context_snippet": "No synonyms available for augmentation of 'texture'"
+    "context_snippet": "No synonyms available for augmentation of 'selection'"
+  },
+  {
+    "word": "tactics",
+    "protected_trigger": false,
+    "context_snippet": "No synonyms available for augmentation of 'tactics'"
+  },
+  {
+    "word": "influence",
+    "protected_trigger": false,
+    "context_snippet": "No synonyms available for augmentation of 'influence'"
+  },
+  {
+    "word": "understanding",
+    "protected_trigger": false,
+    "context_snippet": "No synonyms available for augmentation of 'understanding'"
+  },
+  {
+    "word": "potential",
+    "protected_trigger": false,
+    "context_snippet": "No synonyms available for augmentation of 'potential'"
+  },
+  {
+    "word": "collision",
+    "protected_trigger": false,
+    "context_snippet": "No synonyms available for augmentation of 'collision'"
+  },
+  {
+    "word": "cyber",
+    "protected_trigger": false,
+    "context_snippet": "No synonyms available for augmentation of 'cyber'"
+  },
+  {
+    "word": "maximum",
+    "protected_trigger": false,
+    "context_snippet": "No synonyms available for augmentation of 'maximum'"
+  },
+  {
+    "word": "collision",
+    "protected_trigger": false,
+    "context_snippet": "No synonyms available for augmentation of 'collision'"
+  },
+  {
+    "word": "decisions",
+    "protected_trigger": false,
+    "context_snippet": "No synonyms available for augmentation of 'decisions'"
+  },
+  {
+    "word": "timestamped",
+    "protected_trigger": false,
+    "context_snippet": "No synonyms available for augmentation of 'timestamped'"
+  },
+  {
+    "word": "future",
+    "protected_trigger": false,
+    "context_snippet": "No synonyms available for augmentation of 'future'"
+  },
+  {
+    "word": "tools",
+    "protected_trigger": false,
+    "context_snippet": "No synonyms available for augmentation of 'tools'"
+  },
+  {
+    "word": "pre-dive",
+    "protected_trigger": false,
+    "context_snippet": "No synonyms available for augmentation of 'pre-dive'"
+  },
+  {
+    "word": "account",
+    "protected_trigger": false,
+    "context_snippet": "No synonyms available for augmentation of 'account'"
+  },
+  {
+    "word": "completion",
+    "protected_trigger": false,
+    "context_snippet": "No synonyms available for augmentation of 'completion'"
+  },
+  {
+    "word": "200m",
+    "protected_trigger": false,
+    "context_snippet": "No synonyms available for augmentation of '200m'"
+  },
+  {
+    "word": "sounder",
+    "protected_trigger": false,
+    "context_snippet": "No synonyms available for augmentation of 'sounder'"
+  },
+  {
+    "word": "showing",
+    "protected_trigger": false,
+    "context_snippet": "No synonyms available for augmentation of 'showing'"
   },
   {
     "word": "fitted",
     "protected_trigger": false,
     "context_snippet": "No synonyms available for augmentation of 'fitted'"
-  },
-  {
-    "word": "zones",
-    "protected_trigger": false,
-    "context_snippet": "No synonyms available for augmentation of 'zones'"
-  },
-  {
-    "word": "actions",
-    "protected_trigger": false,
-    "context_snippet": "No synonyms available for augmentation of 'actions'"
-  },
-  {
-    "word": "protocols",
-    "protected_trigger": false,
-    "context_snippet": "No synonyms available for augmentation of 'protocols'"
   },
   {
     "word": "global",
@@ -60,14 +185,59 @@
     "context_snippet": "No synonyms available for augmentation of 'minimum'"
   },
   {
-    "word": "incorporation",
+    "word": "vector",
     "protected_trigger": false,
-    "context_snippet": "No synonyms available for augmentation of 'incorporation'"
+    "context_snippet": "No synonyms available for augmentation of 'vector'"
   },
   {
-    "word": "understanding",
+    "word": "zones",
     "protected_trigger": false,
-    "context_snippet": "No synonyms available for augmentation of 'understanding'"
+    "context_snippet": "No synonyms available for augmentation of 'zones'"
+  },
+  {
+    "word": "ascent",
+    "protected_trigger": false,
+    "context_snippet": "No synonyms available for augmentation of 'ascent'"
+  },
+  {
+    "word": "etc",
+    "protected_trigger": false,
+    "context_snippet": "No synonyms available for augmentation of 'etc'"
+  },
+  {
+    "word": "trade-offs",
+    "protected_trigger": false,
+    "context_snippet": "No synonyms available for augmentation of 'trade-offs'"
+  },
+  {
+    "word": "factors",
+    "protected_trigger": false,
+    "context_snippet": "No synonyms available for augmentation of 'factors'"
+  },
+  {
+    "word": "equipment",
+    "protected_trigger": false,
+    "context_snippet": "No synonyms available for augmentation of 'equipment'"
+  },
+  {
+    "word": "maximum",
+    "protected_trigger": false,
+    "context_snippet": "No synonyms available for augmentation of 'maximum'"
+  },
+  {
+    "word": "similar",
+    "protected_trigger": false,
+    "context_snippet": "No synonyms available for augmentation of 'similar'"
+  },
+  {
+    "word": "reference",
+    "protected_trigger": false,
+    "context_snippet": "No synonyms available for augmentation of 'reference'"
+  },
+  {
+    "word": "historical",
+    "protected_trigger": false,
+    "context_snippet": "No synonyms available for augmentation of 'historical'"
   },
   {
     "word": "engagement",
@@ -80,19 +250,9 @@
     "context_snippet": "No synonyms available for augmentation of 'traffic'"
   },
   {
-    "word": "engagement",
+    "word": "informs",
     "protected_trigger": false,
-    "context_snippet": "No synonyms available for augmentation of 'engagement'"
-  },
-  {
-    "word": "acoustic",
-    "protected_trigger": false,
-    "context_snippet": "No synonyms available for augmentation of 'acoustic'"
-  },
-  {
-    "word": "tactics",
-    "protected_trigger": false,
-    "context_snippet": "No synonyms available for augmentation of 'tactics'"
+    "context_snippet": "No synonyms available for augmentation of 'informs'"
   },
   {
     "word": "improves",
@@ -100,24 +260,24 @@
     "context_snippet": "No synonyms available for augmentation of 'improves'"
   },
   {
-    "word": "understanding",
+    "word": "multibeam",
     "protected_trigger": false,
-    "context_snippet": "No synonyms available for augmentation of 'understanding'"
+    "context_snippet": "No synonyms available for augmentation of 'multibeam'"
   },
   {
-    "word": "denied",
+    "word": "faults",
     "protected_trigger": false,
-    "context_snippet": "No synonyms available for augmentation of 'denied'"
+    "context_snippet": "No synonyms available for augmentation of 'faults'"
   },
   {
-    "word": "resulting",
+    "word": "affecting",
     "protected_trigger": false,
-    "context_snippet": "No synonyms available for augmentation of 'resulting'"
+    "context_snippet": "No synonyms available for augmentation of 'affecting'"
   },
   {
-    "word": "avoidance",
+    "word": "collision",
     "protected_trigger": false,
-    "context_snippet": "No synonyms available for augmentation of 'avoidance'"
+    "context_snippet": "No synonyms available for augmentation of 'collision'"
   },
   {
     "word": "prior",
@@ -125,14 +285,19 @@
     "context_snippet": "No synonyms available for augmentation of 'prior'"
   },
   {
-    "word": "minimum",
+    "word": "maximum",
     "protected_trigger": false,
-    "context_snippet": "No synonyms available for augmentation of 'minimum'"
+    "context_snippet": "No synonyms available for augmentation of 'maximum'"
   },
   {
-    "word": "degradation",
+    "word": "features",
     "protected_trigger": false,
-    "context_snippet": "No synonyms available for augmentation of 'degradation'"
+    "context_snippet": "No synonyms available for augmentation of 'features'"
+  },
+  {
+    "word": "affecting",
+    "protected_trigger": false,
+    "context_snippet": "No synonyms available for augmentation of 'affecting'"
   },
   {
     "word": "potential",
@@ -140,24 +305,29 @@
     "context_snippet": "No synonyms available for augmentation of 'potential'"
   },
   {
-    "word": "issues",
+    "word": "acoustic",
     "protected_trigger": false,
-    "context_snippet": "No synonyms available for augmentation of 'issues'"
+    "context_snippet": "No synonyms available for augmentation of 'acoustic'"
   },
   {
-    "word": "timestamped",
+    "word": "annotated",
     "protected_trigger": false,
-    "context_snippet": "No synonyms available for augmentation of 'timestamped'"
+    "context_snippet": "No synonyms available for augmentation of 'annotated'"
   },
   {
-    "word": "cycles",
+    "word": "learned",
     "protected_trigger": false,
-    "context_snippet": "No synonyms available for augmentation of 'cycles'"
+    "context_snippet": "No synonyms available for augmentation of 'learned'"
   },
   {
-    "word": "versus",
+    "word": "etc",
     "protected_trigger": false,
-    "context_snippet": "No synonyms available for augmentation of 'versus'"
+    "context_snippet": "No synonyms available for augmentation of 'etc'"
+  },
+  {
+    "word": "completion",
+    "protected_trigger": false,
+    "context_snippet": "No synonyms available for augmentation of 'completion'"
   },
   {
     "word": "discrepancies",
@@ -165,24 +335,19 @@
     "context_snippet": "No synonyms available for augmentation of 'discrepancies'"
   },
   {
-    "word": "automated",
+    "word": "interest",
     "protected_trigger": false,
-    "context_snippet": "No synonyms available for augmentation of 'automated'"
+    "context_snippet": "No synonyms available for augmentation of 'interest'"
   },
   {
-    "word": "200m",
+    "word": "contacts",
     "protected_trigger": false,
-    "context_snippet": "No synonyms available for augmentation of '200m'"
+    "context_snippet": "No synonyms available for augmentation of 'contacts'"
   },
   {
-    "word": "echo",
+    "word": "beach",
     "protected_trigger": false,
-    "context_snippet": "No synonyms available for augmentation of 'echo'"
-  },
-  {
-    "word": "underwater",
-    "protected_trigger": false,
-    "context_snippet": "No synonyms available for augmentation of 'underwater'"
+    "context_snippet": "No synonyms available for augmentation of 'beach'"
   },
   {
     "word": "subsea",
@@ -200,159 +365,14 @@
     "context_snippet": "No synonyms available for augmentation of 'maximum'"
   },
   {
-    "word": "electronic",
-    "protected_trigger": false,
-    "context_snippet": "No synonyms available for augmentation of 'electronic'"
-  },
-  {
-    "word": "etc",
-    "protected_trigger": false,
-    "context_snippet": "No synonyms available for augmentation of 'etc'"
-  },
-  {
-    "word": "versus",
-    "protected_trigger": false,
-    "context_snippet": "No synonyms available for augmentation of 'versus'"
-  },
-  {
-    "word": "altitude",
-    "protected_trigger": false,
-    "context_snippet": "No synonyms available for augmentation of 'altitude'"
-  },
-  {
-    "word": "service",
-    "protected_trigger": false,
-    "context_snippet": "No synonyms available for augmentation of 'service'"
-  },
-  {
-    "word": "global",
-    "protected_trigger": false,
-    "context_snippet": "No synonyms available for augmentation of 'global'"
-  },
-  {
-    "word": "maximum",
-    "protected_trigger": false,
-    "context_snippet": "No synonyms available for augmentation of 'maximum'"
-  },
-  {
     "word": "minimum",
     "protected_trigger": false,
     "context_snippet": "No synonyms available for augmentation of 'minimum'"
   },
   {
-    "word": "zones",
+    "word": "no-go",
     "protected_trigger": false,
-    "context_snippet": "No synonyms available for augmentation of 'zones'"
-  },
-  {
-    "word": "detection",
-    "protected_trigger": false,
-    "context_snippet": "No synonyms available for augmentation of 'detection'"
-  },
-  {
-    "word": "standard",
-    "protected_trigger": false,
-    "context_snippet": "No synonyms available for augmentation of 'standard'"
-  },
-  {
-    "word": "multibeam",
-    "protected_trigger": false,
-    "context_snippet": "No synonyms available for augmentation of 'multibeam'"
-  },
-  {
-    "word": "echo",
-    "protected_trigger": false,
-    "context_snippet": "No synonyms available for augmentation of 'echo'"
-  },
-  {
-    "word": "defects",
-    "protected_trigger": false,
-    "context_snippet": "No synonyms available for augmentation of 'defects'"
-  },
-  {
-    "word": "rules",
-    "protected_trigger": false,
-    "context_snippet": "No synonyms available for augmentation of 'rules'"
-  },
-  {
-    "word": "rules",
-    "protected_trigger": false,
-    "context_snippet": "No synonyms available for augmentation of 'rules'"
-  },
-  {
-    "word": "traffic",
-    "protected_trigger": false,
-    "context_snippet": "No synonyms available for augmentation of 'traffic'"
-  },
-  {
-    "word": "maintaining",
-    "protected_trigger": false,
-    "context_snippet": "No synonyms available for augmentation of 'maintaining'"
-  },
-  {
-    "word": "potential",
-    "protected_trigger": false,
-    "context_snippet": "No synonyms available for augmentation of 'potential'"
-  },
-  {
-    "word": "terrain",
-    "protected_trigger": false,
-    "context_snippet": "No synonyms available for augmentation of 'terrain'"
-  },
-  {
-    "word": "incomplete",
-    "protected_trigger": false,
-    "context_snippet": "No synonyms available for augmentation of 'incomplete'"
-  },
-  {
-    "word": "affecting",
-    "protected_trigger": false,
-    "context_snippet": "No synonyms available for augmentation of 'affecting'"
-  },
-  {
-    "word": "avoidance",
-    "protected_trigger": false,
-    "context_snippet": "No synonyms available for augmentation of 'avoidance'"
-  },
-  {
-    "word": "prior",
-    "protected_trigger": false,
-    "context_snippet": "No synonyms available for augmentation of 'prior'"
-  },
-  {
-    "word": "potential",
-    "protected_trigger": false,
-    "context_snippet": "No synonyms available for augmentation of 'potential'"
-  },
-  {
-    "word": "acoustic",
-    "protected_trigger": false,
-    "context_snippet": "No synonyms available for augmentation of 'acoustic'"
-  },
-  {
-    "word": "maps",
-    "protected_trigger": false,
-    "context_snippet": "No synonyms available for augmentation of 'maps'"
-  },
-  {
-    "word": "multibeam",
-    "protected_trigger": false,
-    "context_snippet": "No synonyms available for augmentation of 'multibeam'"
-  },
-  {
-    "word": "annotated",
-    "protected_trigger": false,
-    "context_snippet": "No synonyms available for augmentation of 'annotated'"
-  },
-  {
-    "word": "beach",
-    "protected_trigger": false,
-    "context_snippet": "No synonyms available for augmentation of 'beach'"
-  },
-  {
-    "word": "strength",
-    "protected_trigger": false,
-    "context_snippet": "No synonyms available for augmentation of 'strength'"
+    "context_snippet": "No synonyms available for augmentation of 'no-go'"
   },
   {
     "word": "process",
@@ -365,99 +385,9 @@
     "context_snippet": "No synonyms available for augmentation of 'actions'"
   },
   {
-    "word": "object",
+    "word": "search",
     "protected_trigger": false,
-    "context_snippet": "No synonyms available for augmentation of 'object'"
-  },
-  {
-    "word": "service",
-    "protected_trigger": false,
-    "context_snippet": "No synonyms available for augmentation of 'service'"
-  },
-  {
-    "word": "modelling",
-    "protected_trigger": false,
-    "context_snippet": "No synonyms available for augmentation of 'modelling'"
-  },
-  {
-    "word": "historical",
-    "protected_trigger": false,
-    "context_snippet": "No synonyms available for augmentation of 'historical'"
-  },
-  {
-    "word": "assessments",
-    "protected_trigger": false,
-    "context_snippet": "No synonyms available for augmentation of 'assessments'"
-  },
-  {
-    "word": "historical",
-    "protected_trigger": false,
-    "context_snippet": "No synonyms available for augmentation of 'historical'"
-  },
-  {
-    "word": "traffic",
-    "protected_trigger": false,
-    "context_snippet": "No synonyms available for augmentation of 'traffic'"
-  },
-  {
-    "word": "engagement",
-    "protected_trigger": false,
-    "context_snippet": "No synonyms available for augmentation of 'engagement'"
-  },
-  {
-    "word": "informs",
-    "protected_trigger": false,
-    "context_snippet": "No synonyms available for augmentation of 'informs'"
-  },
-  {
-    "word": "collision",
-    "protected_trigger": false,
-    "context_snippet": "No synonyms available for augmentation of 'collision'"
-  },
-  {
-    "word": "inform",
-    "protected_trigger": false,
-    "context_snippet": "No synonyms available for augmentation of 'inform'"
-  },
-  {
-    "word": "interference",
-    "protected_trigger": false,
-    "context_snippet": "No synonyms available for augmentation of 'interference'"
-  },
-  {
-    "word": "zones",
-    "protected_trigger": false,
-    "context_snippet": "No synonyms available for augmentation of 'zones'"
-  },
-  {
-    "word": "collision",
-    "protected_trigger": false,
-    "context_snippet": "No synonyms available for augmentation of 'collision'"
-  },
-  {
-    "word": "etc",
-    "protected_trigger": false,
-    "context_snippet": "No synonyms available for augmentation of 'etc'"
-  },
-  {
-    "word": "habitat",
-    "protected_trigger": false,
-    "context_snippet": "No synonyms available for augmentation of 'habitat'"
-  },
-  {
-    "word": "clutter",
-    "protected_trigger": false,
-    "context_snippet": "No synonyms available for augmentation of 'clutter'"
-  },
-  {
-    "word": "potential",
-    "protected_trigger": false,
-    "context_snippet": "No synonyms available for augmentation of 'potential'"
-  },
-  {
-    "word": "achievable",
-    "protected_trigger": false,
-    "context_snippet": "No synonyms available for augmentation of 'achievable'"
+    "context_snippet": "No synonyms available for augmentation of 'search'"
   },
   {
     "word": "beach",
@@ -465,9 +395,54 @@
     "context_snippet": "No synonyms available for augmentation of 'beach'"
   },
   {
-    "word": "post-mission",
+    "word": "habitat",
     "protected_trigger": false,
-    "context_snippet": "No synonyms available for augmentation of 'post-mission'"
+    "context_snippet": "No synonyms available for augmentation of 'habitat'"
+  },
+  {
+    "word": "distribution",
+    "protected_trigger": false,
+    "context_snippet": "No synonyms available for augmentation of 'distribution'"
+  },
+  {
+    "word": "minimum",
+    "protected_trigger": false,
+    "context_snippet": "No synonyms available for augmentation of 'minimum'"
+  },
+  {
+    "word": "varying",
+    "protected_trigger": false,
+    "context_snippet": "No synonyms available for augmentation of 'varying'"
+  },
+  {
+    "word": "beach",
+    "protected_trigger": false,
+    "context_snippet": "No synonyms available for augmentation of 'beach'"
+  },
+  {
+    "word": "success",
+    "protected_trigger": false,
+    "context_snippet": "No synonyms available for augmentation of 'success'"
+  },
+  {
+    "word": "historical",
+    "protected_trigger": false,
+    "context_snippet": "No synonyms available for augmentation of 'historical'"
+  },
+  {
+    "word": "rules",
+    "protected_trigger": false,
+    "context_snippet": "No synonyms available for augmentation of 'rules'"
+  },
+  {
+    "word": "engagement",
+    "protected_trigger": false,
+    "context_snippet": "No synonyms available for augmentation of 'engagement'"
+  },
+  {
+    "word": "rules",
+    "protected_trigger": false,
+    "context_snippet": "No synonyms available for augmentation of 'rules'"
   },
   {
     "word": "etc",
@@ -475,9 +450,84 @@
     "context_snippet": "No synonyms available for augmentation of 'etc'"
   },
   {
-    "word": "account",
+    "word": "collision",
     "protected_trigger": false,
-    "context_snippet": "No synonyms available for augmentation of 'account'"
+    "context_snippet": "No synonyms available for augmentation of 'collision'"
+  },
+  {
+    "word": "potential",
+    "protected_trigger": false,
+    "context_snippet": "No synonyms available for augmentation of 'potential'"
+  },
+  {
+    "word": "object",
+    "protected_trigger": false,
+    "context_snippet": "No synonyms available for augmentation of 'object'"
+  },
+  {
+    "word": "interference",
+    "protected_trigger": false,
+    "context_snippet": "No synonyms available for augmentation of 'interference'"
+  },
+  {
+    "word": "avoidance",
+    "protected_trigger": false,
+    "context_snippet": "No synonyms available for augmentation of 'avoidance'"
+  },
+  {
+    "word": "prior",
+    "protected_trigger": false,
+    "context_snippet": "No synonyms available for augmentation of 'prior'"
+  },
+  {
+    "word": "zones",
+    "protected_trigger": false,
+    "context_snippet": "No synonyms available for augmentation of 'zones'"
+  },
+  {
+    "word": "zones",
+    "protected_trigger": false,
+    "context_snippet": "No synonyms available for augmentation of 'zones'"
+  },
+  {
+    "word": "plumes",
+    "protected_trigger": false,
+    "context_snippet": "No synonyms available for augmentation of 'plumes'"
+  },
+  {
+    "word": "interference",
+    "protected_trigger": false,
+    "context_snippet": "No synonyms available for augmentation of 'interference'"
+  },
+  {
+    "word": "collision",
+    "protected_trigger": false,
+    "context_snippet": "No synonyms available for augmentation of 'collision'"
+  },
+  {
+    "word": "potential",
+    "protected_trigger": false,
+    "context_snippet": "No synonyms available for augmentation of 'potential'"
+  },
+  {
+    "word": "factors",
+    "protected_trigger": false,
+    "context_snippet": "No synonyms available for augmentation of 'factors'"
+  },
+  {
+    "word": "beach",
+    "protected_trigger": false,
+    "context_snippet": "No synonyms available for augmentation of 'beach'"
+  },
+  {
+    "word": "etc",
+    "protected_trigger": false,
+    "context_snippet": "No synonyms available for augmentation of 'etc'"
+  },
+  {
+    "word": "holes",
+    "protected_trigger": false,
+    "context_snippet": "No synonyms available for augmentation of 'holes'"
   },
   {
     "word": "discrepancies",
@@ -490,8 +540,133 @@
     "context_snippet": "No synonyms available for augmentation of 'interest'"
   },
   {
-    "word": "procedure",
+    "word": "adaptive",
     "protected_trigger": false,
-    "context_snippet": "No synonyms available for augmentation of 'procedure'"
+    "context_snippet": "No synonyms available for augmentation of 'adaptive'"
+  },
+  {
+    "word": "evidence",
+    "protected_trigger": false,
+    "context_snippet": "No synonyms available for augmentation of 'evidence'"
+  },
+  {
+    "word": "supplies",
+    "protected_trigger": false,
+    "context_snippet": "No synonyms available for augmentation of 'supplies'"
+  },
+  {
+    "word": "experienced",
+    "protected_trigger": false,
+    "context_snippet": "No synonyms available for augmentation of 'experienced'"
+  },
+  {
+    "word": "degradation",
+    "protected_trigger": false,
+    "context_snippet": "No synonyms available for augmentation of 'degradation'"
+  },
+  {
+    "word": "adverse",
+    "protected_trigger": false,
+    "context_snippet": "No synonyms available for augmentation of 'adverse'"
+  },
+  {
+    "word": "refining",
+    "protected_trigger": false,
+    "context_snippet": "No synonyms available for augmentation of 'refining'"
+  },
+  {
+    "word": "platforms",
+    "protected_trigger": false,
+    "context_snippet": "No synonyms available for augmentation of 'platforms'"
+  },
+  {
+    "word": "influence",
+    "protected_trigger": false,
+    "context_snippet": "No synonyms available for augmentation of 'influence'"
+  },
+  {
+    "word": "considerations",
+    "protected_trigger": false,
+    "context_snippet": "No synonyms available for augmentation of 'considerations'"
+  },
+  {
+    "word": "traffic",
+    "protected_trigger": false,
+    "context_snippet": "No synonyms available for augmentation of 'traffic'"
+  },
+  {
+    "word": "quality",
+    "protected_trigger": false,
+    "context_snippet": "No synonyms available for augmentation of 'quality'"
+  },
+  {
+    "word": "underwater",
+    "protected_trigger": false,
+    "context_snippet": "No synonyms available for augmentation of 'underwater'"
+  },
+  {
+    "word": "expected",
+    "protected_trigger": false,
+    "context_snippet": "No synonyms available for augmentation of 'expected'"
+  },
+  {
+    "word": "identifiers",
+    "protected_trigger": false,
+    "context_snippet": "No synonyms available for augmentation of 'identifiers'"
+  },
+  {
+    "word": "ensures",
+    "protected_trigger": false,
+    "context_snippet": "No synonyms available for augmentation of 'ensures'"
+  },
+  {
+    "word": "cause",
+    "protected_trigger": false,
+    "context_snippet": "No synonyms available for augmentation of 'cause'"
+  },
+  {
+    "word": "include",
+    "protected_trigger": false,
+    "context_snippet": "No synonyms available for augmentation of 'include'"
+  },
+  {
+    "word": "geospatial",
+    "protected_trigger": false,
+    "context_snippet": "No synonyms available for augmentation of 'geospatial'"
+  },
+  {
+    "word": "automated",
+    "protected_trigger": false,
+    "context_snippet": "No synonyms available for augmentation of 'automated'"
+  },
+  {
+    "word": "solutions",
+    "protected_trigger": false,
+    "context_snippet": "No synonyms available for augmentation of 'solutions'"
+  },
+  {
+    "word": "ai-generated",
+    "protected_trigger": false,
+    "context_snippet": "No synonyms available for augmentation of 'ai-generated'"
+  },
+  {
+    "word": "unstructured",
+    "protected_trigger": false,
+    "context_snippet": "No synonyms available for augmentation of 'unstructured'"
+  },
+  {
+    "word": "format",
+    "protected_trigger": false,
+    "context_snippet": "No synonyms available for augmentation of 'format'"
+  },
+  {
+    "word": "high-resolution",
+    "protected_trigger": false,
+    "context_snippet": "No synonyms available for augmentation of 'high-resolution'"
+  },
+  {
+    "word": "improved",
+    "protected_trigger": false,
+    "context_snippet": "No synonyms available for augmentation of 'improved'"
   }
 ]

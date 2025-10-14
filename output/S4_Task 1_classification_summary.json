@@ -1,0 +1,18 @@
+{
+  "child_summary": {
+    "Physical Processes": 2,
+    "Environmental Context": 4,
+    "Objectives": 3,
+    "uncategorised": 1,
+    "Risk Performance And Effectiveness": 1,
+    "Hazards": 1,
+    "Performance": 2
+  },
+  "parent_summary": {
+    "Environmental And Oceanographic Conditions": 6,
+    "Mission Parameters And Objectives": 3,
+    "uncategorised": 1,
+    "Threats And Risk Management": 2,
+    "Vehicle Capabilities And Constraints": 2
+  }
+}

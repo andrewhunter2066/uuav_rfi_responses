@@ -14,7 +14,7 @@
   },
   {
     "ResponseID":"60",
-    "ResponseText":"unsuitable beach slope substrate landing",
+    "ResponseText":"unsuitable beach gradient substrate arrival",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -66,7 +66,7 @@
   },
   {
     "ResponseID":"62",
-    "ResponseText":"marine science anomalies eg rip currents substrate plumes",
+    "ResponseText":"oceanographic anomalies eg rip circulation sediment plumes",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -144,7 +144,7 @@
   },
   {
     "ResponseID":"312",
-    "ResponseText":"approximation battery completion mission",
+    "ResponseText":"estimated battery completion sortie",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -170,7 +170,7 @@
   },
   {
     "ResponseID":"313",
-    "ResponseText":"potential acoustic communications effectiveness issues",
+    "ResponseText":"potential acoustic communications performance issues",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -196,7 +196,7 @@
   },
   {
     "ResponseID":"314",
-    "ResponseText":"factor information grounding event occurs",
+    "ResponseText":"factor records grounding event occurs",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -222,7 +222,7 @@
   },
   {
     "ResponseID":"315",
-    "ResponseText":"coverage area operations achievable time limitations",
+    "ResponseText":"coverage area operations achievable time bound",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -248,7 +248,7 @@
   },
   {
     "ResponseID":"316",
-    "ResponseText":"potential buoyancy factors oceanic column information",
+    "ResponseText":"potential buoyancy factors water column information",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -274,7 +274,7 @@
   },
   {
     "ResponseID":"317",
-    "ResponseText":"total time location sea surface",
+    "ResponseText":"total time location top layer",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,

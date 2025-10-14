@@ -14,7 +14,7 @@
   },
   {
     "ResponseID":"52",
-    "ResponseText":"use base chart models marine environmental hydrographic data",
+    "ResponseText":"utilize base electronic chart models layered environmental hydrographic data",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -40,7 +40,7 @@
   },
   {
     "ResponseID":"53",
-    "ResponseText":"apply steady state scoring based mission parameters eg stealth cruise speed safety",
+    "ResponseText":"apply viability scoring based assignment parameters course stealth speed safety",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -66,7 +66,7 @@
   },
   {
     "ResponseID":"54",
-    "ResponseText":"incorporate predictive modelling beach entry varying conditions",
+    "ResponseText":"incorporate predictive modelling beach access varying climate",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -118,7 +118,7 @@
   },
   {
     "ResponseID":"286",
-    "ResponseText":"understanding historical performance known defects equipment",
+    "ResponseText":"historical performance known defects equipment understanding",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -144,7 +144,7 @@
   },
   {
     "ResponseID":"287",
-    "ResponseText":"understanding environmental conditions endurance launch return systems mission velocity sensor performance rules engagement etc",
+    "ResponseText":"understanding environmental conditions endurance launch recovery systems mission speed sensor performance rules engagement etc",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -170,7 +170,7 @@
   },
   {
     "ResponseID":"288",
-    "ResponseText":"rules engagement extent inform timings",
+    "ResponseText":"rules engagement coverage inform interval",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -196,7 +196,7 @@
   },
   {
     "ResponseID":"289",
-    "ResponseText":"time surface risk surfacing covert ocean surface traffic accuracy",
+    "ResponseText":"elapsed time surface danger surfacing covert surface traffic accuracy",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -248,7 +248,7 @@
   },
   {
     "ResponseID":"291",
-    "ResponseText":"confidence route planning maintaining geo-location",
+    "ResponseText":"confidence path planning maintaining position",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -274,7 +274,7 @@
   },
   {
     "ResponseID":"292",
-    "ResponseText":"informs area operations informs assets required",
+    "ResponseText":"informs area operations informs assets needed",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -300,7 +300,7 @@
   },
   {
     "ResponseID":"294",
-    "ResponseText":"range host vessel loiter time acoustic communications specification safety vessel etc",
+    "ResponseText":"range host vessel range acoustic communications requirement safety uuv etc",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -326,7 +326,7 @@
   },
   {
     "ResponseID":"295",
-    "ResponseText":"improves safety vehicle collision avoidance tactics track selection etc",
+    "ResponseText":"improves safety vessel collision avoidance tactics route selection etc",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -378,7 +378,7 @@
   },
   {
     "ResponseID":"297",
-    "ResponseText":"confidence area mission understanding",
+    "ResponseText":"classification confidence understanding area operations",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,

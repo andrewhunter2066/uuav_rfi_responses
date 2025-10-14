@@ -14,7 +14,7 @@
   },
   {
     "ResponseID":"15",
-    "ResponseText":"logging path decisions instrument performance environmental conditions",
+    "ResponseText":"logging track decisions sensor performance environmental conditions",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -66,7 +66,7 @@
   },
   {
     "ResponseID":"17",
-    "ResponseText":"post-mission analysis post-mission analysis tools feedback future planning cycles",
+    "ResponseText":"integration post-mission analysis tools feedback future planning cycles",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -92,7 +92,7 @@
   },
   {
     "ResponseID":"158",
-    "ResponseText":"initial seafloor elevation check lists pre-dive etc",
+    "ResponseText":"initial test check lists pre-dive etc",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -118,7 +118,7 @@
   },
   {
     "ResponseID":"159",
-    "ResponseText":"traceability user account information",
+    "ResponseText":"signatory user account information",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -144,7 +144,7 @@
   },
   {
     "ResponseID":"160",
-    "ResponseText":"specific job coordinate load template",
+    "ResponseText":"specific job files load configuration file",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -196,7 +196,7 @@
   },
   {
     "ResponseID":"162",
-    "ResponseText":"holes dataset sensor performance issues",
+    "ResponseText":"holes information sensor performance issues",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -222,7 +222,7 @@
   },
   {
     "ResponseID":"163",
-    "ResponseText":"depth discrepancies",
+    "ResponseText":"seafloor elevation discrepancies",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -274,7 +274,7 @@
   },
   {
     "ResponseID":"165",
-    "ResponseText":"automated procedure record contacts",
+    "ResponseText":"automated procedure recording contacts",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,

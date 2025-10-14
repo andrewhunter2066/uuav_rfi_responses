@@ -40,7 +40,7 @@
   },
   {
     "ResponseID":"2",
-    "ResponseText":"current tidal stream predictions especially east australian current east australian current influence",
+    "ResponseText":"flow coordinate stream predictions especially east australian current eac influence",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -66,7 +66,7 @@
   },
   {
     "ResponseID":"3",
-    "ResponseText":"input speed parameter eg route mps achieve mission objectives",
+    "ResponseText":"input speed requirements eg course mps achieve mission objectives",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -92,7 +92,7 @@
   },
   {
     "ResponseID":"86",
-    "ResponseText":"surface subsea traffic route",
+    "ResponseText":"ocean surface subsea traffic route",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -118,7 +118,7 @@
   },
   {
     "ResponseID":"87",
-    "ResponseText":"depth slope route area of operation operations",
+    "ResponseText":"depth incline route area operations",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -144,7 +144,7 @@
   },
   {
     "ResponseID":"88",
-    "ResponseText":"equipment limitations service capabilities",
+    "ResponseText":"equipment limitations service capacity",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -170,7 +170,7 @@
   },
   {
     "ResponseID":"89",
-    "ResponseText":"bottom texture route area operations",
+    "ResponseText":"bottom texture planned line area operations",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -196,7 +196,7 @@
   },
   {
     "ResponseID":"90",
-    "ResponseText":"seafloor classification infrastructure route area of operation operations",
+    "ResponseText":"seafloor categorization infrastructure route area operations",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -222,7 +222,7 @@
   },
   {
     "ResponseID":"91",
-    "ResponseText":"ephemeral current tides route zone operations",
+    "ResponseText":"ephemeral tide tides route area operations",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -248,7 +248,7 @@
   },
   {
     "ResponseID":"92",
-    "ResponseText":"threat assessment cyber risk objective",
+    "ResponseText":"threat assessment cyber risk task",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -274,7 +274,7 @@
   },
   {
     "ResponseID":"93",
-    "ResponseText":"timings hard bathymetry right",
+    "ResponseText":"schedule hard left right",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -300,7 +300,7 @@
   },
   {
     "ResponseID":"94",
-    "ResponseText":"oceanic column data route area operations",
+    "ResponseText":"water column data route area operations",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -326,7 +326,7 @@
   },
   {
     "ResponseID":"95",
-    "ResponseText":"launch rescue locations parameters",
+    "ResponseText":"launch return locations parameters",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -352,7 +352,7 @@
   },
   {
     "ResponseID":"96",
-    "ResponseText":"sensor range fitted vehicle",
+    "ResponseText":"payload range fitted vehicle",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -378,7 +378,7 @@
   },
   {
     "ResponseID":"97",
-    "ResponseText":"duration vehicle",
+    "ResponseText":"endurance uuv",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -404,7 +404,7 @@
   },
   {
     "ResponseID":"98",
-    "ResponseText":"maximum seafloor elevation vehicle",
+    "ResponseText":"maximum depth vessel",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -430,7 +430,7 @@
   },
   {
     "ResponseID":"99",
-    "ResponseText":"active sensor acquisition requirements",
+    "ResponseText":"active sensor collection specification",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -456,7 +456,7 @@
   },
   {
     "ResponseID":"100",
-    "ResponseText":"global positioning system fixing requirements update rate",
+    "ResponseText":"global positioning system fixing requirements sampling rate",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -482,7 +482,7 @@
   },
   {
     "ResponseID":"101",
-    "ResponseText":"deviation requirements sensors",
+    "ResponseText":"precision requirements sensors",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -508,7 +508,7 @@
   },
   {
     "ResponseID":"102",
-    "ResponseText":"accuracy requirements routing",
+    "ResponseText":"accuracy requirements wayfinding",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -534,7 +534,7 @@
   },
   {
     "ResponseID":"103",
-    "ResponseText":"minimum seafloor elevation vehicle",
+    "ResponseText":"minimum underwater depth vehicle",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -560,7 +560,7 @@
   },
   {
     "ResponseID":"104",
-    "ResponseText":"vector electronic routing charts data route area activity",
+    "ResponseText":"vector electronic navigational charts data route area operations",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -612,7 +612,7 @@
   },
   {
     "ResponseID":"106",
-    "ResponseText":"vehicle communication criterion",
+    "ResponseText":"auv communication requirements",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -638,7 +638,7 @@
   },
   {
     "ResponseID":"107",
-    "ResponseText":"navigational hazards route aoi operations",
+    "ResponseText":"navigational restriction route area operations",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -690,7 +690,7 @@
   },
   {
     "ResponseID":"109",
-    "ResponseText":"dive ascent process elapsed time",
+    "ResponseText":"geo-fix ascent process time",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -716,7 +716,7 @@
   },
   {
     "ResponseID":"110",
-    "ResponseText":"actions loss communications loss vehicle etc",
+    "ResponseText":"actions loss communications malfunction vehicle etc",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -742,7 +742,7 @@
   },
   {
     "ResponseID":"111",
-    "ResponseText":"search area of operation area operations coordinates",
+    "ResponseText":"search area area operations coordinates",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -768,7 +768,7 @@
   },
   {
     "ResponseID":"112",
-    "ResponseText":"mission collection specification",
+    "ResponseText":"mission collection need",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -794,7 +794,7 @@
   },
   {
     "ResponseID":"113",
-    "ResponseText":"zone confidence route area of operation operations",
+    "ResponseText":"zone confidence corridor area operations",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,

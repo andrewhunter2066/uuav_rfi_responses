@@ -11,14 +11,11 @@ from datetime import datetime
 from typing import List, Optional, Any, NamedTuple
 from collections import defaultdict, Counter
 
-from openpyxl.pivot.fields import Boolean
-
 # Download required corpora
 nltk.download('stopwords')
 nltk.download('punkt')
 nltk.download('wordnet')
 nltk.download('omw-1.4')
-
 
 # Domain-specific acronym expansions for text preprocessing
 ACRONYM_EXPANSIONS = {
@@ -49,6 +46,15 @@ QUESTION_CONTEXT_SEEDS = {
     "q4": ["ThreatsAndRiskManagement", "NavigationAndPositioning", "TestAndEvaluationScenarios"],
     "q5": ["ThreatsAndRiskManagement", "AuditAndAccountability", "DataProductsAndRequirements"],
     "q6": ["HistoricalAndContextualData", "DataProductsAndRequirements", "AuditAndAccountability"],
+
+    # Task-based contexts for Scenario 4 (Field Observations - User Input)
+    "task 1": ["ThreatsAndRiskManagement", "EstimationAndUncertaintyModeling", "VehicleCapabilitiesAndConstraints"],
+    "task 2": ["VehicleCapabilitiesAndConstraints", "EnvironmentalAndOceanographicConditions",
+               "NavigationAndPositioning"],
+    "task 3": ["DataProductsAndRequirements", "TerrainAndBathymetry", "VehicleCapabilitiesAndConstraints"],
+    "task 4": ["AuditAndAccountability", "MissionParametersAndObjectives", "DataProductsAndRequirements"],
+    "task 5": ["ThreatsAndRiskManagement", "AuditAndAccountability", "CommunicationsAndControl"],
+    "task 6": ["AuditAndAccountability", "DataProductsAndRequirements", "HistoricalAndContextualData"],
 }
 
 # Regex pattern to insert space between lowercase and uppercase letters
@@ -157,6 +163,12 @@ CLASSIFICATION_FILE_CONFIGS = [
     (1, 'Q6'),
     (2, 'Q6'),
     (3, 'Q6'),
+    (4, 'Task 1'),
+    (4, 'Task 2'),
+    (4, 'Task 3'),
+    (4, 'Task 4'),
+    (4, 'Task 5'),
+    (4, 'Task 6')
 ]
 
 ORIGINAL_DATA_PATH = './input/normalised_all_responses.csv'
@@ -164,11 +176,11 @@ CLASSIFIED_OUTPUT_PATH = './output/normalised_all_classified_responses.csv'
 
 # Regex pattern to insert space before capital letters (except at the start of string)
 _CAMEL_CASE_PATTERN = r'(?<!^)(?=[A-Z])'
-# Regex pattern to normalize multiple whitespace characters into single space
+# A Regex pattern to normalise multiple whitespace characters into single space
 _WHITESPACE_NORMALIZATION_PATTERN = r'\s+'
-# Regex pattern to insert space before uppercase letter followed by lowercase (e.g., "camelCase" -> "camel Case")
+# A Regex pattern to insert space before uppercase letter followed by lowercase (e.g. "camelCase" -> "camel Case")
 _UPPERCASE_LOWERCASE_PATTERN = r'(.)([A-Z][a-z]+)'
-# Regex pattern to insert space before uppercase letter after lowercase/digit (e.g., "camel2Case" -> "camel2 Case")
+# A Regex pattern to insert space before uppercase letter after lowercase/digit (e.g. "camel2Case" -> "camel2 Case")
 _LOWERCASE_DIGIT_UPPERCASE_PATTERN = r'([a-z0-9])([A-Z])'
 
 # Suppression Log
@@ -440,7 +452,7 @@ def map_question_to_context(question: str, taxonomy: dict) -> str:
     prefix match is found, "General" is returned as the default context.
 
     :param question: The question string to be mapped, typically starting with a specific
-                     prefix (e.g. "q1", "q2").
+                     prefix (e.g. "q1", "q2", "task 1").
     :type question: str
     :param taxonomy: A dictionary representing the taxonomy, which includes details about
                      mission planning contexts and hierarchical categorisation.
@@ -448,9 +460,19 @@ def map_question_to_context(question: str, taxonomy: dict) -> str:
     :return: A string indicating the expanded and concatenated contexts related to the
              question prefix or a default value ("General") if no match is found.
     :rtype: str
+
+    Example:
+        >>> taxonomy = {"MissionPlanningTaxonomy": {...}}
+        >>> context = map_question_to_context("Q1 - What are the options?", taxonomy)
+        >>> print(context)
+        'Terrain And Bathymetry+Environmental And Oceanographic Conditions+...'
+        >>> context = map_question_to_context("Task 1 - Report risk profile", taxonomy)
+        >>> print(context)
+        'Threats And Risk Management+Estimation And Uncertainty Modeling+...'
     """
     q = question.lower().strip()
 
+    # Check for both question (q1-q6) and task (task 1-6) prefixes
     for prefix, seeds in QUESTION_CONTEXT_SEEDS.items():
         if q.startswith(prefix):
             expanded = expand_contexts(taxonomy["MissionPlanningTaxonomy"], seeds, depth=1, normalise=True)
@@ -573,18 +595,23 @@ def _swap_adjacent_words(words: list[str], protected_terms: set[str]) -> list[st
     return augmented_words
 
 
-def augment_text_minimal(text: str, aug_prob=0.1) -> str:
+def augment_text_minimal(text: str, v_rules: ValidationRules, aug_prob=0.1) -> str:
     """
-    Augments the input text by occasionally swapping adjacent, non-technical words
-    based on a specified augmentation probability. The augmentation excludes
-    certain "protected" terms and operates only when the text contains enough words.
+    Perform minimal text augmentation by swapping adjacent words while adhering to
+    specific validation rules. The function ensures augmentation is applied only
+    if the text meets the minimum word count requirements and a randomised
+    probability threshold. Words deemed protected by the validation rules
+    are kept unaffected during augmentation.
 
-    :param text: The original text to augment.
+    :param text: The input text to be augmented.
     :type text: str
-    :param aug_prob: The probability of applying text augmentation. Defaults to 0.1.
+    :param v_rules: Validation rules that include protected terms which
+        must remain unaffected during augmentation.
+    :type v_rules: ValidationRules
+    :param aug_prob: The probability of applying augmentation to the text.
+        Defaults to 0.1.
     :type aug_prob: float
-    :return: The modified text with possible word swaps, or the same text if
-             conditions for augmentation are not met.
+    :return: The text after performing minimal augmentation.
     :rtype: str
     """
     words = text.split()
@@ -593,7 +620,7 @@ def augment_text_minimal(text: str, aug_prob=0.1) -> str:
     if word_count < MIN_WORDS_FOR_AUGMENTATION or random.random() > aug_prob:
         return text
 
-    augmented_words = _swap_adjacent_words(words, PROTECTED_TERMS)
+    augmented_words = _swap_adjacent_words(words, v_rules.protected_terms)
     return ' '.join(augmented_words)
 
 
@@ -621,7 +648,7 @@ def augment_text_structural(text: str) -> str:
     return augmented
 
 
-def _normalize_inputs(word: str, context: str) -> tuple[str, str]:
+def _normalise_inputs(word: str, context: str) -> tuple[str, str]:
     """
     Normalise the input word and context strings by stripping any leading or trailing
     whitespace and converting them to lowercase.
@@ -795,7 +822,7 @@ def check_conflict(word: str, context: str, conflict_rules: dict) -> dict:
     :rtype: dict
     """
     # Normalise inputs
-    word, context = _normalize_inputs(word, context)
+    word, context = _normalise_inputs(word, context)
 
     # Validate context
     is_valid, error_result = _validate_context(context, conflict_rules)
@@ -1048,7 +1075,8 @@ def validate_term(term: str,
     :param validation_rules: An instance of ValidationRules containing the
         rules and configurations for validations.
     :type validation_rules: ValidationRules
-    :param strict_mode: A flag indicating if strict mode checks such as cross-context conflicts should be applied. Defaults to False.
+    :param strict_mode: A flag indicating if strict mode checks such as cross-context conflicts should be applied. 
+        Defaults to False.
     :type strict_mode: bool
     :return: A dictionary containing the validated term, its context(s), the
         final validation status, and additional details.
@@ -1128,7 +1156,7 @@ def _update_summary(summary: dict, status: str) -> None:
 def batch_validate(terms: list,
                    context: Any,
                    validation_rules: ValidationRules,
-                   strict_mode: Boolean = False) -> dict:
+                   strict_mode: bool = False) -> dict:
     """
     Validates a batch of terms against the provided validation rules within a given context.
 
@@ -1217,8 +1245,8 @@ def _try_reverse_lookup(word_norm: str, domain_synonyms: dict[str, list[str]]) -
         match is found, returns an empty list.
     """
     for key, syns in domain_synonyms.items():
-        normalized_synonyms = [s.lower() for s in syns]
-        if word_norm in normalized_synonyms:
+        normalised_synonyms = [s.lower() for s in syns]
+        if word_norm in normalised_synonyms:
             return [key] + [s for s in syns if s.lower() != word_norm]
     return []
 
@@ -1321,7 +1349,7 @@ def get_domain_synonyms(word: str, domain_synonyms: dict[str, list[str]], protec
     if result:
         return result
 
-    # Try plural/singular normalization
+    # Try plural/singular normalisation
     result = _try_plural_singular_lookup(word_norm, domain_synonyms)
     if result:
         return result
@@ -1335,21 +1363,21 @@ def get_domain_synonyms(word: str, domain_synonyms: dict[str, list[str]], protec
     return []
 
 
-def _normalize_and_expand_acronyms(text: str) -> str:
+def _normalise_and_expand_acronyms(text: str) -> str:
     """
-    Normalizes the input text by converting it to lowercase and replacing acronyms
+    Normalises the input text by converting it to lowercase and replacing acronyms
     based on predefined patterns and expansions. The method uses regex to identify
     acronyms and substitutes them with their corresponding expansions.
 
-    :param text: The input string to be normalized and expanded.
+    :param text: The input string to be normalised and expanded.
     :type text: str
-    :return: The normalized and expanded text.
+    :return: The normalised and expanded text.
     :rtype: str
     """
-    normalized = text.lower()
+    normalised = text.lower()
     for acronym_pattern, expansion in ACRONYM_EXPANSIONS.items():
-        normalized = re.sub(acronym_pattern, expansion, normalized)
-    return normalized
+        normalised = re.sub(acronym_pattern, expansion, normalised)
+    return normalised
 
 
 def _remove_punctuation(text: str) -> str:
@@ -1387,33 +1415,33 @@ def _filter_stopwords(text: str) -> str:
 
 def preprocess(text: str) -> str:
     """
-    Processes input text by normalizing, expanding acronyms, removing punctuation,
+    Processes input text by normalising, expanding acronyms, removing punctuation,
     and filtering out stopwords.
 
     The function applies multiple preprocessing steps on the provided text
     to prepare it for further analysis or processing tasks. Each step ensures the
-    input text is cleaned and standardized.
+    input text is cleaned and standardised.
 
     :param text: The input text to preprocess
     :type text: str
-    :return: The processed text after normalization, punctuation removal, and
+    :return: The processed text after normalisation, punctuation removal, and
         stopword filtering
     :rtype: str
     """
-    text = _normalize_and_expand_acronyms(text)
+    text = _normalise_and_expand_acronyms(text)
     text = _remove_punctuation(text)
     text = _filter_stopwords(text)
     return text
 
 
 # Custom synonym augmentation using NLTK WordNet
-def _normalize_lemma_name(lemma_name: str) -> str:
+def _normalise_lemma_name(lemma_name: str) -> str:
     """
-    Normalizes the input lemma name by replacing underscores with spaces.
+    Normalises the input lemma name by replacing underscores with spaces.
 
-    :param lemma_name: The lemma name to be normalized.
+    :param lemma_name: The lemma name to be normalised.
     :type lemma_name: str
-    :return: A normalized lemma name with underscores replaced by spaces.
+    :return: A normalised lemma name with underscores replaced by spaces.
     :rtype: str
     """
     return lemma_name.replace('_', ' ')
@@ -1438,22 +1466,22 @@ def _should_exclude_synonym(synonym: str, original_word: str) -> bool:
 def _extract_lemma_synonyms(synset, original_word: str) -> set[str]:
     """
     Extracts synonyms (lemmas) from a given synset while excluding those that match
-    certain criteria. The synonyms are normalized before being included in the
+    certain criteria. The synonyms are normalised before being included in the
     returned set.
 
-    :param synset: The synset from which to extract and normalize synonyms.
+    :param synset: The synset from which to extract and normalise synonyms.
     :type synset: Synset
     :param original_word: The word used as a reference to exclude certain synonyms.
     :type original_word: str
-    :return: A set of normalized synonyms from the synset, excluding inappropriate
+    :return: A set of normalised synonyms from the synset, excluding inappropriate
         ones based on the original word.
     :rtype: set[str]
     """
     return {
-        normalized_synonym
+        normalised_synonym
         for lemma in synset.lemmas()
         if not _should_exclude_synonym(
-            normalized_synonym := _normalize_lemma_name(lemma.name()),
+            normalised_synonym := _normalise_lemma_name(lemma.name()),
             original_word
         )
     }
@@ -1513,7 +1541,7 @@ def _select_random_indices(word_count: int, num_to_replace: int) -> list[int]:
     return random.sample(range(word_count), max_possible_replacements)
 
 
-def _get_synonym_for_word(word: str) -> str | None:
+def _get_synonym_for_word(word: str, validation_rules: ValidationRules) -> str | None:
     """
     Retrieve a random synonym for the given word.
 
@@ -1521,10 +1549,11 @@ def _get_synonym_for_word(word: str) -> str | None:
     If no synonyms are found, logs a suppression event and returns None.
 
     :param word: The word to find a synonym for.
+    :param validation_rules: Validation rules contain protected terms and domain synonyms.
     :return: A randomly selected synonym, or None if no synonyms are available.
     """
     if DOMAIN_SPECIFIC:
-        synonyms = get_domain_synonyms(word, DOMAIN_SYNONYMS, PROTECTED_TERMS)
+        synonyms = get_domain_synonyms(word, DOMAIN_SYNONYMS, validation_rules.protected_terms)
     else:
         synonyms = get_synonyms(word)
 
@@ -1539,31 +1568,36 @@ def _get_synonym_for_word(word: str) -> str | None:
         return None
 
 
-def _replace_words_with_synonyms(words: list[str], indices: list[int]) -> list[str]:
+def _replace_words_with_synonyms(words: list[str], indices: list[int], validation_rules: ValidationRules) -> list[str]:
     """
     Replace specified words in a list with their synonyms.
 
     This function performs word augmentation by replacing specific words in a
     provided list with random synonyms. The words to be replaced are specified
     by their indices in the list. If domain-specific synonyms are enabled, the
-    function will prioritize retrieving synonyms from the predefined domain-specific
+    function will prioritise retrieving synonyms from the predefined domain-specific
     synonyms set; otherwise, general synonyms will be retrieved. When no synonyms
     are found, the original word is retained, and an event with relevant context
     is logged.
 
     :param words: A list of words to process.
     :param indices: A list of indices specifying which words in the list to replace.
-    :return: A new list of words with specified words replaced by synonyms.
+    :param validation_rules: Validation rules contain protected terms and domain synonyms.
+    :return: A new list of words with specified words is replaced by synonyms.
     """
     augmented_words = words.copy()
     for idx in indices:
-        synonym = _get_synonym_for_word(words[idx])
+        synonym = _get_synonym_for_word(words[idx], validation_rules)
         if synonym:
             augmented_words[idx] = synonym
     return augmented_words
 
 
-def augment_text(text: str, aug_prob=0.3, max_synonyms=2, structural_aug_prob=0.3) -> str:
+def augment_text(text: str,
+                 validation_rules: ValidationRules,
+                 aug_prob=0.3,
+                 max_synonyms=2,
+                 structural_aug_prob=0.3) -> str:
     """
     Augments the given text by replacing words with synonyms based on specified
     augmentation probability and maximum synonyms. Optionally applies minimal
@@ -1571,6 +1605,8 @@ def augment_text(text: str, aug_prob=0.3, max_synonyms=2, structural_aug_prob=0.
 
     :param text: The input text to be augmented.
     :type text: str
+    :param validation_rules: Validation rules containing protected terms and domain synonyms.
+    :type validation_rules: ValidationRules
     :param aug_prob: The probability of replacing a word with its synonym. Defaults to 0.3.
     :type aug_prob: float
     :param max_synonyms: The maximum number of synonyms to consider for replacement. Defaults to 2.
@@ -1589,7 +1625,7 @@ def augment_text(text: str, aug_prob=0.3, max_synonyms=2, structural_aug_prob=0.
 
     num_to_replace = _calculate_replacement_count(word_count, aug_prob, max_synonyms)
     indices_to_replace = _select_random_indices(word_count, num_to_replace)
-    augmented_words = _replace_words_with_synonyms(words, indices_to_replace)
+    augmented_words = _replace_words_with_synonyms(words, indices_to_replace, validation_rules)
 
     augmented_text = ' '.join(augmented_words)
 
@@ -1626,11 +1662,11 @@ def _calculate_category_scores(text_lower: str, category_keywords: dict[str, lis
     Calculate scores for each category based on the occurrences of keywords
     in the given text.
 
-    This function analyzes the provided text and calculates a score for each
+    This function analyses the provided text and calculates a score for each
     category based on the number of times the associated keywords for that
     category are present in the text.
 
-    :param text_lower: The text to analyze, expected in lowercase for
+    :param text_lower: The text to analyse, expected in lowercase for
         case-insensitive keyword matching.
     :type text_lower: str
     :param category_keywords: A dictionary where keys represent categories
@@ -1648,7 +1684,7 @@ def _calculate_category_scores(text_lower: str, category_keywords: dict[str, lis
 
 def _select_best_category(scores: dict[str, int]) -> str:
     """
-    Select the best-scoring category from the scores dictionary.
+    Select the best-scoring category from the scores' dictionary.
 
     Returns 'uncategorised' if no category has a positive score,
     otherwise returns the category with the highest score.
@@ -1664,15 +1700,15 @@ def _select_best_category(scores: dict[str, int]) -> str:
     return predicted_category
 
 
-def _normalize_scores(scores: dict[str, int]) -> dict[str, float]:
+def _normalise_scores(scores: dict[str, int]) -> dict[str, float]:
     """
-    Normalize scores so they sum to 1.0.
+    Normalise scores so they sum to 1.0.
 
     If all scores are zero, they remain zero (dividing by 1).
 
     :param scores: Dictionary mapping category names to their raw scores
     :type scores: dict[str, int]
-    :return: Dictionary with normalized scores (values sum to 1.0)
+    :return: Dictionary with normalised scores (values sum to 1.0)
     :rtype: dict[str, float]
     """
     total_score = sum(scores.values()) if sum(scores.values()) > 0 else 1
@@ -1684,7 +1720,7 @@ def classify_response(text: str, taxonomy: dict) -> tuple[str, dict[str, float]]
     [DEPRECATED - Use classify_with_taxonomy for production code]
 
     Classify a given text into a category based on a taxonomy and return the
-    predicted category along with the normalized scores for each category.
+    predicted category along with the normalised scores for each category.
 
     This function provides a simpler, flat classification interface without
     hierarchical parent/child relationships. It is retained for:
@@ -1699,15 +1735,15 @@ def classify_response(text: str, taxonomy: dict) -> tuple[str, dict[str, float]]
     keywords from the taxonomy, calculates scores for how well the text matches
     each category, and finally selects the best matching category. If no
     categories score above zero, the function assigns 'uncategorised' as the
-    default category. It also normalizes the scores for each category to sum to 1.
+    default category. It also normalises the scores for each category to sum to 1.
 
     :param text: The text input to be classified
     :type text: str
-    :param taxonomy: A dictionary where keys represent category names,
-        and the values are lists of keywords associated with each category
+    :param taxonomy: A dictionary where keys represent category names. 
+        The values are lists of keywords associated with each category
     :type taxonomy: dict
     :return: A tuple with the predicted category as a string and a dictionary
-        of normalized scores for each category
+        of normalised scores for each category
     :rtype: tuple[str, dict[str, float]]
 
     Example:
@@ -1724,13 +1760,13 @@ def classify_response(text: str, taxonomy: dict) -> tuple[str, dict[str, float]]
     # Score categories
     scores = _calculate_category_scores(text_lower, category_keywords)
 
-    # Pick best-scoring category
+    # Pick the best-scoring category
     predicted_category = _select_best_category(scores)
 
-    # Normalize scores
-    normalized_scores = _normalize_scores(scores)
+    # Normalise scores
+    normalised_scores = _normalise_scores(scores)
 
-    return predicted_category, normalized_scores
+    return predicted_category, normalised_scores
 
 
 def load_preprocess_and_filter_responses(
@@ -1743,7 +1779,7 @@ def load_preprocess_and_filter_responses(
 
     This function performs three operations:
     1. Loads response data from a CSV file
-    2. Preprocesses text by normalizing forward slashes to spaces
+    2. Preprocesses text by normalising forward slashes to spaces
     3. Filters responses matching the specified scenario number and question prefix
 
     :param file_path: The path to the CSV file containing the response data.
@@ -1758,7 +1794,7 @@ def load_preprocess_and_filter_responses(
     """
     df = pd.read_csv(file_path)
 
-    # Normalize forward slashes in response text for consistent processing
+    # Normalise forward slashes in response text for consistent processing
     df['ResponseText'] = df['ResponseText'].str.replace(
         FORWARD_SLASH_REPLACEMENT_PATTERN,
         FORWARD_SLASH_REPLACEMENT,
@@ -1798,11 +1834,11 @@ def preprocess_responses(response_series: pd.DataFrame) -> pd.DataFrame:
         cleaned response texts and duplicates removed based on the 'ResponseText' column.
     :rtype: pd.DataFrame
     """
-    # Filter valid responses using a vectorized boolean mask
+    # Filter valid responses using a vectorised boolean mask
     valid_mask = response_series['ResponseText'].apply(_is_valid_response)
     filtered_df = response_series[valid_mask].copy()
 
-    # Apply preprocessing to ResponseText column vectorized
+    # Apply preprocessing to ResponseText column vectorised
     filtered_df['ResponseText'] = filtered_df['ResponseText'].apply(preprocess)
 
     # Remove duplicates and select required columns
@@ -1815,7 +1851,8 @@ def preprocess_responses(response_series: pd.DataFrame) -> pd.DataFrame:
 def _create_augmented_responses(response_id: str, response_text: str,
                                 aug_prob: float, max_synonyms: int,
                                 use_minimal_augmentation: bool,
-                                minimal_aug_prob: float) -> list:
+                                minimal_aug_prob: float,
+                                validation_rules: ValidationRules) -> list:
     """
     Creates augmented versions of a single response.
 
@@ -1831,6 +1868,8 @@ def _create_augmented_responses(response_id: str, response_text: str,
     :type use_minimal_augmentation: bool
     :param minimal_aug_prob: Probability for minimal augmentation.
     :type minimal_aug_prob: float
+    :param validation_rules: Validation rules containing protected terms.
+    :type validation_rules: ValidationRules
     :return: List of response dictionaries (original and augmented).
     :rtype: list
     """
@@ -1843,7 +1882,7 @@ def _create_augmented_responses(response_id: str, response_text: str,
     })
 
     # Add a synonym-based augmented version
-    augmented_text = augment_text(response_text, aug_prob=aug_prob, max_synonyms=max_synonyms)
+    augmented_text = augment_text(response_text, validation_rules, aug_prob=aug_prob, max_synonyms=max_synonyms)
     responses.append({
         'ResponseID': response_id,
         'ResponseText': augmented_text
@@ -1851,7 +1890,7 @@ def _create_augmented_responses(response_id: str, response_text: str,
 
     # Optionally add minimal augmentation version
     if use_minimal_augmentation:
-        minimal_augmented_text = augment_text_minimal(response_text, aug_prob=minimal_aug_prob)
+        minimal_augmented_text = augment_text_minimal(response_text, validation_rules, aug_prob=minimal_aug_prob)
         if minimal_augmented_text != response_text:
             responses.append({
                 'ResponseID': response_id,
@@ -1861,9 +1900,9 @@ def _create_augmented_responses(response_id: str, response_text: str,
     return responses
 
 
-def augment_response_dataset(responses: pd.DataFrame, aug_prob: float = 0.3,
-                             max_synonyms: int = 2, sample_size: int = 500,
-                             use_minimal_augmentation: bool = False,
+def augment_response_dataset(responses: pd.DataFrame, validation_rules: ValidationRules,
+                             aug_prob: float = 0.3, max_synonyms: int = 2,
+                             sample_size: int = 500, use_minimal_augmentation: bool = False,
                              minimal_aug_prob: float = 0.1) -> pd.DataFrame:
     """
     Augments a dataset of text responses by applying various text augmentation techniques
@@ -1875,6 +1914,8 @@ def augment_response_dataset(responses: pd.DataFrame, aug_prob: float = 0.3,
         at least two columns: 'ResponseID' (identifiers for the responses) and 'ResponseText'
         (the actual response text to augment).
     :type responses: pandas.DataFrame
+    :param validation_rules: Validation rules containing protected terms and domain synonyms.
+    :type validation_rules: ValidationRules
     :param aug_prob: Probability for applying synonym-based augmentation to each word in the
         responses.
     :type aug_prob: float
@@ -1902,7 +1943,8 @@ def augment_response_dataset(responses: pd.DataFrame, aug_prob: float = 0.3,
             aug_prob=aug_prob,
             max_synonyms=max_synonyms,
             use_minimal_augmentation=use_minimal_augmentation,
-            minimal_aug_prob=minimal_aug_prob
+            minimal_aug_prob=minimal_aug_prob,
+            validation_rules=validation_rules
         )
         augmented_rows.extend(response_entries)
 
@@ -1914,9 +1956,9 @@ def augment_response_dataset(responses: pd.DataFrame, aug_prob: float = 0.3,
     return augmented_df
 
 
-def _normalize_keywords(keywords: list[str]) -> list[str]:
+def _normalise_keywords(keywords: list[str]) -> list[str]:
     """
-    Normalizes keywords to lowercase for case-insensitive matching.
+    Normalises keywords to lowercase for case-insensitive matching.
 
     :param keywords: List of keyword strings.
     :type keywords: list[str]
@@ -1942,7 +1984,7 @@ def _calculate_keyword_score(text_lower: str, keywords: list[str]) -> int:
 
 def classify_with_taxonomy(text: str, child_keywords: dict, parent_keywords: dict):
     """
-    Analyzes a given text to classify it into predefined child and parent taxonomy categories based on the
+    Analyses a given text to classify it into predefined child and parent taxonomy categories based on the
     presence of keywords. It calculates scores for child-level and parent-level classifications and
     returns the results.
 
@@ -1968,7 +2010,7 @@ def classify_with_taxonomy(text: str, child_keywords: dict, parent_keywords: dic
     parent_scores = defaultdict(int)
 
     for child, data in child_keywords.items():
-        keywords = _normalize_keywords(data["keywords"])
+        keywords = _normalise_keywords(data["keywords"])
         parent = data["parent"]
         score = _calculate_keyword_score(text_lower, keywords)
         if score > 0:
@@ -1978,8 +2020,8 @@ def classify_with_taxonomy(text: str, child_keywords: dict, parent_keywords: dic
     # --- Parent-only scan (fallback if no child hits)
     if not child_scores:
         for parent, keywords in parent_keywords.items():
-            normalized_keywords = _normalize_keywords(keywords)
-            score = _calculate_keyword_score(text_lower, normalized_keywords)
+            normalised_keywords = _normalise_keywords(keywords)
+            score = _calculate_keyword_score(text_lower, normalised_keywords)
             if score > 0:
                 parent_scores[parent] += score
 
@@ -2066,9 +2108,9 @@ def classify_responses(responses: pd.DataFrame, child_keywords: dict, parent_key
         text = resp['ResponseText']
 
         # Run hybrid taxonomy classifier
-        classification = classify_with_taxonomy(text, child_keywords, parent_keywords)
+        classification = classify_with_taxonomy(str(text), child_keywords, parent_keywords)
 
-        result = _create_classification_result(resp_id, text, classification)
+        result = _create_classification_result(str(resp_id), str(text), classification)
         results.append(result)
 
     return results
@@ -2076,7 +2118,7 @@ def classify_responses(responses: pd.DataFrame, child_keywords: dict, parent_key
 
 def summarise_classifications(results: list[dict]) -> dict:
     """
-    Summarizes classification results by counting occurrences of predicted child
+    Summarises classification results by counting occurrences of predicted child
     and parent categories. It takes a list of dictionaries where each dictionary
     represents a classification result with potential `PredictedChild` and
     `PredictedParent` keys. If these keys are missing in a classification result,
@@ -2282,6 +2324,7 @@ def main(question: str, scenario: int, taxonomy: dict, validation_rules: Validat
     # Augment dataset with synonyms
     responses_aug = augment_response_dataset(
         responses=responses,
+        validation_rules=validation_rules,
         aug_prob=0.3,
         max_synonyms=2,
         sample_size=500
@@ -2323,7 +2366,7 @@ def _has_validation_issue(summary: dict, key: str) -> bool:
 def extract_validation_flags(report: dict) -> dict:
     """
     Extract validation flags from the provided report.
-    The function analyzes the `summary` sub-dictionary within the given report
+    The function analyses the `summary` sub-dictionary within the given report
     and determines the presence of specific validation flags such as
     `has_protected`, `has_conflict`, and `has_cross_conflict`. Additionally, it
     includes the full validation summary in the returned dictionary.
@@ -2436,7 +2479,7 @@ def merge_classifications_to_source(
     # Load classification results
     classifications_df = pd.read_csv(classification_results_path)
 
-    # Load original normalized data
+    # Load original normalised data
     original_df = pd.read_csv(original_data_path)
 
     # Aggregate classifications to handle augmentation duplicates
@@ -2541,17 +2584,17 @@ def batch_merge_all_scenarios(question: str, scenarios: list[int]) -> None:
 
 
 def _process_scenario_classification(
-        master_df: pd.DataFrame,
+        primary_df: pd.DataFrame,
         scenario: int,
         question: str
 ) -> tuple[pd.DataFrame, bool]:
     """
     Process and merge classification results for a single scenario.
 
-    :param master_df: The master dataframe to merge classifications into
+    :param primary_df: The primary dataframe to merge classifications into
     :param scenario: The scenario number to process
     :param question: The question identifier
-    :return: Tuple of (updated master dataframe, success flag)
+    :return: Tuple of (updated primary dataframe, success flag)
     """
     classification_path = f"./output/S{scenario}_{question}_classification_results.csv"
 
@@ -2568,8 +2611,8 @@ def _process_scenario_classification(
         column_name = f'S{scenario}_{question}_Categories'
         aggregated.rename(columns={'predicted_category': column_name}, inplace=True)
 
-        # Merge to master
-        updated_df = master_df.merge(
+        # Merge to primary
+        updated_df = primary_df.merge(
             aggregated,
             on='ResponseID',
             how='left'
@@ -2583,39 +2626,39 @@ def _process_scenario_classification(
 
     except FileNotFoundError:
         print(f"Warning: Classification file not found for Scenario {scenario}")
-        return master_df, False
+        return primary_df, False
 
 
-def create_master_classified_file(question: str, scenarios: list[int]) -> None:
+def create_primary_classified_file(question: str, scenarios: list[int]) -> None:
     """
-    Creates and saves a master classified file by merging and aggregating
+    Creates and saves a primary classified file by merging and aggregating
     classification results for different scenarios into a single dataset.
     This function processes responses classified for each scenario, aggregates
-    unique predicted categories per response, and appends them to a master dataset.
+    unique predicted categories per response, and appends them to a primary dataset.
     The output file contains all classified responses merged with their respective
     categories for each scenario.
     :param question: The name of the question or topic for which the classifications are performed.
     :type question: str
     :param scenarios: A list of scenario numbers. Each scenario corresponds to a
-                      classification file to be loaded and merged with the master file.
+                      classification file to be loaded and merged with the primary file.
     :type scenarios: list[int]
     :return: This function does not return any value. The resulting dataset is written
              to a CSV file.
     :rtype: None
     """
     # Load original data
-    master_df = pd.read_csv('./input/normalised_all_responses.csv')
+    primary_df = pd.read_csv('./input/normalised_all_responses.csv')
 
     # Merge classifications from each scenario
     successfully_processed_scenarios = []
     for scenario in scenarios:
-        master_df, success = _process_scenario_classification(master_df, scenario, question)
+        primary_df, success = _process_scenario_classification(primary_df, scenario, question)
         if success:
             successfully_processed_scenarios.append(scenario)
 
-    # Save the master file
+    # Save the primary file
     output_path = './output/normalised_all_classified_responses.csv'
-    master_df.to_csv(output_path, index=False)
+    primary_df.to_csv(output_path, index=False)
 
     print(f"\n{'=' * 60}")
     print(f"Master classified file saved to: {output_path}")
@@ -2623,21 +2666,21 @@ def create_master_classified_file(question: str, scenarios: list[int]) -> None:
     print(f"\nColumns added:")
     for scenario in successfully_processed_scenarios:
         col_name = f'S{scenario}_{question}_Categories'
-        if col_name in master_df.columns:
+        if col_name in primary_df.columns:
             print(f"  - {col_name}")
-    print(f"\nTotal responses: {len(master_df)}")
+    print(f"\nTotal responses: {len(primary_df)}")
 
 
-def _initialize_dataframe_columns(df: pd.DataFrame) -> pd.DataFrame:
+def _initialise_dataframe_columns(df: pd.DataFrame) -> pd.DataFrame:
     """
-    Initializes missing columns in a pandas DataFrame with default values.
+    Initialises missing columns in a panda DataFrame with default values.
 
     This function ensures that the given DataFrame has specific required columns
     ('Classification', 'Version', 'ChangeNote', 'ChangeDate'). If any of these
     columns are missing, they are added to the DataFrame with their respective
     default values.
 
-    :param df: The pandas DataFrame to initialize with default columns.
+    :param df: The panda DataFrame to initialise with default columns.
     :type df: pd.DataFrame
     :return: The updated DataFrame with all required columns ensured.
     :rtype: pd.DataFrame
@@ -2662,7 +2705,7 @@ def _combine_classifications(
     either concatenates the child and parent classifications into a single string, or selectively assigns
     the child classification unless it is 'uncategorised', in which case the parent classification is used.
 
-    :param classifications_df: A pandas DataFrame containing columns `PredictedChild` and
+    :param classifications_df: A panda DataFrame containing columns `PredictedChild` and
         `PredictedParent` that represent the predicted classification labels for child and parent
         categories respectively.
     :type classifications_df: pd.DataFrame
@@ -2670,14 +2713,14 @@ def _combine_classifications(
         parent classifications into a single combined label. If False, selectively combines either
         `PredictedChild` or `PredictedParent`.
     :type combine_child_parent: bool
-    :return: A pandas DataFrame with an additional column `ClassificationCombined` containing
+    :return: A panda DataFrame with an additional column `ClassificationCombined` containing
         the combined classification labels.
     :rtype: pd.DataFrame
     """
     if combine_child_parent:
         classifications_df['ClassificationCombined'] = (
-            classifications_df['PredictedChild'].astype(str) + "|" +
-            classifications_df['PredictedParent'].astype(str)
+                classifications_df['PredictedChild'].astype(str) + "|" +
+                classifications_df['PredictedParent'].astype(str)
         )
     else:
         classifications_df['ClassificationCombined'] = classifications_df.apply(
@@ -2718,9 +2761,9 @@ def _update_original_dataframe(
     entries in the original dataframe and updating specific columns for those
     entries.
 
-    :param original_df: The original pandas DataFrame containing response data
+    :param original_df: The original pandas DataFrame contains response data
                         that will be updated based on the aggregated DataFrame.
-    :param aggregated: The aggregated pandas DataFrame containing classification
+    :param aggregated: The aggregated pandas DataFrame contains classification
                        data and metadata that will be used to update the original
                        DataFrame.
     :param file_mod_date: A string indicating the modification date that will be
@@ -2753,7 +2796,7 @@ def _process_classification_file(
 
     :param scenario: The scenario identifier as an integer.
     :param question: A string specifying the question identifier associated with the scenario.
-    :param original_df: A pandas DataFrame that will be updated with aggregated classification
+    :param original_df: A panda DataFrame that will be updated with aggregated classification
         information.
     :param combine_child_parent: A boolean indicating whether child and parent classifications
         should be combined.
@@ -2792,10 +2835,10 @@ def _print_merge_statistics(original_df: pd.DataFrame, current_date: str, output
     """
     Prints merge statistics for a given DataFrame, including summaries of classified
     and unclassified responses, version distributions, top classification patterns,
-    records updated to a specific version, and multi-category responses. Additionally,
+    records updated to a specific version, and multicategory responses. Additionally,
     outputs the merged file's save location and the current classification date.
 
-    :param original_df: The original DataFrame containing classification data and
+    :param original_df: The original DataFrame contains classification data and
         related metadata.
     :type original_df: pd.DataFrame
     :param current_date: The current date represented as a string, used to mark
@@ -2854,7 +2897,7 @@ def merge_all_classifications_single_column(
     original_df = pd.read_csv(original_data_path)
     current_date = datetime.now().strftime('%Y-%m-%d')
 
-    original_df = _initialize_dataframe_columns(original_df)
+    original_df = _initialise_dataframe_columns(original_df)
 
     for scenario, question in classification_files:
         _process_classification_file(scenario, question, original_df, combine_child_parent)
@@ -3046,7 +3089,7 @@ def merge_all_classifications():
 
     This function processes multiple classification files, each identified by a
     tuple containing a scenario number and a corresponding question identifier.
-    It utilizes the `merge_all_classifications_multi_column` function to merge
+    It uses the `merge_all_classifications_multi_column` function to merge
     data from these classification sources. The combined data is read from the
     original data path and written to the output path.
 
@@ -3094,7 +3137,7 @@ def save_summary_report(results: list[dict], summary_path: str) -> None:
     uses the input data to create two separate grouped summaries, one for 'child' and one
     for 'parent' predictions, which are then saved as CSV files.
     :param results: List of dictionaries containing prediction results and associated
-        flags to be summarized.
+        flags to be summarised.
     :type results: list[dict]
     :param summary_path: Path where the summary reports will be saved. The function
         generates two separate CSV files, appending '_child' and '_parent' to the base
@@ -3136,7 +3179,7 @@ def _validate_key(key, errors: list) -> None:
 def _validate_value_is_list(key: str, value, errors: list) -> bool:
     """
     Validates that the provided value is a list. If the value is not a list, an error message is appended to the
-    errors list, and validation fails.
+    error list, and validation fails.
 
     :param key: The key associated with the value being validated.
     :type key: str
@@ -3232,15 +3275,15 @@ def validate_domain_synonyms(file_path: str) -> dict:
     }
 
 
-def _normalize_key(key: str) -> str:
+def _normalise_key(key: str) -> str:
     """
-    Normalize a given key by converting it to lowercase and removing any characters
+    Normalise a given key by converting it to lowercase and removing any characters
     that are not alphanumeric. This ensures that keys are consistent and follow
     a unified format.
 
-    :param key: The input key string to be normalized.
+    :param key: The input key string to be normalised.
     :type key: str
-    :return: A normalized string containing only lowercase alphanumeric characters.
+    :return: A normalised string containing only lowercase alphanumeric characters.
     :rtype: str
     """
     return re.sub(r'[^a-z0-9]', '', key.lower())
@@ -3251,7 +3294,7 @@ def _generate_pascal_case(base: str) -> str:
     Generates a PascalCase string from a given base string.
 
     This function takes a base string, splits it into words based on spaces,
-    capitalizes the first letter of each word, and then joins them into a
+    capitalises the first letter of each word, and then joins them into a
     single PascalCase formatted string.
 
     :param base: The input string to be converted into PascalCase
@@ -3298,15 +3341,15 @@ def build_category_key_map(category_keywords: dict) -> dict:
     """
     Builds a mapping of various key formats to their canonical forms.
 
-    This function generates a mapping of normalized strings, case format variants
-    (e.g., camelCase, PascalCase, snake_case, kebab-case), and their original canonical keys,
+    This function generates a mapping of normalised strings, case format variants
+    (e.g. camelCase, PascalCase, snake_case, kebab-case), and their original canonical keys,
     based on the input dictionary of category keywords.
 
     :param category_keywords: A dictionary of category keywords with canonical
         string keys that serve as the base for generating various key formats.
     :type category_keywords: dict
 
-    :return: A dictionary mapping different formatted keys (e.g., normalized,
+    :return: A dictionary mapping different formatted keys (e.g. normalised,
         case variants) to their corresponding canonical keys from the input.
     :rtype: dict
     """
@@ -3315,13 +3358,13 @@ def build_category_key_map(category_keywords: dict) -> dict:
     for canonical in category_keywords.keys():
         base = canonical.lower()
 
-        # Add normalized key (alphanumeric only)
-        normalized = _normalize_key(canonical)
-        key_map[normalized] = canonical
+        # Add a normalised key (alphanumeric only)
+        normalised = _normalise_key(canonical)
+        key_map[normalised] = canonical
 
         # Add case format variants
         pascal = _generate_pascal_case(base)
-        key_map[pascal.lower()] = canonical  # camelCase: terrainandbathymetry
+        key_map[pascal.lower()] = canonical  # camelCase: terrainAndBathymetry
         key_map[pascal] = canonical  # PascalCase: TerrainAndBathymetry
 
         snake = _generate_snake_case(base)
@@ -3333,46 +3376,44 @@ def build_category_key_map(category_keywords: dict) -> dict:
     return key_map
 
 
-def _normalise_key(key: str) -> str:
+def _normalise_key_for_matching(key: str) -> str:
     """
-    Normalizes a given key by transforming it to lowercase and removing any
+    Normalises a given key by transforming it to lowercase and removing any
     characters that are not letters (a-z) or digits (0-9).
 
-    :param key: The input string to be normalized.
+    :param key: The input string to be normalised.
     :type key: str
-    :return: A normalized string consisting only of lowercase letters and digits.
+    :return: A normalised string consisting only of lowercase letters and digits.
     :rtype: str
     """
     return re.sub(r'[^a-z0-9]', '', key.lower())
 
 
-# ... existing code ...
-
 def normalise_category_keys(imported_dict: dict, category_keywords: dict) -> dict:
     """
-    Normalizes the keys of the input dictionary according to a predefined category key map
+    Normalises the keys of the input dictionary according to a predefined category key map
     derived from given category keywords.
 
-    This function helps standardize the keys in a dictionary by:
-    1. Normalizing keys to lowercase alphanumeric strings by removing any non-alphanumeric
+    This function helps standardise the keys in a dictionary by:
+    1. Normalising keys to lowercase alphanumeric strings by removing any non-alphanumeric
        characters.
-    2. Mapping normalized keys to their corresponding standard category keys using the
+    2. Mapping normalised keys to their corresponding standard category keys using the
        category keywords provided.
 
     After processing, any key that does not match an entry in the key map will remain
     unchanged in the returned dictionary.
 
-    :param imported_dict: The input dictionary whose keys need to be normalized.
+    :param imported_dict: The input dictionary whose keys need to be normalised.
     :param category_keywords: A dictionary defining the relation between category keywords
-        and standardized category names.
-    :return: A new dictionary with normalized and mapped keys.
+        and standardised category names.
+    :return: A new dictionary with normalised and mapped keys.
     :rtype: dict
     """
     key_map = build_category_key_map(category_keywords)
 
     normalised_dict = {}
     for k, v in imported_dict.items():
-        norm_k = _normalise_key(k)
+        norm_k = _normalise_key_for_matching(k)
         mapped_key = key_map.get(norm_k, k)  # fallback to original if not found
         normalised_dict[mapped_key] = v
 
@@ -3380,26 +3421,26 @@ def normalise_category_keys(imported_dict: dict, category_keywords: dict) -> dic
 
 
 def humanise_key(key: str) -> str:
-        """
-        Transforms a string key into a human-readable format by replacing specific
-        characters and adjusting case. Underscores and hyphens are replaced with
-        spaces. Spaces are added before capitalized letters (unless at the start),
-        and the result is normalized and converted to title case.
-        :param key: The input key to be transformed.
-        :return: A human-readable string derived from the input key.
-        """
-        # Replace underscores and hyphens with spaces
-        result = key.replace("_", " ").replace("-", " ")
-        # Add spaces before capital letters (but not at start)
-        result = re.sub(_CAMEL_CASE_PATTERN, ' ', result)
-        # Normalise whitespace and title case
-        result = re.sub(_WHITESPACE_NORMALIZATION_PATTERN, ' ', result).strip()
-        return result
+    """
+    Transforms a string key into a human-readable format by replacing specific
+    characters and adjusting case. Underscores and hyphens are replaced with
+    spaces. Spaces are added before capitalised letters (unless at the start),
+    and the result is normalised and converted to title case.
+    :param key: The input key to be transformed.
+    :return: A human-readable string derived from the input key.
+    """
+    # Replace underscores and hyphens with spaces
+    result = key.replace("_", " ").replace("-", " ")
+    # Add spaces before capital letters (but not at start)
+    result = re.sub(_CAMEL_CASE_PATTERN, ' ', result)
+    # Normalise whitespace and title case
+    result = re.sub(_WHITESPACE_NORMALIZATION_PATTERN, ' ', result).strip()
+    return result
 
 
 def normalise_key(name: str) -> str:
     """
-    Normalize a camel case or Pascal case string to a space-separated string.
+    Normalise a camel case or Pascal case string to a space-separated string.
     This function takes a camel case or Pascal case string, separates each word
     by inserting a space character, and removes any leading or trailing spaces
     from the resulting string.
@@ -3459,17 +3500,17 @@ def _process_child_concepts(parent_key: str, parent_val: dict) -> tuple[dict[str
 def load_taxonomy(json_path: str):
     """
     Loads and processes a taxonomy from a JSON file, extracting parent and child
-    keywords along with their hierarchical relationships. The function normalizes
-    keys, organizes parent-child relationships, and structures the data into two
-    dictionaries: one containing keywords grouped by normalized parent names and
+    keywords along with their hierarchical relationships. The function normalises
+    keys, organises parent-child relationships, and structures the data into two
+    dictionaries: one containing keywords grouped by normalised parent names and
     another containing child concepts with their attributes.
 
     :param json_path: Path to the JSON file containing taxonomy data.
     :type json_path: str
     :return: A tuple containing two dictionaries:
-        1. A dictionary where keys are normalized parent names and values are
+        1. A dictionary where keys are normalised parent names and values are
            sorted lists of keywords associated with those parents.
-        2. A dictionary where keys are normalized child names and values are
+        2. A dictionary where keys are normalised child names and values are
            dictionaries containing associated keywords and parent names.
     :rtype: tuple[dict, dict]
     """
@@ -3488,13 +3529,13 @@ def load_taxonomy(json_path: str):
     return parent_keywords, child_keywords
 
 
-def _normalize_and_group_terms(data: dict) -> dict[str, set[str]]:
+def _normalise_and_group_terms(data: dict) -> dict[str, set[str]]:
     """
-    Normalizes and groups terms from raw data dictionary.
+    Normalises and groups terms from raw data dictionary.
 
     :param data: Dictionary mapping categories to lists of terms.
     :type data: dict
-    :return: Dictionary mapping categories to sets of normalized terms.
+    :return: Dictionary mapping categories to sets of normalised terms.
     :rtype: dict[str, set[str]]
     """
     return {k: {t.lower().strip() for t in v} for k, v in data.items()}
@@ -3517,20 +3558,20 @@ def load_protected_terms(path: str, flatten: bool = True) -> set[str] | dict[str
     with open(path, "r", encoding="utf-8") as f:
         data = json.load(f)
 
-    grouped = _normalize_and_group_terms(data)
+    grouped = _normalise_and_group_terms(data)
 
     if flatten:
         return set().union(*grouped.values())
     return grouped
 
 
-def _normalize_rule_list(rules: list) -> list:
+def _normalise_rule_list(rules: list) -> list:
     """
-    Normalize a list of rules by converting to lowercase and stripping whitespace.
+    Normalise a list of rules by converting to lowercase and stripping whitespace.
 
-    :param rules: List of rule strings to normalize.
+    :param rules: List of rule strings to normalise.
     :type rules: list
-    :return: List of normalized rule strings.
+    :return: List of normalised rule strings.
     :rtype: list
     """
     return [rule.lower().strip() for rule in rules]
@@ -3538,12 +3579,12 @@ def _normalize_rule_list(rules: list) -> list:
 
 def load_conflict_rules(path: str) -> dict:
     """
-    Load conflict rules from a JSON file and normalize the data to lowercase for consistent
-    matching. The normalization ensures that all keys and list values in the rules dictionary
+    Load conflict rules from a JSON file and normalise the data to lowercase for consistent
+    matching. The normalisation ensures that all keys and list values in the rules dictionary
     are converted to lowercase.
     :param path: The file path to the JSON file containing conflict rules.
     :type path: str
-    :return: A dictionary containing normalized conflict rules with "protected" and
+    :return: A dictionary containing normalised conflict rules with "protected" and
         "synonyms" lists for each context.
     :rtype: dict
     """
@@ -3551,13 +3592,13 @@ def load_conflict_rules(path: str) -> dict:
         data = json.load(f)
 
     # normalise to lowercase for consistent matching
-    normalized = {}
+    normalised = {}
     for ctx, rules in data.items():
-        normalized[ctx.lower()] = {
-            "protected": _normalize_rule_list(rules.get("protected", [])),
-            "synonyms": _normalize_rule_list(rules.get("synonyms", []))
+        normalised[ctx.lower()] = {
+            "protected": _normalise_rule_list(rules.get("protected", [])),
+            "synonyms": _normalise_rule_list(rules.get("synonyms", []))
         }
-    return normalized
+    return normalised
 
 
 def load_taxonomy_configuration(taxonomy_path: str) -> tuple[dict, dict]:
@@ -3570,7 +3611,7 @@ def load_taxonomy_configuration(taxonomy_path: str) -> tuple[dict, dict]:
     :param taxonomy_path: The file path to the taxonomy configuration file.
                           It is expected to be a valid JSON file.
     :return: A tuple containing two elements:
-             1. The raw taxonomy dictionary loaded from the file.
+             1. The raw taxonomy dictionary is loaded from the file.
              2. A dictionary of category keywords with human-readable keys and their associated values.
     """
     with open(taxonomy_path, 'r', encoding='utf-8') as f:
@@ -3596,7 +3637,7 @@ def load_taxonomy_configuration(taxonomy_path: str) -> tuple[dict, dict]:
 def load_and_validate_domain_synonyms(synonyms_path: str) -> dict:
     """
     Loads and validates domain synonyms from a given file path. The function checks
-    the validity of the synonyms file, prints a detailed report of the validation,
+    the validity of the synonym file, prints a detailed report of the validation,
     and loads the content into a dictionary. The dictionary keys and values are
     converted to lowercase for consistency.
 
@@ -3641,7 +3682,7 @@ def load_validation_configuration(
     :param protected_terms_path: The path to the file containing protected terms.
     :param conflict_rules_path: The path to the file containing conflict rules.
     :param domain_synonyms: A dictionary mapping domain terms to their synonyms.
-    :return: The constructed ValidationRules object based on the provided inputs.
+    :return: The constructed ValidationRules object is based on the provided inputs.
     """
     protected_terms = load_protected_terms(protected_terms_path, flatten=False)
     conflict_rules = load_conflict_rules(conflict_rules_path)
@@ -3696,10 +3737,7 @@ if __name__ == "__main__":
         domain_synonyms=DOMAIN_SYNONYMS
     )
 
-    # Extract PROTECTED_TERMS from validation_rules for use in augmentation
-    PROTECTED_TERMS = validation_rules.protected_terms
-
-    # Run classification for all scenarios
+    # Run classification for scenarios 1 to 3
     for scenario_num in [1, 2, 3]:
         print(f"\n{'#' * 60}")
         for question_num in ["Q1", "Q2", "Q3", "Q4", "Q5", "Q6"]:
@@ -3707,9 +3745,16 @@ if __name__ == "__main__":
             main(question_num, scenario_num, marine_planning_taxonomy_raw,
                  validation_rules, merge_to_source=False)
 
+    # Run classification for scenario 4
+    scenario_num = 4
+    for question_num in ["Task 1", "Task 2", "Task 3", "Task 4", "Task 5", "Task 6"]:
+        print(f"Running classification for Scenario {scenario_num}, {question_num}")
+        main(question_num, scenario_num, marine_planning_taxonomy_raw,
+             validation_rules, merge_to_source=False)
+
     # After all scenarios are classified, merge into a single file
     print(f"\n{'#' * 60}")
-    print(f"# Merging all classifications into master file")
+    print(f"# Merging all classifications into primary file")
     print(f"{'#' * 60}\n")
     merge_all_classifications()
 

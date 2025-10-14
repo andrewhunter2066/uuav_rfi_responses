@@ -14,7 +14,7 @@
   },
   {
     "ResponseID":"22",
-    "ResponseText":"multibeam echo sounder extent width versus depth profile",
+    "ResponseText":"multibeam echo sounder extent width versus bathymetry profile",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -40,7 +40,7 @@
   },
   {
     "ResponseID":"23",
-    "ResponseText":"examination speed versus data quality trade-offs",
+    "ResponseText":"survey speed versus data quality trade-offs",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -66,7 +66,7 @@
   },
   {
     "ResponseID":"24",
-    "ResponseText":"unmanned underwater craft altitude pitch roll stability",
+    "ResponseText":"unmanned underwater vehicle altitude pitch planned line control",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -92,7 +92,7 @@
   },
   {
     "ResponseID":"25",
-    "ResponseText":"environmental factors course clarity seabed composition acoustic interference",
+    "ResponseText":"ocean conditions factors eg turbidity seabed composition acoustic interference",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -118,7 +118,7 @@
   },
   {
     "ResponseID":"26",
-    "ResponseText":"sensor calibration status historical efficiency",
+    "ResponseText":"payload calibration status historical performance",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -170,7 +170,7 @@
   },
   {
     "ResponseID":"195",
-    "ResponseText":"timeframe hard left right",
+    "ResponseText":"timings hard underwater depth right",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -196,7 +196,7 @@
   },
   {
     "ResponseID":"196",
-    "ResponseText":"duration vehicle",
+    "ResponseText":"loiter time vehicle",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -222,7 +222,7 @@
   },
   {
     "ResponseID":"197",
-    "ResponseText":"global positioning system fixing requirements frequency",
+    "ResponseText":"global fixing system fixing requirements frequency",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -248,7 +248,7 @@
   },
   {
     "ResponseID":"198",
-    "ResponseText":"deviation requirements sensors",
+    "ResponseText":"accuracy requirements instrument",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -274,7 +274,7 @@
   },
   {
     "ResponseID":"199",
-    "ResponseText":"accuracy need navigation",
+    "ResponseText":"accuracy specification navigation",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -326,7 +326,7 @@
   },
   {
     "ResponseID":"201",
-    "ResponseText":"minimum depth vehicle",
+    "ResponseText":"minimum depth craft",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -352,7 +352,7 @@
   },
   {
     "ResponseID":"202",
-    "ResponseText":"vehicle communication specification",
+    "ResponseText":"vehicle communication need",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -378,7 +378,7 @@
   },
   {
     "ResponseID":"203",
-    "ResponseText":"navigational hazards route area undertaking",
+    "ResponseText":"wayfinding hazards route area operations",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -404,7 +404,7 @@
   },
   {
     "ResponseID":"204",
-    "ResponseText":"no-go zones route area operations",
+    "ResponseText":"no-go zones route area of operation operations",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -430,7 +430,7 @@
   },
   {
     "ResponseID":"205",
-    "ResponseText":"zone confidence path area operations",
+    "ResponseText":"zone classification confidence route area operations",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,

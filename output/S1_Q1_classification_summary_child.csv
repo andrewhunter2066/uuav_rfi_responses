@@ -4,17 +4,16 @@ Deployment,False,False,False,1
 Environmental Context,False,False,False,1
 Hardware,False,False,False,4
 Hazards,False,False,False,2
-Measurement And Models,False,False,False,1
+Measurement And Models,False,False,False,2
 Navigation Systems,False,False,False,2
 Objectives,False,False,False,4
-Performance,False,False,False,5
-Physical Processes,False,False,False,4
+Performance,False,False,False,6
+Physical Processes,False,False,False,3
 Route And Trajectory,False,False,False,11
-Seafloor Characterization,False,False,False,5
-Spatial Aspects,False,False,False,1
-Spatial Reference,False,False,False,1
-Surface Features,False,False,False,4
-Survey Data,False,False,False,2
+Seafloor Characterization,False,False,False,3
+Spatial Reference,False,False,False,2
+Surface Features,False,False,False,3
+Survey Data,False,False,False,1
 System Constraints,False,False,False,3
 Temporal Aspects,False,False,False,1
-uncategorised,False,False,False,8
+uncategorised,False,False,False,11

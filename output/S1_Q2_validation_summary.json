@@ -14,7 +14,7 @@
   },
   {
     "ResponseID":"4",
-    "ResponseText":"acoustic positioning limitations eg high precision acoustic localization endurance",
+    "ResponseText":"acoustic localization restriction eg high precision acoustic positioning range",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -40,7 +40,7 @@
   },
   {
     "ResponseID":"5",
-    "ResponseText":"global positioning system fix availability including surfacing protocols permissible",
+    "ResponseText":"global positioning application fix availability including surfacing protocols permissible",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -66,7 +66,7 @@
   },
   {
     "ResponseID":"6",
-    "ResponseText":"battery life endurance employ",
+    "ResponseText":"battery life loiter time uuvs",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -92,7 +92,7 @@
   },
   {
     "ResponseID":"7",
-    "ResponseText":"turnaround time coordination multiple utilize",
+    "ResponseText":"turnaround time coordination multiple employ",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -118,7 +118,7 @@
   },
   {
     "ResponseID":"114",
-    "ResponseText":"equipment restriction service capabilities",
+    "ResponseText":"equipment limitations service capacity",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -144,7 +144,7 @@
   },
   {
     "ResponseID":"115",
-    "ResponseText":"timings hard underwater depth right",
+    "ResponseText":"timings restriction left right",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -170,7 +170,7 @@
   },
   {
     "ResponseID":"116",
-    "ResponseText":"endurance uuv",
+    "ResponseText":"duration vehicle",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -196,7 +196,7 @@
   },
   {
     "ResponseID":"117",
-    "ResponseText":"global positioning system fixing parameter frequency",
+    "ResponseText":"global positioning system fixing requirements update rate",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -222,7 +222,7 @@
   },
   {
     "ResponseID":"118",
-    "ResponseText":"accuracy parameter sensors",
+    "ResponseText":"precision requirements sensors",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -248,7 +248,7 @@
   },
   {
     "ResponseID":"119",
-    "ResponseText":"error requirements navigation",
+    "ResponseText":"accuracy criterion navigation",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -274,7 +274,7 @@
   },
   {
     "ResponseID":"120",
-    "ResponseText":"maximum depth uuv",
+    "ResponseText":"maximum depth vehicle",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -300,7 +300,7 @@
   },
   {
     "ResponseID":"121",
-    "ResponseText":"minimum depth vehicle",
+    "ResponseText":"minimum depth vessel",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -326,7 +326,7 @@
   },
   {
     "ResponseID":"122",
-    "ResponseText":"vehicle comms requirements",
+    "ResponseText":"uuv communication requirements",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -352,7 +352,7 @@
   },
   {
     "ResponseID":"123",
-    "ResponseText":"navigational hazards planned line area operations",
+    "ResponseText":"navigational hazards path area operations",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -378,7 +378,7 @@
   },
   {
     "ResponseID":"124",
-    "ResponseText":"no-go zones path area operations",
+    "ResponseText":"no-go zones route sector operations",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -404,7 +404,7 @@
   },
   {
     "ResponseID":"125",
-    "ResponseText":"zone confidence route area activity",
+    "ResponseText":"zone classification confidence route area operations",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,

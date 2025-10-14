@@ -1,28 +1,29 @@
 {
   "child_summary": {
     "Surface Features": 2,
-    "uncategorised": 7,
-    "Environmental Context": 2,
+    "uncategorised": 9,
+    "Environmental Context": 1,
+    "Physical Processes": 1,
     "Water Properties": 2,
-    "Hazards": 1,
-    "Depth Limits": 1,
-    "System Constraints": 2,
-    "Temporal Aspects": 2,
+    "Hazards": 3,
+    "System Constraints": 1,
+    "Temporal Aspects": 1,
+    "Seafloor Characterization": 1,
     "Performance": 1,
     "Navigation Systems": 2,
-    "Accuracy And Hazards": 1,
-    "Route And Trajectory": 7,
-    "Seafloor Characterization": 1,
-    "Hardware": 2,
-    "Safety And Mitigation": 1
+    "Accuracy And Hazards": 2,
+    "Route And Trajectory": 6,
+    "Hardware": 1,
+    "Comms Infrastructure": 1
   },
   "parent_summary": {
     "Terrain And Bathymetry": 3,
-    "uncategorised": 7,
+    "uncategorised": 9,
     "Environmental And Oceanographic Conditions": 4,
     "Threats And Risk Management": 2,
-    "Vehicle Capabilities And Constraints": 6,
-    "Mission Parameters And Objectives": 2,
-    "Navigation And Positioning": 10
+    "Vehicle Capabilities And Constraints": 3,
+    "Mission Parameters And Objectives": 1,
+    "Navigation And Positioning": 11,
+    "Communications And Control": 1
   }
 }

@@ -2,17 +2,17 @@
   "child_summary": {
     "Environmental Context": 2,
     "Objectives": 6,
-    "uncategorised": 7,
-    "Seafloor Characterization": 1,
+    "uncategorised": 8,
     "Accountability": 2,
-    "Data Integrity And Resilience": 4
+    "Data Integrity And Resilience": 3,
+    "Seafloor Characterization": 1
   },
   "parent_summary": {
     "Environmental And Oceanographic Conditions": 2,
     "Mission Parameters And Objectives": 6,
-    "uncategorised": 7,
-    "Terrain And Bathymetry": 1,
+    "uncategorised": 8,
     "Audit And Accountability": 2,
-    "Data Products And Requirements": 4
+    "Data Products And Requirements": 3,
+    "Terrain And Bathymetry": 1
   }
 }

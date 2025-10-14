@@ -1,33 +1,33 @@
 ResponseID,ResponseText,PredictedChild,PredictedParent,ChildScores,ParentScores,has_protected,has_conflict,has_cross_conflict
 4,acoustic positioning limitations eg high precision acoustic positioning range,Performance,Vehicle Capabilities And Constraints,{'Performance': 1},{'Vehicle Capabilities And Constraints': 1},False,False,False
-4,acoustic positioning limitations eg high precision acoustic localization endurance,Performance,Vehicle Capabilities And Constraints,{'Performance': 1},{'Vehicle Capabilities And Constraints': 1},False,False,False
+4,acoustic localization restriction eg high precision acoustic positioning range,Performance,Vehicle Capabilities And Constraints,{'Performance': 1},{'Vehicle Capabilities And Constraints': 1},False,False,False
 5,global positioning system fix availability including surfacing protocols permissible,Navigation Systems,Navigation And Positioning,"{'Navigation Systems': 1, 'Accuracy And Hazards': 1}",{'Navigation And Positioning': 2},False,False,False
-5,global positioning system fix availability including surfacing protocols permissible,Navigation Systems,Navigation And Positioning,"{'Navigation Systems': 1, 'Accuracy And Hazards': 1}",{'Navigation And Positioning': 2},False,False,False
+5,global positioning application fix availability including surfacing protocols permissible,uncategorised,uncategorised,{},{},False,False,False
 6,battery life endurance uuvs,Performance,Vehicle Capabilities And Constraints,{'Performance': 1},{'Vehicle Capabilities And Constraints': 1},False,False,False
-6,battery life endurance employ,Performance,Vehicle Capabilities And Constraints,{'Performance': 1},{'Vehicle Capabilities And Constraints': 1},False,False,False
+6,battery life loiter time uuvs,uncategorised,uncategorised,{},{},False,False,False
 7,turnaround time coordination multiple uuvs,uncategorised,uncategorised,{},{},False,False,False
-7,turnaround time coordination multiple utilize,uncategorised,uncategorised,{},{},False,False,False
+7,turnaround time coordination multiple employ,uncategorised,uncategorised,{},{},False,False,False
 114,equipment limitations service capabilities,System Constraints,Vehicle Capabilities And Constraints,{'System Constraints': 1},{'Vehicle Capabilities And Constraints': 1},False,False,False
-114,equipment restriction service capabilities,uncategorised,uncategorised,{},{},False,False,False
+114,equipment limitations service capacity,System Constraints,Vehicle Capabilities And Constraints,{'System Constraints': 1},{'Vehicle Capabilities And Constraints': 1},False,False,False
 115,timings hard left right,Temporal Aspects,Mission Parameters And Objectives,{'Temporal Aspects': 1},{'Mission Parameters And Objectives': 1},False,False,False
-115,timings hard underwater depth right,Temporal Aspects,Mission Parameters And Objectives,{'Temporal Aspects': 1},{'Mission Parameters And Objectives': 1},False,False,False
+115,timings restriction left right,Temporal Aspects,Mission Parameters And Objectives,{'Temporal Aspects': 1},{'Mission Parameters And Objectives': 1},False,False,False
 116,endurance vehicle,Performance,Vehicle Capabilities And Constraints,{'Performance': 1},{'Vehicle Capabilities And Constraints': 1},False,False,False
-116,endurance uuv,Performance,Vehicle Capabilities And Constraints,{'Performance': 1},{'Vehicle Capabilities And Constraints': 1},False,False,False
+116,duration vehicle,uncategorised,uncategorised,{},{},False,False,False
 117,global positioning system fixing requirements frequency,Navigation Systems,Navigation And Positioning,"{'Navigation Systems': 1, 'Accuracy And Hazards': 1, 'Comms Infrastructure': 1}","{'Navigation And Positioning': 2, 'Communications And Control': 1}",False,False,False
-117,global positioning system fixing parameter frequency,Navigation Systems,Navigation And Positioning,"{'Navigation Systems': 1, 'Accuracy And Hazards': 1, 'Comms Infrastructure': 1}","{'Navigation And Positioning': 2, 'Communications And Control': 1}",False,False,False
+117,global positioning system fixing requirements update rate,Navigation Systems,Navigation And Positioning,"{'Navigation Systems': 1, 'Accuracy And Hazards': 1}",{'Navigation And Positioning': 2},False,False,False
 118,accuracy requirements sensors,Accuracy And Hazards,Navigation And Positioning,{'Accuracy And Hazards': 1},{'Navigation And Positioning': 1},False,False,False
-118,accuracy parameter sensors,Accuracy And Hazards,Navigation And Positioning,{'Accuracy And Hazards': 1},{'Navigation And Positioning': 1},False,False,False
+118,precision requirements sensors,uncategorised,uncategorised,{},{},False,False,False
 119,accuracy requirements navigation,Route And Trajectory,Navigation And Positioning,"{'Route And Trajectory': 1, 'Accuracy And Hazards': 1}",{'Navigation And Positioning': 2},False,False,False
-119,error requirements navigation,Route And Trajectory,Navigation And Positioning,{'Route And Trajectory': 1},{'Navigation And Positioning': 1},False,False,False
+119,accuracy criterion navigation,Route And Trajectory,Navigation And Positioning,"{'Route And Trajectory': 1, 'Accuracy And Hazards': 1}",{'Navigation And Positioning': 2},False,False,False
 120,maximum depth vehicle,uncategorised,uncategorised,{},{},False,False,False
-120,maximum depth uuv,uncategorised,uncategorised,{},{},False,False,False
+120,maximum depth vehicle,uncategorised,uncategorised,{},{},False,False,False
 121,minimum depth vehicle,uncategorised,uncategorised,{},{},False,False,False
-121,minimum depth vehicle,uncategorised,uncategorised,{},{},False,False,False
+121,minimum depth vessel,uncategorised,uncategorised,{},{},False,False,False
 122,vehicle communication requirements,Hardware,Vehicle Capabilities And Constraints,"{'Hardware': 1, 'Performance Constraints': 1, 'Comms Infrastructure': 1}","{'Vehicle Capabilities And Constraints': 2, 'Communications And Control': 1}",False,False,False
-122,vehicle comms requirements,uncategorised,uncategorised,{},{},False,False,False
+122,uuv communication requirements,Hardware,Vehicle Capabilities And Constraints,"{'Hardware': 1, 'Comms Infrastructure': 1}","{'Vehicle Capabilities And Constraints': 1, 'Communications And Control': 1}",False,False,False
 123,navigational hazards route area operations,Route And Trajectory,Navigation And Positioning,"{'Route And Trajectory': 2, 'Accuracy And Hazards': 1, 'Hazards': 2}","{'Navigation And Positioning': 3, 'Threats And Risk Management': 2}",False,False,False
-123,navigational hazards planned line area operations,Hazards,Navigation And Positioning,"{'Route And Trajectory': 1, 'Accuracy And Hazards': 1, 'Hazards': 2}","{'Navigation And Positioning': 2, 'Threats And Risk Management': 2}",False,False,False
+123,navigational hazards path area operations,Hazards,Navigation And Positioning,"{'Route And Trajectory': 1, 'Accuracy And Hazards': 1, 'Hazards': 2}","{'Navigation And Positioning': 2, 'Threats And Risk Management': 2}",False,False,False
 124,no-go zones route area operations,Route And Trajectory,Navigation And Positioning,"{'Route And Trajectory': 1, 'Accuracy And Hazards': 1}",{'Navigation And Positioning': 2},False,False,False
-124,no-go zones path area operations,Accuracy And Hazards,Navigation And Positioning,{'Accuracy And Hazards': 1},{'Navigation And Positioning': 1},False,False,False
+124,no-go zones route sector operations,Route And Trajectory,Navigation And Positioning,"{'Route And Trajectory': 1, 'Accuracy And Hazards': 1}",{'Navigation And Positioning': 2},False,False,False
 125,zone confidence route area operations,Route And Trajectory,Navigation And Positioning,{'Route And Trajectory': 1},{'Navigation And Positioning': 1},False,False,False
-125,zone confidence route area activity,Route And Trajectory,Navigation And Positioning,{'Route And Trajectory': 1},{'Navigation And Positioning': 1},False,False,False
+125,zone classification confidence route area operations,Route And Trajectory,Navigation And Positioning,"{'Route And Trajectory': 1, 'Survey Data': 1}","{'Navigation And Positioning': 1, 'Data Products And Requirements': 1}",False,False,False

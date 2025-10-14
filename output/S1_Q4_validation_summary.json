@@ -14,7 +14,7 @@
   },
   {
     "ResponseID":"10",
-    "ResponseText":"global positioning system-denied acoustically denied environments",
+    "ResponseText":"global positioning system-denied acoustically denied hydrodynamics",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -40,7 +40,7 @@
   },
   {
     "ResponseID":"11",
-    "ResponseText":"sensor breakdown scenarios eg doppler velocity log failure resulting off-track drift potential",
+    "ResponseText":"detector failure scenarios eg doppler velocity log failure resulting off-track drift potential",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -66,7 +66,7 @@
   },
   {
     "ResponseID":"12",
-    "ResponseText":"sea surface global positioning system position high-traffic areas eg shipping channels",
+    "ResponseText":"surfacing global positioning system position high-traffic areas track shipping channels",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -118,7 +118,7 @@
   },
   {
     "ResponseID":"139",
-    "ResponseText":"sensor performance prior mission start bench bathymetry",
+    "ResponseText":"sensor performance prior operation start bench seafloor elevation",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -144,7 +144,7 @@
   },
   {
     "ResponseID":"140",
-    "ResponseText":"ephemeral current tides route area mission",
+    "ResponseText":"ephemeral current tides corridor area operations",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -170,7 +170,7 @@
   },
   {
     "ResponseID":"141",
-    "ResponseText":"mission cyber threat assessment cyber risk mission",
+    "ResponseText":"threat assessment cyber risk mission",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -196,7 +196,7 @@
   },
   {
     "ResponseID":"142",
-    "ResponseText":"seafloor classification infrastructure route area activity",
+    "ResponseText":"substrate classification infrastructure route area operations",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -222,7 +222,7 @@
   },
   {
     "ResponseID":"143",
-    "ResponseText":"endurance auv",
+    "ResponseText":"range vehicle",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -248,7 +248,7 @@
   },
   {
     "ResponseID":"144",
-    "ResponseText":"maximum depth rov",
+    "ResponseText":"maximum depth vehicle",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -274,7 +274,7 @@
   },
   {
     "ResponseID":"145",
-    "ResponseText":"minimum depth vehicle",
+    "ResponseText":"minimum depth rov",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -300,7 +300,7 @@
   },
   {
     "ResponseID":"146",
-    "ResponseText":"navigational hazards path area operations",
+    "ResponseText":"navigational restriction route area operations",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -326,7 +326,7 @@
   },
   {
     "ResponseID":"147",
-    "ResponseText":"vehicle communication parameter",
+    "ResponseText":"vehicle signal requirements",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -352,7 +352,7 @@
   },
   {
     "ResponseID":"148",
-    "ResponseText":"no-go zones route operating area operations",
+    "ResponseText":"no-go zones planned line area operations",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -378,7 +378,7 @@
   },
   {
     "ResponseID":"149",
-    "ResponseText":"actions loss telemetry loss vehicle etc",
+    "ResponseText":"actions loss communications malfunction vehicle etc",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -404,7 +404,7 @@
   },
   {
     "ResponseID":"150",
-    "ResponseText":"zone confidence route sector operations",
+    "ResponseText":"zone confidence corridor area operations",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,

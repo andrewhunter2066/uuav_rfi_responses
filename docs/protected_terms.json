@@ -159,5 +159,36 @@
     "launch window", "mission debrief", "mission execution",
     "mission window", "recovery window", "time synchronization",
     "timestamp", "utc"
+  ],
+
+  "RiskAndPerformance": [
+    "risk profile", "risk profiling", "risk model", "risk deficiencies",
+    "risk flags", "notifiable incident", "incident logging", "root cause analysis",
+    "security risk assessment", "standard operating procedures", "effectiveness"
+  ],
+
+  "EnvironmentalPerformance": [
+    "adverse weather", "restricted waterways", "acoustically complex environments",
+    "performance degradation", "UUV stability", "propulsion efficiency",
+    "sensor reliability", "comparative analysis across platforms",
+    "vessel traffic considerations"
+  ],
+
+  "SoundingAndDataQuality": [
+    "sounding quality", "UUV altitude", "pitch", "roll", "environmental noise",
+    "MBES performance", "DVL performance", "expected resolution",
+    "coverage benchmark", "data anomalies", "data gaps"
+  ],
+
+  "MissionRecords": [
+    "task identifiers", "mission plans", "timestamped task identifiers",
+    "metadata tagging", "traceability", "Defence data standards",
+    "signatory information", "user account information", "job file templates"
+  ],
+
+  "Scenario4_StandardsAndCapacity": [
+    "data standards", "format adequacy", "capacity scaling",
+    "multi-UUV operations", "structured and unstructured data",
+    "imagery and acoustic logs", "AI-generated insights"
   ]
 }

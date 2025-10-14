@@ -14,7 +14,7 @@
   },
   {
     "ResponseID":"56",
-    "ResponseText":"habitat disruption risk environmental environmental compliance",
+    "ResponseText":"habitat disruption vulnerability environmental compliance",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -40,7 +40,7 @@
   },
   {
     "ResponseID":"57",
-    "ResponseText":"bottom object interference unmanned underwater vessel sensors mobility",
+    "ResponseText":"bottom object interference unmanned underwater vehicle payload mobility",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -66,7 +66,7 @@
   },
   {
     "ResponseID":"58",
-    "ResponseText":"surf operating area dynamics potential vehicle instability",
+    "ResponseText":"surf region dynamics potential vehicle instability",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -144,7 +144,7 @@
   },
   {
     "ResponseID":"299",
-    "ResponseText":"sensor efficiency prior mission endurance bench test",
+    "ResponseText":"sensor performance prior mission operational duration bench test",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -170,7 +170,7 @@
   },
   {
     "ResponseID":"300",
-    "ResponseText":"ephemeral current tides corridor area operations",
+    "ResponseText":"ephemeral current tides route area undertaking",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -196,7 +196,7 @@
   },
   {
     "ResponseID":"301",
-    "ResponseText":"threat assessment cyber hazard mission",
+    "ResponseText":"risk assessment cyber risk mission",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -222,7 +222,7 @@
   },
   {
     "ResponseID":"302",
-    "ResponseText":"seafloor classification route infrastructure route area operations",
+    "ResponseText":"seafloor classification infrastructure path area operations",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -248,7 +248,7 @@
   },
   {
     "ResponseID":"303",
-    "ResponseText":"endurance vessel",
+    "ResponseText":"loiter time vehicle",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -274,7 +274,7 @@
   },
   {
     "ResponseID":"304",
-    "ResponseText":"maximum depth auv",
+    "ResponseText":"maximum depth rov",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -300,7 +300,7 @@
   },
   {
     "ResponseID":"305",
-    "ResponseText":"minimum underwater depth vehicle",
+    "ResponseText":"minimum bathymetry vehicle",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -326,7 +326,7 @@
   },
   {
     "ResponseID":"306",
-    "ResponseText":"navigational hazards route region operations",
+    "ResponseText":"navigational hazards route operating area operations",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -352,7 +352,7 @@
   },
   {
     "ResponseID":"307",
-    "ResponseText":"vehicle communication specification",
+    "ResponseText":"vehicle communication parameter",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -378,7 +378,7 @@
   },
   {
     "ResponseID":"308",
-    "ResponseText":"no-go zones route aoi operations",
+    "ResponseText":"no-go zones route area operations",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -404,7 +404,7 @@
   },
   {
     "ResponseID":"309",
-    "ResponseText":"actions loss communications loss vehicle etc",
+    "ResponseText":"actions loss communications breakdown vehicle etc",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -430,7 +430,7 @@
   },
   {
     "ResponseID":"310",
-    "ResponseText":"zone confidence track area operations",
+    "ResponseText":"area confidence route area operations",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,

@@ -14,7 +14,7 @@
   },
   {
     "ResponseID":"39",
-    "ResponseText":"multibeam echo sounder metadata logs eg ping rate swath width coverage maps",
+    "ResponseText":"multibeam echo sounder metadata logs transit ping rate swath coordinate coverage maps",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -66,7 +66,7 @@
   },
   {
     "ResponseID":"41",
-    "ResponseText":"survey track intersection timestamps environmental conditions",
+    "ResponseText":"survey track overlays timestamps environmental climate",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -92,7 +92,7 @@
   },
   {
     "ResponseID":"42",
-    "ResponseText":"post-mission processing reports highlighting anomalies feedback learned",
+    "ResponseText":"post-mission analysis reports highlighting anomalies output learned",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -118,7 +118,7 @@
   },
   {
     "ResponseID":"238",
-    "ResponseText":"initial underwater depth check lists pre-dive etc",
+    "ResponseText":"initial test check lists pre-dive etc",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -144,7 +144,7 @@
   },
   {
     "ResponseID":"239",
-    "ResponseText":"user responsibility user account information",
+    "ResponseText":"signatory user account dataset",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -170,7 +170,7 @@
   },
   {
     "ResponseID":"240",
-    "ResponseText":"specific path files load template",
+    "ResponseText":"specific job files load job file",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -196,7 +196,7 @@
   },
   {
     "ResponseID":"241",
-    "ResponseText":"time task versus completion factors trajectory",
+    "ResponseText":"time task versus completion factors ratio",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -248,7 +248,7 @@
   },
   {
     "ResponseID":"243",
-    "ResponseText":"seafloor elevation discrepancies",
+    "ResponseText":"depth discrepancies",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -274,7 +274,7 @@
   },
   {
     "ResponseID":"244",
-    "ResponseText":"course interest",
+    "ResponseText":"track interest",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -300,7 +300,7 @@
   },
   {
     "ResponseID":"245",
-    "ResponseText":"automated procedure data record contacts",
+    "ResponseText":"automated procedure record contacts",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,

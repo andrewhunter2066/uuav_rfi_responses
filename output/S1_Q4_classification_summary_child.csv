@@ -1,14 +1,16 @@
 PredictedChild,has_protected,has_conflict,has_cross_conflict,count
-Control Systems,False,False,False,1
+Accuracy And Hazards,False,False,False,1
+Comms Infrastructure,False,False,False,1
 Failure Scenarios,False,False,False,1
 Hardware,False,False,False,3
-Hazards,False,False,False,3
-Navigation Systems,False,False,False,4
+Hazards,False,False,False,2
+Measurement And Models,False,False,False,1
+Navigation Systems,False,False,False,3
 Objectives,False,False,False,1
 Performance,False,False,False,2
 Physical Processes,False,False,False,3
-Route And Trajectory,False,False,False,5
+Route And Trajectory,False,False,False,4
 Safety And Mitigation,False,False,False,2
 Seafloor Characterization,False,False,False,1
 Survey Data,False,False,False,2
-uncategorised,False,False,False,4
+uncategorised,False,False,False,5
