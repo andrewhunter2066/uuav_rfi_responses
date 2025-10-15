@@ -513,7 +513,7 @@ To be completed post-workshop series.
 
 ### Appendix C: Mapping of Requirements to Taxonomy
 
-[Mapping of Requirements to Taxonomy](https://github.com/surroundaustralia/RAN/blob/main/rfi/rfi_data/output/mapping_requirements_taxonomy.js)
+[Mapping of Requirements to Taxonomy](https://github.com/surroundaustralia/RAN/blob/main/rfi/rfi_data/output/mapping_requirements_taxonomy.json)
 
 [Mapping of Domain and Concept labels used on Figure 1 to Taxonomy Domain and Concept Names](https://github.com/surroundaustralia/RAN/blob/main/rfi/rfi_data/output/id_mapping.json)
 
