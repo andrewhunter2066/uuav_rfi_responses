@@ -425,7 +425,7 @@ Defines compliance, interoperability, and security rules for mission data and sy
 
 ## Mapping Taxonomy to Requirements
 
-To understand the scope of the taxonomy, it has been mapped to the project requirements 
+To understand the scope of the taxonomy, it has been mapped to the project requirements, as documented in  
 [see Appendix B](#appendix-b-uuv-project-requirements). 
 
 As outlined above, the structured mission planning taxonomy is organised into high-level domains such as 
@@ -434,8 +434,8 @@ descriptions and key terms, [see Appendix A](#appendix-a-mission-planning-taxono
 information relevant to UUV mission planning as described in the RFI responses from RAN SMEs. This taxonomy served as a 
 reference framework, providing consistent categories that can show how project requirements are being met.
 
-Using this taxonomy as a foundation, each project requirement  
-[see Appendix B](#appendix-b-uuv-project-requirements) was systematically reviewed to determine 
+Using this taxonomy as a foundation, each project requirement, as documented in 
+[see Appendix B](#appendix-b-uuv-project-requirements), was systematically reviewed to determine 
 which domains and concepts it addressed. The analysis was not limited to “closest fit” matches; instead, requirements 
 were interpreted in terms of their cross-cutting impact. For example, route planning requirements were linked not only 
 to <code>NavigationAndPositioning</code>, but also to <code>TerrainAndBathymetry</code>, 
