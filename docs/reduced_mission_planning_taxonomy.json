@@ -217,7 +217,7 @@
           ]
         },
         "PerformanceConstraints": {
-          "Description": "Pre-mission or planned constraints such as endurance limits, comms requirements, and bench test results.",
+          "Description": "Pre-mission or planned constraints such as endurance limits, communications requirements, and bench test results.",
           "Terms": [
             "vehicle endurance",
             "vehicle communication requirements",
@@ -250,7 +250,7 @@
       ]
     },
     "NavigationAndPositioning": {
-      "Description": "Addresses systems, references, and risks tied to precise positioning and safe navigation.",
+      "Description": "Addresses systems, references, and risks tied to positioning and safe navigation.",
       "Concepts": {
         "NavigationSystems": {
           "Description": "Tools such as GPS, GNSS, INS, DVL.",
@@ -411,7 +411,7 @@
       "Description": "Manages hazards, mitigation, and incident handling. Covers risk modelling, detection risks, and recovery procedures.",
       "Concepts": {
         "Hazards": {
-          "Description": "Threats including comms loss, navigational hazards, adversary influence.",
+          "Description": "Threats including communications loss, navigational hazards, adversary influence.",
           "Terms": [
             "threat",
             "risk",
@@ -459,12 +459,12 @@
           ]
         },
         "IncidentManagementAndRecording": {
-          "Description": "Logging of incidents (comms, sensor failures, drift), root cause analysis, alerts.",
+          "Description": "Logging of incidents (communications, sensor failures, drift), root cause analysis, alerts.",
           "Terms": [
             "incident root cause analysis",
             "operational impact assessment",
             "incident timeline recording",
-            "comms dropouts logging",
+            "communications dropouts logging",
             "sensor failures logging",
             "navigation drift logging with geospatial context",
             "automated alerts from risk flags",
@@ -583,7 +583,7 @@
           ]
         },
         "DataIntegrityAndResilience": {
-          "Description": "Gaps, anomalies, misalignments, integrity assurance.",
+          "Description": "Gaps, anomalies, misalignment's, integrity assurance.",
           "Terms": [
             "data dropouts from MBES",
             "environmental interference in data",
@@ -676,7 +676,7 @@
             "satellite",
             "latency",
             "reliability",
-            "comms channel",
+            "communications channel",
             "acoustic communications range",
             "communication confidence"
           ]

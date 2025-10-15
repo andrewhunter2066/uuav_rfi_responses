@@ -121,13 +121,21 @@ FILES_TO_MOVE_TO_OUTPUT = [
     "docs/mission_planning_taxonomy descriptions.md",
     "output/RFI_report.md",
     "docs/Coverage Report.md",
-    "docs/mapping_artifact_taxonomy.json"
+    "docs/mapping_artifact_taxonomy.json",
+    "docs/refs.bib",
+    "docs/uuv_requirements.csv",
+    "docs/id_mapping.json"
+]
+
+IMG_TO_MOVE = [
+    "img/cluster_map.png"
 ]
 
 # Target repo (can be local or remote)
 TARGET_REPO_DIR = Path("C:/Users/Andrew/Documents/GitHub/RAN").expanduser()
 TARGET_CLEAN_SUBDIR = TARGET_REPO_DIR / "rfi/rfi_data/cleaned_merged_responses"
 TARGET_OUTPUT_SUBDIR = TARGET_REPO_DIR / "rfi/rfi_data/output"
+TARGET_IMG_SUBDIR = TARGET_REPO_DIR / "rfi/rfi_data/img"
 
 TARGET_CLEAN_SUBDIR.mkdir(parents=True, exist_ok=True)
 TARGET_OUTPUT_SUBDIR.mkdir(parents=True, exist_ok=True)
@@ -162,3 +170,4 @@ def move_files(files_to_move: list[str], target_subdir: Path):
 if __name__ == "__main__":
     move_files(FILES_TO_MOVE_TO_CLEAN, TARGET_CLEAN_SUBDIR)
     move_files(FILES_TO_MOVE_TO_OUTPUT, TARGET_OUTPUT_SUBDIR)
+    move_files(IMG_TO_MOVE, TARGET_IMG_SUBDIR)

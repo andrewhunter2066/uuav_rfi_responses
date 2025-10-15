@@ -1,0 +1,1030 @@
+{
+  "heat_tree": [
+    {
+      "id": "TAB",
+      "name": "TerrainAndBathymetry",
+      "score": 12.0,
+      "heat": 0.631578947368421,
+      "children": [
+        {
+          "id": "SF",
+          "name": "SurfaceFeatures",
+          "score": 3.0,
+          "heat": 0.3333333333333333,
+          "children": []
+        },
+        {
+          "id": "SC",
+          "name": "SeafloorCharacterization",
+          "score": 6.0,
+          "heat": 0.6666666666666666,
+          "children": []
+        },
+        {
+          "id": "BDP",
+          "name": "BathymetricDataProducts",
+          "score": 3.0,
+          "heat": 0.3333333333333333,
+          "children": []
+        },
+        {
+          "id": "QAC",
+          "name": "QualityAndConfidence",
+          "score": 0,
+          "heat": 0.0,
+          "children": []
+        },
+        {
+          "id": "CR",
+          "name": "CoverageRisks",
+          "score": 0,
+          "heat": 0.0,
+          "children": []
+        },
+        {
+          "id": "SAI",
+          "name": "SeafloorAndInfrastructure",
+          "score": 0,
+          "heat": 0.0,
+          "children": []
+        },
+        {
+          "id": "SOQ",
+          "name": "SoundingOperationsQuality",
+          "score": 3.0,
+          "heat": 0.3333333333333333,
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": "EAOC",
+      "name": "EnvironmentalAndOceanographicConditions",
+      "score": 14.0,
+      "heat": 0.7368421052631579,
+      "children": [
+        {
+          "id": "PP",
+          "name": "PhysicalProcesses",
+          "score": 8.0,
+          "heat": 0.8888888888888888,
+          "children": []
+        },
+        {
+          "id": "WP",
+          "name": "WaterProperties",
+          "score": 5.0,
+          "heat": 0.5555555555555556,
+          "children": []
+        },
+        {
+          "id": "MAM",
+          "name": "MeasurementAndModels",
+          "score": 3.0,
+          "heat": 0.3333333333333333,
+          "children": []
+        },
+        {
+          "id": "EC",
+          "name": "EnvironmentalContext",
+          "score": 3.0,
+          "heat": 0.3333333333333333,
+          "children": []
+        },
+        {
+          "id": "EAD",
+          "name": "EphemeralsAndDynamics",
+          "score": 2.0,
+          "heat": 0.2222222222222222,
+          "children": []
+        },
+        {
+          "id": "ER",
+          "name": "EnvironmentalRisks",
+          "score": 0,
+          "heat": 0.0,
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": "VCAC",
+      "name": "VehicleCapabilitiesAndConstraints",
+      "score": 14.0,
+      "heat": 0.7368421052631579,
+      "children": [
+        {
+          "id": "P",
+          "name": "Performance",
+          "score": 6.0,
+          "heat": 0.6666666666666666,
+          "children": []
+        },
+        {
+          "id": "H",
+          "name": "Hardware",
+          "score": 3.0,
+          "heat": 0.3333333333333333,
+          "children": []
+        },
+        {
+          "id": "SC2",
+          "name": "SystemConstraints",
+          "score": 0,
+          "heat": 0.0,
+          "children": []
+        },
+        {
+          "id": "OL",
+          "name": "OperationalLimits",
+          "score": 0,
+          "heat": 0.0,
+          "children": []
+        },
+        {
+          "id": "DL",
+          "name": "DepthLimits",
+          "score": 3.0,
+          "heat": 0.3333333333333333,
+          "children": []
+        },
+        {
+          "id": "PC",
+          "name": "PerformanceConstraints",
+          "score": 3.0,
+          "heat": 0.3333333333333333,
+          "children": []
+        },
+        {
+          "id": "AOP",
+          "name": "AdverseOperationalPerformance",
+          "score": 8.0,
+          "heat": 0.8888888888888888,
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": "NAP",
+      "name": "NavigationAndPositioning",
+      "score": 14.0,
+      "heat": 0.7368421052631579,
+      "children": [
+        {
+          "id": "NS",
+          "name": "NavigationSystems",
+          "score": 2.0,
+          "heat": 0.2222222222222222,
+          "children": []
+        },
+        {
+          "id": "SR",
+          "name": "SpatialReference",
+          "score": 0,
+          "heat": 0.0,
+          "children": []
+        },
+        {
+          "id": "RAT",
+          "name": "RouteAndTrajectory",
+          "score": 9.0,
+          "heat": 1.0,
+          "children": []
+        },
+        {
+          "id": "AAH",
+          "name": "AccuracyAndHazards",
+          "score": 5.0,
+          "heat": 0.5555555555555556,
+          "children": []
+        },
+        {
+          "id": "DE",
+          "name": "DeniedEnvironments",
+          "score": 0,
+          "heat": 0.0,
+          "children": []
+        },
+        {
+          "id": "FS",
+          "name": "FailureScenarios",
+          "score": 0,
+          "heat": 0.0,
+          "children": []
+        },
+        {
+          "id": "OR",
+          "name": "OperationalRisks",
+          "score": 0,
+          "heat": 0.0,
+          "children": []
+        },
+        {
+          "id": "TASFR",
+          "name": "TrafficAndSurfaceFixRisks",
+          "score": 0,
+          "heat": 0.0,
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": "MPAO",
+      "name": "MissionParametersAndObjectives",
+      "score": 2.5,
+      "heat": 0.13157894736842105,
+      "children": [
+        {
+          "id": "O",
+          "name": "Objectives",
+          "score": 1.0,
+          "heat": 0.1111111111111111,
+          "children": []
+        },
+        {
+          "id": "TA",
+          "name": "TemporalAspects",
+          "score": 0,
+          "heat": 0.0,
+          "children": []
+        },
+        {
+          "id": "SA",
+          "name": "SpatialAspects",
+          "score": 0,
+          "heat": 0.0,
+          "children": []
+        },
+        {
+          "id": "OW",
+          "name": "OperationalWindows",
+          "score": 1.5,
+          "heat": 0.16666666666666666,
+          "children": []
+        },
+        {
+          "id": "MIAT",
+          "name": "MissionIdentificationAndTraceability",
+          "score": 0,
+          "heat": 0.0,
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": "TARM",
+      "name": "ThreatsAndRiskManagement",
+      "score": 10.0,
+      "heat": 0.5263157894736842,
+      "children": [
+        {
+          "id": "H2",
+          "name": "Hazards",
+          "score": 5.0,
+          "heat": 0.5555555555555556,
+          "children": []
+        },
+        {
+          "id": "RAR",
+          "name": "ResponseAndRecovery",
+          "score": 0,
+          "heat": 0.0,
+          "children": []
+        },
+        {
+          "id": "SAM",
+          "name": "SafetyAndMitigation",
+          "score": 6.0,
+          "heat": 0.6666666666666666,
+          "children": []
+        },
+        {
+          "id": "AADR",
+          "name": "AdversarialAndDetectionRisks",
+          "score": 5.0,
+          "heat": 0.5555555555555556,
+          "children": []
+        },
+        {
+          "id": "IMAR",
+          "name": "IncidentManagementAndRecording",
+          "score": 0,
+          "heat": 0.0,
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": "HACD",
+      "name": "HistoricalAndContextualData",
+      "score": 3.0,
+      "heat": 0.15789473684210525,
+      "children": [
+        {
+          "id": "MH",
+          "name": "MissionHistory",
+          "score": 0,
+          "heat": 0.0,
+          "children": []
+        },
+        {
+          "id": "DC",
+          "name": "DataContext",
+          "score": 3.0,
+          "heat": 0.3333333333333333,
+          "children": []
+        },
+        {
+          "id": "AAL",
+          "name": "AnalysisAndLearning",
+          "score": 0,
+          "heat": 0.0,
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": "DPAR",
+      "name": "DataProductsAndRequirements",
+      "score": 19.0,
+      "heat": 1.0,
+      "children": [
+        {
+          "id": "SD",
+          "name": "SurveyData",
+          "score": 0,
+          "heat": 0.0,
+          "children": []
+        },
+        {
+          "id": "DQ",
+          "name": "DataQuality",
+          "score": 5.0,
+          "heat": 0.5555555555555556,
+          "children": []
+        },
+        {
+          "id": "MAF",
+          "name": "MetadataAndFormat",
+          "score": 6.0,
+          "heat": 0.6666666666666666,
+          "children": []
+        },
+        {
+          "id": "O2",
+          "name": "Outputs",
+          "score": 3.0,
+          "heat": 0.3333333333333333,
+          "children": []
+        },
+        {
+          "id": "DIAR",
+          "name": "DataIntegrityAndResilience",
+          "score": 3.0,
+          "heat": 0.3333333333333333,
+          "children": []
+        },
+        {
+          "id": "SAC",
+          "name": "StandardsAndCapacity",
+          "score": 3.0,
+          "heat": 0.3333333333333333,
+          "children": []
+        },
+        {
+          "id": "RDA",
+          "name": "ReusableDataAssets",
+          "score": 0,
+          "heat": 0.0,
+          "children": []
+        },
+        {
+          "id": "AO",
+          "name": "AnnotatedOutputs",
+          "score": 5.0,
+          "heat": 0.5555555555555556,
+          "children": []
+        },
+        {
+          "id": "EATP",
+          "name": "EventAndTelemetryProducts",
+          "score": 0,
+          "heat": 0.0,
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": "CAC",
+      "name": "CommunicationsAndControl",
+      "score": 0,
+      "heat": 0.0,
+      "children": [
+        {
+          "id": "CI",
+          "name": "CommsInfrastructure",
+          "score": 0,
+          "heat": 0.0,
+          "children": []
+        },
+        {
+          "id": "CS",
+          "name": "ControlSystems",
+          "score": 0,
+          "heat": 0.0,
+          "children": []
+        },
+        {
+          "id": "R",
+          "name": "Reliability",
+          "score": 0,
+          "heat": 0.0,
+          "children": []
+        },
+        {
+          "id": "TO",
+          "name": "TelemetryObservability",
+          "score": 0,
+          "heat": 0.0,
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": "OL2",
+      "name": "OperationalLogistics",
+      "score": 0,
+      "heat": 0.0,
+      "children": [
+        {
+          "id": "D",
+          "name": "Deployment",
+          "score": 0,
+          "heat": 0.0,
+          "children": []
+        },
+        {
+          "id": "AAS",
+          "name": "AccessAndSupport",
+          "score": 0,
+          "heat": 0.0,
+          "children": []
+        },
+        {
+          "id": "FO",
+          "name": "FieldOperations",
+          "score": 0,
+          "heat": 0.0,
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": "EAUM",
+      "name": "EstimationAndUncertaintyModeling",
+      "score": 8.0,
+      "heat": 0.42105263157894735,
+      "children": [
+        {
+          "id": "UM",
+          "name": "UncertaintyModeling",
+          "score": 5.0,
+          "heat": 0.5555555555555556,
+          "children": []
+        },
+        {
+          "id": "CS2",
+          "name": "ConfidenceScoring",
+          "score": 0,
+          "heat": 0.0,
+          "children": []
+        },
+        {
+          "id": "PE",
+          "name": "PredictiveEstimation",
+          "score": 5.0,
+          "heat": 0.5555555555555556,
+          "children": []
+        },
+        {
+          "id": "RFAE",
+          "name": "RiskFusionAndEffectiveness",
+          "score": 6.0,
+          "heat": 0.6666666666666666,
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": "TAES",
+      "name": "TestAndEvaluationScenarios",
+      "score": 0,
+      "heat": 0.0,
+      "children": [
+        {
+          "id": "SB",
+          "name": "SystemBenchmarks",
+          "score": 0,
+          "heat": 0.0,
+          "children": []
+        },
+        {
+          "id": "OS",
+          "name": "OperationalScenarios",
+          "score": 0,
+          "heat": 0.0,
+          "children": []
+        },
+        {
+          "id": "RS",
+          "name": "RecordabilityScenarios",
+          "score": 0,
+          "heat": 0.0,
+          "children": []
+        },
+        {
+          "id": "TS",
+          "name": "TraceabilityScenarios",
+          "score": 0,
+          "heat": 0.0,
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": "MAAT",
+      "name": "MissionAuditAndTraceability",
+      "score": 15.5,
+      "heat": 0.8157894736842105,
+      "children": [
+        {
+          "id": "ML",
+          "name": "MissionLogging",
+          "score": 0,
+          "heat": 0.0,
+          "children": []
+        },
+        {
+          "id": "MAR",
+          "name": "MetadataAndRecords",
+          "score": 8.0,
+          "heat": 0.8888888888888888,
+          "children": []
+        },
+        {
+          "id": "CAV",
+          "name": "ChecklistAndVerification",
+          "score": 2.5,
+          "heat": 0.2777777777777778,
+          "children": []
+        },
+        {
+          "id": "RAR2",
+          "name": "RecordAndReplay",
+          "score": 0,
+          "heat": 0.0,
+          "children": []
+        },
+        {
+          "id": "PR",
+          "name": "PerformanceRatios",
+          "score": 0,
+          "heat": 0.0,
+          "children": []
+        },
+        {
+          "id": "EM",
+          "name": "EffectivenessMetrics",
+          "score": 0,
+          "heat": 0.0,
+          "children": []
+        },
+        {
+          "id": "DP",
+          "name": "DecisionProvenance",
+          "score": 7.0,
+          "heat": 0.7777777777777778,
+          "children": []
+        },
+        {
+          "id": "PEL",
+          "name": "PlanExecutionLinkage",
+          "score": 3.0,
+          "heat": 0.3333333333333333,
+          "children": []
+        },
+        {
+          "id": "VAT",
+          "name": "VersioningAndTemplates",
+          "score": 0,
+          "heat": 0.0,
+          "children": []
+        },
+        {
+          "id": "SAR",
+          "name": "SearchAndRetrieval",
+          "score": 0,
+          "heat": 0.0,
+          "children": []
+        },
+        {
+          "id": "RAG",
+          "name": "RetentionAndGovernance",
+          "score": 0,
+          "heat": 0.0,
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": "IAF",
+      "name": "IntegrationAndFeedback",
+      "score": 1.0,
+      "heat": 0.05263157894736842,
+      "children": [
+        {
+          "id": "PMI",
+          "name": "PostMissionIntegration",
+          "score": 0,
+          "heat": 0.0,
+          "children": []
+        },
+        {
+          "id": "LF",
+          "name": "LearningFeedback",
+          "score": 1.0,
+          "heat": 0.1111111111111111,
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": "SAG",
+      "name": "StandardsAndGovernance",
+      "score": 16.5,
+      "heat": 0.868421052631579,
+      "children": [
+        {
+          "id": "SA2",
+          "name": "StandardsAdequacy",
+          "score": 3.0,
+          "heat": 0.3333333333333333,
+          "children": []
+        },
+        {
+          "id": "FAC",
+          "name": "FormatAndContent",
+          "score": 7.0,
+          "heat": 0.7777777777777778,
+          "children": []
+        },
+        {
+          "id": "IP",
+          "name": "InteroperabilityProfiles",
+          "score": 5.0,
+          "heat": 0.5555555555555556,
+          "children": []
+        },
+        {
+          "id": "CAS",
+          "name": "CapacityAndScalability",
+          "score": 0,
+          "heat": 0.0,
+          "children": []
+        },
+        {
+          "id": "CAH",
+          "name": "ClassificationAndHandling",
+          "score": 0,
+          "heat": 0.0,
+          "children": []
+        },
+        {
+          "id": "IAS",
+          "name": "IdentityAndSignoff",
+          "score": 3.5,
+          "heat": 0.3888888888888889,
+          "children": []
+        },
+        {
+          "id": "AC",
+          "name": "AccessControl",
+          "score": 5.0,
+          "heat": 0.5555555555555556,
+          "children": []
+        },
+        {
+          "id": "CAP",
+          "name": "ComplianceAndPolicy",
+          "score": 3.0,
+          "heat": 0.3333333333333333,
+          "children": []
+        },
+        {
+          "id": "PAPII",
+          "name": "PrivacyAndPII",
+          "score": 0,
+          "heat": 0.0,
+          "children": []
+        }
+      ]
+    }
+  ],
+  "links": [
+    {
+      "source": "TAB",
+      "target": "EAUM",
+      "weight": 0
+    },
+    {
+      "source": "TAB",
+      "target": "EAOC",
+      "weight": 9.0
+    },
+    {
+      "source": "TAB",
+      "target": "DPAR",
+      "weight": 3.0
+    },
+    {
+      "source": "EAOC",
+      "target": "EAUM",
+      "weight": 5.0
+    },
+    {
+      "source": "EAOC",
+      "target": "TAB",
+      "weight": 9.0
+    },
+    {
+      "source": "EAOC",
+      "target": "VCAC",
+      "weight": 9.0
+    },
+    {
+      "source": "VCAC",
+      "target": "NAP",
+      "weight": 11.0
+    },
+    {
+      "source": "VCAC",
+      "target": "MPAO",
+      "weight": 0
+    },
+    {
+      "source": "VCAC",
+      "target": "EAUM",
+      "weight": 0
+    },
+    {
+      "source": "VCAC",
+      "target": "EAOC",
+      "weight": 9.0
+    },
+    {
+      "source": "VCAC",
+      "target": "TARM",
+      "weight": 2.0
+    },
+    {
+      "source": "NAP",
+      "target": "EAUM",
+      "weight": 0
+    },
+    {
+      "source": "NAP",
+      "target": "VCAC",
+      "weight": 11.0
+    },
+    {
+      "source": "NAP",
+      "target": "OL2",
+      "weight": 0
+    },
+    {
+      "source": "NAP",
+      "target": "TARM",
+      "weight": 5.0
+    },
+    {
+      "source": "MPAO",
+      "target": "EAUM",
+      "weight": 0
+    },
+    {
+      "source": "MPAO",
+      "target": "TARM",
+      "weight": 0
+    },
+    {
+      "source": "MPAO",
+      "target": "OL2",
+      "weight": 0
+    },
+    {
+      "source": "MPAO",
+      "target": "MAAT",
+      "weight": 2.5
+    },
+    {
+      "source": "MPAO",
+      "target": "SAG",
+      "weight": 1.5
+    },
+    {
+      "source": "TARM",
+      "target": "MPAO",
+      "weight": 0
+    },
+    {
+      "source": "TARM",
+      "target": "EAUM",
+      "weight": 0
+    },
+    {
+      "source": "TARM",
+      "target": "VCAC",
+      "weight": 2.0
+    },
+    {
+      "source": "TARM",
+      "target": "MAAT",
+      "weight": 0
+    },
+    {
+      "source": "TARM",
+      "target": "CAC",
+      "weight": 0
+    },
+    {
+      "source": "HACD",
+      "target": "EAUM",
+      "weight": 3.0
+    },
+    {
+      "source": "HACD",
+      "target": "DPAR",
+      "weight": 3.0
+    },
+    {
+      "source": "HACD",
+      "target": "MPAO",
+      "weight": 0
+    },
+    {
+      "source": "HACD",
+      "target": "MAAT",
+      "weight": 0
+    },
+    {
+      "source": "DPAR",
+      "target": "TAB",
+      "weight": 3.0
+    },
+    {
+      "source": "DPAR",
+      "target": "HACD",
+      "weight": 3.0
+    },
+    {
+      "source": "DPAR",
+      "target": "EAUM",
+      "weight": 5.0
+    },
+    {
+      "source": "DPAR",
+      "target": "MAAT",
+      "weight": 11.0
+    },
+    {
+      "source": "CAC",
+      "target": "VCAC",
+      "weight": 0
+    },
+    {
+      "source": "CAC",
+      "target": "TARM",
+      "weight": 0
+    },
+    {
+      "source": "CAC",
+      "target": "EAUM",
+      "weight": 0
+    },
+    {
+      "source": "OL2",
+      "target": "MPAO",
+      "weight": 0
+    },
+    {
+      "source": "OL2",
+      "target": "NAP",
+      "weight": 0
+    },
+    {
+      "source": "EAUM",
+      "target": "TAB",
+      "weight": 0
+    },
+    {
+      "source": "EAUM",
+      "target": "EAOC",
+      "weight": 5.0
+    },
+    {
+      "source": "EAUM",
+      "target": "DPAR",
+      "weight": 5.0
+    },
+    {
+      "source": "EAUM",
+      "target": "HACD",
+      "weight": 3.0
+    },
+    {
+      "source": "EAUM",
+      "target": "NAP",
+      "weight": 0
+    },
+    {
+      "source": "EAUM",
+      "target": "TARM",
+      "weight": 0
+    },
+    {
+      "source": "EAUM",
+      "target": "MPAO",
+      "weight": 0
+    },
+    {
+      "source": "TAES",
+      "target": "TARM",
+      "weight": 0
+    },
+    {
+      "source": "TAES",
+      "target": "VCAC",
+      "weight": 0
+    },
+    {
+      "source": "TAES",
+      "target": "DPAR",
+      "weight": 0
+    },
+    {
+      "source": "MAAT",
+      "target": "HACD",
+      "weight": 0
+    },
+    {
+      "source": "MAAT",
+      "target": "DPAR",
+      "weight": 11.0
+    },
+    {
+      "source": "MAAT",
+      "target": "TARM",
+      "weight": 0
+    },
+    {
+      "source": "MAAT",
+      "target": "EAUM",
+      "weight": 0
+    },
+    {
+      "source": "MAAT",
+      "target": "VCAC",
+      "weight": 3.0
+    },
+    {
+      "source": "MAAT",
+      "target": "SAG",
+      "weight": 8.5
+    },
+    {
+      "source": "IAF",
+      "target": "HACD",
+      "weight": 0
+    },
+    {
+      "source": "IAF",
+      "target": "MAAT",
+      "weight": 1.0
+    },
+    {
+      "source": "IAF",
+      "target": "MPAO",
+      "weight": 1.0
+    },
+    {
+      "source": "SAG",
+      "target": "DPAR",
+      "weight": 8.0
+    },
+    {
+      "source": "SAG",
+      "target": "MPAO",
+      "weight": 1.5
+    }
+  ]
+}

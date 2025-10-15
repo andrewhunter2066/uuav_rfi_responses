@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<style>
+    body {
+        font-family: sans-serif;
+    }
+
+    .node circle {
+        stroke: #555;
+        stroke-width: 1.5px;
+    }
+
+    .node text {
+        font: 12px sans-serif;
+        text-anchor: middle;
+    }
+
+    .link {
+        fill: none;
+        stroke: #999;
+        stroke-opacity: 0.6;
+    }
+
+    #container {
+        display: flex;
+        gap: 20px;
+    }
+
+    #legend {
+        font-size: 12px;
+        line-height: 1.4em;
+    }
+
+    #legend .title {
+        font-weight: bold;
+        margin-bottom: 8px;
+    }
+
+    #legend .mapping {
+        margin-top: 10px;
+    }
+</style>
+<body>
+<div id="container">
+    <svg id="cluster" width="800" height="800"></svg>
+    <div id="legend" width="300"></div>
+</div>
+
+<script src="https://d3js.org/d3.v7.min.js"></script>
+<script>
+    d3.json("heat_tree_data.json").then(function (data) {
+
+        const width = 800, height = 800;
+        const radius = width / 2 - 100;
+
+        const svg = d3.select("#cluster")
+            .attr("viewBox", [-width / 2, -height / 2, width, height]);
+
+        const root = {name: "Root", children: data.heat_tree};
+        const hierarchy = d3.hierarchy(root);
+
+        const cluster = d3.cluster().size([2 * Math.PI, radius]);
+        cluster(hierarchy);
+
+        // Scales
+        const colorScale = d3.scaleLinear()
+            .domain([0, 1])
+            .range(["#ccc", "#006400"]);
+
+        const maxScore = d3.max(hierarchy.descendants(), d => d.data.score || 0) || 1;
+        const sizeScale = d3.scaleSqrt().domain([0, maxScore]).range([3, 15]);
+
+        // Tree links (hierarchy)
+        svg.append("g")
+            .selectAll("path")
+            .data(hierarchy.links())
+            .join("path")
+            .attr("fill", "none")
+            .attr("stroke", "#ccc")
+            .attr("stroke-width", 1)
+            .attr("d", d3.linkRadial()
+                .angle(d => d.x)
+                .radius(d => d.y));
+
+        // Cross-domain links (extra edges)
+        svg.append("g")
+            .selectAll("line")
+            .data(data.links)
+            .join("line")
+            .attr("stroke", "darkgreen")
+            .attr("stroke-opacity", 0.5)
+            .attr("stroke-width", 1)
+            .attr("x1", d => {
+                let node = hierarchy.descendants().find(n => n.data.id === d.source);
+                return node ? node.y * Math.cos(node.x - Math.PI / 2) : 0;
+            })
+            .attr("y1", d => {
+                let node = hierarchy.descendants().find(n => n.data.id === d.source);
+                return node ? node.y * Math.sin(node.x - Math.PI / 2) : 0;
+            })
+            .attr("x2", d => {
+                let node = hierarchy.descendants().find(n => n.data.id === d.target);
+                return node ? node.y * Math.cos(node.x - Math.PI / 2) : 0;
+            })
+            .attr("y2", d => {
+                let node = hierarchy.descendants().find(n => n.data.id === d.target);
+                return node ? node.y * Math.sin(node.x - Math.PI / 2) : 0;
+            });
+
+        // Nodes
+        const node = svg.append("g")
+            .selectAll("g")
+            .data(hierarchy.descendants())
+            .join("g")
+            .attr("transform", d => {
+                const [x, y] = [d.x, d.y];
+                return `translate(${y * Math.cos(x - Math.PI / 2)}, ${y * Math.sin(x - Math.PI / 2)})`;
+            });
+
+        node.append("circle")
+            .attr("r", d => sizeScale(d.data.score || 0))
+            .attr("fill", d => colorScale(d.data.heat || 0));
+
+        node.append("text")
+            .attr("dy", "0.31em")
+            .attr("transform", d => {
+                // angle in degrees
+                const angle = (d.x * 180 / Math.PI) - 90;
+                // rotate text, flip if on the left half
+                const rotate = angle + (d.x >= Math.PI ? 180 : 0);
+
+                // distance = circle radius + padding
+                const r = sizeScale(d.data.score || 0);
+                const padding = 6;
+
+                // offset direction: outwards from the circle
+                const offset = (d.x < Math.PI ? (r + padding) : -(r + padding));
+
+                return `rotate(${rotate}) translate(${offset},0)`;
+            })
+            .attr("text-anchor", d => d.x >= Math.PI ? "end" : "start")
+            .text(d => d.data.id || "");
+
+        // Diagram Title
+        svg.append("text")
+            .attr("x", 0)
+            .attr("y", -height / 2 + 30)   // 30px down from the top edge
+            .attr("text-anchor", "middle") // center align
+            .style("font-size", "18px")
+            .style("font-weight", "bold")
+            .text("Mapping of Taxonomy to Project Requirements");
+
+        // ================= Legend in separate container =================
+        const legend = d3.select("#legend");
+
+        // --- Title ---
+        legend.append("div")
+            .attr("class", "title")
+            .style("font-weight", "bold")
+            .style("margin-bottom", "8px")
+            .text("Legend");
+
+        // --- Color scale (heat) ---
+        legend.append("div").text("Node color = coverage");
+
+        const colorLegend = legend.append("svg")
+            .attr("width", 160)
+            .attr("height", 50);
+
+        const defs = colorLegend.append("defs");
+        const gradient = defs.append("linearGradient")
+            .attr("id", "heat-gradient")
+            .attr("x1", "0%").attr("x2", "100%")
+            .attr("y1", "0%").attr("y2", "0%");
+        gradient.append("stop").attr("offset", "0%").attr("stop-color", "#ccc");
+        gradient.append("stop").attr("offset", "100%").attr("stop-color", "#006400");
+
+        colorLegend.append("rect")
+            .attr("x", 20).attr("y", 10)
+            .attr("width", 120).attr("height", 12)
+            .style("fill", "url(#heat-gradient)");
+
+        colorLegend.append("text").attr("x", 20).attr("y", 35).text("Low");
+        colorLegend.append("text").attr("x", 120).attr("y", 35).text("High");
+
+        // --- Node size (requirements count) ---
+        legend.append("div").style("margin-top", "12px")
+            .text("Node size = # of related requirements met");
+
+        const sizeLegend = legend.append("svg")
+            .attr("width", 200)
+            .attr("height", 50);
+
+        sizeLegend.append("circle")
+            .attr("cx", 30).attr("cy", 25)
+            .attr("r", sizeScale(1))
+            .attr("fill", "#ccc").attr("stroke", "#555");
+
+        sizeLegend.append("circle")
+            .attr("cx", 70).attr("cy", 25)
+            .attr("r", sizeScale(maxScore))
+            .attr("fill", "#006400").attr("stroke", "#555");
+
+        sizeLegend.append("text")
+            .attr("x", 110).attr("y", 30)
+            .text("fewer → more");
+
+        // --- Link thickness (optional) ---
+        legend.append("div").style("margin-top", "12px")
+            .text("Green Links: Related-To");
+
+        legend.append("div").style("margin-top", "12px")
+            .text("Gray Links: Domain - Concept");
+
+        const linkLegend = legend.append("svg")
+            .attr("width", 200)
+            .attr("height", 40);
+
+        // --- Acronym mapping ---
+        legend.append("div").style("margin-top", "12px")
+            .text("Domain Acronyms:");
+
+        legend.selectAll(".maptext")
+            .data(data.heat_tree)
+            .join("div")
+            .attr("class", "maptext")
+            .style("margin-left", "10px")
+            .text(d => `${d.id}: ${d.name}`);
+
+    });
+</script>
+</body>
