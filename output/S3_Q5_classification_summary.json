@@ -1,19 +1,18 @@
 {
   "child_summary": {
     "Surface Features": 2,
-    "uncategorised": 11,
-    "Physical Processes": 1,
-    "Environmental Context": 1,
-    "Objectives": 1,
-    "Hardware": 2,
-    "Bathymetric Data Products": 2,
+    "uncategorised": 10,
+    "Physical Processes": 2,
+    "Hardware": 3,
+    "Objectives": 2,
+    "Bathymetric Data Products": 1,
     "Measurement And Models": 2
   },
   "parent_summary": {
-    "Terrain And Bathymetry": 4,
-    "uncategorised": 11,
+    "Terrain And Bathymetry": 3,
+    "uncategorised": 10,
     "Environmental And Oceanographic Conditions": 4,
-    "Mission Parameters And Objectives": 1,
-    "Vehicle Capabilities And Constraints": 2
+    "Vehicle Capabilities And Constraints": 3,
+    "Mission Parameters And Objectives": 2
   }
 }

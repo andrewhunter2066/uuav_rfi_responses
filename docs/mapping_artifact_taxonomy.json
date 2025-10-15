@@ -1,0 +1,70 @@
+{
+  "ArtifactToDomainMap": {
+    "Data": {
+      "SupportsDomains": [
+        "NavigationAndPositioning",
+        "TerrainAndBathymetry",
+        "EnvironmentalAndOceanographicConditions",
+        "VehicleCapabilitiesAndConstraints",
+        "DataProductsAndRequirements",
+        "EstimationAndUncertaintyModeling",
+        "MissionAuditAndTraceability",
+        "ThreatsAndRiskManagement"
+      ],
+      "Rationale": "Data artifacts include raw sensor data, bathymetry, environmental models, and mission logs. These are the backbone inputs and outputs across most mission planning domains."
+    },
+    "Services": {
+      "SupportsDomains": [
+        "EnvironmentalAndOceanographicConditions",
+        "DataProductsAndRequirements",
+        "StandardsAndGovernance"
+      ],
+      "Rationale": "Service artifacts (APIs, external connectors, integration pipelines) support ingestion of environmental data, fusion of geospatial formats, and interoperability standards."
+    },
+    "Workflows": {
+      "SupportsDomains": [
+        "NavigationAndPositioning",
+        "MissionParametersAndObjectives",
+        "ThreatsAndRiskManagement",
+        "EstimationAndUncertaintyModeling",
+        "IntegrationAndFeedback"
+      ],
+      "Rationale": "Workflow artifacts model how missions are planned, optimised, executed, and iteratively refined. They link closely to navigation, risk management, and planning objectives."
+    },
+    "UI/UX": {
+      "SupportsDomains": [
+        "MissionParametersAndObjectives",
+        "MissionAuditAndTraceability",
+        "StandardsAndGovernance"
+      ],
+      "Rationale": "UI artifacts (interfaces, provenance displays, LLM interactions) support user suitability, audit traceability, and compliant visualisation of metadata."
+    },
+    "Architecture": {
+      "SupportsDomains": [
+        "VehicleCapabilitiesAndConstraints",
+        "NavigationAndPositioning",
+        "StandardsAndGovernance",
+        "ThreatsAndRiskManagement"
+      ],
+      "Rationale": "Architecture artifacts cover vehicle integration, standalone solutions, performance constraints, and secure system design."
+    },
+    "Ops/Governance": {
+      "SupportsDomains": [
+        "MissionAuditAndTraceability",
+        "ThreatsAndRiskManagement",
+        "StandardsAndGovernance",
+        "DataProductsAndRequirements"
+      ],
+      "Rationale": "Operational and governance artifacts (cyber worthiness, testing, compliance logs, data retention) underpin safety, accountability, and regulatory assurance."
+    },
+    "Documentation": {
+      "SupportsDomains": [
+        "MissionAuditAndTraceability",
+        "StandardsAndGovernance",
+        "DataProductsAndRequirements",
+        "HistoricalAndContextualData"
+      ],
+      "Rationale": "Documentation artifacts ensure audit trails, AI model specifications, data standards compliance, and lessons learned are preserved."
+    }
+  }
+}

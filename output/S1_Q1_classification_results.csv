@@ -2,62 +2,62 @@ ResponseID,ResponseText,PredictedChild,PredictedParent,ChildScores,ParentScores,
 1,optimal terrain analysis particularly identifying areas exceeding original equipment manufacturer-stipulated avoidance abort angles,Surface Features,Terrain And Bathymetry,"{'Surface Features': 1, 'System Constraints': 1, 'Response And Recovery': 1}","{'Terrain And Bathymetry': 1, 'Vehicle Capabilities And Constraints': 1, 'Threats And Risk Management': 1}",False,False,False
 1,optimal terrain analysis particularly identifying areas exceeding original equipment manufacturer-stipulated avoidance abort angles,Surface Features,Terrain And Bathymetry,"{'Surface Features': 1, 'System Constraints': 1, 'Response And Recovery': 1}","{'Terrain And Bathymetry': 1, 'Vehicle Capabilities And Constraints': 1, 'Threats And Risk Management': 1}",False,False,False
 2,current tidal stream predictions especially east australian current eac influence,Physical Processes,Environmental And Oceanographic Conditions,{'Physical Processes': 5},{'Environmental And Oceanographic Conditions': 5},False,False,False
-2,flow coordinate stream predictions especially east australian current eac influence,Physical Processes,Environmental And Oceanographic Conditions,{'Physical Processes': 4},{'Environmental And Oceanographic Conditions': 4},False,False,False
+2,current tidal stream predictions especially east australian current stream influence,Physical Processes,Environmental And Oceanographic Conditions,{'Physical Processes': 4},{'Environmental And Oceanographic Conditions': 4},False,False,False
 3,input speed requirements eg xx mps achieve mission objectives,Objectives,Mission Parameters And Objectives,"{'Performance': 1, 'Objectives': 2}","{'Vehicle Capabilities And Constraints': 1, 'Mission Parameters And Objectives': 2}",False,False,False
-3,input speed requirements eg course mps achieve mission objectives,Objectives,Mission Parameters And Objectives,"{'Performance': 1, 'Objectives': 2}","{'Vehicle Capabilities And Constraints': 1, 'Mission Parameters And Objectives': 2}",False,False,False
+3,resource speed requirements eg trajectory mps achieve mission objectives,Objectives,Mission Parameters And Objectives,"{'Performance': 1, 'Route And Trajectory': 1, 'Objectives': 2}","{'Vehicle Capabilities And Constraints': 1, 'Navigation And Positioning': 1, 'Mission Parameters And Objectives': 2}",False,False,False
 86,surface subsea traffic route,Route And Trajectory,Navigation And Positioning,{'Route And Trajectory': 1},{'Navigation And Positioning': 1},False,False,False
-86,ocean surface subsea traffic route,Environmental Context,Environmental And Oceanographic Conditions,"{'Environmental Context': 1, 'Route And Trajectory': 1}","{'Environmental And Oceanographic Conditions': 1, 'Navigation And Positioning': 1}",False,False,False
+86,surface subsea traffic route,Route And Trajectory,Navigation And Positioning,{'Route And Trajectory': 1},{'Navigation And Positioning': 1},False,False,False
 87,depth slope route area operations,Surface Features,Terrain And Bathymetry,"{'Surface Features': 1, 'Route And Trajectory': 1}","{'Terrain And Bathymetry': 1, 'Navigation And Positioning': 1}",False,False,False
-87,depth incline route area operations,Route And Trajectory,Navigation And Positioning,{'Route And Trajectory': 1},{'Navigation And Positioning': 1},False,False,False
+87,seafloor elevation slope route area operations,Surface Features,Terrain And Bathymetry,"{'Surface Features': 1, 'Seafloor Characterization': 1, 'Route And Trajectory': 1}","{'Terrain And Bathymetry': 2, 'Navigation And Positioning': 1}",False,False,False
 88,equipment limitations service capabilities,System Constraints,Vehicle Capabilities And Constraints,{'System Constraints': 1},{'Vehicle Capabilities And Constraints': 1},False,False,False
-88,equipment limitations service capacity,System Constraints,Vehicle Capabilities And Constraints,{'System Constraints': 1},{'Vehicle Capabilities And Constraints': 1},False,False,False
+88,equipment limitations service ability,System Constraints,Vehicle Capabilities And Constraints,{'System Constraints': 1},{'Vehicle Capabilities And Constraints': 1},False,False,False
 89,bottom texture route area operations,Seafloor Characterization,Terrain And Bathymetry,"{'Seafloor Characterization': 1, 'Route And Trajectory': 1}","{'Terrain And Bathymetry': 1, 'Navigation And Positioning': 1}",False,False,False
-89,bottom texture planned line area operations,Seafloor Characterization,Terrain And Bathymetry,{'Seafloor Characterization': 1},{'Terrain And Bathymetry': 1},False,False,False
+89,bottom texture route area operations,Seafloor Characterization,Terrain And Bathymetry,"{'Seafloor Characterization': 1, 'Route And Trajectory': 1}","{'Terrain And Bathymetry': 1, 'Navigation And Positioning': 1}",False,False,False
 90,seafloor classification infrastructure route area operations,Survey Data,Data Products And Requirements,"{'Seafloor Characterization': 1, 'Route And Trajectory': 1, 'Survey Data': 2}","{'Terrain And Bathymetry': 1, 'Navigation And Positioning': 1, 'Data Products And Requirements': 2}",False,False,False
-90,seafloor categorization infrastructure route area operations,Seafloor Characterization,Terrain And Bathymetry,"{'Seafloor Characterization': 1, 'Route And Trajectory': 1, 'Survey Data': 1}","{'Terrain And Bathymetry': 1, 'Navigation And Positioning': 1, 'Data Products And Requirements': 1}",False,False,False
+90,seafloor classification route infrastructure route area operations,Survey Data,Data Products And Requirements,"{'Seafloor Characterization': 1, 'Route And Trajectory': 1, 'Survey Data': 2}","{'Terrain And Bathymetry': 1, 'Navigation And Positioning': 1, 'Data Products And Requirements': 2}",False,False,False
 91,ephemeral current tides route area operations,Physical Processes,Environmental And Oceanographic Conditions,"{'Physical Processes': 1, 'Route And Trajectory': 1}","{'Environmental And Oceanographic Conditions': 1, 'Navigation And Positioning': 1}",False,False,False
-91,ephemeral tide tides route area operations,Route And Trajectory,Navigation And Positioning,{'Route And Trajectory': 1},{'Navigation And Positioning': 1},False,False,False
+91,ephemeral current tides route area mission,Physical Processes,Environmental And Oceanographic Conditions,"{'Physical Processes': 1, 'Route And Trajectory': 1, 'Objectives': 1}","{'Environmental And Oceanographic Conditions': 1, 'Navigation And Positioning': 1, 'Mission Parameters And Objectives': 1}",False,False,False
 92,threat assessment cyber risk mission,Hazards,Threats And Risk Management,"{'Objectives': 1, 'Hazards': 2, 'Safety And Mitigation': 1}","{'Mission Parameters And Objectives': 1, 'Threats And Risk Management': 3}",False,False,False
-92,threat assessment cyber risk task,Hazards,Threats And Risk Management,"{'Objectives': 1, 'Hazards': 2, 'Safety And Mitigation': 1}","{'Mission Parameters And Objectives': 1, 'Threats And Risk Management': 3}",False,False,False
+92,threat survey cyber risk mission,Hazards,Threats And Risk Management,"{'Objectives': 1, 'Hazards': 2, 'Safety And Mitigation': 1}","{'Mission Parameters And Objectives': 1, 'Threats And Risk Management': 3}",False,False,False
 93,timings hard left right,Temporal Aspects,Mission Parameters And Objectives,{'Temporal Aspects': 1},{'Mission Parameters And Objectives': 1},False,False,False
 93,schedule hard left right,uncategorised,uncategorised,{},{},False,False,False
 94,water column data route area operations,Measurement And Models,Environmental And Oceanographic Conditions,"{'Measurement And Models': 1, 'Route And Trajectory': 1}","{'Environmental And Oceanographic Conditions': 1, 'Navigation And Positioning': 1}",False,False,False
 94,water column data route area operations,Measurement And Models,Environmental And Oceanographic Conditions,"{'Measurement And Models': 1, 'Route And Trajectory': 1}","{'Environmental And Oceanographic Conditions': 1, 'Navigation And Positioning': 1}",False,False,False
 95,launch recovery locations parameters,Deployment,Operational Logistics,"{'System Constraints': 1, 'Response And Recovery': 1, 'Deployment': 2, 'Access And Support': 1}","{'Vehicle Capabilities And Constraints': 1, 'Threats And Risk Management': 1, 'Operational Logistics': 3}",False,False,False
-95,launch return locations parameters,System Constraints,Vehicle Capabilities And Constraints,"{'System Constraints': 1, 'Deployment': 1}","{'Vehicle Capabilities And Constraints': 1, 'Operational Logistics': 1}",False,False,False
+95,release recovery locations parameters,System Constraints,Operational Logistics,"{'System Constraints': 1, 'Response And Recovery': 1, 'Deployment': 1, 'Access And Support': 1}","{'Vehicle Capabilities And Constraints': 1, 'Threats And Risk Management': 1, 'Operational Logistics': 2}",False,False,False
 96,sensor range fitted vehicle,Performance,Vehicle Capabilities And Constraints,"{'Performance': 1, 'Hardware': 1}",{'Vehicle Capabilities And Constraints': 2},False,False,False
-96,payload range fitted vehicle,Performance,Vehicle Capabilities And Constraints,"{'Performance': 1, 'Hardware': 1}",{'Vehicle Capabilities And Constraints': 2},False,False,False
+96,sensor range fitted uuv,Performance,Vehicle Capabilities And Constraints,"{'Performance': 1, 'Hardware': 1}",{'Vehicle Capabilities And Constraints': 2},False,False,False
 97,endurance vehicle,Performance,Vehicle Capabilities And Constraints,{'Performance': 1},{'Vehicle Capabilities And Constraints': 1},False,False,False
-97,endurance uuv,Performance,Vehicle Capabilities And Constraints,{'Performance': 1},{'Vehicle Capabilities And Constraints': 1},False,False,False
+97,range vehicle,Performance,Vehicle Capabilities And Constraints,{'Performance': 1},{'Vehicle Capabilities And Constraints': 1},False,False,False
 98,maximum depth vehicle,uncategorised,uncategorised,{},{},False,False,False
-98,maximum depth vessel,uncategorised,uncategorised,{},{},False,False,False
+98,maximum depth vehicle,uncategorised,uncategorised,{},{},False,False,False
 99,active sensor collection requirements,uncategorised,uncategorised,{},{},False,False,False
-99,active sensor collection specification,uncategorised,uncategorised,{},{},False,False,False
+99,active sensor measurement requirements,uncategorised,uncategorised,{},{},False,False,False
 100,global positioning system fixing requirements frequency,Navigation Systems,Navigation And Positioning,"{'Navigation Systems': 1, 'Accuracy And Hazards': 1, 'Comms Infrastructure': 1}","{'Navigation And Positioning': 2, 'Communications And Control': 1}",False,False,False
-100,global positioning system fixing requirements sampling rate,Navigation Systems,Navigation And Positioning,"{'Navigation Systems': 1, 'Accuracy And Hazards': 1}",{'Navigation And Positioning': 2},False,False,False
+100,global positioning platform fixing requirements frequency,Comms Infrastructure,Communications And Control,{'Comms Infrastructure': 1},{'Communications And Control': 1},False,False,False
 101,accuracy requirements sensors,Accuracy And Hazards,Navigation And Positioning,{'Accuracy And Hazards': 1},{'Navigation And Positioning': 1},False,False,False
-101,precision requirements sensors,uncategorised,uncategorised,{},{},False,False,False
+101,accuracy criterion sensors,Accuracy And Hazards,Navigation And Positioning,{'Accuracy And Hazards': 1},{'Navigation And Positioning': 1},False,False,False
 102,accuracy requirements navigation,Route And Trajectory,Navigation And Positioning,"{'Route And Trajectory': 1, 'Accuracy And Hazards': 1}",{'Navigation And Positioning': 2},False,False,False
-102,accuracy requirements wayfinding,Accuracy And Hazards,Navigation And Positioning,{'Accuracy And Hazards': 1},{'Navigation And Positioning': 1},False,False,False
+102,accuracy requirements routing,Accuracy And Hazards,Navigation And Positioning,{'Accuracy And Hazards': 1},{'Navigation And Positioning': 1},False,False,False
 103,minimum depth vehicle,uncategorised,uncategorised,{},{},False,False,False
-103,minimum underwater depth vehicle,uncategorised,uncategorised,{},{},False,False,False
+103,minimum depth craft,uncategorised,uncategorised,{},{},False,False,False
 104,vector electronic navigational charts data route area operations,Route And Trajectory,Navigation And Positioning,"{'Quality And Confidence': 1, 'Route And Trajectory': 2}","{'Terrain And Bathymetry': 1, 'Navigation And Positioning': 2}",False,False,False
-104,vector electronic navigational charts data route area operations,Route And Trajectory,Navigation And Positioning,"{'Quality And Confidence': 1, 'Route And Trajectory': 2}","{'Terrain And Bathymetry': 1, 'Navigation And Positioning': 2}",False,False,False
+104,vector electronic navigational electronic chart data path area operations,Route And Trajectory,Navigation And Positioning,{'Route And Trajectory': 1},{'Navigation And Positioning': 1},False,False,False
 105,vehicle speed limitations parameters,Performance,Vehicle Capabilities And Constraints,"{'Performance': 1, 'System Constraints': 1}",{'Vehicle Capabilities And Constraints': 2},False,False,False
-105,vehicle speed limitations attribute,Performance,Vehicle Capabilities And Constraints,{'Performance': 1},{'Vehicle Capabilities And Constraints': 1},False,False,False
+105,vehicle speed limitations input,Performance,Vehicle Capabilities And Constraints,{'Performance': 1},{'Vehicle Capabilities And Constraints': 1},False,False,False
 106,vehicle communication requirements,Hardware,Vehicle Capabilities And Constraints,"{'Hardware': 1, 'Performance Constraints': 1, 'Comms Infrastructure': 1}","{'Vehicle Capabilities And Constraints': 2, 'Communications And Control': 1}",False,False,False
-106,auv communication requirements,Hardware,Vehicle Capabilities And Constraints,"{'Hardware': 1, 'Comms Infrastructure': 1}","{'Vehicle Capabilities And Constraints': 1, 'Communications And Control': 1}",False,False,False
+106,vehicle comms requirements,uncategorised,uncategorised,{},{},False,False,False
 107,navigational hazards route area operations,Route And Trajectory,Navigation And Positioning,"{'Route And Trajectory': 2, 'Accuracy And Hazards': 1, 'Hazards': 2}","{'Navigation And Positioning': 3, 'Threats And Risk Management': 2}",False,False,False
-107,navigational restriction route area operations,Route And Trajectory,Navigation And Positioning,{'Route And Trajectory': 2},{'Navigation And Positioning': 2},False,False,False
+107,navigational hazards planned line area operations,Hazards,Navigation And Positioning,"{'Route And Trajectory': 1, 'Accuracy And Hazards': 1, 'Hazards': 2}","{'Navigation And Positioning': 2, 'Threats And Risk Management': 2}",False,False,False
 108,no-go zones route area operations,Route And Trajectory,Navigation And Positioning,"{'Route And Trajectory': 1, 'Accuracy And Hazards': 1}",{'Navigation And Positioning': 2},False,False,False
 108,no-go zones route area operations,Route And Trajectory,Navigation And Positioning,"{'Route And Trajectory': 1, 'Accuracy And Hazards': 1}",{'Navigation And Positioning': 2},False,False,False
 109,dive ascent process time,uncategorised,uncategorised,{},{},False,False,False
-109,geo-fix ascent process time,uncategorised,uncategorised,{},{},False,False,False
+109,coordinate ascent process time,uncategorised,uncategorised,{},{},False,False,False
 110,actions loss communications loss vehicle etc,Hardware,Vehicle Capabilities And Constraints,"{'Hardware': 1, 'Comms Infrastructure': 1}","{'Vehicle Capabilities And Constraints': 1, 'Communications And Control': 1}",False,False,False
-110,actions loss communications malfunction vehicle etc,Hardware,Vehicle Capabilities And Constraints,"{'Hardware': 1, 'Comms Infrastructure': 1}","{'Vehicle Capabilities And Constraints': 1, 'Communications And Control': 1}",False,False,False
+110,actions loss data link loss vehicle etc,Comms Infrastructure,Communications And Control,"{'Comms Infrastructure': 1, 'Control Systems': 1}",{'Communications And Control': 2},False,False,False
 111,search area area operations coordinates,Spatial Reference,Navigation And Positioning,"{'Spatial Reference': 1, 'Spatial Aspects': 1}","{'Navigation And Positioning': 1, 'Mission Parameters And Objectives': 1}",False,False,False
-111,search area area operations coordinates,Spatial Reference,Navigation And Positioning,"{'Spatial Reference': 1, 'Spatial Aspects': 1}","{'Navigation And Positioning': 1, 'Mission Parameters And Objectives': 1}",False,False,False
+111,search area area undertaking coordinates,Spatial Reference,Navigation And Positioning,"{'Spatial Reference': 1, 'Spatial Aspects': 1}","{'Navigation And Positioning': 1, 'Mission Parameters And Objectives': 1}",False,False,False
 112,mission collection requirements,Objectives,Mission Parameters And Objectives,{'Objectives': 1},{'Mission Parameters And Objectives': 1},False,False,False
-112,mission collection need,Objectives,Mission Parameters And Objectives,{'Objectives': 1},{'Mission Parameters And Objectives': 1},False,False,False
+112,mission measurement requirements,Objectives,Mission Parameters And Objectives,{'Objectives': 1},{'Mission Parameters And Objectives': 1},False,False,False
 113,zone confidence route area operations,Route And Trajectory,Navigation And Positioning,{'Route And Trajectory': 1},{'Navigation And Positioning': 1},False,False,False
-113,zone confidence corridor area operations,uncategorised,uncategorised,{},{},False,False,False
+113,zone confidence route area of operation operations,Route And Trajectory,Navigation And Positioning,"{'Route And Trajectory': 1, 'Spatial Aspects': 1, 'Field Operations': 1}","{'Navigation And Positioning': 1, 'Mission Parameters And Objectives': 1, 'Operational Logistics': 1}",False,False,False

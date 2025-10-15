@@ -14,7 +14,7 @@
   },
   {
     "ResponseID":"8",
-    "ResponseText":"use standard error limits define acceptable variance route scheduling",
+    "ResponseText":"use standard uncertainty limits define acceptable variance corridor planning",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -40,7 +40,7 @@
   },
   {
     "ResponseID":"9",
-    "ResponseText":"incorporation environmental uncertainty simulation refine estimations",
+    "ResponseText":"incorporation environmental uncertainty models refine estimations",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -92,7 +92,7 @@
   },
   {
     "ResponseID":"127",
-    "ResponseText":"ocean conditions conditions endurance launch recovery systems mission speed sensor performance rules engagement etc understanding",
+    "ResponseText":"understanding environmental conditions endurance deployment recovery platform mission speed sensor performance rules engagement etc",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -118,7 +118,7 @@
   },
   {
     "ResponseID":"128",
-    "ResponseText":"rules engagement coverage inform timings",
+    "ResponseText":"rules engagement coverage inform schedule",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -144,7 +144,7 @@
   },
   {
     "ResponseID":"129",
-    "ResponseText":"time surface risk surfacing covert surface traffic deviation",
+    "ResponseText":"time surface hazard top layer covert surface traffic accuracy",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -170,7 +170,7 @@
   },
   {
     "ResponseID":"130",
-    "ResponseText":"rules engagement line spacing",
+    "ResponseText":"rules engagement coordinate spacing",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -196,7 +196,7 @@
   },
   {
     "ResponseID":"131",
-    "ResponseText":"confidence route planning maintaining geo-location",
+    "ResponseText":"confidence route planning maintaining position",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -222,7 +222,7 @@
   },
   {
     "ResponseID":"132",
-    "ResponseText":"informs area operations informs assets necessary",
+    "ResponseText":"informs area operations informs assets required",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -248,7 +248,7 @@
   },
   {
     "ResponseID":"134",
-    "ResponseText":"range host craft loiter time acoustic communications requirement safety vessel etc",
+    "ResponseText":"range host vessel range acoustic communications need safety rov etc",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -274,7 +274,7 @@
   },
   {
     "ResponseID":"135",
-    "ResponseText":"improves safety vehicle collision avoidance tactics route selection etc",
+    "ResponseText":"improves safety vehicle collision avoidance tactics path selection etc",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -326,7 +326,7 @@
   },
   {
     "ResponseID":"137",
-    "ResponseText":"confidence understanding area operations",
+    "ResponseText":"route confidence understanding area operations",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,

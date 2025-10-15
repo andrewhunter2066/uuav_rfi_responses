@@ -115,6 +115,13 @@ FILES_TO_MOVE_TO_OUTPUT = [
     "output/S4_Task 6_classification_summary.json",
     "output/S4_Task 6_classification_summary_child.csv",
     "output/S4_Task 6_classification_summary_parent.csv",
+    "docs/reduced_mission_planning_taxonomy.json",
+    "docs/mapping_requirements_taxonomy.json",
+    "docs/mapping_taxonomy_requirement.json",
+    "docs/mission_planning_taxonomy descriptions.md",
+    "output/RFI_report.md",
+    "docs/Coverage Report.md",
+    "docs/mapping_artifact_taxonomy.json"
 ]
 
 # Target repo (can be local or remote)

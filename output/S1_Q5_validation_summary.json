@@ -14,7 +14,7 @@
   },
   {
     "ResponseID":"13",
-    "ResponseText":"navigation off-track drift confined choke-point aquatic sensor degradation failure",
+    "ResponseText":"navigation drift confined choke-point waters payload degradation failure",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -40,7 +40,7 @@
   },
   {
     "ResponseID":"14",
-    "ResponseText":"environmental anomalies route unexpected currents bottom features",
+    "ResponseText":"environmental deviation eg unexpected currents seafloor features",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -92,7 +92,7 @@
   },
   {
     "ResponseID":"152",
-    "ResponseText":"estimated battery completion sortie",
+    "ResponseText":"estimated battery completion mission",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -118,7 +118,7 @@
   },
   {
     "ResponseID":"153",
-    "ResponseText":"potential acoustic telemetry performance issues",
+    "ResponseText":"potential acoustic communications efficiency issues",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -144,7 +144,7 @@
   },
   {
     "ResponseID":"154",
-    "ResponseText":"input damage grounding event occurs",
+    "ResponseText":"factor damage grounding event precision",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -170,7 +170,7 @@
   },
   {
     "ResponseID":"155",
-    "ResponseText":"coverage area operations achievable elapsed time limitations",
+    "ResponseText":"coverage area operations achievable time limitations",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -196,7 +196,7 @@
   },
   {
     "ResponseID":"156",
-    "ResponseText":"potential buoyancy factors marine column information",
+    "ResponseText":"potential buoyancy factors water column information",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -222,7 +222,7 @@
   },
   {
     "ResponseID":"157",
-    "ResponseText":"dataset time location surface",
+    "ResponseText":"total elapsed time location surface",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,

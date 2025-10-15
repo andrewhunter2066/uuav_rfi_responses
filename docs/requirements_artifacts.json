@@ -1,0 +1,94 @@
+{
+  "ArtifactMapping": [
+    {
+      "RequirementID": "AURRP-01",
+      "RequirementName": "Route Planning",
+      "Artifacts": ["Data", "Workflows", "Architecture"]
+    },
+    {
+      "RequirementID": "AURRP-02",
+      "RequirementName": "Sensor Interface",
+      "Artifacts": ["Data", "Services", "Architecture", "Ops/Governance"]
+    },
+    {
+      "RequirementID": "AURRP-03",
+      "RequirementName": "Contribute to the UUV navigation",
+      "Artifacts": ["Data", "Workflows", "Architecture"]
+    },
+    {
+      "RequirementID": "AURRP-04",
+      "RequirementName": "Ingest Environmental Data",
+      "Artifacts": ["Data", "Services", "Workflows"]
+    },
+    {
+      "RequirementID": "AURRP-05",
+      "RequirementName": "Leverage LLMs",
+      "Artifacts": ["Workflows", "UI/UX", "Ops/Governance"]
+    },
+    {
+      "RequirementID": "AURRP-06",
+      "RequirementName": "Route planning software to enhance productivity",
+      "Artifacts": ["UI/UX", "Workflows", "Ops/Governance"]
+    },
+    {
+      "RequirementID": "AURRP-07",
+      "RequirementName": "User Suitability",
+      "Artifacts": ["UI/UX", "Workflows"]
+    },
+    {
+      "RequirementID": "AURRP-09",
+      "RequirementName": "Data Fusion",
+      "Artifacts": ["Data", "Services", "Architecture", "Ops/Governance"]
+    },
+    {
+      "RequirementID": "AURRP-10",
+      "RequirementName": "Solution must be standalone",
+      "Artifacts": ["Architecture", "Ops/Governance"]
+    },
+    {
+      "RequirementID": "AURRP-11",
+      "RequirementName": "Read Only",
+      "Artifacts": ["Data", "Ops/Governance"]
+    },
+    {
+      "RequirementID": "AURRP-12",
+      "RequirementName": "Cyber worthiness",
+      "Artifacts": ["Ops/Governance", "Architecture"]
+    },
+    {
+      "RequirementID": "AURRP-13",
+      "RequirementName": "System Flexibility",
+      "Artifacts": ["Architecture", "Services", "Ops/Governance"]
+    },
+    {
+      "RequirementID": "AURRP-14",
+      "RequirementName": "AI Model Specification",
+      "Artifacts": ["Data", "Ops/Governance", "Documentation"]
+    },
+    {
+      "RequirementID": "AURRP-15",
+      "RequirementName": "Platform Agnostic Design",
+      "Artifacts": ["Architecture", "Workflows"]
+    },
+    {
+      "RequirementID": "AURRP-16",
+      "RequirementName": "Route Optimisation",
+      "Artifacts": ["Data", "Workflows", "Architecture"]
+    },
+    {
+      "RequirementID": "AURRP-17",
+      "RequirementName": "Adaptability to uncertain environments",
+      "Artifacts": ["Data", "Workflows", "Ops/Governance"]
+    },
+    {
+      "RequirementID": "AURRP-18",
+      "RequirementName": "Obstacle Avoidance",
+      "Artifacts": ["Data", "Workflows", "Architecture", "Ops/Governance"]
+    },
+    {
+      "RequirementID": "AURRP-19",
+      "RequirementName": "AI to be self documenting",
+      "Artifacts": ["Data", "Ops/Governance", "Documentation"]
+    }
+  ]
+}

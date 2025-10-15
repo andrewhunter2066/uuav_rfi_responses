@@ -40,7 +40,7 @@
   },
   {
     "ResponseID":"65",
-    "ResponseText":"mission logs detailing approach climate outcomes",
+    "ResponseText":"mission outage detailing approach conditions outcomes",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -66,7 +66,7 @@
   },
   {
     "ResponseID":"66",
-    "ResponseText":"feature detection records confidence display",
+    "ResponseText":"feature detection records confidence scores",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -92,7 +92,7 @@
   },
   {
     "ResponseID":"67",
-    "ResponseText":"post-mission after-action report beach viability landing success",
+    "ResponseText":"post-mission feedback beach steady state landing success",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -144,7 +144,7 @@
   },
   {
     "ResponseID":"319",
-    "ResponseText":"signatory utilize account information",
+    "ResponseText":"signatory user account information",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -170,7 +170,7 @@
   },
   {
     "ResponseID":"320",
-    "ResponseText":"specific job files consumption template",
+    "ResponseText":"specific job files load job file",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -196,7 +196,7 @@
   },
   {
     "ResponseID":"321",
-    "ResponseText":"time task versus completion factors course",
+    "ResponseText":"time task versus completion factors ratio",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -222,7 +222,7 @@
   },
   {
     "ResponseID":"322",
-    "ResponseText":"holes data sensor performance issues",
+    "ResponseText":"holes data instrument performance issues",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -300,7 +300,7 @@
   },
   {
     "ResponseID":"325",
-    "ResponseText":"automated procedure log entry contacts",
+    "ResponseText":"automated procedure record contacts",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,

@@ -14,7 +14,7 @@
   },
   {
     "ResponseID":"35",
-    "ResponseText":"gaps multibeam echo sounder area covered missed features",
+    "ResponseText":"gaps multibeam echo sounder coverage missed features",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -40,7 +40,7 @@
   },
   {
     "ResponseID":"36",
-    "ResponseText":"payload degradation calibration drift",
+    "ResponseText":"sensor degradation calibration offset",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -66,7 +66,7 @@
   },
   {
     "ResponseID":"37",
-    "ResponseText":"inability detect critical seabed features area of operation granularity limits",
+    "ResponseText":"steady state signal data critical seabed features due resolution limits",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -118,7 +118,7 @@
   },
   {
     "ResponseID":"231",
-    "ResponseText":"potential likelihood collision",
+    "ResponseText":"potential chance collision",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -144,7 +144,7 @@
   },
   {
     "ResponseID":"232",
-    "ResponseText":"projection battery completion mission",
+    "ResponseText":"estimated energy storage completion mission",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -170,7 +170,7 @@
   },
   {
     "ResponseID":"233",
-    "ResponseText":"potential acoustic communications performance issues",
+    "ResponseText":"potential acoustic link performance issues",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -196,7 +196,7 @@
   },
   {
     "ResponseID":"234",
-    "ResponseText":"factor damage grounding event error",
+    "ResponseText":"factor damage grounding event precision",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -222,7 +222,7 @@
   },
   {
     "ResponseID":"235",
-    "ResponseText":"coverage area mission achievable time limitations",
+    "ResponseText":"coverage sector operations achievable time limitations",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -248,7 +248,7 @@
   },
   {
     "ResponseID":"236",
-    "ResponseText":"potential buoyancy factors hydrographic column information",
+    "ResponseText":"potential buoyancy factors water column signal data",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -274,7 +274,7 @@
   },
   {
     "ResponseID":"237",
-    "ResponseText":"total time location sea surface",
+    "ResponseText":"total timing location surface",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,

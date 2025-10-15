@@ -1,0 +1,19 @@
+RequirementID,RequirementName,TaxonomyDomain,TaxonomyConcept,TraceabilityLevel,Rationale,Priority,VerificationMethod
+AURRP-01,Route Planning,NavigationAndPositioning,RouteAndTrajectory,Direct,"Route planning aligns directly with navigation routes, trajectories, and route selection confidence.","",Simulation/Test
+AURRP-02,Sensor Interface,VehicleCapabilitiesAndConstraints,Hardware,Direct,"Sensor interfacing depends on hardware payloads, comms, and integration constraints.","",Demonstration
+AURRP-03,Contribute to the UUV navigation,NavigationAndPositioning,NavigationSystems,Direct,"Comprehensive navigational picture requires integration of GNSS, INS, DVL, etc.","",Demonstration/Inspection
+AURRP-04,Ingest Environmental Data,EnvironmentalAndOceanographicConditions,PhysicalProcesses; WaterProperties,Direct,"Environmental inputs directly map to currents, tides, winds, turbidity, temperature, salinity, and density concepts.","",Analysis/Test
+AURRP-05,Leverage LLMs,MissionAuditAndTraceability,DecisionProvenance,Direct,"Use of LLMs for reasoning capture and provenance aligns with taxonomy’s decision logging and rationale capture.","",Demonstration
+AURRP-06,Route planning software to enhance productivity,MissionParametersAndObjectives,Objectives,Indirect,"Productivity enhancement aligns indirectly with achieving mission objectives without removing human oversight.","",Inspection/User Trials
+AURRP-07,User Suitability,MissionParametersAndObjectives,OperationalWindows (indirect),Indirect,"Ease of use links indirectly to mission scheduling/parameters and human factors; not a strict taxonomy fit but relevant.","",User Testing
+AURRP-09,Data Fusion,DataProductsAndRequirements,MetadataAndFormat; DataQuality,Direct,"Requirement maps to taxonomy concepts on metadata, formats, fusion, and standards compliance.","",Test/Demonstration
+AURRP-10,Solution must be standalone,StandardsAndGovernance,AccessControl; InteroperabilityProfiles,Direct,"Maps to taxonomy concepts of role-based access, interoperability, and standalone compliance.","",Inspection
+AURRP-11,Read Only,DataProductsAndRequirements,DataIntegrityAndResilience,Direct,"Maps directly to data integrity, anomaly, and duplication avoidance concepts.","",Analysis
+AURRP-12,Cyber worthiness,ThreatsAndRiskManagement,SafetyAndMitigation; AdversarialAndDetectionRisks,Direct,"Integrity maps to cyber risk mitigation, safety case, and redundancy requirements.","",Security Assessment
+AURRP-13,System Flexibility,StandardsAndGovernance,InteroperabilityProfiles,Direct,"Open architectures align with standards compatibility and OEM interoperability concepts.","",Design Review
+AURRP-14,AI Model Specification,StandardsAndGovernance,FormatAndContent,Direct,"Relates to metadata, rich content documentation, and AI-generated insight standards.","",Documentation Review
+AURRP-15,Platform Agnostic Design,VehicleCapabilitiesAndConstraints,PerformanceConstraints,Direct,"Platform-agnostic design maps to pre-mission performance constraints and cross-platform profiles.","",Test Across Platforms
+AURRP-16,Route Optimisation,NavigationAndPositioning,RouteAndTrajectory,Direct,"Route optimisation directly links to taxonomy concepts of route confidence and trajectory selection.","",Simulation/Test
+AURRP-17,Adaptability to uncertain environments,EstimationAndUncertaintyModeling,UncertaintyModeling; PredictiveEstimation,Direct,"Requirement maps to predictive modeling, environmental uncertainty models, and adaptive estimation.","",Simulation/Test
+AURRP-18,Obstacle Avoidance,ThreatsAndRiskManagement,SafetyAndMitigation,Direct,"Obstacle avoidance maps to collision avoidance and safety case concepts.","",Simulation/Demonstration
+AURRP-19,AI to be self documenting,MissionAuditAndTraceability,MetadataAndRecords; DecisionProvenance,Direct,"Self-documenting AI outputs align with metadata logging, provenance capture, and annotated outputs.","",Documentation/Inspection

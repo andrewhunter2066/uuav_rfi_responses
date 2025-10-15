@@ -14,7 +14,7 @@
   },
   {
     "ResponseID":"4",
-    "ResponseText":"acoustic localization restriction eg high precision acoustic positioning range",
+    "ResponseText":"acoustic positioning limitations eg high precision acoustic positioning duration",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -40,7 +40,7 @@
   },
   {
     "ResponseID":"5",
-    "ResponseText":"global positioning application fix availability including surfacing protocols permissible",
+    "ResponseText":"global positioning system coordinate availability including surfacing protocols permissible",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -66,7 +66,7 @@
   },
   {
     "ResponseID":"6",
-    "ResponseText":"battery life loiter time uuvs",
+    "ResponseText":"battery life endurance utilize",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -92,7 +92,7 @@
   },
   {
     "ResponseID":"7",
-    "ResponseText":"turnaround time coordination multiple employ",
+    "ResponseText":"turnaround elapsed time coordination multiple uuvs",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -118,7 +118,7 @@
   },
   {
     "ResponseID":"114",
-    "ResponseText":"equipment limitations service capacity",
+    "ResponseText":"equipment threshold service capabilities",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -144,7 +144,7 @@
   },
   {
     "ResponseID":"115",
-    "ResponseText":"timings restriction left right",
+    "ResponseText":"timings no-go zone left right",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -170,7 +170,7 @@
   },
   {
     "ResponseID":"116",
-    "ResponseText":"duration vehicle",
+    "ResponseText":"loiter time vehicle",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -196,7 +196,7 @@
   },
   {
     "ResponseID":"117",
-    "ResponseText":"global positioning system fixing requirements update rate",
+    "ResponseText":"global geolocation system fixing requirements frequency",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -248,7 +248,7 @@
   },
   {
     "ResponseID":"119",
-    "ResponseText":"accuracy criterion navigation",
+    "ResponseText":"accuracy parameter navigation",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -300,7 +300,7 @@
   },
   {
     "ResponseID":"121",
-    "ResponseText":"minimum depth vessel",
+    "ResponseText":"minimum underwater depth vehicle",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -326,7 +326,7 @@
   },
   {
     "ResponseID":"122",
-    "ResponseText":"uuv communication requirements",
+    "ResponseText":"rov communication requirements",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -352,7 +352,7 @@
   },
   {
     "ResponseID":"123",
-    "ResponseText":"navigational hazards path area operations",
+    "ResponseText":"navigational hazards route area activity",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -378,7 +378,7 @@
   },
   {
     "ResponseID":"124",
-    "ResponseText":"no-go zones route sector operations",
+    "ResponseText":"no-go zones route area undertaking",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -404,7 +404,7 @@
   },
   {
     "ResponseID":"125",
-    "ResponseText":"zone classification confidence route area operations",
+    "ResponseText":"zone confidence route area of operation operations",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,

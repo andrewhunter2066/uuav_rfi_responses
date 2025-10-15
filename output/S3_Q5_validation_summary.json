@@ -14,7 +14,7 @@
   },
   {
     "ResponseID":"60",
-    "ResponseText":"unsuitable beach gradient substrate arrival",
+    "ResponseText":"unsuitable beach gradient substrate landing",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -40,7 +40,7 @@
   },
   {
     "ResponseID":"61",
-    "ResponseText":"presence marine life protected habitat zones",
+    "ResponseText":"presence aquatic life protected habitat zones",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -66,7 +66,7 @@
   },
   {
     "ResponseID":"62",
-    "ResponseText":"oceanographic anomalies eg rip circulation sediment plumes",
+    "ResponseText":"oceanographic fault eg geo-fix currents sediment plumes",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -92,7 +92,7 @@
   },
   {
     "ResponseID":"63",
-    "ResponseText":"sensor interference bottom clutter acoustic shadowing",
+    "ResponseText":"payload interference bottom clutter acoustic shadowing",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -144,7 +144,7 @@
   },
   {
     "ResponseID":"312",
-    "ResponseText":"estimated battery completion sortie",
+    "ResponseText":"estimated battery completion mission",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -196,7 +196,7 @@
   },
   {
     "ResponseID":"314",
-    "ResponseText":"factor records grounding event occurs",
+    "ResponseText":"factor damage grounding occurrence occurs",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -222,7 +222,7 @@
   },
   {
     "ResponseID":"315",
-    "ResponseText":"coverage area operations achievable time bound",
+    "ResponseText":"area covered area operations achievable time limitations",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -248,7 +248,7 @@
   },
   {
     "ResponseID":"316",
-    "ResponseText":"potential buoyancy factors water column information",
+    "ResponseText":"potential buoyancy factors water column dataset",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -274,7 +274,7 @@
   },
   {
     "ResponseID":"317",
-    "ResponseText":"total time location top layer",
+    "ResponseText":"records time location surface",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,

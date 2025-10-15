@@ -1,0 +1,646 @@
+{
+  "TaxonomyCoverage": {
+    "NavigationAndPositioning": {
+      "Concepts": {
+        "RouteAndTrajectory": {
+          "SupportsRequirements": [
+            {
+              "RequirementID": "AURRP-01",
+              "RequirementName": "Route Planning",
+              "TraceabilityLevel": "Direct",
+              "Rationale": "Route optimisation requires integration of navigational geometry, seafloor/topographic constraints, environmental dynamics, and vehicle performance envelopes.",
+              "VerificationMethod": "Simulation/Test"
+            },
+            {
+              "RequirementID": "AURRP-15",
+              "RequirementName": "Platform Agnostic Design",
+              "TraceabilityLevel": "Direct",
+              "Rationale": "Platform-agnostic design requires route options that adapt across vehicles with differing performance.",
+              "VerificationMethod": "Cross-platform Test"
+            },
+            {
+              "RequirementID": "AURRP-16",
+              "RequirementName": "Route Optimisation",
+              "TraceabilityLevel": "Direct",
+              "Rationale": "Route optimisation is a synthesis of navigation, environmental conditions, terrain, and vehicle performance.",
+              "VerificationMethod": "Simulation/Test"
+            }
+          ],
+          "Priority": "High"
+        },
+        "NavigationSystems": {
+          "SupportsRequirements": [
+            {
+              "RequirementID": "AURRP-03",
+              "RequirementName": "Contribute to the UUV navigation",
+              "TraceabilityLevel": "Direct",
+              "Rationale": "A comprehensive navigational picture requires integration of GNSS, INS, DVL, and other navigation systems.",
+              "VerificationMethod": "Demonstration/Inspection"
+            }
+          ],
+          "Priority": "Medium"
+        },
+        "AccuracyAndHazards": {
+          "SupportsRequirements": [
+            {
+              "RequirementID": "AURRP-18",
+              "RequirementName": "Obstacle Avoidance",
+              "TraceabilityLevel": "Direct",
+              "Rationale": "Avoidance depends on navigation accuracy, identification of hazards, and defining no-go zones.",
+              "VerificationMethod": "Simulation/Demonstration"
+            }
+          ],
+          "Priority": "High"
+        }
+      }
+    },
+    "TerrainAndBathymetry": {
+      "Concepts": {
+        "SeafloorCharacterization": {
+          "SupportsRequirements": [
+            {
+              "RequirementID": "AURRP-01",
+              "RequirementName": "Route Planning",
+              "TraceabilityLevel": "Direct",
+              "Rationale": "Seafloor and substrate characteristics influence route feasibility and risk.",
+              "VerificationMethod": "Simulation/Test"
+            },
+            {
+              "RequirementID": "AURRP-16",
+              "RequirementName": "Route Optimisation",
+              "TraceabilityLevel": "Direct",
+              "Rationale": "Optimisation requires considering seafloor slope, features, and bathymetric complexity.",
+              "VerificationMethod": "Simulation/Test"
+            }
+          ],
+          "Priority": "High"
+        },
+        "BathymetricDataProducts": {
+          "SupportsRequirements": [
+            {
+              "RequirementID": "AURRP-01",
+              "RequirementName": "Route Planning",
+              "TraceabilityLevel": "Direct",
+              "Rationale": "High-resolution bathymetric grids and DEMs are essential inputs for route selection.",
+              "VerificationMethod": "Simulation/Test"
+            }
+          ],
+          "Priority": "Medium"
+        },
+        "SoundingOperationsQuality": {
+          "SupportsRequirements": [
+            {
+              "RequirementID": "AURRP-02",
+              "RequirementName": "Sensor Interface",
+              "TraceabilityLevel": "Direct",
+              "Rationale": "Bathymetric sensors like MBES and DVL require reliable interfacing and quality control.",
+              "VerificationMethod": "Demonstration/Test"
+            }
+          ],
+          "Priority": "High"
+        },
+        "SurfaceFeatures": {
+          "SupportsRequirements": [
+            {
+              "RequirementID": "AURRP-18",
+              "RequirementName": "Obstacle Avoidance",
+              "TraceabilityLevel": "Direct",
+              "Rationale": "Surface features such as terrain slope and complexity affect obstacle avoidance strategies.",
+              "VerificationMethod": "Simulation/Demonstration"
+            }
+          ],
+          "Priority": "High"
+        }
+      }
+    },
+    "EnvironmentalAndOceanographicConditions": {
+      "Concepts": {
+        "PhysicalProcesses": {
+          "SupportsRequirements": [
+            {
+              "RequirementID": "AURRP-01",
+              "RequirementName": "Route Planning",
+              "TraceabilityLevel": "Direct",
+              "Rationale": "Currents, tides, and wind directly impact route feasibility.",
+              "VerificationMethod": "Simulation/Test"
+            },
+            {
+              "RequirementID": "AURRP-04",
+              "RequirementName": "Ingest Environmental Data",
+              "TraceabilityLevel": "Direct",
+              "Rationale": "Environmental inputs like tides, currents, and wind drive route efficiency.",
+              "VerificationMethod": "Analysis/Test"
+            },
+            {
+              "RequirementID": "AURRP-16",
+              "RequirementName": "Route Optimisation",
+              "TraceabilityLevel": "Direct",
+              "Rationale": "Optimisation depends on predicting physical oceanographic processes.",
+              "VerificationMethod": "Simulation/Test"
+            }
+          ],
+          "Priority": "High"
+        },
+        "WaterProperties": {
+          "SupportsRequirements": [
+            {
+              "RequirementID": "AURRP-01",
+              "RequirementName": "Route Planning",
+              "TraceabilityLevel": "Direct",
+              "Rationale": "Density, salinity, and turbidity affect navigational risk and vehicle efficiency.",
+              "VerificationMethod": "Simulation/Test"
+            },
+            {
+              "RequirementID": "AURRP-04",
+              "RequirementName": "Ingest Environmental Data",
+              "TraceabilityLevel": "Direct",
+              "Rationale": "Environmental data ingestion requires handling of temperature, density, and turbidity layers.",
+              "VerificationMethod": "Analysis/Test"
+            }
+          ],
+          "Priority": "High"
+        },
+        "EphemeralsAndDynamics": {
+          "SupportsRequirements": [
+            {
+              "RequirementID": "AURRP-04",
+              "RequirementName": "Ingest Environmental Data",
+              "TraceabilityLevel": "Direct",
+              "Rationale": "Transient tides and currents must be incorporated into route planning.",
+              "VerificationMethod": "Analysis/Test"
+            }
+          ],
+          "Priority": "Medium"
+        },
+        "MeasurementAndModels": {
+          "SupportsRequirements": [
+            {
+              "RequirementID": "AURRP-02",
+              "RequirementName": "Sensor Interface",
+              "TraceabilityLevel": "Direct",
+              "Rationale": "Interfaces to CTDs and HF radar feed measurement models.",
+              "VerificationMethod": "Demonstration/Test"
+            }
+          ],
+          "Priority": "High"
+        },
+        "EnvironmentalContext": {
+          "SupportsRequirements": [
+            {
+              "RequirementID": "AURRP-17",
+              "RequirementName": "Adaptability to uncertain environments",
+              "TraceabilityLevel": "Direct",
+              "Rationale": "Adaptive modelling requires environmental context to forecast uncertainty.",
+              "VerificationMethod": "Simulation/Test"
+            }
+          ],
+          "Priority": "High"
+        }
+      }
+    },
+    "VehicleCapabilitiesAndConstraints": {
+      "Concepts": {
+        "Hardware": {
+          "SupportsRequirements": [
+            {
+              "RequirementID": "AURRP-02",
+              "RequirementName": "Sensor Interface",
+              "TraceabilityLevel": "Direct",
+              "Rationale": "Sensors are physical hardware payloads requiring integration.",
+              "VerificationMethod": "Demonstration/Test"
+            }
+          ],
+          "Priority": "High"
+        },
+        "Performance": {
+          "SupportsRequirements": [
+            {
+              "RequirementID": "AURRP-01",
+              "RequirementName": "Route Planning",
+              "TraceabilityLevel": "Direct",
+              "Rationale": "Vehicle performance (range, speed) constrains feasible routes.",
+              "VerificationMethod": "Simulation/Test"
+            },
+            {
+              "RequirementID": "AURRP-16",
+              "RequirementName": "Route Optimisation",
+              "TraceabilityLevel": "Direct",
+              "Rationale": "Performance envelopes determine mission-viable route optimisations.",
+              "VerificationMethod": "Simulation/Test"
+            }
+          ],
+          "Priority": "High"
+        },
+        "PerformanceConstraints": {
+          "SupportsRequirements": [
+            {
+              "RequirementID": "AURRP-15",
+              "RequirementName": "Platform Agnostic Design",
+              "TraceabilityLevel": "Direct",
+              "Rationale": "Agility requires performance constraints adaptable across platforms.",
+              "VerificationMethod": "Cross-platform Test"
+            }
+          ],
+          "Priority": "High"
+        },
+        "AdverseOperationalPerformance": {
+          "SupportsRequirements": [
+            {
+              "RequirementID": "AURRP-01",
+              "RequirementName": "Route Planning",
+              "TraceabilityLevel": "Direct",
+              "Rationale": "Route selection must account for vehicle degradation in adverse current/sea states.",
+              "VerificationMethod": "Simulation/Test"
+            },
+            {
+              "RequirementID": "AURRP-03",
+              "RequirementName": "Contribute to the UUV navigation",
+              "TraceabilityLevel": "Direct",
+              "Rationale": "Adverse vehicle performance affects overall navigation picture.",
+              "VerificationMethod": "Demonstration/Inspection"
+            }
+          ],
+          "Priority": "High"
+        }
+      }
+    },
+    "MissionParametersAndObjectives": {
+      "Concepts": {
+        "Objectives": {
+          "SupportsRequirements": [
+            {
+              "RequirementID": "AURRP-06",
+              "RequirementName": "Route planning software to enhance productivity",
+              "TraceabilityLevel": "Indirect",
+              "Rationale": "Productivity enhancement aligns indirectly with achieving mission objectives without removing human oversight.",
+              "VerificationMethod": "User Trials"
+            }
+          ],
+          "Priority": "Medium"
+        },
+        "OperationalWindows": {
+          "SupportsRequirements": [
+            {
+              "RequirementID": "AURRP-07",
+              "RequirementName": "User Suitability",
+              "TraceabilityLevel": "Indirect",
+              "Rationale": "Ease of use links indirectly to operational timing and workflow continuity.",
+              "VerificationMethod": "User Testing"
+            }
+          ],
+          "Priority": "High"
+        }
+      }
+    },
+    "DataProductsAndRequirements": {
+      "Concepts": {
+        "MetadataAndFormat": {
+          "SupportsRequirements": [
+            {
+              "RequirementID": "AURRP-02",
+              "RequirementName": "Sensor Interface",
+              "TraceabilityLevel": "Direct",
+              "Rationale": "Sensor data must be ingested in correct formats for use.",
+              "VerificationMethod": "Demonstration/Test"
+            },
+            {
+              "RequirementID": "AURRP-09",
+              "RequirementName": "Data Fusion",
+              "TraceabilityLevel": "Direct",
+              "Rationale": "Fusion depends on interoperable metadata and formats.",
+              "VerificationMethod": "Test/Demonstration"
+            }
+          ],
+          "Priority": "High"
+        },
+        "DataQuality": {
+          "SupportsRequirements": [
+            {
+              "RequirementID": "AURRP-04",
+              "RequirementName": "Ingest Environmental Data",
+              "TraceabilityLevel": "Direct",
+              "Rationale": "Environmental ingestion requires quality and confidence scoring.",
+              "VerificationMethod": "Analysis/Test"
+            },
+            {
+              "RequirementID": "AURRP-09",
+              "RequirementName": "Data Fusion",
+              "TraceabilityLevel": "Direct",
+              "Rationale": "Fusion requires quality control, overlap checks, and scoring.",
+              "VerificationMethod": "Test/Demonstration"
+            }
+          ],
+          "Priority": "High"
+        },
+        "DataIntegrityAndResilience": {
+          "SupportsRequirements": [
+            {
+              "RequirementID": "AURRP-11",
+              "RequirementName": "Read Only",
+              "TraceabilityLevel": "Direct",
+              "Rationale": "Read-only handling preserves data integrity and avoids duplication.",
+              "VerificationMethod": "Analysis"
+            }
+          ],
+          "Priority": "High"
+        },
+        "AnnotatedOutputs": {
+          "SupportsRequirements": [
+            {
+              "RequirementID": "AURRP-05",
+              "RequirementName": "Leverage LLMs",
+              "TraceabilityLevel": "Direct",
+              "Rationale": "LLM outputs must be annotated with rationale for traceability.",
+              "VerificationMethod": "Demonstration"
+            },
+            {
+              "RequirementID": "AURRP-19",
+              "RequirementName": "AI to be self documenting",
+              "TraceabilityLevel": "Direct",
+              "Rationale": "GenAI outputs should annotate features and rationale for decision support.",
+              "VerificationMethod": "Documentation/Inspection"
+            }
+          ],
+          "Priority": "High"
+        }
+      }
+    },
+    "MissionAuditAndTraceability": {
+      "Concepts": {
+        "DecisionProvenance": {
+          "SupportsRequirements": [
+            {
+              "RequirementID": "AURRP-05",
+              "RequirementName": "Leverage LLMs",
+              "TraceabilityLevel": "Direct",
+              "Rationale": "Provenance of decisions requires LLM capture of reasoning.",
+              "VerificationMethod": "Demonstration"
+            },
+            {
+              "RequirementID": "AURRP-14",
+              "RequirementName": "AI Model Specification",
+              "TraceabilityLevel": "Direct",
+              "Rationale": "AI model specification feeds provenance of decision paths.",
+              "VerificationMethod": "Documentation Review"
+            },
+            {
+              "RequirementID": "AURRP-19",
+              "RequirementName": "AI to be self documenting",
+              "TraceabilityLevel": "Direct",
+              "Rationale": "Self-documenting outputs provide provenance for planning decisions.",
+              "VerificationMethod": "Documentation/Inspection"
+            }
+          ],
+          "Priority": "High"
+        },
+        "MetadataAndRecords": {
+          "SupportsRequirements": [
+            {
+              "RequirementID": "AURRP-02",
+              "RequirementName": "Sensor Interface",
+              "TraceabilityLevel": "Indirect",
+              "Rationale": "Sensor logs form part of mission records.",
+              "VerificationMethod": "Demonstration/Test"
+            },
+            {
+              "RequirementID": "AURRP-11",
+              "RequirementName": "Read Only",
+              "TraceabilityLevel": "Direct",
+              "Rationale": "Preserves provenance of original data without duplication.",
+              "VerificationMethod": "Analysis"
+            },
+            {
+              "RequirementID": "AURRP-19",
+              "RequirementName": "AI to be self documenting",
+              "TraceabilityLevel": "Direct",
+              "Rationale": "Self-documentation ensures complete metadata for audit.",
+              "VerificationMethod": "Documentation/Inspection"
+            }
+          ],
+          "Priority": "High"
+        },
+        "ChecklistAndVerification": {
+          "SupportsRequirements": [
+            {
+              "RequirementID": "AURRP-06",
+              "RequirementName": "Route planning software to enhance productivity",
+              "TraceabilityLevel": "Indirect",
+              "Rationale": "Checklists and verification help ensure workflow alignment.",
+              "VerificationMethod": "User Trials"
+            },
+            {
+              "RequirementID": "AURRP-07",
+              "RequirementName": "User Suitability",
+              "TraceabilityLevel": "Indirect",
+              "Rationale": "Checklist validation supports user suitability assessment.",
+              "VerificationMethod": "User Testing"
+            }
+          ],
+          "Priority": "High"
+        }
+      }
+    },
+    "ThreatsAndRiskManagement": {
+      "Concepts": {
+        "Hazards": {
+          "SupportsRequirements": [
+            {
+              "RequirementID": "AURRP-03",
+              "RequirementName": "Contribute to the UUV navigation",
+              "TraceabilityLevel": "Direct",
+              "Rationale": "Contributing to navigation includes awareness of hazards.",
+              "VerificationMethod": "Demonstration/Inspection"
+            },
+            {
+              "RequirementID": "AURRP-18",
+              "RequirementName": "Obstacle Avoidance",
+              "TraceabilityLevel": "Direct",
+              "Rationale": "Obstacle avoidance is central to hazard management.",
+              "VerificationMethod": "Simulation/Demonstration"
+            }
+          ],
+          "Priority": "High"
+        },
+        "SafetyAndMitigation": {
+          "SupportsRequirements": [
+            {
+              "RequirementID": "AURRP-12",
+              "RequirementName": "Cyber worthiness",
+              "TraceabilityLevel": "Direct",
+              "Rationale": "System integrity requires redundancy and mitigation plans.",
+              "VerificationMethod": "Security Assessment"
+            },
+            {
+              "RequirementID": "AURRP-18",
+              "RequirementName": "Obstacle Avoidance",
+              "TraceabilityLevel": "Direct",
+              "Rationale": "Collision avoidance is a safety mitigation requirement.",
+              "VerificationMethod": "Simulation/Demonstration"
+            }
+          ],
+          "Priority": "High"
+        },
+        "AdversarialAndDetectionRisks": {
+          "SupportsRequirements": [
+            {
+              "RequirementID": "AURRP-10",
+              "RequirementName": "Solution must be standalone",
+              "TraceabilityLevel": "Indirect",
+              "Rationale": "Standalone design mitigates cyber risk vectors.",
+              "VerificationMethod": "Inspection"
+            },
+            {
+              "RequirementID": "AURRP-12",
+              "RequirementName": "Cyber worthiness",
+              "TraceabilityLevel": "Direct",
+              "Rationale": "Cyber worthiness links to adversarial detection risks.",
+              "VerificationMethod": "Security Assessment"
+            }
+          ],
+          "Priority": "High"
+        }
+      }
+    },
+    "EstimationAndUncertaintyModeling": {
+      "Concepts": {
+        "UncertaintyModeling": {
+          "SupportsRequirements": [
+            {
+              "RequirementID": "AURRP-04",
+              "RequirementName": "Ingest Environmental Data",
+              "TraceabilityLevel": "Indirect",
+              "Rationale": "Environmental inputs require uncertainty quantification.",
+              "VerificationMethod": "Analysis/Test"
+            },
+            {
+              "RequirementID": "AURRP-17",
+              "RequirementName": "Adaptability to uncertain environments",
+              "TraceabilityLevel": "Direct",
+              "Rationale": "Adaptability depends on uncertainty modelling.",
+              "VerificationMethod": "Simulation/Test"
+            }
+          ],
+          "Priority": "High"
+        },
+        "PredictiveEstimation": {
+          "SupportsRequirements": [
+            {
+              "RequirementID": "AURRP-04",
+              "RequirementName": "Ingest Environmental Data",
+              "TraceabilityLevel": "Indirect",
+              "Rationale": "Predictive estimation is required to forecast environmental data layers.",
+              "VerificationMethod": "Analysis/Test"
+            },
+            {
+              "RequirementID": "AURRP-17",
+              "RequirementName": "Adaptability to uncertain environments",
+              "TraceabilityLevel": "Direct",
+              "Rationale": "Responding to uncertainty requires predictive estimation.",
+              "VerificationMethod": "Simulation/Test"
+            }
+          ],
+          "Priority": "High"
+        },
+        "RiskFusionAndEffectiveness": {
+          "SupportsRequirements": [
+            {
+              "RequirementID": "AURRP-09",
+              "RequirementName": "Data Fusion",
+              "TraceabilityLevel": "Direct",
+              "Rationale": "Data fusion requires risk-based effectiveness monitoring.",
+              "VerificationMethod": "Test/Demonstration"
+            },
+            {
+              "RequirementID": "AURRP-17",
+              "RequirementName": "Adaptability to uncertain environments",
+              "TraceabilityLevel": "Direct",
+              "Rationale": "Adaptive thresholds require real-time data fusion into risk models.",
+              "VerificationMethod": "Simulation/Test"
+            }
+          ],
+          "Priority": "High"
+        }
+      }
+    },
+    "StandardsAndGovernance": {
+      "Concepts": {
+        "AccessControl": {
+          "SupportsRequirements": [
+            {
+              "RequirementID": "AURRP-10",
+              "RequirementName": "Solution must be standalone",
+              "TraceabilityLevel": "Direct",
+              "Rationale": "Role-based controls and isolation are required for standalone security.",
+              "VerificationMethod": "Inspection"
+            },
+            {
+              "RequirementID": "AURRP-12",
+              "RequirementName": "Cyber worthiness",
+              "TraceabilityLevel": "Direct",
+              "Rationale": "Access control underpins system integrity.",
+              "VerificationMethod": "Security Assessment"
+            }
+          ],
+          "Priority": "High"
+        },
+        "InteroperabilityProfiles": {
+          "SupportsRequirements": [
+            {
+              "RequirementID": "AURRP-10",
+              "RequirementName": "Solution must be standalone",
+              "TraceabilityLevel": "Direct",
+              "Rationale": "Interoperability must be constrained to enforce isolation.",
+              "VerificationMethod": "Inspection"
+            },
+            {
+              "RequirementID": "AURRP-13",
+              "RequirementName": "System Flexibility",
+              "TraceabilityLevel": "Direct",
+              "Rationale": "Flexibility requires standards-compliant profiles.",
+              "VerificationMethod": "Design Review"
+            }
+          ],
+          "Priority": "High"
+        },
+        "FormatAndContent": {
+          "SupportsRequirements": [
+            {
+              "RequirementID": "AURRP-05",
+              "RequirementName": "Leverage LLMs",
+              "TraceabilityLevel": "Indirect",
+              "Rationale": "Outputs must be packaged with rich metadata for compliance.",
+              "VerificationMethod": "Demonstration"
+            },
+            {
+              "RequirementID": "AURRP-14",
+              "RequirementName": "AI Model Specification",
+              "TraceabilityLevel": "Direct",
+              "Rationale": "AI models must be documented with framework and metadata.",
+              "VerificationMethod": "Documentation Review"
+            },
+            {
+              "RequirementID": "AURRP-19",
+              "RequirementName": "AI to be self documenting",
+              "TraceabilityLevel": "Direct",
+              "Rationale": "Self-documentation requires rich metadata and content standards.",
+              "VerificationMethod": "Documentation/Inspection"
+            }
+          ],
+          "Priority": "High"
+        },
+        "StandardsAdequacy": {
+          "SupportsRequirements": [
+            {
+              "RequirementID": "AURRP-13",
+              "RequirementName": "System Flexibility",
+              "TraceabilityLevel": "Direct",
+              "Rationale": "Flexibility requires standards that can evolve with emerging needs.",
+              "VerificationMethod": "Design Review"
+            }
+          ],
+          "Priority": "High"
+        }
+      }
+    }
+  }
+}

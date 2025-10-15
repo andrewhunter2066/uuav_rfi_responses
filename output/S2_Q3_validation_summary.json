@@ -14,7 +14,7 @@
   },
   {
     "ResponseID":"27",
-    "ResponseText":"use bathymetric uncertainty forecast model estimate feature detection classification confidence",
+    "ResponseText":"apply bathymetric uncertainty models approximation feature detection confidence",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -40,7 +40,7 @@
   },
   {
     "ResponseID":"28",
-    "ResponseText":"use standard deviation thresholds feature classification dependability",
+    "ResponseText":"apply standard deviation thresholds feature clustering reliability",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -92,7 +92,7 @@
   },
   {
     "ResponseID":"30",
-    "ResponseText":"incorporate predictive modelling command performance wave period mission parameters",
+    "ResponseText":"incorporate predictive modelling sonar performance wave period mission parameters",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -118,7 +118,7 @@
   },
   {
     "ResponseID":"206",
-    "ResponseText":"understanding historical performance known defects equipment",
+    "ResponseText":"historical efficiency known defects equipment understanding",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -144,7 +144,7 @@
   },
   {
     "ResponseID":"207",
-    "ResponseText":"environmental weather endurance launch recovery systems mission speed sensor performance rules engagement etc understanding",
+    "ResponseText":"understanding environmental conditions endurance launch recovery systems mission speed payload performance rules engagement etc",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -170,7 +170,7 @@
   },
   {
     "ResponseID":"208",
-    "ResponseText":"rules engagement area covered inform timings",
+    "ResponseText":"rules engagement coverage inform timeframe",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -196,7 +196,7 @@
   },
   {
     "ResponseID":"209",
-    "ResponseText":"time surface risk surfacing covert surface traffic uncertainty",
+    "ResponseText":"time sea surface risk surfacing covert surface traffic uncertainty",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -222,7 +222,7 @@
   },
   {
     "ResponseID":"210",
-    "ResponseText":"rules engagement geo-fix spacing",
+    "ResponseText":"rules engagement line spacing",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -248,7 +248,7 @@
   },
   {
     "ResponseID":"211",
-    "ResponseText":"confidence route planning maintaining fix",
+    "ResponseText":"route confidence route planning maintaining position",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -274,7 +274,7 @@
   },
   {
     "ResponseID":"212",
-    "ResponseText":"informs area operations informs assets required",
+    "ResponseText":"informs sector operations informs assets required",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -300,7 +300,7 @@
   },
   {
     "ResponseID":"214",
-    "ResponseText":"range host vessel range acoustic data link requirement protection vessel etc",
+    "ResponseText":"range host auv range acoustic communications requirement safety vessel etc",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -352,7 +352,7 @@
   },
   {
     "ResponseID":"216",
-    "ResponseText":"pathfinding hazards inform potential adversary influence",
+    "ResponseText":"navigational hazards inform potential adversary influence",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -378,7 +378,7 @@
   },
   {
     "ResponseID":"217",
-    "ResponseText":"confidence aoi operations understanding",
+    "ResponseText":"confidence area operations understanding",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,

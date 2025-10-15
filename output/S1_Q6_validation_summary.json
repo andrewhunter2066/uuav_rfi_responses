@@ -14,7 +14,7 @@
   },
   {
     "ResponseID":"15",
-    "ResponseText":"logging track decisions sensor performance environmental conditions",
+    "ResponseText":"logging corridor decisions sensor performance environmental conditions",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -40,7 +40,7 @@
   },
   {
     "ResponseID":"16",
-    "ResponseText":"timestamped mission events deviations",
+    "ResponseText":"timestamped assignment events deviations",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -66,7 +66,7 @@
   },
   {
     "ResponseID":"17",
-    "ResponseText":"integration post-mission analysis tools feedback future planning cycles",
+    "ResponseText":"post-mission analysis post-mission analysis tools feedback future planning cycles",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -92,7 +92,7 @@
   },
   {
     "ResponseID":"158",
-    "ResponseText":"initial test check lists pre-dive etc",
+    "ResponseText":"initial test check position pre-dive etc",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -118,7 +118,7 @@
   },
   {
     "ResponseID":"159",
-    "ResponseText":"signatory user account information",
+    "ResponseText":"signatory utilize account information",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -144,7 +144,7 @@
   },
   {
     "ResponseID":"160",
-    "ResponseText":"specific job files load configuration file",
+    "ResponseText":"specific job files load template",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -196,7 +196,7 @@
   },
   {
     "ResponseID":"162",
-    "ResponseText":"holes information sensor performance issues",
+    "ResponseText":"holes data detector performance issues",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -222,7 +222,7 @@
   },
   {
     "ResponseID":"163",
-    "ResponseText":"seafloor elevation discrepancies",
+    "ResponseText":"depth discrepancies",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -274,7 +274,7 @@
   },
   {
     "ResponseID":"165",
-    "ResponseText":"automated procedure recording contacts",
+    "ResponseText":"automated procedure record contacts",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,

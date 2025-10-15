@@ -1,23 +1,23 @@
 ResponseID,ResponseText,PredictedChild,PredictedParent,ChildScores,ParentScores,has_protected,has_conflict,has_cross_conflict
 15,logging route decisions sensor performance environmental conditions,Environmental Context,Environmental And Oceanographic Conditions,"{'Environmental Context': 2, 'Route And Trajectory': 1}","{'Environmental And Oceanographic Conditions': 2, 'Navigation And Positioning': 1}",False,False,False
-15,logging track decisions sensor performance environmental conditions,Environmental Context,Environmental And Oceanographic Conditions,{'Environmental Context': 2},{'Environmental And Oceanographic Conditions': 2},False,False,False
+15,logging corridor decisions sensor performance environmental conditions,Environmental Context,Environmental And Oceanographic Conditions,{'Environmental Context': 2},{'Environmental And Oceanographic Conditions': 2},False,False,False
 16,timestamped mission events deviations,Objectives,Mission Parameters And Objectives,"{'Objectives': 1, 'Operational Windows': 1, 'Mission Logging': 1, 'Event Timeline Model': 1}","{'Mission Parameters And Objectives': 2, 'Audit And Accountability': 1, 'Knowledge Management And Traceability': 1}",False,False,False
-16,timestamped mission events deviations,Objectives,Mission Parameters And Objectives,"{'Objectives': 1, 'Operational Windows': 1, 'Mission Logging': 1, 'Event Timeline Model': 1}","{'Mission Parameters And Objectives': 2, 'Audit And Accountability': 1, 'Knowledge Management And Traceability': 1}",False,False,False
+16,timestamped assignment events deviations,Operational Windows,Mission Parameters And Objectives,{'Operational Windows': 1},{'Mission Parameters And Objectives': 1},False,False,False
 17,integration post-mission analysis tools feedback future planning cycles,Objectives,Mission Parameters And Objectives,{'Objectives': 1},{'Mission Parameters And Objectives': 1},False,False,False
-17,integration post-mission analysis tools feedback future planning cycles,Objectives,Mission Parameters And Objectives,{'Objectives': 1},{'Mission Parameters And Objectives': 1},False,False,False
+17,post-mission analysis post-mission analysis tools feedback future planning cycles,Objectives,Mission Parameters And Objectives,{'Objectives': 1},{'Mission Parameters And Objectives': 1},False,False,False
 158,initial test check lists pre-dive etc,uncategorised,uncategorised,{},{},False,False,False
-158,initial test check lists pre-dive etc,uncategorised,uncategorised,{},{},False,False,False
+158,initial test check position pre-dive etc,uncategorised,uncategorised,{},{},False,False,False
 159,signatory user account information,Accountability,Audit And Accountability,"{'Accountability': 1, 'Identity And Signoff': 1}","{'Audit And Accountability': 1, 'Governance Security And Access': 1}",False,False,False
-159,signatory user account information,Accountability,Audit And Accountability,"{'Accountability': 1, 'Identity And Signoff': 1}","{'Audit And Accountability': 1, 'Governance Security And Access': 1}",False,False,False
+159,signatory utilize account information,uncategorised,uncategorised,{},{},False,False,False
 160,specific job files load template,uncategorised,uncategorised,{},{},False,False,False
-160,specific job files load configuration file,uncategorised,uncategorised,{},{},False,False,False
+160,specific job files load template,uncategorised,uncategorised,{},{},False,False,False
 161,time task versus completion factors ratio,Objectives,Mission Parameters And Objectives,{'Objectives': 1},{'Mission Parameters And Objectives': 1},False,False,False
 161,time task versus completion factors ratio,Objectives,Mission Parameters And Objectives,{'Objectives': 1},{'Mission Parameters And Objectives': 1},False,False,False
 162,holes data sensor performance issues,Data Integrity And Resilience,Data Products And Requirements,"{'Data Integrity And Resilience': 1, 'Mission Data Integrity': 1}",{'Data Products And Requirements': 2},False,False,False
-162,holes information sensor performance issues,Data Integrity And Resilience,Data Products And Requirements,"{'Data Integrity And Resilience': 1, 'Mission Data Integrity': 1}",{'Data Products And Requirements': 2},False,False,False
+162,holes data detector performance issues,uncategorised,uncategorised,{},{},False,False,False
 163,depth discrepancies,Data Integrity And Resilience,Data Products And Requirements,"{'Data Integrity And Resilience': 1, 'Mission Data Integrity': 1}",{'Data Products And Requirements': 2},False,False,False
-163,seafloor elevation discrepancies,Seafloor Characterization,Terrain And Bathymetry,{'Seafloor Characterization': 1},{'Terrain And Bathymetry': 1},False,False,False
+163,depth discrepancies,Data Integrity And Resilience,Data Products And Requirements,"{'Data Integrity And Resilience': 1, 'Mission Data Integrity': 1}",{'Data Products And Requirements': 2},False,False,False
 164,track interest,uncategorised,uncategorised,{},{},False,False,False
 164,path interest,uncategorised,uncategorised,{},{},False,False,False
 165,automated procedure record contacts,uncategorised,uncategorised,{},{},False,False,False
-165,automated procedure recording contacts,uncategorised,uncategorised,{},{},False,False,False
+165,automated procedure record contacts,uncategorised,uncategorised,{},{},False,False,False

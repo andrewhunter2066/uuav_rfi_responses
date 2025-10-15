@@ -14,7 +14,7 @@
   },
   {
     "ResponseID":"39",
-    "ResponseText":"multibeam echo sounder metadata logs transit ping rate swath coordinate coverage maps",
+    "ResponseText":"multibeam echo sounder metadata logs eg ping track swath width coverage maps",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -66,7 +66,7 @@
   },
   {
     "ResponseID":"41",
-    "ResponseText":"survey track overlays timestamps environmental climate",
+    "ResponseText":"survey course overlays timestamps environmental conditions",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -92,7 +92,7 @@
   },
   {
     "ResponseID":"42",
-    "ResponseText":"post-mission analysis reports highlighting anomalies output learned",
+    "ResponseText":"post-mission analysis reports highlighting irregularity lessons learned",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -144,7 +144,7 @@
   },
   {
     "ResponseID":"239",
-    "ResponseText":"signatory user account dataset",
+    "ResponseText":"signatory user account information",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -170,7 +170,7 @@
   },
   {
     "ResponseID":"240",
-    "ResponseText":"specific job files load job file",
+    "ResponseText":"specific track files load template",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -222,7 +222,7 @@
   },
   {
     "ResponseID":"242",
-    "ResponseText":"holes data detector performance issues",
+    "ResponseText":"holes data sensor efficiency issues",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -274,7 +274,7 @@
   },
   {
     "ResponseID":"244",
-    "ResponseText":"track interest",
+    "ResponseText":"route interest",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,

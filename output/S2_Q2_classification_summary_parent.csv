@@ -1,9 +1,8 @@
 PredictedParent,has_protected,has_conflict,has_cross_conflict,count
-Communications And Control,False,False,False,2
 Environmental And Oceanographic Conditions,False,False,False,2
 Historical And Contextual Data,False,False,False,2
 Mission Parameters And Objectives,False,False,False,2
 Navigation And Positioning,False,False,False,11
 Terrain And Bathymetry,False,False,False,2
 Vehicle Capabilities And Constraints,False,False,False,8
-uncategorised,False,False,False,5
+uncategorised,False,False,False,7

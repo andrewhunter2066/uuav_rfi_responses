@@ -14,7 +14,7 @@
   },
   {
     "ResponseID":"22",
-    "ResponseText":"multibeam echo sounder extent width versus bathymetry profile",
+    "ResponseText":"multibeam echo sounder extent width versus depth profile",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -66,7 +66,7 @@
   },
   {
     "ResponseID":"24",
-    "ResponseText":"unmanned underwater vehicle altitude pitch planned line control",
+    "ResponseText":"unmanned underwater vehicle altitude course roll stability",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -92,7 +92,7 @@
   },
   {
     "ResponseID":"25",
-    "ResponseText":"ocean conditions factors eg turbidity seabed composition acoustic interference",
+    "ResponseText":"environmental factors eg turbidity seabed composition acoustic interference",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -118,7 +118,7 @@
   },
   {
     "ResponseID":"26",
-    "ResponseText":"payload calibration status historical performance",
+    "ResponseText":"sensor calibration status historical performance",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -144,7 +144,7 @@
   },
   {
     "ResponseID":"194",
-    "ResponseText":"equipment limitations service capabilities",
+    "ResponseText":"equipment constraint service capabilities",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -170,7 +170,7 @@
   },
   {
     "ResponseID":"195",
-    "ResponseText":"timings hard underwater depth right",
+    "ResponseText":"timings no-go zone left right",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -196,7 +196,7 @@
   },
   {
     "ResponseID":"196",
-    "ResponseText":"loiter time vehicle",
+    "ResponseText":"endurance uuv",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -222,7 +222,7 @@
   },
   {
     "ResponseID":"197",
-    "ResponseText":"global fixing system fixing requirements frequency",
+    "ResponseText":"global positioning system fixing requirements frequency",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -248,7 +248,7 @@
   },
   {
     "ResponseID":"198",
-    "ResponseText":"accuracy requirements instrument",
+    "ResponseText":"precision requirements sensors",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -274,7 +274,7 @@
   },
   {
     "ResponseID":"199",
-    "ResponseText":"accuracy specification navigation",
+    "ResponseText":"accuracy requirements wayfinding",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -300,7 +300,7 @@
   },
   {
     "ResponseID":"200",
-    "ResponseText":"maximum depth vehicle",
+    "ResponseText":"maximum depth auv",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -326,7 +326,7 @@
   },
   {
     "ResponseID":"201",
-    "ResponseText":"minimum depth craft",
+    "ResponseText":"minimum depth rov",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -352,7 +352,7 @@
   },
   {
     "ResponseID":"202",
-    "ResponseText":"vehicle communication need",
+    "ResponseText":"vehicle comms requirements",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -378,7 +378,7 @@
   },
   {
     "ResponseID":"203",
-    "ResponseText":"wayfinding hazards route area operations",
+    "ResponseText":"navigational hazards path area operations",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -404,7 +404,7 @@
   },
   {
     "ResponseID":"204",
-    "ResponseText":"no-go zones route area of operation operations",
+    "ResponseText":"no-go zones route area activity",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -430,7 +430,7 @@
   },
   {
     "ResponseID":"205",
-    "ResponseText":"zone classification confidence route area operations",
+    "ResponseText":"zone confidence route area of operation operations",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,

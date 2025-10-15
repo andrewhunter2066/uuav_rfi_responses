@@ -1,15 +1,15 @@
 {
   "child_summary": {
     "Incident Management And Notifications": 2,
-    "Physical Processes": 5,
+    "Physical Processes": 4,
     "Objectives": 2,
-    "Hardware": 1
+    "Hardware": 2
   },
   "parent_summary": {
     "Threats And Risk Management": 2,
-    "Navigation And Positioning": 2,
-    "Mission Parameters And Objectives": 2,
+    "Navigation And Positioning": 1,
     "Environmental And Oceanographic Conditions": 3,
-    "Vehicle Capabilities And Constraints": 1
+    "Mission Parameters And Objectives": 2,
+    "Vehicle Capabilities And Constraints": 2
   }
 }

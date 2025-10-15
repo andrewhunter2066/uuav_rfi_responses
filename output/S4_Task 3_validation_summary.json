@@ -40,7 +40,7 @@
   },
   {
     "ResponseID":"75",
-    "ResponseText":"multibeam echo sounder doppler velocity log performance expected vs actual expected resolution coverage",
+    "ResponseText":"multibeam echo sounder doppler velocity log efficiency benchmarked expected resolution coverage",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -66,7 +66,7 @@
   },
   {
     "ResponseID":"76",
-    "ResponseText":"data gaps anomalies must flagged post-mission analysis future mission design",
+    "ResponseText":"data gaps anomalies combination flagged post-mission review future planning",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -92,7 +92,7 @@
   },
   {
     "ResponseID":"333",
-    "ResponseText":"data track purpose could better",
+    "ResponseText":"data fit purpose could energy storage",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,

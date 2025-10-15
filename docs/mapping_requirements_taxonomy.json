@@ -1,0 +1,513 @@
+{
+  "RequirementMapping": [
+    {
+      "RequirementID": "AURRP-01",
+      "RequirementName": "Route Planning",
+      "RequirementText": "End-to-end process optimisation for selection of the optimal route(s) from a candidate set, for consideration by the mission commander",
+      "RelatedTaxonomy": [
+        {
+          "Domain": "NavigationAndPositioning",
+          "Concepts": [
+            "RouteAndTrajectory"
+          ]
+        },
+        {
+          "Domain": "TerrainAndBathymetry",
+          "Concepts": [
+            "SeafloorCharacterization",
+            "BathymetricDataProducts"
+          ]
+        },
+        {
+          "Domain": "EnvironmentalAndOceanographicConditions",
+          "Concepts": [
+            "PhysicalProcesses",
+            "WaterProperties"
+          ]
+        },
+        {
+          "Domain": "VehicleCapabilitiesAndConstraints",
+          "Concepts": [
+            "Performance",
+            "DepthLimits",
+            "AdverseOperationalPerformance"
+          ]
+        }
+      ],
+      "TraceabilityLevel": "Direct",
+      "Rationale": "Optimal routes depend on navigation geometry, terrain constraints, environment, and vehicle limits.",
+      "Priority": "High",
+      "VerificationMethod": "Simulation/Test"
+    },
+    {
+      "RequirementID": "AURRP-02",
+      "RequirementName": "Sensor Interface",
+      "RequirementText": "Demonstrate ability to interface with existing sensors.",
+      "RelatedTaxonomy": [
+        {
+          "Domain": "VehicleCapabilitiesAndConstraints",
+          "Concepts": [
+            "Hardware"
+          ]
+        },
+        {
+          "Domain": "EnvironmentalAndOceanographicConditions",
+          "Concepts": [
+            "MeasurementAndModels"
+          ]
+        },
+        {
+          "Domain": "TerrainAndBathymetry",
+          "Concepts": [
+            "SoundingOperationsQuality"
+          ]
+        },
+        {
+          "Domain": "DataProductsAndRequirements",
+          "Concepts": [
+            "MetadataAndFormat"
+          ]
+        },
+        {
+          "Domain": "MissionAuditAndTraceability",
+          "Concepts": [
+            "MetadataAndRecords"
+          ]
+        }
+      ],
+      "TraceabilityLevel": "Direct",
+      "Rationale": "Sensor interfaces are core to hardware, environmental models, bathymetric soundings, and data integration.",
+      "Priority": "High",
+      "VerificationMethod": "Demonstration/Test"
+    },
+    {
+      "RequirementID": "AURRP-03",
+      "RequirementName": "Contribute to the UUV navigation",
+      "RelatedTaxonomy": [
+        {
+          "Domain": "NavigationAndPositioning",
+          "Concepts": [
+            "NavigationSystems",
+            "AccuracyAndHazards"
+          ]
+        },
+        {
+          "Domain": "VehicleCapabilitiesAndConstraints",
+          "Concepts": [
+            "AdverseOperationalPerformance"
+          ]
+        },
+        {
+          "Domain": "ThreatsAndRiskManagement",
+          "Concepts": [
+            "Hazards"
+          ]
+        }
+      ],
+      "TraceabilityLevel": "Direct",
+      "Rationale": "Navigation picture fuses positioning systems, vehicle performance limits, and hazard awareness.",
+      "Priority": "Medium",
+      "VerificationMethod": "Demonstration/Inspection"
+    },
+    {
+      "RequirementID": "AURRP-04",
+      "RequirementName": "Ingest Environmental Data",
+      "RelatedTaxonomy": [
+        {
+          "Domain": "EnvironmentalAndOceanographicConditions",
+          "Concepts": [
+            "PhysicalProcesses",
+            "WaterProperties",
+            "EphemeralsAndDynamics"
+          ]
+        },
+        {
+          "Domain": "EstimationAndUncertaintyModeling",
+          "Concepts": [
+            "UncertaintyModeling",
+            "PredictiveEstimation"
+          ]
+        },
+        {
+          "Domain": "DataProductsAndRequirements",
+          "Concepts": [
+            "DataQuality"
+          ]
+        }
+      ],
+      "TraceabilityLevel": "Direct",
+      "Rationale": "Environmental inputs drive optimal route planning and require predictive estimation.",
+      "Priority": "Medium",
+      "VerificationMethod": "Analysis/Test"
+    },
+    {
+      "RequirementID": "AURRP-05",
+      "RequirementName": "Leverage LLMs",
+      "RelatedTaxonomy": [
+        {
+          "Domain": "MissionAuditAndTraceability",
+          "Concepts": [
+            "DecisionProvenance",
+            "PlanExecutionLinkage"
+          ]
+        },
+        {
+          "Domain": "DataProductsAndRequirements",
+          "Concepts": [
+            "AnnotatedOutputs"
+          ]
+        },
+        {
+          "Domain": "StandardsAndGovernance",
+          "Concepts": [
+            "FormatAndContent"
+          ]
+        }
+      ],
+      "TraceabilityLevel": "Direct",
+      "Rationale": "LLMs provide decision capture, annotated outputs, and provenance of reasoning.",
+      "Priority": "High",
+      "VerificationMethod": "Demonstration"
+    },
+    {
+      "RequirementID": "AURRP-06",
+      "RequirementName": "Route planning software to enhance productivity",
+      "RelatedTaxonomy": [
+        {
+          "Domain": "MissionParametersAndObjectives",
+          "Concepts": [
+            "Objectives"
+          ]
+        },
+        {
+          "Domain": "MissionAuditAndTraceability",
+          "Concepts": [
+            "ChecklistAndVerification"
+          ]
+        },
+        {
+          "Domain": "IntegrationAndFeedback",
+          "Concepts": [
+            "LearningFeedback"
+          ]
+        }
+      ],
+      "TraceabilityLevel": "Indirect",
+      "Rationale": "Productivity links to achieving mission objectives, traceability, and iterative improvements.",
+      "Priority": "Medium",
+      "VerificationMethod": "Inspection/User Trials"
+    },
+    {
+      "RequirementID": "AURRP-07",
+      "RequirementName": "User Suitability",
+      "RelatedTaxonomy": [
+        {
+          "Domain": "MissionParametersAndObjectives",
+          "Concepts": [
+            "OperationalWindows"
+          ]
+        },
+        {
+          "Domain": "MissionAuditAndTraceability",
+          "Concepts": [
+            "ChecklistAndVerification"
+          ]
+        },
+        {
+          "Domain": "StandardsAndGovernance",
+          "Concepts": [
+            "IdentityAndSignoff"
+          ]
+        }
+      ],
+      "TraceabilityLevel": "Indirect",
+      "Rationale": "Usability is grounded in operational timing, verification processes, and accountability",
+      "Priority": "High",
+      "VerificationMethod": "User Testing"
+    },
+    {
+      "RequirementID": "AURRP-09",
+      "RequirementName": "Data Fusion",
+      "RelatedTaxonomy": [
+        {
+          "Domain": "DataProductsAndRequirements",
+          "Concepts": [
+            "MetadataAndFormat",
+            "DataQuality",
+            "Outputs"
+          ]
+        },
+        {
+          "Domain": "EstimationAndUncertaintyModeling",
+          "Concepts": [
+            "RiskFusionAndEffectiveness"
+          ]
+        },
+        {
+          "Domain": "HistoricalAndContextualData",
+          "Concepts": [
+            "DataContext"
+          ]
+        }
+      ],
+      "TraceabilityLevel": "Direct",
+      "Rationale": "Fusion requires handling formats, applying confidence metrics, and integrating legacy/historical datasets.",
+      "Priority": "High",
+      "VerificationMethod": "Test/Demonstration"
+    },
+    {
+      "RequirementID": "AURRP-10",
+      "RequirementName": "Solution must be standalone",
+      "RelatedTaxonomy": [
+        {
+          "Domain": "StandardsAndGovernance",
+          "Concepts": [
+            "AccessControl",
+            "InteroperabilityProfiles"
+          ]
+        },
+        {
+          "Domain": "ThreatsAndRiskManagement",
+          "Concepts": [
+            "AdversarialAndDetectionRisks"
+          ]
+        }
+      ],
+      "TraceabilityLevel": "Direct",
+      "Rationale": "Standalone design ensures compliance, independence, and resilience.",
+      "Priority": "Medium",
+      "VerificationMethod": "Inspection"
+    },
+    {
+      "RequirementID": "AURRP-11",
+      "RequirementName": "Read Only",
+      "RelatedTaxonomy": [
+        {
+          "Domain": "DataProductsAndRequirements",
+          "Concepts": [
+            "DataIntegrityAndResilience"
+          ]
+        },
+        {
+          "Domain": "MissionAuditAndTraceability",
+          "Concepts": [
+            "MetadataAndRecords"
+          ]
+        }
+      ],
+      "TraceabilityLevel": "Direct",
+      "Rationale": "Read-only constraints preserve integrity and traceable provenance.",
+      "Priority": "High",
+      "VerificationMethod": "Analysis"
+    },
+    {
+      "RequirementID": "AURRP-12",
+      "RequirementName": "Cyber worthiness",
+      "RelatedTaxonomy": [
+        {
+          "Domain": "ThreatsAndRiskManagement",
+          "Concepts": [
+            "SafetyAndMitigation",
+            "AdversarialAndDetectionRisks"
+          ]
+        },
+        {
+          "Domain": "StandardsAndGovernance",
+          "Concepts": [
+            "ComplianceAndPolicy",
+            "AccessControl"
+          ]
+        }
+      ],
+      "TraceabilityLevel": "Direct",
+      "Rationale": "Cyber worthiness links to system safety, adversarial risk, and compliance with standards.",
+      "Priority": "High",
+      "VerificationMethod": "Security Assessment"
+    },
+    {
+      "RequirementID": "AURRP-13",
+      "RequirementName": "System Flexibility",
+      "RelatedTaxonomy": [
+        {
+          "Domain": "StandardsAndGovernance",
+          "Concepts": [
+            "InteroperabilityProfiles",
+            "StandardsAdequacy"
+          ]
+        },
+        {
+          "Domain": "DataProductsAndRequirements",
+          "Concepts": [
+            "StandardsAndCapacity"
+          ]
+        }
+      ],
+      "TraceabilityLevel": "Direct",
+      "Rationale": "Flexibility requires standards compliance, future-proofing, and scalable formats.",
+      "Priority": "High",
+      "VerificationMethod": "Design Review"
+    },
+    {
+      "RequirementID": "AURRP-14",
+      "RequirementName": "AI Model Specification",
+      "RelatedTaxonomy": [
+        {
+          "Domain": "StandardsAndGovernance",
+          "Concepts": [
+            "FormatAndContent",
+            "IdentityAndSignoff"
+          ]
+        },
+        {
+          "Domain": "MissionAuditAndTraceability",
+          "Concepts": [
+            "DecisionProvenance"
+          ]
+        }
+      ],
+      "TraceabilityLevel": "Direct",
+      "Rationale": "AI model specs form part of rich metadata and governance.",
+      "Priority": "Medium",
+      "VerificationMethod": "Documentation Review"
+    },
+    {
+      "RequirementID": "AURRP-15",
+      "RequirementName": "Platform Agnostic Design",
+      "RelatedTaxonomy": [
+        {
+          "Domain": "VehicleCapabilitiesAndConstraints",
+          "Concepts": [
+            "PerformanceConstraints",
+            "AdverseOperationalPerformance"
+          ]
+        },
+        {
+          "Domain": "NavigationAndPositioning",
+          "Concepts": [
+            "RouteAndTrajectory"
+          ]
+        }
+      ],
+      "TraceabilityLevel": "Direct",
+      "Rationale": "Platform agnosticism requires routes to adapt across vehicles with differing performance.",
+      "Priority": "High",
+      "VerificationMethod": "Test Across Platforms"
+    },
+    {
+      "RequirementID": "AURRP-16",
+      "RequirementName": "Route Optimisation",
+      "RelatedTaxonomy": [
+        {
+          "Domain": "NavigationAndPositioning",
+          "Concepts": [
+            "RouteAndTrajectory"
+          ]
+        },
+        {
+          "Domain": "EnvironmentalAndOceanographicConditions",
+          "Concepts": [
+            "PhysicalProcesses"
+          ]
+        },
+        {
+          "Domain": "TerrainAndBathymetry",
+          "Concepts": [
+            "SeafloorCharacterization"
+          ]
+        },
+        {
+          "Domain": "VehicleCapabilitiesAndConstraints",
+          "Concepts": [
+            "Performance"
+          ]
+        }
+      ],
+      "TraceabilityLevel": "Direct",
+      "Rationale": "Route optimisation is a synthesis of environment, bathymetry, and vehicle performance.",
+      "Priority": "High",
+      "VerificationMethod": "Simulation/Test"
+    },
+    {
+      "RequirementID": "AURRP-17",
+      "RequirementName": "Adaptability to uncertain environments",
+      "RelatedTaxonomy": [
+        {
+          "Domain": "EstimationAndUncertaintyModeling",
+          "Concepts": [
+            "UncertaintyModeling",
+            "PredictiveEstimation",
+            "RiskFusionAndEffectiveness"
+          ]
+        },
+        {
+          "Domain": "EnvironmentalAndOceanographicConditions",
+          "Concepts": [
+            "EnvironmentalContext"
+          ]
+        }
+      ],
+      "TraceabilityLevel": "Direct",
+      "Rationale": "Adaptability requires predictive modelling and environmental uncertainty handling.",
+      "Priority": "High",
+      "VerificationMethod": "Simulation/Test"
+    },
+    {
+      "RequirementID": "AURRP-18",
+      "RequirementName": "Obstacle Avoidance",
+      "RelatedTaxonomy": [
+        {
+          "Domain": "ThreatsAndRiskManagement",
+          "Concepts": [
+            "SafetyAndMitigation",
+            "Hazards"
+          ]
+        },
+        {
+          "Domain": "NavigationAndPositioning",
+          "Concepts": [
+            "AccuracyAndHazards"
+          ]
+        },
+        {
+          "Domain": "TerrainAndBathymetry",
+          "Concepts": [
+            "SurfaceFeatures"
+          ]
+        }
+      ],
+      "TraceabilityLevel": "Direct",
+      "Rationale": "Avoidance requires identifying hazards, navigating accurately, and considering terrain complexity.",
+      "Priority": "High",
+      "VerificationMethod": "Simulation/Demonstration"
+    },
+    {
+      "RequirementID": "AURRP-19",
+      "RequirementName": "AI to be self documenting",
+      "RelatedTaxonomy": [
+        {
+          "Domain": "MissionAuditAndTraceability",
+          "Concepts": [
+            "MetadataAndRecords",
+            "DecisionProvenance"
+          ]
+        },
+        {
+          "Domain": "DataProductsAndRequirements",
+          "Concepts": [
+            "AnnotatedOutputs"
+          ]
+        },
+        {
+          "Domain": "StandardsAndGovernance",
+          "Concepts": [
+            "FormatAndContent"
+          ]
+        }
+      ],
+      "TraceabilityLevel": "Direct",
+      "Rationale": "Self-documentation requires metadata capture, annotated outputs, and compliance with standards.",
+      "Priority": "Medium",
+      "VerificationMethod": "Documentation/Inspection"
+    }
+  ]
+}

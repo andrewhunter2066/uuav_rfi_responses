@@ -1,0 +1,20 @@
+RequirementID,RequirementName,NavigationAndPositioning,TerrainAndBathymetry,EnvironmentalAndOceanographicConditions,VehicleCapabilitiesAndConstraints,MissionParametersAndObjectives,DataProductsAndRequirements,MissionAuditAndTraceability,ThreatsAndRiskManagement,EstimationAndUncertaintyModeling,StandardsAndGovernance,HistoricalAndContextualData,CommunicationsAndControl,OperationalLogistics,TestAndEvaluationScenarios,IntegrationAndFeedback
+AURRP-01,Route Planning,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0
+AURRP-02,Sensor Interface,0,1,1,1,0,1,1,0,0,0,0,0,0,0,0
+AURRP-03,Contribute to the UUV navigation,1,0,0,1,0,0,0,1,0,0,0,0,0,0,0
+AURRP-04,Ingest Environmental Data,0,0,1,0,0,1,0,0,1,0,0,0,0,0,0
+AURRP-05,Leverage LLMs,0,0,0,0,0,1,1,0,0,1,0,0,0,0,0
+AURRP-06,Route planning software to enhance productivity,0,0,0,0,1,0,1,0,0,0,0,0,0,0,1
+AURRP-07,User Suitability,0,0,0,0,1,0,1,0,0,1,0,0,0,0,0
+AURRP-09,Data Fusion,0,0,0,0,0,1,0,0,1,0,1,0,0,0,0
+AURRP-10,Solution must be standalone,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0
+AURRP-11,Read Only,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0
+AURRP-12,Cyber worthiness,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0
+AURRP-13,System Flexibility,0,0,0,0,0,1,0,0,0,1,0,0,0,0,0
+AURRP-14,AI Model Specification,0,0,0,0,0,0,1,0,0,1,0,0,0,0,0
+AURRP-15,Platform Agnostic Design,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0
+AURRP-16,Route Optimisation,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0
+AURRP-17,Adaptability to uncertain environments,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0
+AURRP-18,Obstacle Avoidance,1,1,0,0,0,0,0,1,0,0,0,0,0,0,0
+AURRP-19,AI to be self documenting,0,0,0,0,0,1,1,0,0,1,0,0,0,0,0
+
