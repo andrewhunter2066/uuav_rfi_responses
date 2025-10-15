@@ -491,6 +491,8 @@ To be completed post-workshop series.
 
 ## References
 
+[Goto Bibtex References](https://github.com/surroundaustralia/RAN/blob/main/rfi/rfi_data/output/refs.bib)
+
 ---
 
 ## Appendices
