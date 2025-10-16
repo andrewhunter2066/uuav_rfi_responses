@@ -40,7 +40,7 @@
   },
   {
     "ResponseID":"11",
-    "ResponseText":"sensor failure scenarios eg doppler velocity log failure resulting off-track drift potential",
+    "ResponseText":"sensor failure scenarios eg doppler cruise speed log failure resulting off-track drift potential",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -66,7 +66,7 @@
   },
   {
     "ResponseID":"12",
-    "ResponseText":"surfacing global positioning system fix high-traffic operating area eg shipping channels",
+    "ResponseText":"surfacing global positioning system fix high-traffic areas eg shipping channels",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -118,7 +118,7 @@
   },
   {
     "ResponseID":"139",
-    "ResponseText":"sensor performance prior mission endurance bench underwater depth",
+    "ResponseText":"sensor efficiency prior mission start bench test",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -144,7 +144,7 @@
   },
   {
     "ResponseID":"140",
-    "ResponseText":"ephemeral current tides path area operations",
+    "ResponseText":"ephemeral current tides route area undertaking",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -170,7 +170,7 @@
   },
   {
     "ResponseID":"141",
-    "ResponseText":"threat assessment cyber risk mission",
+    "ResponseText":"mission cyber threat assessment cyber risk mission",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -196,7 +196,7 @@
   },
   {
     "ResponseID":"142",
-    "ResponseText":"seafloor classification infrastructure planned line area operations",
+    "ResponseText":"seafloor classification route infrastructure route area operations",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -222,7 +222,7 @@
   },
   {
     "ResponseID":"143",
-    "ResponseText":"range vehicle",
+    "ResponseText":"loiter time vehicle",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -248,7 +248,7 @@
   },
   {
     "ResponseID":"144",
-    "ResponseText":"maximum depth vessel",
+    "ResponseText":"maximum depth vehicle",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -274,7 +274,7 @@
   },
   {
     "ResponseID":"145",
-    "ResponseText":"minimum depth vehicle",
+    "ResponseText":"minimum underwater depth vehicle",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -300,7 +300,7 @@
   },
   {
     "ResponseID":"146",
-    "ResponseText":"navigational hazards route zone operations",
+    "ResponseText":"navigational constraint route area operations",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -326,7 +326,7 @@
   },
   {
     "ResponseID":"147",
-    "ResponseText":"vehicle communication parameter",
+    "ResponseText":"vehicle telemetry requirements",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -352,7 +352,7 @@
   },
   {
     "ResponseID":"148",
-    "ResponseText":"no-go zones path area operations",
+    "ResponseText":"no-go zones route area operations",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -378,7 +378,7 @@
   },
   {
     "ResponseID":"149",
-    "ResponseText":"actions loss communications loss vehicle etc",
+    "ResponseText":"actions loss comms loss vehicle etc",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,

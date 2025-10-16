@@ -1,12 +1,14 @@
 {
   "child_summary": {
     "Objectives": 4,
-    "Metadata And Format": 3,
-    "uncategorised": 3
+    "Metadata And Format": 1,
+    "Control Systems": 1,
+    "uncategorised": 4
   },
   "parent_summary": {
     "Mission Parameters And Objectives": 4,
-    "Data Products And Requirements": 3,
-    "uncategorised": 3
+    "Data Products And Requirements": 1,
+    "Communications And Control": 1,
+    "uncategorised": 4
   }
 }

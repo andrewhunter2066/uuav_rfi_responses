@@ -14,7 +14,7 @@
   },
   {
     "ResponseID":"74",
-    "ResponseText":"sounding quality affected unmanned underwater vehicle altitude pitch roll environmental noise",
+    "ResponseText":"sounding quality affected unmanned underwater vehicle altitude course planned line environmental noise",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -40,7 +40,7 @@
   },
   {
     "ResponseID":"75",
-    "ResponseText":"multibeam echo sounder doppler velocity log efficiency benchmarked expected resolution coverage",
+    "ResponseText":"multibeam echo sounder doppler speed log performance benchmarked expected resolution coverage",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -66,7 +66,7 @@
   },
   {
     "ResponseID":"76",
-    "ResponseText":"data gaps anomalies combination flagged post-mission review future planning",
+    "ResponseText":"data gaps irregularity must flagged post-mission review future planning",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -92,7 +92,7 @@
   },
   {
     "ResponseID":"333",
-    "ResponseText":"data fit purpose could energy storage",
+    "ResponseText":"data fit purpose could power source",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,

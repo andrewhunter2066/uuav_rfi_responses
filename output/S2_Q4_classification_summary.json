@@ -4,26 +4,23 @@
     "Bathymetric Data Products": 4,
     "Physical Processes": 4,
     "Safety And Mitigation": 2,
-    "Objectives": 3,
-    "Hazards": 1,
+    "Objectives": 2,
+    "Hazards": 2,
     "Survey Data": 2,
-    "Performance": 2,
-    "uncategorised": 3,
-    "Seafloor Characterization": 1,
+    "Performance": 1,
+    "uncategorised": 6,
     "Route And Trajectory": 5,
     "Hardware": 3,
-    "Control Systems": 1,
     "Accuracy And Hazards": 1
   },
   "parent_summary": {
-    "Terrain And Bathymetry": 7,
-    "Navigation And Positioning": 7,
-    "Environmental And Oceanographic Conditions": 3,
-    "Threats And Risk Management": 3,
-    "Mission Parameters And Objectives": 3,
+    "Terrain And Bathymetry": 6,
+    "Navigation And Positioning": 8,
+    "Threats And Risk Management": 4,
+    "Mission Parameters And Objectives": 2,
+    "Environmental And Oceanographic Conditions": 2,
     "Data Products And Requirements": 2,
-    "Vehicle Capabilities And Constraints": 5,
-    "uncategorised": 3,
-    "Communications And Control": 1
+    "Vehicle Capabilities And Constraints": 4,
+    "uncategorised": 6
   }
 }

@@ -1,22 +1,22 @@
 {
   "child_summary": {
     "Bathymetric Data Products": 2,
-    "Metadata And Records": 2,
+    "Metadata And Records": 1,
+    "uncategorised": 10,
     "Environmental Context": 2,
-    "Post Mission Analysis": 2,
-    "uncategorised": 8,
-    "Accountability": 2,
-    "Objectives": 2,
+    "Post Mission Analysis": 1,
+    "Objectives": 3,
+    "Accountability": 1,
     "Data Integrity And Resilience": 3,
-    "Route And Trajectory": 1
+    "Seafloor Characterization": 1
   },
   "parent_summary": {
     "Data Products And Requirements": 5,
-    "Audit And Accountability": 4,
+    "Audit And Accountability": 2,
+    "uncategorised": 10,
     "Environmental And Oceanographic Conditions": 2,
-    "Historical And Contextual Data": 2,
-    "uncategorised": 8,
-    "Mission Parameters And Objectives": 2,
-    "Navigation And Positioning": 1
+    "Historical And Contextual Data": 1,
+    "Mission Parameters And Objectives": 3,
+    "Terrain And Bathymetry": 1
   }
 }

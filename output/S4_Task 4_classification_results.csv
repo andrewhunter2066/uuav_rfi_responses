@@ -1,11 +1,11 @@
 ResponseID,ResponseText,PredictedChild,PredictedParent,ChildScores,ParentScores,has_protected,has_conflict,has_cross_conflict
 77,mission plans include timestamped task identifiers objectives environmental overlays,Objectives,Mission Parameters And Objectives,"{'Environmental Context': 1, 'Objectives': 3, 'Operational Windows': 1, 'Mission Identification And Traceability': 1}","{'Environmental And Oceanographic Conditions': 1, 'Mission Parameters And Objectives': 5}",False,False,False
-77,mission plans include timestamped task identifiers target environmental overlays,Objectives,Mission Parameters And Objectives,"{'Environmental Context': 1, 'Objectives': 2, 'Operational Windows': 1, 'Mission Identification And Traceability': 1}","{'Environmental And Oceanographic Conditions': 1, 'Mission Parameters And Objectives': 4}",False,False,False
+77,mission plans include timestamped task identifiers objectives environmental overlays,Objectives,Mission Parameters And Objectives,"{'Environmental Context': 1, 'Objectives': 3, 'Operational Windows': 1, 'Mission Identification And Traceability': 1}","{'Environmental And Oceanographic Conditions': 1, 'Mission Parameters And Objectives': 5}",False,False,False
 78,metadata tagging mission phase enables traceability reuse,Objectives,Mission Parameters And Objectives,"{'Objectives': 1, 'Temporal Aspects': 1, 'Metadata And Format': 1}","{'Mission Parameters And Objectives': 2, 'Data Products And Requirements': 1}",False,False,False
-78,metadata tagging assignment phase enables record linkage reuse,Metadata And Format,Data Products And Requirements,"{'Metadata And Format': 1, 'Comms Infrastructure': 1}","{'Data Products And Requirements': 1, 'Communications And Control': 1}",False,False,False
+78,data descriptor journaling mission phase enables traceability reuse,Objectives,Mission Parameters And Objectives,"{'Objectives': 1, 'Temporal Aspects': 1}",{'Mission Parameters And Objectives': 2},False,False,False
 79,integration defence data standards ensures consistency interoperability,Metadata And Format,Data Products And Requirements,{'Metadata And Format': 1},{'Data Products And Requirements': 1},False,False,False
-79,integration defence data standards ensures consistency interoperability,Metadata And Format,Data Products And Requirements,{'Metadata And Format': 1},{'Data Products And Requirements': 1},False,False,False
+79,integration defence telemetry standards ensures consistency interoperability,Control Systems,Communications And Control,{'Control Systems': 1},{'Communications And Control': 1},False,False,False
 334,area operations search,uncategorised,uncategorised,{},{},False,False,False
-334,area mission search,Objectives,Mission Parameters And Objectives,{'Objectives': 1},{'Mission Parameters And Objectives': 1},False,False,False
+334,area operations search,uncategorised,uncategorised,{},{},False,False,False
 336,acquire target,uncategorised,uncategorised,{},{},False,False,False
-336,acquire goal,uncategorised,uncategorised,{},{},False,False,False
+336,acquire purpose,uncategorised,uncategorised,{},{},False,False,False

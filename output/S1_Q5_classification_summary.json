@@ -3,15 +3,15 @@
     "Physical Processes": 2,
     "Seafloor Characterization": 2,
     "uncategorised": 6,
-    "Objectives": 2,
+    "Objectives": 1,
+    "Measurement And Models": 3,
     "Hardware": 2,
-    "Bathymetric Data Products": 2,
-    "Measurement And Models": 2
+    "Bathymetric Data Products": 2
   },
   "parent_summary": {
-    "Environmental And Oceanographic Conditions": 6,
+    "Environmental And Oceanographic Conditions": 7,
     "uncategorised": 6,
-    "Mission Parameters And Objectives": 2,
+    "Mission Parameters And Objectives": 1,
     "Vehicle Capabilities And Constraints": 2,
     "Terrain And Bathymetry": 2
   }

@@ -40,7 +40,7 @@
   },
   {
     "ResponseID":"61",
-    "ResponseText":"presence aquatic life protected habitat zones",
+    "ResponseText":"presence marine life protected habitat zones",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -66,7 +66,7 @@
   },
   {
     "ResponseID":"62",
-    "ResponseText":"oceanographic fault eg geo-fix currents sediment plumes",
+    "ResponseText":"oceanographic anomalies eg rip east australian current seafloor composition plumes",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -92,7 +92,7 @@
   },
   {
     "ResponseID":"63",
-    "ResponseText":"payload interference bottom clutter acoustic shadowing",
+    "ResponseText":"sensor interference bottom clutter acoustic shadowing",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -196,7 +196,7 @@
   },
   {
     "ResponseID":"314",
-    "ResponseText":"factor damage grounding occurrence occurs",
+    "ResponseText":"factor information grounding event occurs",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -222,7 +222,7 @@
   },
   {
     "ResponseID":"315",
-    "ResponseText":"area covered area operations achievable time limitations",
+    "ResponseText":"coverage area operations achievable time constraint",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -248,7 +248,7 @@
   },
   {
     "ResponseID":"316",
-    "ResponseText":"potential buoyancy factors water column dataset",
+    "ResponseText":"potential buoyancy factors water column records",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -274,7 +274,7 @@
   },
   {
     "ResponseID":"317",
-    "ResponseText":"records time location surface",
+    "ResponseText":"total time location ocean surface",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,

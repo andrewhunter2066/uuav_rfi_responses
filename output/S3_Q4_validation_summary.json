@@ -14,7 +14,7 @@
   },
   {
     "ResponseID":"56",
-    "ResponseText":"habitat disruption risk environmental regulatory compliance",
+    "ResponseText":"habitat disruption risk environmental compliance",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -40,7 +40,7 @@
   },
   {
     "ResponseID":"57",
-    "ResponseText":"substrate object interference unmanned underwater vehicle sensors mobility",
+    "ResponseText":"bottom object interference unmanned underwater vehicle sensors mobility",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -66,7 +66,7 @@
   },
   {
     "ResponseID":"58",
-    "ResponseText":"surf zone dynamics potential vehicle instability",
+    "ResponseText":"surf zone dynamics potential auv instability",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -144,7 +144,7 @@
   },
   {
     "ResponseID":"299",
-    "ResponseText":"instrument effectiveness prior mission start bench test",
+    "ResponseText":"payload performance prior mission endurance bench test",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -170,7 +170,7 @@
   },
   {
     "ResponseID":"300",
-    "ResponseText":"ephemeral current tides corridor area operations",
+    "ResponseText":"ephemeral current tidal stream route area operations",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -196,7 +196,7 @@
   },
   {
     "ResponseID":"301",
-    "ResponseText":"threat assessment cyber risk task",
+    "ResponseText":"threat assessment cyber vulnerability mission",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -222,7 +222,7 @@
   },
   {
     "ResponseID":"302",
-    "ResponseText":"seafloor classification infrastructure route area activity",
+    "ResponseText":"seafloor clustering infrastructure route area operations",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -248,7 +248,7 @@
   },
   {
     "ResponseID":"303",
-    "ResponseText":"endurance rov",
+    "ResponseText":"duration vehicle",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -274,7 +274,7 @@
   },
   {
     "ResponseID":"304",
-    "ResponseText":"maximum bathymetry vehicle",
+    "ResponseText":"maximum depth vehicle",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -300,7 +300,7 @@
   },
   {
     "ResponseID":"305",
-    "ResponseText":"minimum depth rov",
+    "ResponseText":"minimum depth vehicle",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -326,7 +326,7 @@
   },
   {
     "ResponseID":"306",
-    "ResponseText":"navigational hazards route operating area operations",
+    "ResponseText":"navigational hazards planned line area operations",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -352,7 +352,7 @@
   },
   {
     "ResponseID":"307",
-    "ResponseText":"vehicle comms requirements",
+    "ResponseText":"rov communication requirements",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -378,7 +378,7 @@
   },
   {
     "ResponseID":"308",
-    "ResponseText":"no-go zones route area activity",
+    "ResponseText":"no-go zones route area of operation operations",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -430,7 +430,7 @@
   },
   {
     "ResponseID":"310",
-    "ResponseText":"operating area confidence route area operations",
+    "ResponseText":"sector confidence route area operations",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,

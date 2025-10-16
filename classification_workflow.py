@@ -2537,7 +2537,7 @@ def batch_merge_all_scenarios(question: str, scenarios: list[int]) -> None:
     [DEPRECATED - Use merge_all_classifications() instead]
 
     This function has been superseded by merge_all_classifications() which provides:
-    - Multi-column classification output (PredictedChilds, PredictedParents)
+    - Multi-column classification output (PredictedChild, PredictedParent)
     - Enhanced version control and change tracking
     - Single consolidated output file for all scenarios and questions
 
@@ -2916,10 +2916,10 @@ def _ensure_required_columns(df: pd.DataFrame) -> pd.DataFrame:
     :return: The updated DataFrame with all required columns ensured.
     :rtype: pd.DataFrame
     """
-    if 'PredictedChilds' not in df.columns:
-        df['PredictedChilds'] = 'not_classified'
-    if 'PredictedParents' not in df.columns:
-        df['PredictedParents'] = 'not_classified'
+    if 'PredictedChild' not in df.columns:
+        df['PredictedChild'] = 'not_classified'
+    if 'PredictedParent' not in df.columns:
+        df['PredictedParent'] = 'not_classified'
     if 'Version' not in df.columns:
         df['Version'] = df.get('Version', 'v0.1')
     if 'ChangeNote' not in df.columns:
@@ -2960,8 +2960,8 @@ def _aggregate_and_merge_classifications(
 
         mask = original_df['ResponseID'] == response_id
 
-        original_df.loc[mask, 'PredictedChilds'] = child_cats
-        original_df.loc[mask, 'PredictedParents'] = parent_cats
+        original_df.loc[mask, 'PredictedChild'] = child_cats
+        original_df.loc[mask, 'PredictedParent'] = parent_cats
 
         if (child_cats not in ['uncategorised', 'not_classified', '']) or \
                 (parent_cats not in ['uncategorised', 'not_classified', '']):
@@ -3034,8 +3034,8 @@ def _print_classification_statistics(
     print(f"\nTotal responses: {len(df)}")
 
     classified = df[
-        (df['PredictedChilds'] != 'not_classified') |
-        (df['PredictedParents'] != 'not_classified')
+        (df['PredictedChild'] != 'not_classified') |
+        (df['PredictedParent'] != 'not_classified')
         ]
     print(f"Classified responses: {len(classified)}")
     print(f"Unclassified responses: {len(df) - len(classified)}")
@@ -3044,10 +3044,10 @@ def _print_classification_statistics(
     print(df['Version'].value_counts())
 
     print(f"\nTop 10 child classification patterns:")
-    print(df['PredictedChilds'].value_counts().head(10))
+    print(df['PredictedChild'].value_counts().head(10))
 
     print(f"\nTop 10 parent classification patterns:")
-    print(df['PredictedParents'].value_counts().head(10))
+    print(df['PredictedParent'].value_counts().head(10))
 
     updated_records = df[df['Version'] == 'v0.2']
     print(f"\nRecords updated to v0.2: {len(updated_records)}")

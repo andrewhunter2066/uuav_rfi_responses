@@ -14,7 +14,7 @@
   },
   {
     "ResponseID":"71",
-    "ResponseText":"performance degradation high-current zones minimal water acoustically complex environments logged",
+    "ResponseText":"performance degradation high-current zones minimal marine acoustically complex environments logged",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -40,7 +40,7 @@
   },
   {
     "ResponseID":"72",
-    "ResponseText":"unmanned underwater craft stability propulsion efficiency instrument reliability adverse conditions must tracked",
+    "ResponseText":"unmanned underwater vehicle stability propulsion efficiency instrument reliability adverse conditions must tracked",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -66,7 +66,7 @@
   },
   {
     "ResponseID":"73",
-    "ResponseText":"comparative analysis approach platforms operation types essential refining operational limits",
+    "ResponseText":"comparative evaluation across platforms mission types essential refining operational limits",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -92,7 +92,7 @@
   },
   {
     "ResponseID":"330",
-    "ResponseText":"currents major influence task profiles",
+    "ResponseText":"stream major influence mission profiles",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -118,7 +118,7 @@
   },
   {
     "ResponseID":"331",
-    "ResponseText":"wind sea state wave period launch recovery",
+    "ResponseText":"wind sea state swell deployment recovery",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -144,7 +144,7 @@
   },
   {
     "ResponseID":"332",
-    "ResponseText":"vessel traffic considerations unplanned global positioning system surface fixing",
+    "ResponseText":"craft traffic considerations unplanned global positioning system surface fixing",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,

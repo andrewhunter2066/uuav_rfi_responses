@@ -14,7 +14,7 @@
   },
   {
     "ResponseID":"80",
-    "ResponseText":"incident system log include root cause analysis operational consequence",
+    "ResponseText":"incident journaling include root cause analysis activity impact",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -40,7 +40,7 @@
   },
   {
     "ResponseID":"81",
-    "ResponseText":"telemetry dropouts payload failures navigation drift must recorded geospatial context",
+    "ResponseText":"communications dropouts detector failures navigation drift must recorded geospatial corridor",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -66,7 +66,7 @@
   },
   {
     "ResponseID":"82",
-    "ResponseText":"risk flags trigger automated alerts post-mission debrief requirements",
+    "ResponseText":"risk flags trigger automated alerts post-mission debrief criterion",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -118,7 +118,7 @@
   },
   {
     "ResponseID":"338",
-    "ResponseText":"deconfliction communication channels achieved liaison objective orders",
+    "ResponseText":"deconfliction telemetry channels achieved liaison mission tidal stream",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,

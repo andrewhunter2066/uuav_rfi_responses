@@ -14,7 +14,7 @@
   },
   {
     "ResponseID":"8",
-    "ResponseText":"use standard uncertainty limits define acceptable variance corridor planning",
+    "ResponseText":"use standard deviation limits define acceptable variance route preparation",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -40,7 +40,7 @@
   },
   {
     "ResponseID":"9",
-    "ResponseText":"incorporation environmental uncertainty models refine estimations",
+    "ResponseText":"incorporation weather uncertainty models refine estimations",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -92,7 +92,7 @@
   },
   {
     "ResponseID":"127",
-    "ResponseText":"understanding environmental conditions endurance deployment recovery platform mission speed sensor performance rules engagement etc",
+    "ResponseText":"understanding environmental conditions endurance launch recovery platform sortie speed sensor performance rules engagement etc",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -118,7 +118,7 @@
   },
   {
     "ResponseID":"128",
-    "ResponseText":"rules engagement coverage inform schedule",
+    "ResponseText":"rules engagement coverage inform interval",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -144,7 +144,7 @@
   },
   {
     "ResponseID":"129",
-    "ResponseText":"time surface hazard top layer covert surface traffic accuracy",
+    "ResponseText":"time surface risk top layer wave height surface traffic accuracy",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -170,7 +170,7 @@
   },
   {
     "ResponseID":"130",
-    "ResponseText":"rules engagement coordinate spacing",
+    "ResponseText":"rules engagement line spacing",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -196,7 +196,7 @@
   },
   {
     "ResponseID":"131",
-    "ResponseText":"confidence route planning maintaining position",
+    "ResponseText":"route confidence route planning maintaining position",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -248,7 +248,7 @@
   },
   {
     "ResponseID":"134",
-    "ResponseText":"range host vessel range acoustic communications need safety rov etc",
+    "ResponseText":"duration host vessel range acoustic communications requirement safety vessel etc",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -274,7 +274,7 @@
   },
   {
     "ResponseID":"135",
-    "ResponseText":"improves safety vehicle collision avoidance tactics path selection etc",
+    "ResponseText":"improves safety rov collision avoidance tactics route selection etc",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -300,7 +300,7 @@
   },
   {
     "ResponseID":"136",
-    "ResponseText":"navigational hazards inform potential adversary influence",
+    "ResponseText":"navigational constraint inform potential adversary influence",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -326,7 +326,7 @@
   },
   {
     "ResponseID":"137",
-    "ResponseText":"route confidence understanding area operations",
+    "ResponseText":"confidence area operations understanding",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,

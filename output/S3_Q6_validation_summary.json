@@ -40,7 +40,7 @@
   },
   {
     "ResponseID":"65",
-    "ResponseText":"mission outage detailing approach conditions outcomes",
+    "ResponseText":"mission logs detailing approach environment outcomes",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -92,7 +92,7 @@
   },
   {
     "ResponseID":"67",
-    "ResponseText":"post-mission feedback beach steady state landing success",
+    "ResponseText":"post-mission feedback beach viability landing success",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -118,7 +118,7 @@
   },
   {
     "ResponseID":"318",
-    "ResponseText":"initial test check lists pre-dive etc",
+    "ResponseText":"initial test apply lists pre-dive etc",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -144,7 +144,7 @@
   },
   {
     "ResponseID":"319",
-    "ResponseText":"signatory user account information",
+    "ResponseText":"signatory user account dataset",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -170,7 +170,7 @@
   },
   {
     "ResponseID":"320",
-    "ResponseText":"specific job files load job file",
+    "ResponseText":"specific job files load mission form",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -222,7 +222,7 @@
   },
   {
     "ResponseID":"322",
-    "ResponseText":"holes data instrument performance issues",
+    "ResponseText":"holes data sensor performance issues",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -248,7 +248,7 @@
   },
   {
     "ResponseID":"323",
-    "ResponseText":"depth discrepancies",
+    "ResponseText":"bathymetry discrepancies",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -274,7 +274,7 @@
   },
   {
     "ResponseID":"324",
-    "ResponseText":"track interest",
+    "ResponseText":"transit interest",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,

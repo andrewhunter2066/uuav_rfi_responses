@@ -40,7 +40,7 @@
   },
   {
     "ResponseID":"14",
-    "ResponseText":"environmental deviation eg unexpected currents seafloor features",
+    "ResponseText":"environmental irregularity eg unexpected currents seabed features",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -92,7 +92,7 @@
   },
   {
     "ResponseID":"152",
-    "ResponseText":"estimated battery completion mission",
+    "ResponseText":"forecast battery completion mission",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -118,7 +118,7 @@
   },
   {
     "ResponseID":"153",
-    "ResponseText":"potential acoustic communications efficiency issues",
+    "ResponseText":"potential acoustic communications performance issues",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -144,7 +144,7 @@
   },
   {
     "ResponseID":"154",
-    "ResponseText":"factor damage grounding event precision",
+    "ResponseText":"factor damage grounding event occurs",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -196,7 +196,7 @@
   },
   {
     "ResponseID":"156",
-    "ResponseText":"potential buoyancy factors water column information",
+    "ResponseText":"potential buoyancy factors water column signal data",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -222,7 +222,7 @@
   },
   {
     "ResponseID":"157",
-    "ResponseText":"total elapsed time location surface",
+    "ResponseText":"total timing location surface",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,

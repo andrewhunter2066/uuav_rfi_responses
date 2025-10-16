@@ -1,17 +1,20 @@
 {
   "child_summary": {
-    "Physical Processes": 2,
-    "Environmental Context": 3,
-    "Measurement And Models": 1,
-    "Objectives": 4,
+    "Physical Processes": 1,
+    "Environmental Context": 5,
+    "Objectives": 2,
+    "uncategorised": 1,
     "Risk Performance And Effectiveness": 1,
     "Hazards": 1,
-    "Performance": 2
+    "Performance": 2,
+    "Control Systems": 1
   },
   "parent_summary": {
     "Environmental And Oceanographic Conditions": 6,
-    "Mission Parameters And Objectives": 4,
+    "Mission Parameters And Objectives": 2,
+    "uncategorised": 1,
     "Threats And Risk Management": 2,
-    "Vehicle Capabilities And Constraints": 2
+    "Vehicle Capabilities And Constraints": 2,
+    "Communications And Control": 1
   }
 }

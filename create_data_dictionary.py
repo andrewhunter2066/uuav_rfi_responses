@@ -21,8 +21,9 @@ column_descriptions = {
     "Status": "Status of the record (e.g., Draft, Reviewed, Final).",
     "Version": "Version label assigned to this merged data batch.",
     "ChangeNote": "Short note describing what changed in this merge or version.",
-    "Classification": "Classification results for each scenario and question. Only included in classified outputs.",
-    "ChangeDate": "Date of last change to this record. Only included when first change is made."
+    "PredictedChild": "Concept level taxonomy classification.",
+    "PredictedParent": "Domain level taxonomy classification.",
+    "ChangeDate": "Date of last change to this record."
 }
 
 

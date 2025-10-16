@@ -12,5 +12,6 @@ FollowupNeeded,boolean,0,0,,Indicates whether further clarification or follow-up
 Status,string,339,1,Draft,"Status of the record (e.g., Draft, Reviewed, Final)."
 Version,string,339,2,v0.2,Version label assigned to this merged data batch.
 ChangeNote,string,339,2,Initial classification,Short note describing what changed in this merge or version.
-Classification,object,339,11,Terrain and Bathymetry,Classification results for each scenario and question. Only included in classified outputs.
-ChangeDate,object,92,1,2025-10-08,Date of last change to this record. Only included when first change is made.
+PredictedChild,object,339,81,Surface Features,Concept level taxonomy classification.
+PredictedParent,object,339,38,Terrain And Bathymetry,Domain level taxonomy classification.
+ChangeDate,object,283,1,2025-10-16,Date of last change to this record.

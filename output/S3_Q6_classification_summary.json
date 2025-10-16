@@ -1,21 +1,22 @@
 {
   "child_summary": {
-    "Physical Processes": 3,
-    "Environmental Context": 2,
-    "uncategorised": 10,
-    "Access And Support": 1,
-    "Accountability": 2,
-    "Objectives": 2,
+    "Physical Processes": 2,
+    "Environmental Context": 1,
+    "Objectives": 4,
+    "uncategorised": 9,
+    "Access And Support": 2,
+    "Accountability": 1,
     "Data Integrity And Resilience": 3,
-    "Navigation Systems": 1
+    "Seafloor Characterization": 1,
+    "Deployment": 1
   },
   "parent_summary": {
-    "Environmental And Oceanographic Conditions": 3,
-    "Mission Parameters And Objectives": 4,
-    "uncategorised": 10,
-    "Operational Logistics": 1,
-    "Audit And Accountability": 2,
+    "Environmental And Oceanographic Conditions": 2,
+    "Mission Parameters And Objectives": 5,
+    "uncategorised": 9,
+    "Operational Logistics": 3,
+    "Audit And Accountability": 1,
     "Data Products And Requirements": 3,
-    "Navigation And Positioning": 1
+    "Terrain And Bathymetry": 1
   }
 }

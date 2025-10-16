@@ -14,7 +14,7 @@
   },
   {
     "ResponseID":"18",
-    "ResponseText":"swept-channel reconnaissance planning 200m width constraints",
+    "ResponseText":"swept-channel survey planning 200m geo-fix constraints",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -40,7 +40,7 @@
   },
   {
     "ResponseID":"19",
-    "ResponseText":"multibeam echo sounder coverage maps showing resolution overlap gaps",
+    "ResponseText":"multibeam echo sounder coverage maps showing detail overlap gaps",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -66,7 +66,7 @@
   },
   {
     "ResponseID":"20",
-    "ResponseText":"time-on-task estimates based unmanned underwater vehicle speed extent geo-fix environmental conditions",
+    "ResponseText":"time-on-task estimates based unmanned underwater uuv speed swath width weather conditions",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -92,7 +92,7 @@
   },
   {
     "ResponseID":"21",
-    "ResponseText":"terrain complexity seabed gradient data assess mapping feasibility",
+    "ResponseText":"terrain complexity seabed gradient data approach survey feasibility",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -144,7 +144,7 @@
   },
   {
     "ResponseID":"167",
-    "ResponseText":"depth slope corridor area operations",
+    "ResponseText":"depth slope track area operations",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -196,7 +196,7 @@
   },
   {
     "ResponseID":"169",
-    "ResponseText":"bottom texture route area mission",
+    "ResponseText":"bottom texture route area activity",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -222,7 +222,7 @@
   },
   {
     "ResponseID":"170",
-    "ResponseText":"seafloor classification infrastructure route area undertaking",
+    "ResponseText":"seafloor classification infrastructure track area operations",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -248,7 +248,7 @@
   },
   {
     "ResponseID":"171",
-    "ResponseText":"ephemeral current tidal current route area operations",
+    "ResponseText":"ephemeral conditions current tides route area operations",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -274,7 +274,7 @@
   },
   {
     "ResponseID":"172",
-    "ResponseText":"threat mapping cyber risk mission",
+    "ResponseText":"threat assessment cyber risk mission",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -300,7 +300,7 @@
   },
   {
     "ResponseID":"173",
-    "ResponseText":"timings hard left coordinate",
+    "ResponseText":"timings hard left position",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -326,7 +326,7 @@
   },
   {
     "ResponseID":"174",
-    "ResponseText":"water column data planned line area operations",
+    "ResponseText":"marine column data route area operations",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -352,7 +352,7 @@
   },
   {
     "ResponseID":"175",
-    "ResponseText":"launch recovery locations attribute",
+    "ResponseText":"deployment recovery locations parameters",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -378,7 +378,7 @@
   },
   {
     "ResponseID":"176",
-    "ResponseText":"sensor range fitted vehicle",
+    "ResponseText":"sensor range fitted craft",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -404,7 +404,7 @@
   },
   {
     "ResponseID":"177",
-    "ResponseText":"loiter time vehicle",
+    "ResponseText":"endurance platform",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -430,7 +430,7 @@
   },
   {
     "ResponseID":"178",
-    "ResponseText":"maximum depth craft",
+    "ResponseText":"maximum underwater depth vehicle",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -456,7 +456,7 @@
   },
   {
     "ResponseID":"179",
-    "ResponseText":"active instrument collection requirements",
+    "ResponseText":"active sensor collection need",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -482,7 +482,7 @@
   },
   {
     "ResponseID":"180",
-    "ResponseText":"global positioning system fixing requirements update rate",
+    "ResponseText":"global positioning platform fixing requirements frequency",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -508,7 +508,7 @@
   },
   {
     "ResponseID":"181",
-    "ResponseText":"precision requirements sensors",
+    "ResponseText":"error requirements sensors",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -534,7 +534,7 @@
   },
   {
     "ResponseID":"182",
-    "ResponseText":"precision requirements navigation",
+    "ResponseText":"error requirements navigation",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -560,7 +560,7 @@
   },
   {
     "ResponseID":"183",
-    "ResponseText":"minimum depth vehicle",
+    "ResponseText":"minimum depth craft",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -586,7 +586,7 @@
   },
   {
     "ResponseID":"184",
-    "ResponseText":"vector electronic pathfinding charts data route zone operations",
+    "ResponseText":"vector electronic navigational charts signal data track area operations",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -612,7 +612,7 @@
   },
   {
     "ResponseID":"185",
-    "ResponseText":"vehicle speed limitations attribute",
+    "ResponseText":"auv speed limitations parameters",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -638,7 +638,7 @@
   },
   {
     "ResponseID":"186",
-    "ResponseText":"vehicle telemetry requirements",
+    "ResponseText":"vehicle data link requirements",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -664,7 +664,7 @@
   },
   {
     "ResponseID":"187",
-    "ResponseText":"navigational hazards path area operations",
+    "ResponseText":"navigational hazards route sector operations",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -690,7 +690,7 @@
   },
   {
     "ResponseID":"188",
-    "ResponseText":"no-go zones route area operations",
+    "ResponseText":"no-go zones route area mission",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -716,7 +716,7 @@
   },
   {
     "ResponseID":"189",
-    "ResponseText":"dive ascent process time",
+    "ResponseText":"dive ascent process timing",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -742,7 +742,7 @@
   },
   {
     "ResponseID":"190",
-    "ResponseText":"actions loss communications loss rov etc",
+    "ResponseText":"actions loss communications loss vehicle etc",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -768,7 +768,7 @@
   },
   {
     "ResponseID":"191",
-    "ResponseText":"search area area undertaking coordinates",
+    "ResponseText":"search area area operations coordinates",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -794,7 +794,7 @@
   },
   {
     "ResponseID":"192",
-    "ResponseText":"mission measurement requirements",
+    "ResponseText":"task collection requirements",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -820,7 +820,7 @@
   },
   {
     "ResponseID":"193",
-    "ResponseText":"zone confidence path area operations",
+    "ResponseText":"zone confidence track area operations",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,

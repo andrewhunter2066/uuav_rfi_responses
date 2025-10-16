@@ -14,7 +14,7 @@
   },
   {
     "ResponseID":"22",
-    "ResponseText":"multibeam echo sounder extent width versus depth profile",
+    "ResponseText":"multibeam echo sounder swath width versus depth supply",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -66,7 +66,7 @@
   },
   {
     "ResponseID":"24",
-    "ResponseText":"unmanned underwater vehicle altitude course roll stability",
+    "ResponseText":"unmanned underwater rov altitude pitch roll control",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -92,7 +92,7 @@
   },
   {
     "ResponseID":"25",
-    "ResponseText":"environmental factors eg turbidity seabed composition acoustic interference",
+    "ResponseText":"environmental factors eg clarity seabed composition acoustic interference",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -118,7 +118,7 @@
   },
   {
     "ResponseID":"26",
-    "ResponseText":"sensor calibration status historical performance",
+    "ResponseText":"sensor calibration status historical throughput",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -144,7 +144,7 @@
   },
   {
     "ResponseID":"194",
-    "ResponseText":"equipment constraint service capabilities",
+    "ResponseText":"equipment threshold service capabilities",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -170,7 +170,7 @@
   },
   {
     "ResponseID":"195",
-    "ResponseText":"timings no-go zone left right",
+    "ResponseText":"timings hard left position",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -196,7 +196,7 @@
   },
   {
     "ResponseID":"196",
-    "ResponseText":"endurance uuv",
+    "ResponseText":"loiter time vehicle",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -222,7 +222,7 @@
   },
   {
     "ResponseID":"197",
-    "ResponseText":"global positioning system fixing requirements frequency",
+    "ResponseText":"global positioning system position estimate requirements frequency",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -274,7 +274,7 @@
   },
   {
     "ResponseID":"199",
-    "ResponseText":"accuracy requirements wayfinding",
+    "ResponseText":"accuracy requirements piloting",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -300,7 +300,7 @@
   },
   {
     "ResponseID":"200",
-    "ResponseText":"maximum depth auv",
+    "ResponseText":"maximum bathymetry vehicle",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -326,7 +326,7 @@
   },
   {
     "ResponseID":"201",
-    "ResponseText":"minimum depth rov",
+    "ResponseText":"minimum depth auv",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -352,7 +352,7 @@
   },
   {
     "ResponseID":"202",
-    "ResponseText":"vehicle comms requirements",
+    "ResponseText":"craft communication requirements",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -378,7 +378,7 @@
   },
   {
     "ResponseID":"203",
-    "ResponseText":"navigational hazards path area operations",
+    "ResponseText":"navigational hazards route area undertaking",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -404,7 +404,7 @@
   },
   {
     "ResponseID":"204",
-    "ResponseText":"no-go zones route area activity",
+    "ResponseText":"no-go zones route area mission",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -430,7 +430,7 @@
   },
   {
     "ResponseID":"205",
-    "ResponseText":"zone confidence route area of operation operations",
+    "ResponseText":"zone safety confidence route area operations",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,

@@ -14,7 +14,7 @@
   },
   {
     "ResponseID":"35",
-    "ResponseText":"gaps multibeam echo sounder coverage missed features",
+    "ResponseText":"gaps multibeam echo sounder extent missed features",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -40,7 +40,7 @@
   },
   {
     "ResponseID":"36",
-    "ResponseText":"sensor degradation calibration offset",
+    "ResponseText":"sensor degradation calibration drift",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -66,7 +66,7 @@
   },
   {
     "ResponseID":"37",
-    "ResponseText":"steady state signal data critical seabed features due resolution limits",
+    "ResponseText":"balance detect critical seabed features due precision limits",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -92,7 +92,7 @@
   },
   {
     "ResponseID":"38",
-    "ResponseText":"environmental anomalies affecting acoustic performance",
+    "ResponseText":"hydrodynamics anomalies affecting acoustic performance",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -118,7 +118,7 @@
   },
   {
     "ResponseID":"231",
-    "ResponseText":"potential chance collision",
+    "ResponseText":"potential likelihood collision",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -144,7 +144,7 @@
   },
   {
     "ResponseID":"232",
-    "ResponseText":"estimated energy storage completion mission",
+    "ResponseText":"estimated power source completion mission",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -170,7 +170,7 @@
   },
   {
     "ResponseID":"233",
-    "ResponseText":"potential acoustic link performance issues",
+    "ResponseText":"potential acoustic communications efficiency issues",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -196,7 +196,7 @@
   },
   {
     "ResponseID":"234",
-    "ResponseText":"factor damage grounding event precision",
+    "ResponseText":"factor signal data grounding event occurs",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -222,7 +222,7 @@
   },
   {
     "ResponseID":"235",
-    "ResponseText":"coverage sector operations achievable time limitations",
+    "ResponseText":"coverage area mission achievable time limitations",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -248,7 +248,7 @@
   },
   {
     "ResponseID":"236",
-    "ResponseText":"potential buoyancy factors water column signal data",
+    "ResponseText":"potential buoyancy factors water column information",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -274,7 +274,7 @@
   },
   {
     "ResponseID":"237",
-    "ResponseText":"total timing location surface",
+    "ResponseText":"total time coordinates surface",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,

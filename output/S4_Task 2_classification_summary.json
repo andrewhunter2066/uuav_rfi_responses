@@ -3,14 +3,13 @@
     "Physical Processes": 6,
     "Environmental Context": 2,
     "Adverse Performance Profiles": 1,
-    "Analysis And Learning": 1,
+    "Objectives": 1,
     "Navigation Systems": 2
   },
   "parent_summary": {
-    "Environmental And Oceanographic Conditions": 7,
+    "Environmental And Oceanographic Conditions": 6,
     "Vehicle Capabilities And Constraints": 1,
-    "Historical And Contextual Data": 1,
-    "Mission Parameters And Objectives": 1,
+    "Mission Parameters And Objectives": 3,
     "Navigation And Positioning": 2
   }
 }

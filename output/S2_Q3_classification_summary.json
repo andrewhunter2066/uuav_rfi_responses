@@ -5,12 +5,13 @@
     "System Constraints": 2,
     "Analysis And Learning": 1,
     "Mission History": 1,
-    "Environmental Context": 2,
+    "Environmental Context": 1,
+    "Performance": 3,
     "Accuracy And Hazards": 1,
-    "Hazards": 3,
-    "uncategorised": 6,
-    "Route And Trajectory": 2,
-    "Performance": 2,
+    "Hazards": 2,
+    "uncategorised": 5,
+    "Route And Trajectory": 3,
+    "Spatial Reference": 1,
     "Safety And Mitigation": 2
   },
   "parent_summary": {
@@ -19,8 +20,8 @@
     "Historical And Contextual Data": 4,
     "Vehicle Capabilities And Constraints": 5,
     "Environmental And Oceanographic Conditions": 1,
-    "Navigation And Positioning": 3,
-    "Threats And Risk Management": 5,
-    "uncategorised": 6
+    "Navigation And Positioning": 5,
+    "Threats And Risk Management": 4,
+    "uncategorised": 5
   }
 }

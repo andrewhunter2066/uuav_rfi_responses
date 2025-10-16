@@ -14,7 +14,7 @@
   },
   {
     "ResponseID":"31",
-    "ResponseText":"threat incomplete coverage sector terrain shadowing sensor limitations",
+    "ResponseText":"risk incomplete coverage due terrain shadowing sensor restriction",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -40,7 +40,7 @@
   },
   {
     "ResponseID":"32",
-    "ResponseText":"signal data dropouts multibeam echo sounder due environmental interference application faults",
+    "ResponseText":"data dropouts multibeam echo sounder sector environmental interference system faults",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -66,7 +66,7 @@
   },
   {
     "ResponseID":"33",
-    "ResponseText":"piloting drift affecting survey alignment data integrity",
+    "ResponseText":"navigation drift affecting survey alignment data data integrity",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -92,7 +92,7 @@
   },
   {
     "ResponseID":"34",
-    "ResponseText":"overlap errors adjacent reconnaissance lanes",
+    "ResponseText":"overlap errors adjacent mapping lanes",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -144,7 +144,7 @@
   },
   {
     "ResponseID":"219",
-    "ResponseText":"sensor performance prior mission start bench underwater depth",
+    "ResponseText":"sensor throughput prior mission start bench test",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -170,7 +170,7 @@
   },
   {
     "ResponseID":"220",
-    "ResponseText":"ephemeral current tides track area operations",
+    "ResponseText":"ephemeral drift tides route area operations",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -196,7 +196,7 @@
   },
   {
     "ResponseID":"221",
-    "ResponseText":"threat assessment cyber threat mission",
+    "ResponseText":"threat assessment cyber risk task",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -222,7 +222,7 @@
   },
   {
     "ResponseID":"222",
-    "ResponseText":"seafloor classification infrastructure route area of operation operations",
+    "ResponseText":"seafloor classification infrastructure route sector operations",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -248,7 +248,7 @@
   },
   {
     "ResponseID":"223",
-    "ResponseText":"endurance craft",
+    "ResponseText":"loiter time vehicle",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -300,7 +300,7 @@
   },
   {
     "ResponseID":"225",
-    "ResponseText":"minimum seafloor elevation vehicle",
+    "ResponseText":"minimum depth vehicle",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -326,7 +326,7 @@
   },
   {
     "ResponseID":"226",
-    "ResponseText":"navigational hazards route area activity",
+    "ResponseText":"navigational obstacle route area operations",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -352,7 +352,7 @@
   },
   {
     "ResponseID":"227",
-    "ResponseText":"vehicle telemetry requirements",
+    "ResponseText":"vehicle comms requirements",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -378,7 +378,7 @@
   },
   {
     "ResponseID":"228",
-    "ResponseText":"no-go zones track area operations",
+    "ResponseText":"no-go zones planned line area operations",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -404,7 +404,7 @@
   },
   {
     "ResponseID":"229",
-    "ResponseText":"actions loss communications failure vehicle etc",
+    "ResponseText":"actions loss communications loss vehicle etc",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -430,7 +430,7 @@
   },
   {
     "ResponseID":"230",
-    "ResponseText":"zone route confidence route area operations",
+    "ResponseText":"zone confidence route area activity",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,

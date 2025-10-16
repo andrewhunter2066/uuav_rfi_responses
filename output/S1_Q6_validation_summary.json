@@ -14,7 +14,7 @@
   },
   {
     "ResponseID":"15",
-    "ResponseText":"logging corridor decisions sensor performance environmental conditions",
+    "ResponseText":"logging planned line decisions sensor effectiveness environmental conditions",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -40,7 +40,7 @@
   },
   {
     "ResponseID":"16",
-    "ResponseText":"timestamped assignment events deviations",
+    "ResponseText":"timestamped mission events deviations",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -66,7 +66,7 @@
   },
   {
     "ResponseID":"17",
-    "ResponseText":"post-mission analysis post-mission analysis tools feedback future planning cycles",
+    "ResponseText":"integration post-mission analysis tools feedback future planning cycles",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -92,7 +92,7 @@
   },
   {
     "ResponseID":"158",
-    "ResponseText":"initial test check position pre-dive etc",
+    "ResponseText":"initial test check lists pre-dive etc",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -118,7 +118,7 @@
   },
   {
     "ResponseID":"159",
-    "ResponseText":"signatory utilize account information",
+    "ResponseText":"signatory apply account information",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -144,7 +144,7 @@
   },
   {
     "ResponseID":"160",
-    "ResponseText":"specific job files load template",
+    "ResponseText":"specific job files load checklist",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -196,7 +196,7 @@
   },
   {
     "ResponseID":"162",
-    "ResponseText":"holes data detector performance issues",
+    "ResponseText":"holes data payload performance issues",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -222,7 +222,7 @@
   },
   {
     "ResponseID":"163",
-    "ResponseText":"depth discrepancies",
+    "ResponseText":"bathymetry discrepancies",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -248,7 +248,7 @@
   },
   {
     "ResponseID":"164",
-    "ResponseText":"path interest",
+    "ResponseText":"track interest",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -274,7 +274,7 @@
   },
   {
     "ResponseID":"165",
-    "ResponseText":"automated procedure record contacts",
+    "ResponseText":"automated procedure log entry contacts",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,

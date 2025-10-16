@@ -1,21 +1,23 @@
 {
   "child_summary": {
     "Bathymetric Data Products": 4,
-    "Physical Processes": 1,
-    "uncategorised": 7,
+    "Physical Processes": 2,
     "Seafloor Characterization": 2,
-    "Environmental Context": 2,
+    "Environmental Context": 1,
+    "Measurement And Models": 3,
+    "uncategorised": 4,
     "Objectives": 2,
-    "Hardware": 1,
+    "Hardware": 2,
     "Comms Infrastructure": 1,
-    "Measurement And Models": 2
+    "Spatial Reference": 1
   },
   "parent_summary": {
     "Terrain And Bathymetry": 6,
-    "Environmental And Oceanographic Conditions": 5,
-    "uncategorised": 7,
+    "Environmental And Oceanographic Conditions": 6,
+    "uncategorised": 4,
     "Mission Parameters And Objectives": 2,
-    "Vehicle Capabilities And Constraints": 1,
-    "Communications And Control": 1
+    "Vehicle Capabilities And Constraints": 2,
+    "Communications And Control": 1,
+    "Navigation And Positioning": 1
   }
 }

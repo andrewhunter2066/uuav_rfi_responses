@@ -14,7 +14,7 @@
   },
   {
     "ResponseID":"68",
-    "ResponseText":"current systems provide baseline exposure profiling lack dynamic environmental integration",
+    "ResponseText":"current systems provide baseline risk profiling lack dynamic ocean conditions data merging",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -40,7 +40,7 @@
   },
   {
     "ResponseID":"69",
-    "ResponseText":"risk forecast model incorporate real-time oceanographic data unmanned underwater auv performance metrics",
+    "ResponseText":"risk models incorporate real-time oceanographic data unmanned underwater vehicle performance metrics",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -66,7 +66,7 @@
   },
   {
     "ResponseID":"70",
-    "ResponseText":"performance minimal static thresholds absence adaptive learning past missions",
+    "ResponseText":"effectiveness limited static thresholds absence adaptive learning past sortie",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -92,7 +92,7 @@
   },
   {
     "ResponseID":"326",
-    "ResponseText":"standard operating procedures security exposure assessment essential evaluate endorse auv risk",
+    "ResponseText":"standard operating procedures safety risk assessment used evaluate endorse auv risk",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -118,7 +118,7 @@
   },
   {
     "ResponseID":"327",
-    "ResponseText":"environmental conditions stipulated goal quality evidence",
+    "ResponseText":"environmental conditions stipulated objective quality evidence",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -170,7 +170,7 @@
   },
   {
     "ResponseID":"329",
-    "ResponseText":"suitably qualified experienced personnel mission commanders leading operations",
+    "ResponseText":"suitably qualified experienced personnel assignment commanders leading operations",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,

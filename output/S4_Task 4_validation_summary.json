@@ -14,7 +14,7 @@
   },
   {
     "ResponseID":"77",
-    "ResponseText":"mission plans include timestamped task identifiers target environmental overlays",
+    "ResponseText":"mission plans include timestamped task identifiers objectives environmental overlays",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -40,7 +40,7 @@
   },
   {
     "ResponseID":"78",
-    "ResponseText":"metadata tagging assignment phase enables record linkage reuse",
+    "ResponseText":"data descriptor journaling mission phase enables traceability reuse",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -66,7 +66,7 @@
   },
   {
     "ResponseID":"79",
-    "ResponseText":"integration defence data standards ensures consistency interoperability",
+    "ResponseText":"integration defence telemetry standards ensures consistency interoperability",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -92,7 +92,7 @@
   },
   {
     "ResponseID":"334",
-    "ResponseText":"area mission search",
+    "ResponseText":"area operations search",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
@@ -118,7 +118,7 @@
   },
   {
     "ResponseID":"336",
-    "ResponseText":"acquire goal",
+    "ResponseText":"acquire purpose",
     "has_protected":false,
     "has_conflict":false,
     "has_cross_conflict":false,
