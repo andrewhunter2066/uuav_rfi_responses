@@ -477,6 +477,23 @@ abstraction, emphasising overarching requirements and principles rather than low
 
 ---
 
+### Translation of Qualitative RFI Domains and Concepts to Quantitative Metrics
+
+Turning the categorised RFI responses into measurable metrics helps move from broad ideas to practical inputs that can 
+directly guide system design, testing, and monitoring. The taxonomy shows the range of stakeholder needs, but by itself 
+it is predominantly descriptive and abstract. To make it operational, each concept (for example, routing accuracy, 
+efficiency, or reliability) needs to be linked to clear, quantifiable measures. These indicators provide a consistent 
+way to compare design choices, track performance, and show progress against stakeholder expectations. Grounding metrics 
+in the taxonomy ensures that stakeholder knowledge becomes part of the system’s requirements, data models, and 
+evaluation criteria. This also allows the system to be tested, monitored, and improved over time.
+
+**Next steps:** Define an initial set of measurable indicators for each key taxonomy element (those that are most 
+intensively linked to RFI responses). This will create a foundation for building reproducible performance metrics that 
+can guide system design, required workflows and services, user interface (UI) functionality, datasets, and governance 
+requirements.
+
+---
+
 ## Gaps and Questions
 
 To be completed post-workshop series.
