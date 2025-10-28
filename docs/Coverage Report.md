@@ -2,23 +2,23 @@
 
 ### Well(?) mapped domains:
 
-- NavigationAndPositioning (AURRP-01, 03, 15, 16, 18)
+- NavigationAndPositioning (AUVRP-01, 03, 15, 16, 18)
 
-- TerrainAndBathymetry (AURRP-01, 02, 16, 18)
+- TerrainAndBathymetry (AUVRP-01, 02, 16, 18)
 
-- EnvironmentalAndOceanographicConditions (AURRP-01, 02, 04, 16, 17)
+- EnvironmentalAndOceanographicConditions (AUVRP-01, 02, 04, 16, 17)
 
-- DataProductsAndRequirements (AURRP-02, 04, 05, 09, 11, 13, 19)
+- DataProductsAndRequirements (AUVRP-02, 04, 05, 09, 11, 13, 19)
 
-- MissionAuditAndTraceability (AURRP-02, 05, 06, 07, 11, 14, 19)
+- MissionAuditAndTraceability (AUVRP-02, 05, 06, 07, 11, 14, 19)
 
-- StandardsAndGovernance (AURRP-05, 07, 10, 12, 13, 14, 19)
+- StandardsAndGovernance (AUVRP-05, 07, 10, 12, 13, 14, 19)
 
 ### Light coverage so far:
 
-- HistoricalAndContextualData (only AURRP-09 — via legacy fusion).
+- HistoricalAndContextualData (only AUVRP-09 — via legacy fusion).
 
-- IntegrationAndFeedback (only AURRP-06).
+- IntegrationAndFeedback (only AUVRP-06).
 
 ### Unmapped top-level domains (still 0):
 
