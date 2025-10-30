@@ -13,7 +13,7 @@
             "complexity"
           ]
         },
-        "SeafloorCharacterization": {
+        "SeafloorCharacterisation": {
           "Description": "Classifies seabed properties such as texture, substrate, and geomorphology.",
           "Terms": [
             "bathymetry",
@@ -383,7 +383,7 @@
           "Terms": [
             "launch window",
             "recovery window",
-            "time synchronization",
+            "time synchronisation",
             "UTC",
             "timestamp"
           ]
@@ -615,7 +615,7 @@
           "Description": "Templates, reusable profiles.",
           "Terms": [
             "job file templates",
-            "standardized planning files",
+            "standardised planning files",
             "reusable mission profiles"
           ]
         },
@@ -685,7 +685,7 @@
           "Description": "Telemetry logging, synchronisation, packet loss metrics.",
           "Terms": [
             "telemetry logging policies",
-            "time-synchronization for logs",
+            "time-synchronisation for logs",
             "packet loss metrics",
             "link reliability timeseries"
           ]
@@ -707,8 +707,8 @@
             "recovery",
             "deployment",
             "transit",
-            "mobilization",
-            "demobilization"
+            "mobilisation",
+            "demobilisation"
           ]
         },
         "AccessAndSupport": {
