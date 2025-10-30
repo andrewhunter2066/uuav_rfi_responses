@@ -1,0 +1,6 @@
+DupKey,ScenarioNumber,Q,QuestionType,ResponseText,CountRows,DistinctScenarios
+factor of damage if a grounding event occurs,1,Q5,Risk Evaluation,Factor of damage if a grounding event occurs,2,"[1, 3]"
+factor of damage if a grounding event occurs,3,Q5,Risk Evaluation,Factor of damage if a grounding event occurs,2,"[1, 3]"
+potential likelihood of collision,1,Q5,Risk Evaluation,Potential/likelihood of collision,3,"[1, 2, 3]"
+potential likelihood of collision,2,Q5,Risk Evaluation,Potential/likelihood of collision,3,"[1, 2, 3]"
+potential likelihood of collision,3,Q5,Risk Evaluation,Potential/likelihood of collision,3,"[1, 2, 3]"

@@ -1,0 +1,6 @@
+ScenarioNumber,Q,QuestionType,ResponseText,PredictedParent,PredictedChild
+1,Q6,Data Records,"Initial test check lists (pre-dive, etc.)",,
+1,Q6,Data Records,Specific job files to load into a template,,
+1,Q6,Data Records,track of interest,,
+1,Q6,Data Records,Automated procedure to record contacts,,
+3,Q6,Data Records,Feature detection records with confidence scores.,,

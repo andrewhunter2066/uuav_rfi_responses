@@ -1,0 +1,3 @@
+ScenarioNumber,Q,QuestionType,ResponseText,PredictedParent,PredictedChild
+1,Q4,Risk Evaluation,max depth of vehicle,,
+1,Q4,Risk Evaluation,min depth of vehicle,,

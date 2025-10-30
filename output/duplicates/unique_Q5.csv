@@ -1,0 +1,6 @@
+ScenarioNumber,Q,QuestionType,ResponseText,PredictedParent,PredictedChild
+1,Q5,Risk Evaluation,Potential/likelihood of collision,,
+1,Q5,Risk Evaluation,Factor of damage if a grounding event occurs,,
+1,Q5,Risk Evaluation,Total time and location on surface,,
+3,Q5,Risk Evaluation,Presence of marine life or protected habitat zones.,,
+3,Q5,Risk Evaluation,Sensor interference from bottom clutter or acoustic shadowing.,,

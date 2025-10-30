@@ -1,0 +1,5 @@
+Scenario_A,Scenario_B,Score,Text_A,Text_B
+1,2,100.0,min depth of vehicle,min depth of vehicle
+1,3,100.0,max depth of vehicle,max depth of vehicle
+1,3,100.0,min depth of vehicle,min depth of vehicle
+2,3,100.0,min depth of vehicle,min depth of vehicle

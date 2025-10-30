@@ -1,0 +1,9 @@
+Scenario_A,Scenario_B,Score,Text_A,Text_B
+1,2,100.0,"Initial test check lists (pre-dive, etc.)","Initial test check lists (pre-dive, etc.)"
+1,2,100.0,Specific job files to load into a template,Specific job files to load into a template
+1,2,100.0,track of interest,track of interest
+1,2,100.0,Automated procedure to record contacts,Automated procedure to record contacts
+1,3,100.0,"Initial test check lists (pre-dive, etc.)","Initial test check lists (pre-dive, etc.)"
+1,3,100.0,Automated procedure to record contacts,Automated procedure to record contacts
+2,3,100.0,"Initial test check lists (pre-dive, etc.)","Initial test check lists (pre-dive, etc.)"
+2,3,100.0,Automated procedure to record contacts,Automated procedure to record contacts

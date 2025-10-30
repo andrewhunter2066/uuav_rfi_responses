@@ -1,0 +1,5 @@
+Scenario_A,Scenario_B,Score,Text_A,Text_B
+1,2,100.0,Potential/likelihood of collision,Potential/likelihood of collision
+1,3,100.0,Potential/likelihood of collision,Potential/likelihood of collision
+1,3,100.0,Factor of damage if a grounding event occurs,Factor of damage if a grounding event occurs
+2,3,100.0,Potential/likelihood of collision,Potential/likelihood of collision

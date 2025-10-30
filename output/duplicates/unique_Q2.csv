@@ -1,0 +1,5 @@
+ScenarioNumber,Q,QuestionType,ResponseText,PredictedParent,PredictedChild
+1,Q2,Route Evaluation,Turnaround time and coordination of multiple UUVs,,
+1,Q2,Route Evaluation,max depth of vehicle,,
+1,Q2,Route Evaluation,min depth of vehicle,,
+3,Q2,Route Evaluation,Habitat zone sensitivity and restrictions.,,

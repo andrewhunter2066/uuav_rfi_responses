@@ -1,0 +1,5 @@
+ScenarioNumber,Q,QuestionType,ResponseText,PredictedParent,PredictedChild
+1,Q1,Route Evaluation,dive/ascent process/time,,
+2,Q1,Route Evaluation,max depth of vehicle,,
+2,Q1,Route Evaluation,active sensor collection requirements,,
+2,Q1,Route Evaluation,min depth of vehicle,,

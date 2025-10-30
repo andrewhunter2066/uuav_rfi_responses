@@ -1,0 +1,9 @@
+DupKey,ScenarioNumber,Q,QuestionType,ResponseText,CountRows,DistinctScenarios
+confidence in understanding of ao,1,Q3,Route Evaluation,Confidence in understanding of AO,2,"[1, 3]"
+confidence in understanding of ao,3,Q3,Route Evaluation,Confidence in understanding of AO,2,"[1, 3]"
+informs ao informs if other assets are required,1,Q3,Route Evaluation,Informs AO. Informs if other assets are required,3,"[1, 2, 3]"
+informs ao informs if other assets are required,2,Q3,Route Evaluation,Informs AO. Informs if other assets are required,3,"[1, 2, 3]"
+informs ao informs if other assets are required,3,Q3,Route Evaluation,Informs AO. Informs if other assets are required,3,"[1, 2, 3]"
+rules of engagement line spacing,1,Q3,Route Evaluation,"rules of engagement, line spacing",3,"[1, 2, 3]"
+rules of engagement line spacing,2,Q3,Route Evaluation,"rules of engagement, line spacing",3,"[1, 2, 3]"
+rules of engagement line spacing,3,Q3,Route Evaluation,"rules of engagement, line spacing",3,"[1, 2, 3]"

@@ -1,0 +1,10 @@
+DupKey,ScenarioNumber,Q,QuestionType,ResponseText,CountRows,DistinctScenarios
+active sensor collection requirements,2,Q1,Route Evaluation,active sensor collection requirements,2,"[2, 3]"
+active sensor collection requirements,3,Q1,Route Evaluation,active sensor collection requirements,2,"[2, 3]"
+dive ascent process time,1,Q1,Route Evaluation,dive/ascent process/time,3,"[1, 2, 3]"
+dive ascent process time,2,Q1,Route Evaluation,dive/ascent process/time,3,"[1, 2, 3]"
+dive ascent process time,3,Q1,Route Evaluation,dive/ascent process/time,3,"[1, 2, 3]"
+max depth of vehicle,2,Q1,Route Evaluation,max depth of vehicle,2,"[2, 3]"
+max depth of vehicle,3,Q1,Route Evaluation,max depth of vehicle,2,"[2, 3]"
+min depth of vehicle,2,Q1,Route Evaluation,min depth of vehicle,2,"[2, 3]"
+min depth of vehicle,3,Q1,Route Evaluation,min depth of vehicle,2,"[2, 3]"

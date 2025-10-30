@@ -1,0 +1,7 @@
+DupKey,ScenarioNumber,Q,QuestionType,ResponseText,CountRows,DistinctScenarios
+max depth of vehicle,1,Q4,Risk Evaluation,max depth of vehicle,3,"[1, 2, 3]"
+max depth of vehicle,2,Q4,Risk Evaluation,max depth of vehicle,3,"[1, 2, 3]"
+max depth of vehicle,3,Q4,Risk Evaluation,max depth of vehicle,3,"[1, 2, 3]"
+min depth of vehicle,1,Q4,Risk Evaluation,min depth of vehicle,3,"[1, 2, 3]"
+min depth of vehicle,2,Q4,Risk Evaluation,min depth of vehicle,3,"[1, 2, 3]"
+min depth of vehicle,3,Q4,Risk Evaluation,min depth of vehicle,3,"[1, 2, 3]"
