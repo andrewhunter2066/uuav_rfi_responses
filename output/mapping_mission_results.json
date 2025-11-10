@@ -1,0 +1,1082 @@
+[
+  {
+    "requirement_id": "L01",
+    "requirement_text": "The system shall support safe deployment of the UUV from a surface vessel under operational marine conditions",
+    "matches": [
+      {
+        "taxonomy_domain": "NavigationAndPositioning",
+        "domain_concept": "TrafficAndSurfaceFixRisks",
+        "combined_score": 0.492,
+        "keyword_score": 53.3,
+        "semantic_score": 0.474,
+        "classification": "discard"
+      },
+      {
+        "taxonomy_domain": "EstimationAndUncertaintyModelling",
+        "domain_concept": "RiskFusionAndEffectiveness",
+        "combined_score": 0.475,
+        "keyword_score": 40.6,
+        "semantic_score": 0.505,
+        "classification": "discard"
+      },
+      {
+        "taxonomy_domain": "StandardsAndGovernance",
+        "domain_concept": "CapacityAndScalability",
+        "combined_score": 0.466,
+        "keyword_score": 37.7,
+        "semantic_score": 0.505,
+        "classification": "discard"
+      }
+    ]
+  },
+  {
+    "requirement_id": "L02",
+    "requirement_text": "The UUV shall autonomously transition from launch to mission mode when in water",
+    "matches": [
+      {
+        "taxonomy_domain": "StandardsAndGovernance",
+        "domain_concept": "CapacityAndScalability",
+        "combined_score": 0.382,
+        "keyword_score": 37.6,
+        "semantic_score": 0.384,
+        "classification": "discard"
+      },
+      {
+        "taxonomy_domain": "OperationalLogistics",
+        "domain_concept": "Deployment",
+        "combined_score": 0.375,
+        "keyword_score": 46.8,
+        "semantic_score": 0.335,
+        "classification": "discard"
+      },
+      {
+        "taxonomy_domain": "TestAndEvaluationScenarios",
+        "domain_concept": "SystemBenchmarks",
+        "combined_score": 0.368,
+        "keyword_score": 42.9,
+        "semantic_score": 0.341,
+        "classification": "discard"
+      }
+    ]
+  },
+  {
+    "requirement_id": "L03",
+    "requirement_text": "The UUV shall obtain an initial navigation fix before submergence",
+    "matches": [
+      {
+        "taxonomy_domain": "NavigationAndPositioning",
+        "domain_concept": "AccuracyAndHazards",
+        "combined_score": 0.434,
+        "keyword_score": 43.9,
+        "semantic_score": 0.431,
+        "classification": "discard"
+      },
+      {
+        "taxonomy_domain": "NavigationAndPositioning",
+        "domain_concept": "FailureScenarios",
+        "combined_score": 0.426,
+        "keyword_score": 35.4,
+        "semantic_score": 0.458,
+        "classification": "discard"
+      },
+      {
+        "taxonomy_domain": "StandardsAndGovernance",
+        "domain_concept": "CapacityAndScalability",
+        "combined_score": 0.369,
+        "keyword_score": 42.4,
+        "semantic_score": 0.346,
+        "classification": "discard"
+      }
+    ]
+  },
+  {
+    "requirement_id": "L04",
+    "requirement_text": "Pre-dive diagnostic checks between vessel and UUV shall be performed and confirmed before launch proceeds",
+    "matches": [
+      {
+        "taxonomy_domain": "MissionAuditAndTraceability",
+        "domain_concept": "ChecklistAndVerification",
+        "combined_score": 0.503,
+        "keyword_score": 42.5,
+        "semantic_score": 0.536,
+        "classification": "discard"
+      },
+      {
+        "taxonomy_domain": "TestAndEvaluationScenarios",
+        "domain_concept": "SystemBenchmarks",
+        "combined_score": 0.465,
+        "keyword_score": 45.4,
+        "semantic_score": 0.47,
+        "classification": "discard"
+      },
+      {
+        "taxonomy_domain": "NavigationAndPositioning",
+        "domain_concept": "TrafficAndSurfaceFixRisks",
+        "combined_score": 0.434,
+        "keyword_score": 40.7,
+        "semantic_score": 0.445,
+        "classification": "discard"
+      }
+    ]
+  },
+  {
+    "requirement_id": "L05",
+    "requirement_text": "The interface shall display GO/NO-GO status for environmental/operational launch criteria",
+    "matches": [
+      {
+        "taxonomy_domain": "TestAndEvaluationScenarios",
+        "domain_concept": "SystemBenchmarks",
+        "combined_score": 0.434,
+        "keyword_score": 39.3,
+        "semantic_score": 0.451,
+        "classification": "discard"
+      },
+      {
+        "taxonomy_domain": "VehicleCapabilitiesAndConstraints",
+        "domain_concept": "OperationalLimits",
+        "combined_score": 0.414,
+        "keyword_score": 46.5,
+        "semantic_score": 0.393,
+        "classification": "discard"
+      },
+      {
+        "taxonomy_domain": "MissionAuditAndTraceability",
+        "domain_concept": "MissionLogging",
+        "combined_score": 0.396,
+        "keyword_score": 40.2,
+        "semantic_score": 0.393,
+        "classification": "discard"
+      }
+    ]
+  },
+  {
+    "requirement_id": "L06",
+    "requirement_text": "The system shall restrict launch locations based on navigational hazards, EEZ, and restricted zones",
+    "matches": [
+      {
+        "taxonomy_domain": "NavigationAndPositioning",
+        "domain_concept": "AccuracyAndHazards",
+        "combined_score": 0.611,
+        "keyword_score": 57.1,
+        "semantic_score": 0.628,
+        "classification": "discard"
+      },
+      {
+        "taxonomy_domain": "VehicleCapabilitiesAndConstraints",
+        "domain_concept": "OperationalLimits",
+        "combined_score": 0.509,
+        "keyword_score": 47.1,
+        "semantic_score": 0.525,
+        "classification": "discard"
+      },
+      {
+        "taxonomy_domain": "ThreatsAndRiskManagement",
+        "domain_concept": "Hazards",
+        "combined_score": 0.494,
+        "keyword_score": 50.7,
+        "semantic_score": 0.488,
+        "classification": "discard"
+      }
+    ]
+  },
+  {
+    "requirement_id": "L07",
+    "requirement_text": "Launch procedures shall account for site-specific current, tide, and traffic conditions",
+    "matches": [
+      {
+        "taxonomy_domain": "EnvironmentalAndOceanographicConditions",
+        "domain_concept": "PhysicalProcesses",
+        "combined_score": 0.431,
+        "keyword_score": 47.5,
+        "semantic_score": 0.412,
+        "classification": "discard"
+      },
+      {
+        "taxonomy_domain": "MissionAuditAndTraceability",
+        "domain_concept": "MissionLogging",
+        "combined_score": 0.428,
+        "keyword_score": 49.2,
+        "semantic_score": 0.401,
+        "classification": "discard"
+      },
+      {
+        "taxonomy_domain": "OperationalLogistics",
+        "domain_concept": "AccessAndSupport",
+        "combined_score": 0.418,
+        "keyword_score": 45.6,
+        "semantic_score": 0.401,
+        "classification": "discard"
+      }
+    ]
+  },
+  {
+    "requirement_id": "L08",
+    "requirement_text": "The system shall provide maximum allowable wind, swell, and wave condition settings for safe launch",
+    "matches": [
+      {
+        "taxonomy_domain": "EnvironmentalAndOceanographicConditions",
+        "domain_concept": "PhysicalProcesses",
+        "combined_score": 0.459,
+        "keyword_score": 51.2,
+        "semantic_score": 0.437,
+        "classification": "discard"
+      },
+      {
+        "taxonomy_domain": "VehicleCapabilitiesAndConstraints",
+        "domain_concept": "OperationalLimits",
+        "combined_score": 0.429,
+        "keyword_score": 45.3,
+        "semantic_score": 0.419,
+        "classification": "discard"
+      },
+      {
+        "taxonomy_domain": "NavigationAndPositioning",
+        "domain_concept": "AccuracyAndHazards",
+        "combined_score": 0.429,
+        "keyword_score": 42.3,
+        "semantic_score": 0.432,
+        "classification": "discard"
+      }
+    ]
+  },
+  {
+    "requirement_id": "L09",
+    "requirement_text": "Buoyancy and environmental parameters near launch (including salinity and temperature) shall be monitored",
+    "matches": [
+      {
+        "taxonomy_domain": "EnvironmentalAndOceanographicConditions",
+        "domain_concept": "MeasurementAndModels",
+        "combined_score": 0.45,
+        "keyword_score": 39.3,
+        "semantic_score": 0.474,
+        "classification": "discard"
+      },
+      {
+        "taxonomy_domain": "EnvironmentalAndOceanographicConditions",
+        "domain_concept": "WaterProperties",
+        "combined_score": 0.439,
+        "keyword_score": 48.4,
+        "semantic_score": 0.419,
+        "classification": "discard"
+      },
+      {
+        "taxonomy_domain": "TestAndEvaluationScenarios",
+        "domain_concept": "SystemBenchmarks",
+        "combined_score": 0.403,
+        "keyword_score": 41.1,
+        "semantic_score": 0.4,
+        "classification": "discard"
+      }
+    ]
+  },
+  {
+    "requirement_id": "L10",
+    "requirement_text": "Day/night or light-level operational requirements shall be user configurable",
+    "matches": [
+      {
+        "taxonomy_domain": "VehicleCapabilitiesAndConstraints",
+        "domain_concept": "PerformanceConstraints",
+        "combined_score": 0.441,
+        "keyword_score": 53.2,
+        "semantic_score": 0.402,
+        "classification": "discard"
+      },
+      {
+        "taxonomy_domain": "VehicleCapabilitiesAndConstraints",
+        "domain_concept": "OperationalLimits",
+        "combined_score": 0.428,
+        "keyword_score": 42.6,
+        "semantic_score": 0.429,
+        "classification": "discard"
+      },
+      {
+        "taxonomy_domain": "TestAndEvaluationScenarios",
+        "domain_concept": "SystemBenchmarks",
+        "combined_score": 0.412,
+        "keyword_score": 50.0,
+        "semantic_score": 0.375,
+        "classification": "discard"
+      }
+    ]
+  },
+  {
+    "requirement_id": "L11",
+    "requirement_text": "Launch location selection tools shall factor proximity to subsea objectives and launch vessel maneuverability",
+    "matches": [
+      {
+        "taxonomy_domain": "OperationalLogistics",
+        "domain_concept": "AccessAndSupport",
+        "combined_score": 0.501,
+        "keyword_score": 51.0,
+        "semantic_score": 0.497,
+        "classification": "discard"
+      },
+      {
+        "taxonomy_domain": "VehicleCapabilitiesAndConstraints",
+        "domain_concept": "DepthLimits",
+        "combined_score": 0.436,
+        "keyword_score": 39.3,
+        "semantic_score": 0.454,
+        "classification": "discard"
+      },
+      {
+        "taxonomy_domain": "VehicleCapabilitiesAndConstraints",
+        "domain_concept": "OperationalLimits",
+        "combined_score": 0.427,
+        "keyword_score": 48.2,
+        "semantic_score": 0.403,
+        "classification": "discard"
+      }
+    ]
+  },
+  {
+    "requirement_id": "L12",
+    "requirement_text": "The UUV shall maintain stable communications with the vessel during pre-launch and immersion",
+    "matches": [
+      {
+        "taxonomy_domain": "StandardsAndGovernance",
+        "domain_concept": "CapacityAndScalability",
+        "combined_score": 0.473,
+        "keyword_score": 44.8,
+        "semantic_score": 0.484,
+        "classification": "discard"
+      },
+      {
+        "taxonomy_domain": "VehicleCapabilitiesAndConstraints",
+        "domain_concept": "PerformanceConstraints",
+        "combined_score": 0.42,
+        "keyword_score": 51.8,
+        "semantic_score": 0.378,
+        "classification": "discard"
+      },
+      {
+        "taxonomy_domain": "TestAndEvaluationScenarios",
+        "domain_concept": "SystemBenchmarks",
+        "combined_score": 0.414,
+        "keyword_score": 43.0,
+        "semantic_score": 0.407,
+        "classification": "discard"
+      }
+    ]
+  },
+  {
+    "requirement_id": "S01",
+    "requirement_text": "The UUV shall accelerate efficiently on the surface and initiate a safe, optimal dive profile",
+    "matches": [
+      {
+        "taxonomy_domain": "VehicleCapabilitiesAndConstraints",
+        "domain_concept": "DepthLimits",
+        "combined_score": 0.46,
+        "keyword_score": 38.7,
+        "semantic_score": 0.491,
+        "classification": "discard"
+      },
+      {
+        "taxonomy_domain": "StandardsAndGovernance",
+        "domain_concept": "CapacityAndScalability",
+        "combined_score": 0.418,
+        "keyword_score": 48.0,
+        "semantic_score": 0.392,
+        "classification": "discard"
+      },
+      {
+        "taxonomy_domain": "NavigationAndPositioning",
+        "domain_concept": "AccuracyAndHazards",
+        "combined_score": 0.366,
+        "keyword_score": 39.1,
+        "semantic_score": 0.355,
+        "classification": "discard"
+      }
+    ]
+  },
+  {
+    "requirement_id": "S02",
+    "requirement_text": "Mission control shall allow configuration of dive angle, duration, and depth",
+    "matches": [
+      {
+        "taxonomy_domain": "MissionParametersAndObjectives",
+        "domain_concept": "Objectives",
+        "combined_score": 0.488,
+        "keyword_score": 49.1,
+        "semantic_score": 0.487,
+        "classification": "discard"
+      },
+      {
+        "taxonomy_domain": "VehicleCapabilitiesAndConstraints",
+        "domain_concept": "DepthLimits",
+        "combined_score": 0.47,
+        "keyword_score": 42.3,
+        "semantic_score": 0.491,
+        "classification": "discard"
+      },
+      {
+        "taxonomy_domain": "VehicleCapabilitiesAndConstraints",
+        "domain_concept": "OperationalLimits",
+        "combined_score": 0.468,
+        "keyword_score": 49.5,
+        "semantic_score": 0.457,
+        "classification": "discard"
+      }
+    ]
+  },
+  {
+    "requirement_id": "S03",
+    "requirement_text": "The UUV shall adjust power and speed to maintain dive efficiency and safety",
+    "matches": [
+      {
+        "taxonomy_domain": "VehicleCapabilitiesAndConstraints",
+        "domain_concept": "DepthLimits",
+        "combined_score": 0.432,
+        "keyword_score": 39.4,
+        "semantic_score": 0.448,
+        "classification": "discard"
+      },
+      {
+        "taxonomy_domain": "NavigationAndPositioning",
+        "domain_concept": "AccuracyAndHazards",
+        "combined_score": 0.392,
+        "keyword_score": 39.8,
+        "semantic_score": 0.389,
+        "classification": "discard"
+      },
+      {
+        "taxonomy_domain": "StandardsAndGovernance",
+        "domain_concept": "CapacityAndScalability",
+        "combined_score": 0.391,
+        "keyword_score": 45.9,
+        "semantic_score": 0.361,
+        "classification": "discard"
+      }
+    ]
+  },
+  {
+    "requirement_id": "S04",
+    "requirement_text": "Navigation module shall incorporate real-time oceanographic data for dive planning",
+    "matches": [
+      {
+        "taxonomy_domain": "EnvironmentalAndOceanographicConditions",
+        "domain_concept": "MeasurementAndModels",
+        "combined_score": 0.5,
+        "keyword_score": 51.6,
+        "semantic_score": 0.493,
+        "classification": "discard"
+      },
+      {
+        "taxonomy_domain": "VehicleCapabilitiesAndConstraints",
+        "domain_concept": "DepthLimits",
+        "combined_score": 0.459,
+        "keyword_score": 35.1,
+        "semantic_score": 0.506,
+        "classification": "discard"
+      },
+      {
+        "taxonomy_domain": "NavigationAndPositioning",
+        "domain_concept": "AccuracyAndHazards",
+        "combined_score": 0.455,
+        "keyword_score": 44.2,
+        "semantic_score": 0.461,
+        "classification": "discard"
+      }
+    ]
+  },
+  {
+    "requirement_id": "S05",
+    "requirement_text": "The UUV shall be able to offset its dive for avoidance of hazards and remain in approved waters",
+    "matches": [
+      {
+        "taxonomy_domain": "VehicleCapabilitiesAndConstraints",
+        "domain_concept": "DepthLimits",
+        "combined_score": 0.443,
+        "keyword_score": 37.3,
+        "semantic_score": 0.473,
+        "classification": "discard"
+      },
+      {
+        "taxonomy_domain": "EstimationAndUncertaintyModelling",
+        "domain_concept": "RiskFusionAndEffectiveness",
+        "combined_score": 0.437,
+        "keyword_score": 37.1,
+        "semantic_score": 0.465,
+        "classification": "discard"
+      },
+      {
+        "taxonomy_domain": "OperationalLogistics",
+        "domain_concept": "AccessAndSupport",
+        "combined_score": 0.422,
+        "keyword_score": 41.8,
+        "semantic_score": 0.423,
+        "classification": "discard"
+      }
+    ]
+  },
+  {
+    "requirement_id": "S06",
+    "requirement_text": "The system shall respect GO/NO-GO constraints for protected infrastructure and environmental zones",
+    "matches": [
+      {
+        "taxonomy_domain": "NavigationAndPositioning",
+        "domain_concept": "AccuracyAndHazards",
+        "combined_score": 0.444,
+        "keyword_score": 44.7,
+        "semantic_score": 0.443,
+        "classification": "discard"
+      },
+      {
+        "taxonomy_domain": "EnvironmentalAndOceanographicConditions",
+        "domain_concept": "EnvironmentalRisks",
+        "combined_score": 0.444,
+        "keyword_score": 51.1,
+        "semantic_score": 0.415,
+        "classification": "discard"
+      },
+      {
+        "taxonomy_domain": "MissionParametersAndObjectives",
+        "domain_concept": "SpatialAspects",
+        "combined_score": 0.4,
+        "keyword_score": 43.8,
+        "semantic_score": 0.384,
+        "classification": "discard"
+      }
+    ]
+  },
+  {
+    "requirement_id": "S07",
+    "requirement_text": "Guidance control shall enforce safe minimum/maximum dive or climb angles",
+    "matches": [
+      {
+        "taxonomy_domain": "NavigationAndPositioning",
+        "domain_concept": "AccuracyAndHazards",
+        "combined_score": 0.471,
+        "keyword_score": 33.3,
+        "semantic_score": 0.529,
+        "classification": "discard"
+      },
+      {
+        "taxonomy_domain": "ThreatsAndRiskManagement",
+        "domain_concept": "SafetyAndMitigation",
+        "combined_score": 0.466,
+        "keyword_score": 44.3,
+        "semantic_score": 0.476,
+        "classification": "discard"
+      },
+      {
+        "taxonomy_domain": "VehicleCapabilitiesAndConstraints",
+        "domain_concept": "DepthLimits",
+        "combined_score": 0.465,
+        "keyword_score": 42.0,
+        "semantic_score": 0.484,
+        "classification": "discard"
+      }
+    ]
+  },
+  {
+    "requirement_id": "S08",
+    "requirement_text": "The UUV shall support selectable dive behaviors (straight/spiral/waypoint)",
+    "matches": [
+      {
+        "taxonomy_domain": "NavigationAndPositioning",
+        "domain_concept": "AccuracyAndHazards",
+        "combined_score": 0.438,
+        "keyword_score": 34.1,
+        "semantic_score": 0.479,
+        "classification": "discard"
+      },
+      {
+        "taxonomy_domain": "OperationalLogistics",
+        "domain_concept": "AccessAndSupport",
+        "combined_score": 0.402,
+        "keyword_score": 40.0,
+        "semantic_score": 0.402,
+        "classification": "discard"
+      },
+      {
+        "taxonomy_domain": "VehicleCapabilitiesAndConstraints",
+        "domain_concept": "DepthLimits",
+        "combined_score": 0.391,
+        "keyword_score": 35.7,
+        "semantic_score": 0.405,
+        "classification": "discard"
+      }
+    ]
+  },
+  {
+    "requirement_id": "S09",
+    "requirement_text": "Navigation system must support dead reckoning, USBL, and LBL with selectable modes",
+    "matches": [
+      {
+        "taxonomy_domain": "NavigationAndPositioning",
+        "domain_concept": "AccuracyAndHazards",
+        "combined_score": 0.462,
+        "keyword_score": 46.5,
+        "semantic_score": 0.461,
+        "classification": "discard"
+      },
+      {
+        "taxonomy_domain": "NavigationAndPositioning",
+        "domain_concept": "NavigationSystems",
+        "combined_score": 0.402,
+        "keyword_score": 43.5,
+        "semantic_score": 0.387,
+        "classification": "discard"
+      },
+      {
+        "taxonomy_domain": "NavigationAndPositioning",
+        "domain_concept": "FailureScenarios",
+        "combined_score": 0.364,
+        "keyword_score": 33.8,
+        "semantic_score": 0.375,
+        "classification": "discard"
+      }
+    ]
+  },
+  {
+    "requirement_id": "S10",
+    "requirement_text": "The UUV shall automatically activate collision avoidance when nearing the seafloor",
+    "matches": [
+      {
+        "taxonomy_domain": "ThreatsAndRiskManagement",
+        "domain_concept": "SafetyAndMitigation",
+        "combined_score": 0.487,
+        "keyword_score": 48.2,
+        "semantic_score": 0.49,
+        "classification": "discard"
+      },
+      {
+        "taxonomy_domain": "NavigationAndPositioning",
+        "domain_concept": "AccuracyAndHazards",
+        "combined_score": 0.455,
+        "keyword_score": 39.3,
+        "semantic_score": 0.481,
+        "classification": "discard"
+      },
+      {
+        "taxonomy_domain": "VehicleCapabilitiesAndConstraints",
+        "domain_concept": "DepthLimits",
+        "combined_score": 0.41,
+        "keyword_score": 36.1,
+        "semantic_score": 0.432,
+        "classification": "discard"
+      }
+    ]
+  },
+  {
+    "requirement_id": "S11",
+    "requirement_text": "The vessel operator may interrupt or abort dive profiles from the surface",
+    "matches": [
+      {
+        "taxonomy_domain": "NavigationAndPositioning",
+        "domain_concept": "TrafficAndSurfaceFixRisks",
+        "combined_score": 0.566,
+        "keyword_score": 42.3,
+        "semantic_score": 0.627,
+        "classification": "discard"
+      },
+      {
+        "taxonomy_domain": "OperationalLogistics",
+        "domain_concept": "AccessAndSupport",
+        "combined_score": 0.466,
+        "keyword_score": 42.3,
+        "semantic_score": 0.484,
+        "classification": "discard"
+      },
+      {
+        "taxonomy_domain": "VehicleCapabilitiesAndConstraints",
+        "domain_concept": "DepthLimits",
+        "combined_score": 0.419,
+        "keyword_score": 40.0,
+        "semantic_score": 0.426,
+        "classification": "discard"
+      }
+    ]
+  },
+  {
+    "requirement_id": "S12",
+    "requirement_text": "The system shall maintain a functional vessel-UUV link for initial dive phase health/status updates",
+    "matches": [
+      {
+        "taxonomy_domain": "NavigationAndPositioning",
+        "domain_concept": "TrafficAndSurfaceFixRisks",
+        "combined_score": 0.439,
+        "keyword_score": 42.0,
+        "semantic_score": 0.447,
+        "classification": "discard"
+      },
+      {
+        "taxonomy_domain": "EstimationAndUncertaintyModelling",
+        "domain_concept": "RiskFusionAndEffectiveness",
+        "combined_score": 0.408,
+        "keyword_score": 37.9,
+        "semantic_score": 0.421,
+        "classification": "discard"
+      },
+      {
+        "taxonomy_domain": "OperationalLogistics",
+        "domain_concept": "AccessAndSupport",
+        "combined_score": 0.406,
+        "keyword_score": 40.0,
+        "semantic_score": 0.409,
+        "classification": "discard"
+      }
+    ]
+  },
+  {
+    "requirement_id": "M01",
+    "requirement_text": "The UUV shall autonomously adapt path and depth based on real-time environmental data",
+    "matches": [
+      {
+        "taxonomy_domain": "EstimationAndUncertaintyModelling",
+        "domain_concept": "RiskFusionAndEffectiveness",
+        "combined_score": 0.555,
+        "keyword_score": 39.4,
+        "semantic_score": 0.624,
+        "classification": "discard"
+      },
+      {
+        "taxonomy_domain": "StandardsAndGovernance",
+        "domain_concept": "CapacityAndScalability",
+        "combined_score": 0.426,
+        "keyword_score": 45.6,
+        "semantic_score": 0.414,
+        "classification": "discard"
+      },
+      {
+        "taxonomy_domain": "VehicleCapabilitiesAndConstraints",
+        "domain_concept": "DepthLimits",
+        "combined_score": 0.426,
+        "keyword_score": 39.7,
+        "semantic_score": 0.439,
+        "classification": "discard"
+      }
+    ]
+  },
+  {
+    "requirement_id": "M02",
+    "requirement_text": "The system shall optimize route and speed to balance battery reserves and payload needs",
+    "matches": [
+      {
+        "taxonomy_domain": "MissionParametersAndObjectives",
+        "domain_concept": "SpatialAspects",
+        "combined_score": 0.452,
+        "keyword_score": 44.1,
+        "semantic_score": 0.457,
+        "classification": "discard"
+      },
+      {
+        "taxonomy_domain": "VehicleCapabilitiesAndConstraints",
+        "domain_concept": "PerformanceConstraints",
+        "combined_score": 0.389,
+        "keyword_score": 41.0,
+        "semantic_score": 0.38,
+        "classification": "discard"
+      },
+      {
+        "taxonomy_domain": "VehicleCapabilitiesAndConstraints",
+        "domain_concept": "Performance",
+        "combined_score": 0.382,
+        "keyword_score": 42.8,
+        "semantic_score": 0.363,
+        "classification": "discard"
+      }
+    ]
+  },
+  {
+    "requirement_id": "M03",
+    "requirement_text": "Mission planner shall enable waypoint, depth, and altitude management for sensor optimization",
+    "matches": [
+      {
+        "taxonomy_domain": "TestAndEvaluationScenarios",
+        "domain_concept": "SystemBenchmarks",
+        "combined_score": 0.489,
+        "keyword_score": 50.8,
+        "semantic_score": 0.481,
+        "classification": "discard"
+      },
+      {
+        "taxonomy_domain": "NavigationAndPositioning",
+        "domain_concept": "AccuracyAndHazards",
+        "combined_score": 0.481,
+        "keyword_score": 39.3,
+        "semantic_score": 0.519,
+        "classification": "discard"
+      },
+      {
+        "taxonomy_domain": "OperationalLogistics",
+        "domain_concept": "FieldOperations",
+        "combined_score": 0.448,
+        "keyword_score": 45.3,
+        "semantic_score": 0.446,
+        "classification": "discard"
+      }
+    ]
+  },
+  {
+    "requirement_id": "M04",
+    "requirement_text": "The UUV shall log and transmit navigation, status, and payload data at configured intervals",
+    "matches": [
+      {
+        "taxonomy_domain": "StandardsAndGovernance",
+        "domain_concept": "CapacityAndScalability",
+        "combined_score": 0.495,
+        "keyword_score": 45.1,
+        "semantic_score": 0.513,
+        "classification": "discard"
+      },
+      {
+        "taxonomy_domain": "MissionAuditAndTraceability",
+        "domain_concept": "MissionLogging",
+        "combined_score": 0.482,
+        "keyword_score": 40.6,
+        "semantic_score": 0.515,
+        "classification": "discard"
+      },
+      {
+        "taxonomy_domain": "MissionAuditAndTraceability",
+        "domain_concept": "SearchAndRetrieval",
+        "combined_score": 0.452,
+        "keyword_score": 41.5,
+        "semantic_score": 0.468,
+        "classification": "discard"
+      }
+    ]
+  },
+  {
+    "requirement_id": "M05",
+    "requirement_text": "The navigation engine shall account for currents, stratification, and up/down-welling",
+    "matches": [
+      {
+        "taxonomy_domain": "NavigationAndPositioning",
+        "domain_concept": "AccuracyAndHazards",
+        "combined_score": 0.556,
+        "keyword_score": 48.0,
+        "semantic_score": 0.588,
+        "classification": "discard"
+      },
+      {
+        "taxonomy_domain": "NavigationAndPositioning",
+        "domain_concept": "FailureScenarios",
+        "combined_score": 0.463,
+        "keyword_score": 34.6,
+        "semantic_score": 0.513,
+        "classification": "discard"
+      },
+      {
+        "taxonomy_domain": "NavigationAndPositioning",
+        "domain_concept": "RouteAndTrajectory",
+        "combined_score": 0.428,
+        "keyword_score": 45.8,
+        "semantic_score": 0.415,
+        "classification": "discard"
+      }
+    ]
+  },
+  {
+    "requirement_id": "M06",
+    "requirement_text": "The UUV shall maintain avoidance of seafloor and subsea hazards using internal mapping",
+    "matches": [
+      {
+        "taxonomy_domain": "TerrainAndBathymetry",
+        "domain_concept": "SeafloorAndInfrastructure",
+        "combined_score": 0.479,
+        "keyword_score": 51.4,
+        "semantic_score": 0.464,
+        "classification": "discard"
+      },
+      {
+        "taxonomy_domain": "NavigationAndPositioning",
+        "domain_concept": "AccuracyAndHazards",
+        "combined_score": 0.457,
+        "keyword_score": 42.0,
+        "semantic_score": 0.473,
+        "classification": "discard"
+      },
+      {
+        "taxonomy_domain": "EstimationAndUncertaintyModelling",
+        "domain_concept": "RiskFusionAndEffectiveness",
+        "combined_score": 0.445,
+        "keyword_score": 37.5,
+        "semantic_score": 0.475,
+        "classification": "discard"
+      }
+    ]
+  },
+  {
+    "requirement_id": "M07",
+    "requirement_text": "Guidance system shall support terrain-following or pipe-tracking as specified in mission objectives",
+    "matches": [
+      {
+        "taxonomy_domain": "MissionAuditAndTraceability",
+        "domain_concept": "MissionLogging",
+        "combined_score": 0.441,
+        "keyword_score": 44.2,
+        "semantic_score": 0.44,
+        "classification": "discard"
+      },
+      {
+        "taxonomy_domain": "NavigationAndPositioning",
+        "domain_concept": "AccuracyAndHazards",
+        "combined_score": 0.427,
+        "keyword_score": 40.2,
+        "semantic_score": 0.438,
+        "classification": "discard"
+      },
+      {
+        "taxonomy_domain": "NavigationAndPositioning",
+        "domain_concept": "RouteAndTrajectory",
+        "combined_score": 0.42,
+        "keyword_score": 41.9,
+        "semantic_score": 0.42,
+        "classification": "discard"
+      }
+    ]
+  },
+  {
+    "requirement_id": "M08",
+    "requirement_text": "Autonomous fail-safes shall respond to loss of comms, excessive attitude, or collision warnings",
+    "matches": [
+      {
+        "taxonomy_domain": "ThreatsAndRiskManagement",
+        "domain_concept": "SafetyAndMitigation",
+        "combined_score": 0.563,
+        "keyword_score": 49.0,
+        "semantic_score": 0.594,
+        "classification": "discard"
+      },
+      {
+        "taxonomy_domain": "NavigationAndPositioning",
+        "domain_concept": "AccuracyAndHazards",
+        "combined_score": 0.462,
+        "keyword_score": 35.7,
+        "semantic_score": 0.507,
+        "classification": "discard"
+      },
+      {
+        "taxonomy_domain": "ThreatsAndRiskManagement",
+        "domain_concept": "Hazards",
+        "combined_score": 0.45,
+        "keyword_score": 41.5,
+        "semantic_score": 0.466,
+        "classification": "discard"
+      }
+    ]
+  },
+  {
+    "requirement_id": "M09",
+    "requirement_text": "Mission completion criteria (waypoint/objective achieved) shall trigger return or next-phase behavior",
+    "matches": [
+      {
+        "taxonomy_domain": "MissionAuditAndTraceability",
+        "domain_concept": "PerformanceRatios",
+        "combined_score": 0.49,
+        "keyword_score": 50.3,
+        "semantic_score": 0.484,
+        "classification": "discard"
+      },
+      {
+        "taxonomy_domain": "VehicleCapabilitiesAndConstraints",
+        "domain_concept": "OperationalLimits",
+        "combined_score": 0.466,
+        "keyword_score": 45.8,
+        "semantic_score": 0.469,
+        "classification": "discard"
+      },
+      {
+        "taxonomy_domain": "TestAndEvaluationScenarios",
+        "domain_concept": "SystemBenchmarks",
+        "combined_score": 0.46,
+        "keyword_score": 46.5,
+        "semantic_score": 0.458,
+        "classification": "discard"
+      }
+    ]
+  },
+  {
+    "requirement_id": "M10",
+    "requirement_text": "The operator may configure the level of required autonomy or surface oversight per mission",
+    "matches": [
+      {
+        "taxonomy_domain": "VehicleCapabilitiesAndConstraints",
+        "domain_concept": "OperationalLimits",
+        "combined_score": 0.519,
+        "keyword_score": 50.9,
+        "semantic_score": 0.523,
+        "classification": "discard"
+      },
+      {
+        "taxonomy_domain": "CommunicationsAndControl",
+        "domain_concept": "ControlSystems",
+        "combined_score": 0.466,
+        "keyword_score": 36.1,
+        "semantic_score": 0.511,
+        "classification": "discard"
+      },
+      {
+        "taxonomy_domain": "MissionParametersAndObjectives",
+        "domain_concept": "Objectives",
+        "combined_score": 0.462,
+        "keyword_score": 40.3,
+        "semantic_score": 0.487,
+        "classification": "discard"
+      }
+    ]
+  },
+  {
+    "requirement_id": "M11",
+    "requirement_text": "Continuous or burst-based UUV-vessel telemetry protocols shall be supported",
+    "matches": [
+      {
+        "taxonomy_domain": "MissionAuditAndTraceability",
+        "domain_concept": "RecordAndReplay",
+        "combined_score": 0.445,
+        "keyword_score": 39.8,
+        "semantic_score": 0.465,
+        "classification": "discard"
+      },
+      {
+        "taxonomy_domain": "StandardsAndGovernance",
+        "domain_concept": "CapacityAndScalability",
+        "combined_score": 0.434,
+        "keyword_score": 34.8,
+        "semantic_score": 0.471,
+        "classification": "discard"
+      },
+      {
+        "taxonomy_domain": "CommunicationsAndControl",
+        "domain_concept": "TelemetryObservability",
+        "combined_score": 0.415,
+        "keyword_score": 41.3,
+        "semantic_score": 0.416,
+        "classification": "discard"
+      }
+    ]
+  },
+  {
+    "requirement_id": "M12",
+    "requirement_text": "The UUV shall flag or abort mission if protected boundaries or zones are breached",
+    "matches": [
+      {
+        "taxonomy_domain": "ThreatsAndRiskManagement",
+        "domain_concept": "Hazards",
+        "combined_score": 0.403,
+        "keyword_score": 45.0,
+        "semantic_score": 0.384,
+        "classification": "discard"
+      },
+      {
+        "taxonomy_domain": "NavigationAndPositioning",
+        "domain_concept": "AccuracyAndHazards",
+        "combined_score": 0.385,
+        "keyword_score": 44.0,
+        "semantic_score": 0.361,
+        "classification": "discard"
+      },
+      {
+        "taxonomy_domain": "EstimationAndUncertaintyModelling",
+        "domain_concept": "RiskFusionAndEffectiveness",
+        "combined_score": 0.384,
+        "keyword_score": 35.4,
+        "semantic_score": 0.396,
+        "classification": "discard"
+      }
+    ]
+  }
+]

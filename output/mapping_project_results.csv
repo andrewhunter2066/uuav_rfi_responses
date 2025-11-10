@@ -1,0 +1,109 @@
+mission_requirement_id,mission_requirement_text,project_requirement_id,project_requirement_name,combined_score,semantic_score,keyword_score,classification
+L01,The system shall support safe deployment of the UUV from a surface vessel under operational marine conditions,AURRP-18,Obstacle Avoidance,0.336,0.293,43.6,discard
+L01,The system shall support safe deployment of the UUV from a surface vessel under operational marine conditions,AURRP-03,Contribute to the UUV navigation,0.329,0.289,42.2,discard
+L01,The system shall support safe deployment of the UUV from a surface vessel under operational marine conditions,AURRP-12,Cyber worthiness,0.303,0.261,40.0,discard
+L02,The UUV shall autonomously transition from launch to mission mode when in water,AURRP-03,Contribute to the UUV navigation,0.363,0.318,46.7,discard
+L02,The UUV shall autonomously transition from launch to mission mode when in water,AURRP-01,Route Planning,0.342,0.292,45.9,discard
+L02,The UUV shall autonomously transition from launch to mission mode when in water,AURRP-07,User Suitability,0.338,0.257,52.9,discard
+L03,The UUV shall obtain an initial navigation fix before submergence,AURRP-03,Contribute to the UUV navigation,0.389,0.368,43.7,discard
+L03,The UUV shall obtain an initial navigation fix before submergence,AURRP-16,Route Optimisation,0.321,0.296,37.9,discard
+L03,The UUV shall obtain an initial navigation fix before submergence,AURRP-01,Route Planning,0.293,0.253,38.7,discard
+L04,Pre-dive diagnostic checks between vessel and UUV shall be performed and confirmed before launch proceeds,AURRP-03,Contribute to the UUV navigation,0.281,0.233,39.3,discard
+L04,Pre-dive diagnostic checks between vessel and UUV shall be performed and confirmed before launch proceeds,AURRP-01,Route Planning,0.251,0.189,39.6,discard
+L04,Pre-dive diagnostic checks between vessel and UUV shall be performed and confirmed before launch proceeds,AURRP-16,Route Optimisation,0.246,0.193,36.8,discard
+L05,The interface shall display GO/NO-GO status for environmental/operational launch criteria,AURRP-03,Contribute to the UUV navigation,0.371,0.356,40.6,discard
+L05,The interface shall display GO/NO-GO status for environmental/operational launch criteria,AURRP-17,Adaptability to uncertain environments,0.341,0.276,49.3,discard
+L05,The interface shall display GO/NO-GO status for environmental/operational launch criteria,AURRP-16,Route Optimisation,0.337,0.328,35.7,discard
+L06,"The system shall restrict launch locations based on navigational hazards, EEZ, and restricted zones",AURRP-03,Contribute to the UUV navigation,0.438,0.412,49.8,discard
+L06,"The system shall restrict launch locations based on navigational hazards, EEZ, and restricted zones",AURRP-18,Obstacle Avoidance,0.404,0.411,38.7,discard
+L06,"The system shall restrict launch locations based on navigational hazards, EEZ, and restricted zones",AURRP-16,Route Optimisation,0.387,0.421,30.7,discard
+L07,"Launch procedures shall account for site-specific current, tide, and traffic conditions",AURRP-16,Route Optimisation,0.402,0.376,46.4,discard
+L07,"Launch procedures shall account for site-specific current, tide, and traffic conditions",AURRP-04,Ingest Environmental Data,0.374,0.378,36.5,discard
+L07,"Launch procedures shall account for site-specific current, tide, and traffic conditions",AURRP-03,Contribute to the UUV navigation,0.334,0.301,41.0,discard
+L08,"The system shall provide maximum allowable wind, swell, and wave condition settings for safe launch",AURRP-04,Ingest Environmental Data,0.377,0.371,39.0,discard
+L08,"The system shall provide maximum allowable wind, swell, and wave condition settings for safe launch",AURRP-03,Contribute to the UUV navigation,0.352,0.329,40.6,discard
+L08,"The system shall provide maximum allowable wind, swell, and wave condition settings for safe launch",AURRP-17,Adaptability to uncertain environments,0.339,0.326,36.8,discard
+L09,Buoyancy and environmental parameters near launch (including salinity and temperature) shall be monitored,AURRP-17,Adaptability to uncertain environments,0.396,0.36,48.1,discard
+L09,Buoyancy and environmental parameters near launch (including salinity and temperature) shall be monitored,AURRP-04,Ingest Environmental Data,0.361,0.331,43.2,discard
+L09,Buoyancy and environmental parameters near launch (including salinity and temperature) shall be monitored,AURRP-03,Contribute to the UUV navigation,0.303,0.244,43.8,discard
+L10,Day/night or light-level operational requirements shall be user configurable,AURRP-03,Contribute to the UUV navigation,0.349,0.33,39.2,discard
+L10,Day/night or light-level operational requirements shall be user configurable,AURRP-16,Route Optimisation,0.338,0.294,44.1,discard
+L10,Day/night or light-level operational requirements shall be user configurable,AURRP-13,System Flexibility,0.311,0.29,35.8,discard
+L11,Launch location selection tools shall factor proximity to subsea objectives and launch vessel maneuverability,AURRP-01,Route Planning,0.489,0.504,45.6,discard
+L11,Launch location selection tools shall factor proximity to subsea objectives and launch vessel maneuverability,AURRP-16,Route Optimisation,0.449,0.496,34.0,discard
+L11,Launch location selection tools shall factor proximity to subsea objectives and launch vessel maneuverability,AURRP-03,Contribute to the UUV navigation,0.416,0.423,40.0,discard
+L12,The UUV shall maintain stable communications with the vessel during pre-launch and immersion,AURRP-03,Contribute to the UUV navigation,0.372,0.328,47.6,discard
+L12,The UUV shall maintain stable communications with the vessel during pre-launch and immersion,AURRP-01,Route Planning,0.325,0.26,47.7,discard
+L12,The UUV shall maintain stable communications with the vessel during pre-launch and immersion,AURRP-16,Route Optimisation,0.317,0.304,34.5,discard
+S01,"The UUV shall accelerate efficiently on the surface and initiate a safe, optimal dive profile",AURRP-04,Ingest Environmental Data,0.331,0.283,44.3,discard
+S01,"The UUV shall accelerate efficiently on the surface and initiate a safe, optimal dive profile",AURRP-01,Route Planning,0.32,0.25,48.4,discard
+S01,"The UUV shall accelerate efficiently on the surface and initiate a safe, optimal dive profile",AURRP-03,Contribute to the UUV navigation,0.319,0.265,44.4,discard
+S02,"Mission control shall allow configuration of dive angle, duration, and depth",AURRP-03,Contribute to the UUV navigation,0.557,0.597,46.4,discard
+S02,"Mission control shall allow configuration of dive angle, duration, and depth",AURRP-07,User Suitability,0.425,0.402,47.9,discard
+S02,"Mission control shall allow configuration of dive angle, duration, and depth",AURRP-16,Route Optimisation,0.425,0.445,37.8,discard
+S03,The UUV shall adjust power and speed to maintain dive efficiency and safety,AURRP-04,Ingest Environmental Data,0.344,0.256,55.1,discard
+S03,The UUV shall adjust power and speed to maintain dive efficiency and safety,AURRP-03,Contribute to the UUV navigation,0.297,0.248,41.3,discard
+S03,The UUV shall adjust power and speed to maintain dive efficiency and safety,AURRP-18,Obstacle Avoidance,0.288,0.215,45.9,discard
+S04,Navigation module shall incorporate real-time oceanographic data for dive planning,AURRP-03,Contribute to the UUV navigation,0.457,0.465,44.0,discard
+S04,Navigation module shall incorporate real-time oceanographic data for dive planning,AURRP-04,Ingest Environmental Data,0.454,0.496,35.7,discard
+S04,Navigation module shall incorporate real-time oceanographic data for dive planning,AURRP-07,User Suitability,0.331,0.275,46.2,discard
+S05,The UUV shall be able to offset its dive for avoidance of hazards and remain in approved waters,AURRP-18,Obstacle Avoidance,0.374,0.301,54.3,discard
+S05,The UUV shall be able to offset its dive for avoidance of hazards and remain in approved waters,AURRP-03,Contribute to the UUV navigation,0.328,0.271,46.0,discard
+S05,The UUV shall be able to offset its dive for avoidance of hazards and remain in approved waters,AURRP-04,Ingest Environmental Data,0.283,0.247,36.8,discard
+S06,The system shall respect GO/NO-GO constraints for protected infrastructure and environmental zones,AURRP-10,Solution must be standalone,0.385,0.371,41.6,discard
+S06,The system shall respect GO/NO-GO constraints for protected infrastructure and environmental zones,AURRP-12,Cyber worthiness,0.358,0.34,40.0,discard
+S06,The system shall respect GO/NO-GO constraints for protected infrastructure and environmental zones,AURRP-18,Obstacle Avoidance,0.327,0.266,47.0,discard
+S07,Guidance control shall enforce safe minimum/maximum dive or climb angles,AURRP-18,Obstacle Avoidance,0.359,0.36,35.8,discard
+S07,Guidance control shall enforce safe minimum/maximum dive or climb angles,AURRP-03,Contribute to the UUV navigation,0.349,0.336,37.9,discard
+S07,Guidance control shall enforce safe minimum/maximum dive or climb angles,AURRP-16,Route Optimisation,0.336,0.341,32.5,discard
+S08,The UUV shall support selectable dive behaviors (straight/spiral/waypoint),AURRP-03,Contribute to the UUV navigation,0.403,0.411,38.5,discard
+S08,The UUV shall support selectable dive behaviors (straight/spiral/waypoint),AURRP-04,Ingest Environmental Data,0.318,0.321,31.1,discard
+S08,The UUV shall support selectable dive behaviors (straight/spiral/waypoint),AURRP-16,Route Optimisation,0.291,0.278,32.0,discard
+S09,"Navigation system must support dead reckoning, USBL, and LBL with selectable modes",AURRP-03,Contribute to the UUV navigation,0.379,0.348,45.0,discard
+S09,"Navigation system must support dead reckoning, USBL, and LBL with selectable modes",AURRP-15,Platform Agnostic Design,0.304,0.273,37.9,discard
+S09,"Navigation system must support dead reckoning, USBL, and LBL with selectable modes",AURRP-02,Sensor Interface,0.298,0.231,45.6,discard
+S10,The UUV shall automatically activate collision avoidance when nearing the seafloor,AURRP-18,Obstacle Avoidance,0.42,0.4,46.5,discard
+S10,The UUV shall automatically activate collision avoidance when nearing the seafloor,AURRP-03,Contribute to the UUV navigation,0.332,0.29,42.9,discard
+S10,The UUV shall automatically activate collision avoidance when nearing the seafloor,AURRP-04,Ingest Environmental Data,0.291,0.273,33.4,discard
+S11,The vessel operator may interrupt or abort dive profiles from the surface,AURRP-18,Obstacle Avoidance,0.419,0.413,43.3,discard
+S11,The vessel operator may interrupt or abort dive profiles from the surface,AURRP-01,Route Planning,0.299,0.23,46.2,discard
+S11,The vessel operator may interrupt or abort dive profiles from the surface,AURRP-03,Contribute to the UUV navigation,0.296,0.249,40.6,discard
+S12,The system shall maintain a functional vessel-UUV link for initial dive phase health/status updates,AURRP-03,Contribute to the UUV navigation,0.346,0.316,41.5,discard
+S12,The system shall maintain a functional vessel-UUV link for initial dive phase health/status updates,AURRP-01,Route Planning,0.253,0.163,46.2,discard
+S12,The system shall maintain a functional vessel-UUV link for initial dive phase health/status updates,AURRP-18,Obstacle Avoidance,0.244,0.188,37.3,discard
+M01,The UUV shall autonomously adapt path and depth based on real-time environmental data,AURRP-03,Contribute to the UUV navigation,0.36,0.341,40.4,discard
+M01,The UUV shall autonomously adapt path and depth based on real-time environmental data,AURRP-04,Ingest Environmental Data,0.352,0.33,40.1,discard
+M01,The UUV shall autonomously adapt path and depth based on real-time environmental data,AURRP-18,Obstacle Avoidance,0.269,0.189,45.6,discard
+M02,The system shall optimize route and speed to balance battery reserves and payload needs,AURRP-16,Route Optimisation,0.482,0.503,43.3,discard
+M02,The system shall optimize route and speed to balance battery reserves and payload needs,AURRP-01,Route Planning,0.436,0.418,47.8,discard
+M02,The system shall optimize route and speed to balance battery reserves and payload needs,AURRP-04,Ingest Environmental Data,0.41,0.407,41.9,discard
+M03,"Mission planner shall enable waypoint, depth, and altitude management for sensor optimization",AURRP-03,Contribute to the UUV navigation,0.533,0.566,45.5,discard
+M03,"Mission planner shall enable waypoint, depth, and altitude management for sensor optimization",AURRP-16,Route Optimisation,0.509,0.537,44.4,discard
+M03,"Mission planner shall enable waypoint, depth, and altitude management for sensor optimization",AURRP-01,Route Planning,0.489,0.479,51.1,discard
+M04,"The UUV shall log and transmit navigation, status, and payload data at configured intervals",AURRP-03,Contribute to the UUV navigation,0.415,0.388,47.8,discard
+M04,"The UUV shall log and transmit navigation, status, and payload data at configured intervals",AURRP-16,Route Optimisation,0.304,0.31,29.0,discard
+M04,"The UUV shall log and transmit navigation, status, and payload data at configured intervals",AURRP-01,Route Planning,0.285,0.222,43.2,discard
+M05,"The navigation engine shall account for currents, stratification, and up/down-welling",AURRP-03,Contribute to the UUV navigation,0.48,0.483,47.3,discard
+M05,"The navigation engine shall account for currents, stratification, and up/down-welling",AURRP-04,Ingest Environmental Data,0.415,0.435,36.7,discard
+M05,"The navigation engine shall account for currents, stratification, and up/down-welling",AURRP-16,Route Optimisation,0.379,0.384,36.8,discard
+M06,The UUV shall maintain avoidance of seafloor and subsea hazards using internal mapping,AURRP-18,Obstacle Avoidance,0.411,0.35,55.5,discard
+M06,The UUV shall maintain avoidance of seafloor and subsea hazards using internal mapping,AURRP-04,Ingest Environmental Data,0.323,0.29,40.0,discard
+M06,The UUV shall maintain avoidance of seafloor and subsea hazards using internal mapping,AURRP-03,Contribute to the UUV navigation,0.313,0.275,40.2,discard
+M07,Guidance system shall support terrain-following or pipe-tracking as specified in mission objectives,AURRP-03,Contribute to the UUV navigation,0.488,0.507,44.2,discard
+M07,Guidance system shall support terrain-following or pipe-tracking as specified in mission objectives,AURRP-16,Route Optimisation,0.449,0.476,38.7,discard
+M07,Guidance system shall support terrain-following or pipe-tracking as specified in mission objectives,AURRP-01,Route Planning,0.422,0.424,41.8,discard
+M08,"Autonomous fail-safes shall respond to loss of comms, excessive attitude, or collision warnings",AURRP-18,Obstacle Avoidance,0.402,0.404,39.7,discard
+M08,"Autonomous fail-safes shall respond to loss of comms, excessive attitude, or collision warnings",AURRP-12,Cyber worthiness,0.364,0.434,20.2,discard
+M08,"Autonomous fail-safes shall respond to loss of comms, excessive attitude, or collision warnings",AURRP-17,Adaptability to uncertain environments,0.36,0.335,41.9,discard
+M09,Mission completion criteria (waypoint/objective achieved) shall trigger return or next-phase behavior,AURRP-01,Route Planning,0.464,0.474,44.1,discard
+M09,Mission completion criteria (waypoint/objective achieved) shall trigger return or next-phase behavior,AURRP-16,Route Optimisation,0.44,0.459,39.5,discard
+M09,Mission completion criteria (waypoint/objective achieved) shall trigger return or next-phase behavior,AURRP-06,Route planning software to enhance productivity,0.426,0.421,43.8,discard
+M10,The operator may configure the level of required autonomy or surface oversight per mission,AURRP-07,User Suitability,0.473,0.477,46.3,discard
+M10,The operator may configure the level of required autonomy or surface oversight per mission,AURRP-03,Contribute to the UUV navigation,0.465,0.467,46.1,discard
+M10,The operator may configure the level of required autonomy or surface oversight per mission,AURRP-16,Route Optimisation,0.451,0.457,43.8,discard
+M11,Continuous or burst-based UUV-vessel telemetry protocols shall be supported,AURRP-03,Contribute to the UUV navigation,0.274,0.246,34.2,discard
+M11,Continuous or burst-based UUV-vessel telemetry protocols shall be supported,AURRP-01,Route Planning,0.247,0.187,38.8,discard
+M11,Continuous or burst-based UUV-vessel telemetry protocols shall be supported,AURRP-10,Solution must be standalone,0.247,0.19,38.1,discard
+M12,The UUV shall flag or abort mission if protected boundaries or zones are breached,AURRP-03,Contribute to the UUV navigation,0.333,0.257,51.0,discard
+M12,The UUV shall flag or abort mission if protected boundaries or zones are breached,AURRP-07,User Suitability,0.306,0.229,48.5,discard
+M12,The UUV shall flag or abort mission if protected boundaries or zones are breached,AURRP-10,Solution must be standalone,0.297,0.245,41.9,discard
